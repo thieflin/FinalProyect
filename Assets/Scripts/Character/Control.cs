@@ -24,9 +24,8 @@ public class Control
         Vector3 direction = new Vector3(horizontalMovement, 0f, verticalMovement);
 
         if (Input.GetKeyDown(KeyCode.Space))
-        {
             player.Dash();
-        }
+
 
         if (verticalMovement != 0 || horizontalMovement != 0)
         {

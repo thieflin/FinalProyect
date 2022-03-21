@@ -6,26 +6,38 @@ public class PlayerMovement : MonoBehaviour
 {
     public Control characterInputs;
 
+    Rigidbody rb;
+
     [Header("Movement values")]
-    [SerializeField] private float movementSpeed;
+    [SerializeField] private float _movementSpeed;
 
     [Header("Rotation values")]
-    [SerializeField] private float smoothRotation = 0.25f;
+    [SerializeField] private float _smoothRotation = 0.25f;
     float turnSmoothVelocity;
+
+    [Header("Dash values")]
+    [SerializeField] private float _dashForce;
+    [SerializeField] private float _dashTime;
+    [SerializeField] private float _timeBetweenDashes;
+    [SerializeField] private bool canDash = true;
 
     private void Awake()
     {
         characterInputs = new Control(this);
+
+        rb = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         characterInputs.OnUpdate();
+
+
     }
 
     public void Move(Vector3 direction)
     {
-        transform.position += direction * movementSpeed * Time.deltaTime;
+        transform.position += direction * _movementSpeed * Time.deltaTime;
 
 
 
@@ -34,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
 
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, smoothRotation);
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, _smoothRotation);
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
         }
@@ -42,6 +54,22 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash()
     {
+        if (canDash)
+        {
+            rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
+            Debug.Log("Is dashing");
+            StartCoroutine(waitDash());
+        }
 
+    }
+
+    IEnumerator waitDash()
+    {
+        canDash = false;
+
+        yield return new WaitForSeconds(_dashTime);
+        rb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(_timeBetweenDashes);
+        canDash = true;
     }
 }
