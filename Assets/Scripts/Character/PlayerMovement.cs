@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,13 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public Control characterInputs;
 
-    Rigidbody rb;
+    [SerializeField] private Rigidbody _rb;
 
     [Header("Movement values")]
     [SerializeField] private float _movementSpeed;
 
     [Header("Rotation values")]
-    [SerializeField] private float _smoothRotation = 0.25f;
+    [SerializeField] private float _smoothRotation = 360;
     float turnSmoothVelocity;
 
     [Header("Dash values")]
@@ -25,23 +25,31 @@ public class PlayerMovement : MonoBehaviour
     {
         characterInputs = new Control(this);
 
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
+    {
+        characterInputs.OnUpdate();
+        if (Input.GetKeyDown(KeyCode.Space))
+            Dash();
     }
 
     private void Update()
-    {
-        characterInputs.OnUpdate();
-
-
+    { 
+       
     }
+
 
     public void Move(Vector3 direction)
     {
-        transform.position += direction * _movementSpeed * Time.deltaTime;
+        direction.Normalize();
+
+        _rb.velocity = direction * _movementSpeed * Time.fixedDeltaTime;
 
 
 
-        //Rotaci�n
+        //Rotación
         if (direction.z >= 0.1f || direction.x >= 0.1f || direction.x <= -0.1 || direction.z <= -0.1)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
@@ -50,13 +58,14 @@ public class PlayerMovement : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
         }
+
     }
 
     public void Dash()
     {
         if (canDash)
         {
-            rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
+            _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
             Debug.Log("Is dashing");
             StartCoroutine(waitDash());
         }
@@ -68,8 +77,21 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
 
         yield return new WaitForSeconds(_dashTime);
-        rb.velocity = Vector3.zero;
+        _rb.velocity = Vector3.zero;
         yield return new WaitForSeconds(_timeBetweenDashes);
         canDash = true;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+
+        _rb.AddTorque(Vector3.zero);
+
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        _rb.AddTorque(Vector3.zero);
+
     }
 }

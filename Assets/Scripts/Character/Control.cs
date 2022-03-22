@@ -18,18 +18,19 @@ public class Control
     public void OnUpdate()
     {
 
-        verticalMovement = Input.GetAxis("Vertical");
-        horizontalMovement = Input.GetAxis("Horizontal");
+        verticalMovement = Input.GetAxisRaw("Vertical");
+        horizontalMovement = Input.GetAxisRaw("Horizontal");
 
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 direction = new Vector3(horizontalMovement, 0, verticalMovement);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            player.Dash();
 
 
         if (verticalMovement != 0 || horizontalMovement != 0)
             player.Move(direction);
-        
+        else
+            player.Move(Vector3.zero);
 
+        if (Input.GetKeyDown(KeyCode.Space))
+            player.Dash();
     }
 }
