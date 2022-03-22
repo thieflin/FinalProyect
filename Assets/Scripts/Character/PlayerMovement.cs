@@ -35,8 +35,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update()
-    { 
-       
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            Dash();
     }
 
 
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     {
         direction.Normalize();
 
+        if(canDash)
         _rb.velocity = direction * _movementSpeed * Time.fixedDeltaTime;
 
         //Rotación
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canDash)
         {
+            _rb.velocity = new Vector3(0, 0, 0);
             _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
             Debug.Log("Is dashing");
             StartCoroutine(waitDash());

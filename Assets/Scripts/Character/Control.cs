@@ -29,7 +29,6 @@ public class Control
         else
             player.Move(Vector3.zero);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            player.Dash();
+
     }
 }
