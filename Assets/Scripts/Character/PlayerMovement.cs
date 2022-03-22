@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _dashTime;
     [SerializeField] private float _timeBetweenDashes;
     [SerializeField] private bool canDash = true;
+    private bool isDashing;
 
     private void Awake()
     {
@@ -45,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     {
         direction.Normalize();
 
-        if(canDash)
+        if(!isDashing)
         _rb.velocity = direction * _movementSpeed * Time.fixedDeltaTime;
 
         //Rotación
@@ -75,9 +76,10 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator waitDash()
     {
         canDash = false;
-
+        isDashing = true;
         yield return new WaitForSeconds(_dashTime);
         _rb.velocity = Vector3.zero;
+        isDashing = false;
         yield return new WaitForSeconds(_timeBetweenDashes);
         canDash = true;
     }

@@ -1943,5 +1943,9 @@ PrefabInstance:
       propertyPath: _dashForce
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7663021814223445851, guid: a35a0adefdff2d1459b25a757975ce3c, type: 3}
+      propertyPath: _timeBetweenDashes
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35a0adefdff2d1459b25a757975ce3c, type: 3}
