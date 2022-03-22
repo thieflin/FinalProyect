@@ -31,8 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         characterInputs.OnUpdate();
-        if (Input.GetKeyDown(KeyCode.Space))
-            Dash();
+
     }
 
     private void Update()

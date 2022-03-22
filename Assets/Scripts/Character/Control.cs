@@ -23,8 +23,6 @@ public class Control
 
         Vector3 direction = new Vector3(horizontalMovement, 0, verticalMovement);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            player.Dash();
 
         if (verticalMovement != 0 || horizontalMovement != 0)
             player.Move(direction);
