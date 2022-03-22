@@ -44,8 +44,12 @@ public class PlayerMovement : MonoBehaviour
     {
         direction.Normalize();
 
-        _rb.velocity = direction * _movementSpeed * Time.fixedDeltaTime;
+        _rb.velocity += direction * _movementSpeed * Time.fixedDeltaTime;
 
+        if(direction == Vector3.zero)
+        {
+            _rb.velocity = Vector3.zero;
+        }
 
 
         //Rotación
