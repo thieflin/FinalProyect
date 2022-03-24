@@ -23,12 +23,10 @@ public class Control
 
         Vector3 direction = new Vector3(horizontalMovement, 0, verticalMovement);
 
-
         if (verticalMovement != 0 || horizontalMovement != 0)
             player.Move(direction);
         else
             player.Move(Vector3.zero);
-
 
     }
 }

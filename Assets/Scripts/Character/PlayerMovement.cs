@@ -22,11 +22,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool canDash = true;
     private bool isDashing;
 
+    [Header("Target Lock")]
+    [SerializeField] private TargetLock _targetLock;
+    [SerializeField] private bool _isTargeting;
+    [SerializeField] private float _combatSpeed;
+    [SerializeField] private Enemy _lockedEnemy;
+
     private void Awake()
     {
         characterInputs = new Control(this);
 
         _rb = GetComponent<Rigidbody>();
+
+        _targetLock = GetComponentInChildren<TargetLock>();
     }
 
     private void FixedUpdate()
@@ -46,19 +54,40 @@ public class PlayerMovement : MonoBehaviour
     {
         direction.Normalize();
 
-        if(!isDashing)
-        _rb.velocity = direction * _movementSpeed * Time.fixedDeltaTime;
+        if (!isDashing && !_isTargeting)
+            _rb.velocity = direction * _movementSpeed * Time.fixedDeltaTime;
 
         //Rotación
-        if (direction.z >= 0.1f || direction.x >= 0.1f || direction.x <= -0.1 || direction.z <= -0.1)
+
+        if (!_isTargeting)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            if (direction.z >= 0.1f || direction.x >= 0.1f || direction.x <= -0.1 || direction.z <= -0.1)
+            {
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
 
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, _smoothRotation);
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, _smoothRotation);
 
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            }
         }
 
+        if (_isTargeting)
+        {
+            transform.LookAt(_lockedEnemy.transform);
+            transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0);
+            _rb.velocity = direction * _movementSpeed * Time.fixedDeltaTime;
+
+            if (!_targetLock.enemiesClose.Contains(_lockedEnemy))
+                _isTargeting = false;
+
+        }
+    }
+
+    public void TargetEnemy(Enemy e)
+    {
+        _lockedEnemy = e;
+
+        _isTargeting = true; ;
     }
 
     public void Dash()
