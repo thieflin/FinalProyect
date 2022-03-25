@@ -95,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         //TARGETING WALKING
         if (isTargeting)
         {
+            _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
 
             Vector3 lookAt = (_lockedEnemy.transform.position - transform.position).normalized;
 
