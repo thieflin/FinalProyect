@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     {
         direction.Normalize();
 
-        var matrix = Matrix4x4.Rotate(Quaternion.Euler(0,-45,0));
+        var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, -45, 0));
 
         var newInput = matrix.MultiplyPoint3x4(direction);
 
@@ -95,7 +95,8 @@ public class PlayerMovement : MonoBehaviour
         //TARGETING WALKING
         if (isTargeting)
         {
-            _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
+            if (!isDashing)
+                _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
 
             Vector3 lookAt = (_lockedEnemy.transform.position - transform.position).normalized;
 
