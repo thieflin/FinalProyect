@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _movementSpeed;
 
     [Header("Rotation values")]
-    [SerializeField] private float _smoothRotation = 360;
+    [SerializeField] private float _smoothRotation = 0.1f;
     float turnSmoothVelocity;
 
     [Header("Dash values")]
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Target Lock")]
     [SerializeField] private TargetLock _targetLock;
-    [SerializeField] private bool _isTargeting;
+    [SerializeField] public bool isTargeting;
     [SerializeField] private float _combatSpeed;
     [SerializeField] private Enemy _lockedEnemy;
 
@@ -47,23 +47,44 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
             Dash();
+
     }
 
+
+    public void Look(Vector3 direction)
+    {
+        //var relative = (transform.position - direction) - transform.position;
+        //var rot = Quaternion.LookRotation(relative, Vector3.up);
+
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, 360 * Time.fixedDeltaTime);
+    }
 
     public void Move(Vector3 direction)
     {
         direction.Normalize();
 
-        if (!isDashing && !_isTargeting)
-            _rb.velocity = direction * _movementSpeed * Time.fixedDeltaTime;
+        var matrix = Matrix4x4.Rotate(Quaternion.Euler(0,-45,0));
+
+        var newInput = matrix.MultiplyPoint3x4(direction);
+
+        //NORMAL WALKING
+        if (!isDashing && !isTargeting)
+        {
+            _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
+        }
 
         //Rotación
 
-        if (!_isTargeting)
+        if (!isTargeting)
         {
-            if (direction.z >= 0.1f || direction.x >= 0.1f || direction.x <= -0.1 || direction.z <= -0.1)
+
+            var matrixRotation = Matrix4x4.Rotate(Quaternion.Euler(0, -45, 0));
+
+            var newInputRotation = matrix.MultiplyPoint3x4(direction);
+
+            if (newInputRotation.z >= 0.1f || newInputRotation.x >= 0.1f || newInputRotation.x <= -0.1 || newInputRotation.z <= -0.1)
             {
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                float targetAngle = Mathf.Atan2(newInputRotation.x, newInputRotation.z) * Mathf.Rad2Deg;
 
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, _smoothRotation);
 
@@ -71,14 +92,16 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (_isTargeting)
+        //TARGETING WALKING
+        if (isTargeting)
         {
-            transform.LookAt(_lockedEnemy.transform);
-            transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0);
-            _rb.velocity = direction * _movementSpeed * Time.fixedDeltaTime;
+
+            Vector3 lookAt = (_lockedEnemy.transform.position - transform.position).normalized;
+
+            transform.forward = lookAt;
 
             if (!_targetLock.enemiesClose.Contains(_lockedEnemy))
-                _isTargeting = false;
+                isTargeting = false;
 
         }
     }
@@ -87,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _lockedEnemy = e;
 
-        _isTargeting = true; ;
+        isTargeting = true; ;
     }
 
     public void Dash()

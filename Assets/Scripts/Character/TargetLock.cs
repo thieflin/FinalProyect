@@ -17,8 +17,10 @@ public class TargetLock : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (enemiesClose.Count > 0)
+            if (enemiesClose.Count > 0 && !player.isTargeting)
                 LookForClosestEnemy();
+            else if (enemiesClose.Count > 0 && player.isTargeting)
+                player.isTargeting = false;
             else
                 Debug.Log("No hay enemigos cercanos");
         }

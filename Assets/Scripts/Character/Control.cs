@@ -28,5 +28,6 @@ public class Control
         else
             player.Move(Vector3.zero);
 
+        player.Look(direction);
     }
 }
