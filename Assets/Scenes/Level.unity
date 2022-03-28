@@ -17914,7 +17914,7 @@ GameObject:
   - component: {fileID: 1260064208}
   - component: {fileID: 1260064207}
   m_Layer: 0
-  m_Name: Hola
+  m_Name: Combo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17937,6 +17937,8 @@ MonoBehaviour:
   comboTime: 0
   isComboing: 0
   comboEnded: 0
+  chargeAttack: 1
+  chargeAttackTimer: 1
 --- !u!4 &1260064208
 Transform:
   m_ObjectHideFlags: 0
