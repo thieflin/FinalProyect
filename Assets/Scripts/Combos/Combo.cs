@@ -9,6 +9,8 @@ public class Combo : MonoBehaviour
     public float comboTime;
     public bool isComboing;
     public bool comboEnded;
+    public float chargeAttack;
+    public float chargeAttackTimer;
 
 
 
@@ -23,21 +25,23 @@ public class Combo : MonoBehaviour
                 comboCounter++;
                 isComboing = true;
             }
-            else if (comboCounter == 1)
+            else if (comboCounter == 1 && !Input.GetKey(KeyCode.LeftShift))
             {
                 Debug.Log("Ataque numero 2 del combo");
                 comboCounter++;
                 isComboing = true;
             }
+            else if (comboCounter == 1 && Input.GetKey(KeyCode.LeftShift))
+            {
+                comboCounter++;
+                Debug.Log("Ataque numero 2 finisher pesado pesado");
+                Debug.Log("Finisher with melee");
+                comboEnded = true;
+            }
             else if (comboCounter == 2)
             {
                 comboCounter++;
-                Debug.Log("Ataque numero 3 del combo");
-            }
-            else if (comboCounter == 3)
-            {
-                comboCounter++;
-                Debug.Log("Ataque numero 4 del combo");
+                Debug.Log("Ataque numero 3 del combo rapido");
                 Debug.Log("Finisher with melee");
                 comboEnded = true;
             }
@@ -45,15 +49,21 @@ public class Combo : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if(comboCounter == 3)
+            if(comboCounter == 2 && !Input.GetKey(KeyCode.LeftShift))
             {
                 comboCounter++;
-                Debug.Log("Ataque numero 4 del combo");
-                Debug.Log("Finisher with shotgun");
+                Debug.Log("Ataque numero 3 del combo");
+                Debug.Log("Finisher with shotgun regular");
                 comboEnded = true;
             }
+            else if (comboCounter == 2 && Input.GetKey(KeyCode.LeftShift))
+            {
+                Debug.Log("Ataque numero 3 del combo");
+                comboCounter++;
+                comboCounter++; Debug.Log("Heavy Finisher");
+                isComboing = true;
+            }
         }
-
 
 
 
