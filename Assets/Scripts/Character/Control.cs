@@ -23,11 +23,23 @@ public class Control
 
         Vector3 direction = new Vector3(horizontalMovement, 0, verticalMovement);
 
-        if (verticalMovement != 0 || horizontalMovement != 0)
+        if ((verticalMovement != 0 || horizontalMovement != 0) && player.isGrounded())
+        {
             player.Move(direction);
-        else
+        }
+        else if ((verticalMovement != 0 || horizontalMovement != 0) && !player.isGrounded())
+        {
+            player.Move(new Vector3(direction.x, -1f, direction.z));
+            Debug.Log("entre");
+        }
+        else if ((verticalMovement == 0 && horizontalMovement == 0) && !player.isGrounded())
+        {
+            player.Move(new Vector3(direction.x, -1f, direction.z));
+        }
+        else if (verticalMovement == 0 && horizontalMovement == 0 && player.isGrounded())
+        {
             player.Move(Vector3.zero);
+        }
 
-        player.Look(direction);
     }
 }

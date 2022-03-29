@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement values")]
     [SerializeField] private float _movementSpeed;
 
+    //RAYCASTS
+    private Vector3 leftRayCast, rightRayCast, forwardRayCast, backwardRayCast;
+
     [Header("Rotation values")]
     [SerializeField] private float _smoothRotation = 0.1f;
     float turnSmoothVelocity;
@@ -58,15 +61,25 @@ public class PlayerMovement : MonoBehaviour
                 sph.enabled = false;
             else sph.enabled = true;
 
+        //RAYCASTS PARA CAIDA
+        leftRayCast = new Vector3(0, 0, 0.5f);
+        leftRayCast += transform.position;
+
+        rightRayCast = new Vector3(0, 0, -0.5f);
+        rightRayCast += transform.position;
+
+        forwardRayCast = new Vector3(0.5f, 0, 0);
+        forwardRayCast += transform.position;
+
+        backwardRayCast = new Vector3(-1f, 0, 0);
+        backwardRayCast += transform.position;
+
+        Debug.Log(isGrounded());
     }
 
-
-    public void Look(Vector3 direction)
+    private void OnDrawGizmos()
     {
-        //var relative = (transform.position - direction) - transform.position;
-        //var rot = Quaternion.LookRotation(relative, Vector3.up);
-
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, 360 * Time.fixedDeltaTime);
+        Debug.DrawRay(leftRayCast, Vector3.down, Color.green);
     }
 
     public void Move(Vector3 direction)
@@ -87,9 +100,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isTargeting)
         {
-
-            var matrixRotation = Matrix4x4.Rotate(Quaternion.Euler(0, -45, 0));
-
             var newInputRotation = matrix.MultiplyPoint3x4(direction);
 
             if (newInputRotation.z >= 0.1f || newInputRotation.x >= 0.1f || newInputRotation.x <= -0.1 || newInputRotation.z <= -0.1)
@@ -129,9 +139,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canDash)
         {
-            _rb.velocity = new Vector3(0, 0, 0);
             _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
-            Debug.Log("Is dashing");
             StartCoroutine(waitDash());
         }
 
@@ -148,16 +156,13 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
-    private void OnCollisionStay(Collision collision)
+    public bool isGrounded()
     {
-
-        _rb.AddTorque(Vector3.zero);
-
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        _rb.AddTorque(Vector3.zero);
-
+        //EL RANGO VA A VARIAR CUANDO AGREGUE PJ MAIN
+        if (Physics.Raycast(leftRayCast,Vector3.down, 1.3f) || Physics.Raycast(rightRayCast, Vector3.down, 1.3f) || Physics.Raycast(forwardRayCast, Vector3.down, 1.3f) ||
+        Physics.Raycast(backwardRayCast, Vector3.down, 1.3f))
+            return true;
+        else
+            return false;
     }
 }
