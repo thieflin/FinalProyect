@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BluePrint : MonoBehaviour
+public class BlueprintManager : MonoBehaviour
 {
-    public bool hasBp;
 
 }

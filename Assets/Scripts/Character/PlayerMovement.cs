@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _combatSpeed;
     [SerializeField] private Enemy _lockedEnemy;
 
+
+    //Para testear unicamente
+    public SphereCollider sph;
+
     private void Awake()
     {
         characterInputs = new Control(this);
@@ -47,6 +51,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
             Dash();
+
+        //Para testear unicamente
+        if (Input.GetKeyDown(KeyCode.I))
+            if (sph.enabled == true)
+                sph.enabled = false;
+            else sph.enabled = true;
 
     }
 
