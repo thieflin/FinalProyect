@@ -11,6 +11,9 @@ public class Combo : MonoBehaviour
     public bool comboEnded;
     public float chargeAttack;
     public float chargeAttackTimer;
+    public Animator anim;
+    public bool canAttack =true;
+    public float comboDowntime, comboDowntimeFixedValue;
 
 
 
@@ -21,6 +24,8 @@ public class Combo : MonoBehaviour
         {
             if (comboCounter == 0)
             {
+               // anim.SetBool("Att1", true);
+                anim.SetTrigger("A1");
                 Debug.Log("Ataque numero 1 del combo");
                 comboCounter++;
                 isComboing = true;
@@ -29,27 +34,28 @@ public class Combo : MonoBehaviour
             {
                 Debug.Log("Ataque numero 2 del combo");
                 comboCounter++;
+                anim.SetTrigger("A2");
                 isComboing = true;
             }
-            else if (comboCounter == 1 && Input.GetKey(KeyCode.LeftShift))
-            {
-                comboCounter++;
-                Debug.Log("Ataque numero 2 finisher pesado pesado");
-                Debug.Log("Finisher with melee");
-                comboEnded = true;
-            }
+            //else if (comboCounter == 1 && Input.GetKey(KeyCode.LeftShift))
+            //{
+            //    comboCounter++;
+            //    Debug.Log("Ataque numero 2 finisher pesado pesado");
+            //    Debug.Log("Finisher with melee");
+            //    comboEnded = true;
+            //}
             else if (comboCounter == 2)
             {
                 comboCounter++;
+                anim.SetTrigger("A3");
                 Debug.Log("Ataque numero 3 del combo rapido");
                 Debug.Log("Finisher with melee");
-                comboEnded = true;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if(comboCounter == 2 && !Input.GetKey(KeyCode.LeftShift))
+            if (comboCounter == 2 && !Input.GetKey(KeyCode.LeftShift))
             {
                 comboCounter++;
                 Debug.Log("Ataque numero 3 del combo");
@@ -65,10 +71,6 @@ public class Combo : MonoBehaviour
             }
         }
 
-
-
-
-
         if (isComboing)
         {
             comboTime -= Time.deltaTime;
@@ -78,6 +80,7 @@ public class Combo : MonoBehaviour
         {
             comboCounter = 0;
             isComboing = false;
+            anim.SetBool("CanAtt", false);
             comboTime = comboUptime;
         }
 
