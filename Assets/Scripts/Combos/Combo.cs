@@ -9,14 +9,9 @@ public class Combo : MonoBehaviour
     public float comboTime;
     public bool isComboing;
     public bool comboEnded;
-<<<<<<< HEAD
     public Animator anim;
     public bool canAttack =true;
     public float comboDowntime, comboDowntimeFixedValue;
-=======
-    public float chargeAttack;
-    public float chargeAttackTimer;
->>>>>>> parent of 4153ca6 (Combo 1 animations falta cortarlo)
 
 
 
@@ -27,6 +22,8 @@ public class Combo : MonoBehaviour
         {
             if (comboCounter == 0)
             {
+               // anim.SetBool("Att1", true);
+                anim.SetTrigger("A1");
                 Debug.Log("Ataque numero 1 del combo");
                 comboCounter++;
                 isComboing = true;
@@ -35,44 +32,18 @@ public class Combo : MonoBehaviour
             {
                 Debug.Log("Ataque numero 2 del combo");
                 comboCounter++;
+                anim.SetTrigger("A2");
                 isComboing = true;
             }
-<<<<<<< HEAD
-=======
-            else if (comboCounter == 1 && Input.GetKey(KeyCode.LeftShift))
-            {
-                comboCounter++;
-                Debug.Log("Ataque numero 2 finisher pesado pesado");
-                Debug.Log("Finisher with melee");
-                comboEnded = true;
-            }
->>>>>>> parent of 4153ca6 (Combo 1 animations falta cortarlo)
             else if (comboCounter == 2)
             {
                 comboCounter++;
+                anim.SetTrigger("A3");
                 Debug.Log("Ataque numero 3 del combo rapido");
                 Debug.Log("Finisher with melee");
-<<<<<<< HEAD
-=======
                 comboEnded = true;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            if(comboCounter == 2 && !Input.GetKey(KeyCode.LeftShift))
-            {
-                comboCounter++;
-                Debug.Log("Ataque numero 3 del combo");
-                Debug.Log("Finisher with shotgun regular");
->>>>>>> parent of 4153ca6 (Combo 1 animations falta cortarlo)
-                comboEnded = true;
-            }
-        }
-
-
-
-
 
         if (isComboing)
         {
