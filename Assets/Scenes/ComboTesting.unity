@@ -123,59 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &625545903
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 625545904}
-  - component: {fileID: 625545905}
-  m_Layer: 0
-  m_Name: Combo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &625545904
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625545903}
-  m_LocalRotation: {x: -0, y: -0.5483877, z: 0, w: 0.8362243}
-  m_LocalPosition: {x: -0.17099215, y: 0.14218885, z: -0.5372516}
-  m_LocalScale: {x: 0.07586614, y: 0.075866155, z: 0.07586614}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1898480931}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &625545905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625545903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e6959722a2e644881ce371ed07cee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comboCounter: 0
-  comboUptime: 2
-  comboTime: 2
-  isComboing: 0
-  comboEnded: 0
-  anim: {fileID: 1898480930}
-  canAttack: 1
-  comboDowntime: 4
-  comboDowntimeFixedValue: 4
 --- !u!1 &888240168
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +482,7 @@ Animator:
   m_GameObject: {fileID: 1898480929}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 25fdbed33821c594ab898e8e527e3d76, type: 2}
+  m_Controller: {fileID: 9100000, guid: 76b779937a30e99469de7f4112201d14, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -545,8 +492,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!4 &1898480931 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 614ef8c5ff1ced54bbc090b5905815a7, type: 3}
-  m_PrefabInstance: {fileID: 1483936840}
+--- !u!114 &1898480932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898480929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e6959722a2e644881ce371ed07cee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ani: {fileID: 1898480930}
