@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _combatSpeed;
     [SerializeField] private Enemy _lockedEnemy;
 
+    [Header("Animations")]
+    [SerializeField] private Animator animator;
 
     //Para testear unicamente
     public SphereCollider sph;
@@ -42,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
 
         _targetLock = GetComponentInChildren<TargetLock>();
+
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -90,11 +94,41 @@ public class PlayerMovement : MonoBehaviour
 
         var newInput = matrix.MultiplyPoint3x4(direction);
 
-        //NORMAL WALKING
-        if (!isDashing && !isTargeting)
-        {
-            _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
+        //Walking Animation
+
+        if ((direction.x != 0 || direction.z != 0) && !isTargeting)
+        {     
+            animator.SetFloat("Speed", 1);
+            animator.SetBool("IsTargeting", false);
         }
+        else if ((direction.x == 0 || direction.z == 0) && !isTargeting)
+        { 
+            animator.SetFloat("Speed", 0);
+            animator.SetBool("IsTargeting", false);
+        }
+
+        if (isTargeting && (direction.x > 0 || direction.z != 0))
+        {
+            animator.SetFloat("Speed", 1);
+            animator.SetBool("GoingRight", true);
+            animator.SetBool("IsTargeting", true);
+        }
+        else if(isTargeting && (direction.x < 0 || direction.z != 0))
+        {
+            animator.SetFloat("Speed", 1);
+            animator.SetBool("GoingRight", false);
+            animator.SetBool("IsTargeting", true);
+        }else if(isTargeting && (direction.x == 0 && direction.z == 0))
+        {
+            animator.SetFloat("Speed", 0);
+        }
+
+
+            //NORMAL WALKING
+            if (!isDashing && !isTargeting)
+            {
+                _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
+            }
 
         //Rotación
 
@@ -119,6 +153,8 @@ public class PlayerMovement : MonoBehaviour
                 _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
 
             Vector3 lookAt = (_lockedEnemy.transform.position - transform.position).normalized;
+
+            lookAt.y = 0f;
 
             transform.forward = lookAt;
 
@@ -166,7 +202,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded()
     {
         //EL RANGO VA A VARIAR CUANDO AGREGUE PJ MAIN
-        if (Physics.Raycast(leftRayCast,Vector3.down, 1.3f) || Physics.Raycast(rightRayCast, Vector3.down, 1.3f) || Physics.Raycast(forwardRayCast, Vector3.down, 1.3f) ||
+        if (Physics.Raycast(leftRayCast, Vector3.down, 1.3f) || Physics.Raycast(rightRayCast, Vector3.down, 1.3f) || Physics.Raycast(forwardRayCast, Vector3.down, 1.3f) ||
         Physics.Raycast(backwardRayCast, Vector3.down, 1.3f))
             return true;
         else
