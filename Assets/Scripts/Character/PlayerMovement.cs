@@ -124,15 +124,22 @@ public class PlayerMovement : MonoBehaviour
 
             if (!_targetLock.enemiesClose.Contains(_lockedEnemy))
                 isTargeting = false;
-
         }
     }
 
-    public void TargetEnemy(Enemy e)
+    public void TargetEnemy(Enemy e, GameObject targetSign)
     {
         _lockedEnemy = e;
 
-        isTargeting = true; ;
+        //Lo pongo en la posicion del enemigo
+        targetSign.transform.position = new Vector3(_lockedEnemy.transform.position.x, _lockedEnemy.transform.position.y - _lockedEnemy.transform.localScale.y
+            + 0.1f, _lockedEnemy.transform.position.z);
+        //Lo hago hijo del enemigo para que lo siga
+        targetSign.transform.parent = _lockedEnemy.transform;
+        //Lo activo
+        targetSign.SetActive(true);
+
+        isTargeting = true;
     }
 
     public void Dash()
