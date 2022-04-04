@@ -8,10 +8,23 @@ public class Combo : MonoBehaviour
     public Animator ani;
     int _nextCombo = 0;
     public List<GameObject> meleeHitboxes = new List<GameObject>();
+    public List<GameObject> meleeHitboxesUpgraded = new List<GameObject>();
+    public bool upgradedHitbox;
 
+    private void Start()
+    {
+        upgradedHitbox = false;
+        EventManager.Instance.Subscribe("OnGettingBiggerHitbox", UpgradedHitboxTrue);
+
+    }
     void Update()
     {
         InputController();
+    }
+
+    public void UpgradedHitboxTrue(params object[] parameters)
+    {
+        upgradedHitbox = true;
     }
 
     void InputController()
@@ -61,35 +74,46 @@ public class Combo : MonoBehaviour
 
     public void HitBoxMelee1Activate()
     {
-        meleeHitboxes[0].SetActive(true);
+        if (!upgradedHitbox)
+            meleeHitboxes[0].SetActive(true);
+        else meleeHitboxesUpgraded[0].SetActive(true);
     }
 
 
     public void HitBoxMelee2Activate()
     {
-        meleeHitboxes[1].SetActive(true);
+        if (!upgradedHitbox)
+            meleeHitboxes[1].SetActive(true);
+        else meleeHitboxesUpgraded[1].SetActive(true);
 
     }
 
     public void HitBoxMelee3Activate()
     {
-        meleeHitboxes[2].SetActive(true);
+        if (!upgradedHitbox)
+            meleeHitboxes[2].SetActive(true);
+        else meleeHitboxesUpgraded[2].SetActive(true);
 
     }
 
     public void HitBoxMelee1Deactivate()
     {
-        meleeHitboxes[0].SetActive(false);
+        if (!upgradedHitbox)
+            meleeHitboxes[0].SetActive(false);
+        else meleeHitboxesUpgraded[0].SetActive(false);
 
     }
     public void HitBoxMelee2Deactivate()
     {
-        meleeHitboxes[1].SetActive(false);
+        if (!upgradedHitbox)
+            meleeHitboxes[1].SetActive(false);
+        else meleeHitboxesUpgraded[1].SetActive(false);
 
     }
     public void HitBoxMelee3Deactivate()
     {
-        meleeHitboxes[2].SetActive(false);
-
+        if (!upgradedHitbox)
+            meleeHitboxes[2].SetActive(false);
+        else meleeHitboxesUpgraded[2].SetActive(false);
     }
 }

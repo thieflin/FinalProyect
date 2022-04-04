@@ -9,7 +9,6 @@ public class SkillTree : MonoBehaviour
     private float _skillPoints = 0;
     [SerializeField] private GameObject _skillTree = null;
     [SerializeField] private List<Image> _bluePrintImages = null;
-    [SerializeField] private CharStatus _cs;
 
     private void Awake()
     {

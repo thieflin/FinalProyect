@@ -16,4 +16,14 @@ public class BuyAbilities : MonoBehaviour
         EventManager.Instance.Trigger("OnSpendingSP", _skillCosts[1], _skillNumber[1]);
 
     }
+
+    public void GetAbilityThree()
+    {
+        EventManager.Instance.Trigger("OnGettingBiggerHitbox");
+    }
+
+    public void GetAbilityFour()
+    {
+        EventManager.Instance.Trigger("OnGetShield");
+    }
 }
