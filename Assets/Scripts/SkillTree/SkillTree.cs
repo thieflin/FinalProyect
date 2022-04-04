@@ -9,6 +9,7 @@ public class SkillTree : MonoBehaviour
     private float _skillPoints = 0;
     [SerializeField] private GameObject _skillTree = null;
     [SerializeField] private List<Image> _bluePrintImages = null;
+    [SerializeField] private CharStatus _cs;
 
     private void Awake()
     {
@@ -28,19 +29,27 @@ public class SkillTree : MonoBehaviour
     private void Start()
     {
         EventManager.Instance.Subscribe("OnEarningSP", EarningSp);
-        EventManager.Instance.Subscribe("OnSpendingSP", SpendingSp);
+        EventManager.Instance.Subscribe("OnSpendingSP", UpgrandingAbility);
         EventManager.Instance.Subscribe("OnObtainingBlueprint", BluePrintActivations);
     }
 
     private void EarningSp(params object[] parameters) // Obtiene SP
     {
         _skillPoints += (float)parameters[0];
+        EventManager.Instance.Trigger("OnUpdatingSp", _skillPoints);
         Debug.Log(_skillPoints);
     }
 
-    private void SpendingSp(params object[] parameters) //Usa los SP
+    private void UpgrandingAbility (params object[] parameters) //Usa los SP
     {
-        _skillPoints -= (float)parameters[0];
+        var spSpent = (float)parameters[0];
+        if (_skillPoints < spSpent)
+            Debug.Log("U cant buy this skill not enough SP");
+        else
+        {
+            EventManager.Instance.Trigger("OnEnablingNewAbility", (int)parameters[1]);
+            _skillPoints -= (float)parameters[0];
+        }
         Debug.Log(_skillPoints);
 
     }
