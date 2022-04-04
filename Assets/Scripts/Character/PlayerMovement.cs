@@ -169,7 +169,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Lo pongo en la posicion del enemigo
         targetSign.transform.position = new Vector3(_lockedEnemy.transform.position.x, _lockedEnemy.transform.position.y - _lockedEnemy.transform.localScale.y
-            + 0.1f, _lockedEnemy.transform.position.z);
+            + _lockedEnemy.offsetYTargetLock, _lockedEnemy.transform.position.z);
         //Lo hago hijo del enemigo para que lo siga
         targetSign.transform.parent = _lockedEnemy.transform;
         //Lo activo
