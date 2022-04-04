@@ -7,6 +7,7 @@ public class Combo : MonoBehaviour
     bool _isIdle = true;
     public Animator ani;
     int _nextCombo = 0;
+    public List<GameObject> meleeHitboxes = new List<GameObject>();
 
     void Update()
     {
@@ -56,5 +57,39 @@ public class Combo : MonoBehaviour
         _nextCombo = 0;
         ani.SetTrigger("Idle");
         _isIdle = true;
+    }
+
+    public void HitBoxMelee1Activate()
+    {
+        meleeHitboxes[0].SetActive(true);
+    }
+
+
+    public void HitBoxMelee2Activate()
+    {
+        meleeHitboxes[1].SetActive(true);
+
+    }
+
+    public void HitBoxMelee3Activate()
+    {
+        meleeHitboxes[2].SetActive(true);
+
+    }
+
+    public void HitBoxMelee1Deactivate()
+    {
+        meleeHitboxes[0].SetActive(false);
+
+    }
+    public void HitBoxMelee2Deactivate()
+    {
+        meleeHitboxes[1].SetActive(false);
+
+    }
+    public void HitBoxMelee3Deactivate()
+    {
+        meleeHitboxes[2].SetActive(false);
+
     }
 }
