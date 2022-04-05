@@ -14,7 +14,13 @@ public class Quit : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        } 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        }
     }
 }

@@ -46,6 +46,7 @@ public class SkillTree : MonoBehaviour
             Debug.Log("U cant buy this skill not enough SP");
         else
         {
+            EventManager.Instance.Trigger("OnUpdatingSp", _skillPoints); //Gasta skill point
             EventManager.Instance.Trigger("OnEnablingNewAbility", (int)parameters[1]);
             _skillPoints -= (float)parameters[0];
         }
