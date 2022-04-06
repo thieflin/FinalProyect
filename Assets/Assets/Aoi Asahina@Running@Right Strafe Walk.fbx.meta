@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 73194eda60f52244b8079e375ea57add
+guid: b7d5ee36342f18a499e14f8e268912e8
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
+  - first:
+      74: -203655887218126122
+    second: Running@Right Strafe Walk
   - first:
       74: -203655887218126122
     second: mixamo.com

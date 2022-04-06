@@ -78,7 +78,6 @@ public class PlayerMovement : MonoBehaviour
         backwardRayCast = new Vector3(-1f, 0, 0);
         backwardRayCast += transform.position;
 
-        Debug.Log(isGrounded());
     }
 
     private void OnDrawGizmos()
@@ -97,38 +96,35 @@ public class PlayerMovement : MonoBehaviour
         //Walking Animation
 
         if ((direction.x != 0 || direction.z != 0) && !isTargeting)
-        {     
+        {
             animator.SetFloat("Speed", 1);
             animator.SetBool("IsTargeting", false);
         }
         else if ((direction.x == 0 || direction.z == 0) && !isTargeting)
-        { 
+        {
             animator.SetFloat("Speed", 0);
             animator.SetBool("IsTargeting", false);
         }
 
-        if (isTargeting && (direction.x > 0 || direction.z != 0))
+        if (isTargeting )
         {
+            Vector3 newVecX = direction.x * transform.right;
+            Vector3 newVecZ = direction.z * transform.forward;
+
             animator.SetFloat("Speed", 1);
-            animator.SetBool("GoingRight", true);
+            animator.SetFloat("EjeX", newVecX.x);
+            animator.SetFloat("EjeY", newVecZ.z);
             animator.SetBool("IsTargeting", true);
-        }
-        else if(isTargeting && (direction.x < 0 || direction.z != 0))
-        {
-            animator.SetFloat("Speed", 1);
-            animator.SetBool("GoingRight", false);
-            animator.SetBool("IsTargeting", true);
-        }else if(isTargeting && (direction.x == 0 && direction.z == 0))
-        {
-            animator.SetFloat("Speed", 0);
+            Debug.Log(transform.forward);
         }
 
 
-            //NORMAL WALKING
-            if (!isDashing && !isTargeting)
-            {
-                _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
-            }
+
+        //NORMAL WALKING
+        if (!isDashing && !isTargeting)
+        {
+            _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
+        }
 
         //Rotación
 
