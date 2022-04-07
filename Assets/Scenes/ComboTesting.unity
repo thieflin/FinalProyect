@@ -6416,7 +6416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529543317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.010857, y: -40.9, z: -55.6}
+  m_LocalPosition: {x: 50.010857, y: -54.8, z: -55.6}
   m_LocalScale: {x: 138.003, y: 1.9405336, z: 135.50558}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10178,6 +10178,7 @@ GameObject:
   - component: {fileID: 919132148491757850}
   - component: {fileID: 919132148491757851}
   - component: {fileID: 919132148491757852}
+  - component: {fileID: 919132148491757853}
   m_Layer: 0
   m_Name: xbot
   m_TagString: Untagged
@@ -10239,6 +10240,31 @@ MonoBehaviour:
   abilities:
   - {fileID: 1898480934}
   - {fileID: 919132148491757850}
+--- !u!114 &919132148491757853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148491757849}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db632b96c87231248968e6da99b13be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 0}
+  _movementSpeed: 2000
+  _smoothRotation: 0.1
+  _dashForce: 10
+  _dashTime: 0.2
+  _timeBetweenDashes: 0.3
+  canDash: 1
+  _targetLock: {fileID: 0}
+  isTargeting: 0
+  _combatSpeed: 30
+  _lockedEnemy: {fileID: 0}
+  animator: {fileID: 0}
+  sph: {fileID: 0}
 --- !u!4 &1031632035484633598
 Transform:
   m_ObjectHideFlags: 0

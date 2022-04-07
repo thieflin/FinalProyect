@@ -9,6 +9,7 @@ public class AbilityGunOne : Abilities
     private void Start()
     {
         _anim = GetComponent<Animator>();
+        _cs = GetComponent<CharStatus>();
         isIdle = true;
         actionCollider.SetActive(false);
         isActive = false;

@@ -9,6 +9,7 @@ public class AbilityMeleeOne : Abilities
         _anim = GetComponent<Animator>();
         isIdle = true;
         isActive = false;
+        _cs = GetComponent<CharStatus>();
         actionCollider.SetActive(false);
     }
     private void Update()
