@@ -29,7 +29,7 @@ public class Combo : MonoBehaviour
 
     void InputController()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("Fire1"))
         {
             if (_isIdle == true)
             {

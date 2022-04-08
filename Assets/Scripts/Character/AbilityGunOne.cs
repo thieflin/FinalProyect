@@ -23,7 +23,6 @@ public class AbilityGunOne : Abilities
     private void Update()
     {
         Attack();
-        Debug.Log(isActive);
     }
     public override void Attack()
     {

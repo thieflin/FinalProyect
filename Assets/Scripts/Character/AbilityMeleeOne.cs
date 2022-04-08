@@ -15,7 +15,7 @@ public class AbilityMeleeOne : Abilities
     private void Update()
     {
         Attack();
-        Debug.Log(isActive);
+
     }
     public override void Attack()
     {
