@@ -10,11 +10,13 @@ public class Combo : MonoBehaviour
     public List<GameObject> meleeHitboxes = new List<GameObject>();
     public List<GameObject> meleeHitboxesUpgraded = new List<GameObject>();
     public bool upgradedHitbox;
+    private PlayerMovement _pm;
 
     private void Start()
     {
         upgradedHitbox = false;
         EventManager.Instance.Subscribe("OnGettingBiggerHitbox", UpgradedHitboxTrue);
+        _pm = GetComponent<PlayerMovement>();
 
     }
     void Update()
@@ -34,6 +36,7 @@ public class Combo : MonoBehaviour
             if (_isIdle == true)
             {
                 _isIdle = false;
+                _pm._movementSpeed = 10;
                 ani.SetTrigger("A1");
             }
             else
@@ -52,14 +55,26 @@ public class Combo : MonoBehaviour
         {
             case 0:
                 ani.SetTrigger("Idle");
+                _pm._movementSpeed = 1000;
+
+
+
                 _isIdle = true;
                 break;
             case 1:
+                _pm._movementSpeed = 10;
+               
+
                 ani.SetTrigger("A1");
+
                 _nextCombo = 0;
                 break;
             case 2:
+                _pm._movementSpeed = 10;
+               
+
                 ani.SetTrigger("A2");
+
                 _nextCombo = 0;
                 break;
         }
@@ -68,7 +83,9 @@ public class Combo : MonoBehaviour
     public void FinishCombo()
     {
         _nextCombo = 0;
+                _pm._movementSpeed = 1000;
         ani.SetTrigger("Idle");
+        _pm.enabled = true;
         _isIdle = true;
     }
 

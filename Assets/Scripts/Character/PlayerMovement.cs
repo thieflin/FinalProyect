@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
 
     [Header("Movement values")]
-    [SerializeField] private float _movementSpeed;
+    public float _movementSpeed;
 
     //RAYCASTS
     private Vector3 leftRayCast, rightRayCast, forwardRayCast, backwardRayCast;
