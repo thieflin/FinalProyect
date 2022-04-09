@@ -20,6 +20,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask _playerMask;
     public bool playerIsInSight;
 
+    [Header("Attack Trigger")]
+    public Collider triggerAttack;
+
     public GameObject player;
 
     [Header("Animator")]
@@ -33,14 +36,21 @@ public class Enemy : MonoBehaviour
 
         foreach (var item in targetInViewRadius)
         {
+
             Vector3 dirToTarget = (item.transform.position - transform.position);
+
+            //HAGO UN IF PARaA SABER QUE ESTEN EN LA MISMA POSICION O CERCA EN Y CON EL VALOR ABSOLUTO
+
             if (Vector3.Angle(transform.forward, dirToTarget.normalized) < _viewAngle / 2)
             {
                 if (InSight(transform.position, item.transform.position))
                 {
-                    player = item.gameObject;
-                    Debug.DrawLine(transform.position, item.transform.position, Color.red);
-                    playerIsInSight = true;
+                    if (Mathf.Abs(transform.position.y - item.transform.position.y) < 2f && Mathf.Abs(transform.position.y - item.transform.position.y) > 0)
+                    {
+                        player = item.gameObject;
+                        Debug.DrawLine(transform.position, item.transform.position, Color.red);
+                        playerIsInSight = true;
+                    }
                 }
             }
 

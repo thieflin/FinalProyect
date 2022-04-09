@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     float turnSmoothVelocity;
 
     [Header("Dash values")]
+    [SerializeField] private char lastMoveToDash;
     [SerializeField] private float _dashForce;
     [SerializeField] private float _dashTime;
     [SerializeField] private float _timeBetweenDashes;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public bool isTargeting;
     [SerializeField] private float _combatSpeed;
     [SerializeField] private Enemy _lockedEnemy;
+    //[SerializeField] private List<float> enemyDistance;
 
     [Header("Animations")]
     [SerializeField] private Animator animator;
@@ -66,16 +68,16 @@ public class PlayerMovement : MonoBehaviour
             else sph.enabled = true;
 
         //RAYCASTS PARA CAIDA
-        leftRayCast = new Vector3(0, 0, 0.5f);
+        leftRayCast = new Vector3(0, 0, 0.3f);
         leftRayCast += transform.position;
 
-        rightRayCast = new Vector3(0, 0, -0.5f);
+        rightRayCast = new Vector3(0, 0, -0.3f);
         rightRayCast += transform.position;
 
-        forwardRayCast = new Vector3(0.5f, 0, 0);
+        forwardRayCast = new Vector3(0.3f, 0, 0);
         forwardRayCast += transform.position;
 
-        backwardRayCast = new Vector3(-1f, 0, 0);
+        backwardRayCast = new Vector3(-0.3f, 0, 0);
         backwardRayCast += transform.position;
 
     }
@@ -106,16 +108,17 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsTargeting", false);
         }
 
-        if (isTargeting )
+        if (isTargeting)
         {
             Vector3 newVecX = direction.x * transform.right;
             Vector3 newVecZ = direction.z * transform.forward;
+
+
 
             animator.SetFloat("Speed", 1);
             animator.SetFloat("EjeX", newVecX.x);
             animator.SetFloat("EjeY", newVecZ.z);
             animator.SetBool("IsTargeting", true);
-            Debug.Log(transform.forward);
         }
 
 
@@ -154,9 +157,47 @@ public class PlayerMovement : MonoBehaviour
 
             transform.forward = lookAt;
 
+            //if (direction.x != 0 || direction.z != 0)
+            //{
+            //    if (enemyDistance.Count < 2)
+            //    {
+            //        enemyDistance.Add(Vector3.Distance(_lockedEnemy.transform.position, transform.position));
+            //        StartCoroutine(waitForDistanceEnemy());
+            //    }
+            //    else if (enemyDistance.Count == 2)
+            //    {
+            //        enemyDistance.Clear();
+            //    }
+            //}
+
             if (!_targetLock.enemiesClose.Contains(_lockedEnemy))
+            {
                 isTargeting = false;
+                //enemyDistance.Clear();
+            }
         }
+
+        //WHERE TO DASH
+        //if (Vector3.Distance(_lockedEnemy.transform.position, transform.position) < Vector3.Distance(_lockedEnemy.transform.position, transform.position) && isTargeting)
+        //{
+        //    lastMoveToDash = 'S';
+        //}
+        //else if ((_lockedEnemy.transform.position - transform.position).normalized == direction && isTargeting)
+        //{
+        //    lastMoveToDash = 'W';
+        //}
+        ////else if (direction.x == 0 && direction.z < 0 && isTargeting)
+        ////{
+        ////    lastMoveToDash = 'S';
+        ////}
+        ////else if (direction.x == 0 && direction.z > 0 && isTargeting)
+        ////{
+        ////    lastMoveToDash = 'W';
+        ////}
+        //else if (!isTargeting)
+        //{
+        //    lastMoveToDash = 'N';
+        //}
     }
 
     public void TargetEnemy(Enemy e, GameObject targetSign)
@@ -177,12 +218,40 @@ public class PlayerMovement : MonoBehaviour
     public void Dash()
     {
         if (canDash)
-        {
+
             _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
-            StartCoroutine(waitDash());
-        }
+
+        StartCoroutine(waitDash());
+        //switch (lastMoveToDash)
+        //{
+        //    case 'W':
+        //        _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
+        //        StartCoroutine(waitDash());
+        //        break;
+        //    case 'S':
+        //        _rb.AddForce(transform.forward * -1 * _dashForce, ForceMode.Impulse);
+        //        StartCoroutine(waitDash());
+        //        break;
+        //    case 'A':
+        //        _rb.AddForce(transform.right * _dashForce, ForceMode.Impulse);
+        //        StartCoroutine(waitDash());
+        //        break;
+        //    case 'D':
+        //        _rb.AddForce(transform.right * -1 * _dashForce, ForceMode.Impulse);
+        //        StartCoroutine(waitDash());
+        //        break;
+        //    case 'N':
+        //        _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
+        //        StartCoroutine(waitDash());
+        //        break;
+        //    default:
+        //        break;
+        //}
+
 
     }
+
+
 
     IEnumerator waitDash()
     {
@@ -195,11 +264,16 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
+    IEnumerator waitForDistanceEnemy()
+    {
+        yield return new WaitForSeconds(0.2f);
+    }
+
     public bool isGrounded()
     {
         //EL RANGO VA A VARIAR CUANDO AGREGUE PJ MAIN
-        if (Physics.Raycast(leftRayCast, Vector3.down, 1.3f) || Physics.Raycast(rightRayCast, Vector3.down, 1.3f) || Physics.Raycast(forwardRayCast, Vector3.down, 1.3f) ||
-        Physics.Raycast(backwardRayCast, Vector3.down, 1.3f))
+        if (Physics.Raycast(leftRayCast, Vector3.down, 0.3f) || Physics.Raycast(rightRayCast, Vector3.down, 0.3f) || Physics.Raycast(forwardRayCast, Vector3.down, 0.3f) ||
+        Physics.Raycast(backwardRayCast, Vector3.down, 0.3f))
             return true;
         else
             return false;

@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class Zombie : Enemy
 {
-
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
     }
+
 
     private void Update()
     {
         FieldOfView();
 
-        if (playerIsInSight)
+        if (playerIsInSight && Mathf.Abs(transform.position.y - player.transform.position.y) < 2f && Mathf.Abs(transform.position.y - player.transform.position.y) > 0)
         {
             Vector3 lookAt = (player.transform.position - transform.position).normalized;
             lookAt.y = 0f;
             transform.forward = lookAt;
             FollowPlayer();
+            
         }
         else
         {
@@ -29,6 +30,7 @@ public class Zombie : Enemy
 
     private void FollowPlayer()
     {
+
         if (Vector3.Distance(player.transform.position, transform.position) < rangeAttack)
         {
             Attack();

@@ -102,4 +102,9 @@ public class CharStatus : MonoBehaviour
     {
         return _currentLvl;
     }
+
+    public void TakeDamage(int dmg)
+    {
+        hp -= dmg;
+    }
 }
