@@ -29,12 +29,11 @@ public class Control
         }
         else if ((verticalMovement != 0 || horizontalMovement != 0) && !player.isGrounded())
         {
-            player.Move(new Vector3(direction.x, -1f, direction.z));
-            Debug.Log("entre");
+            player.Move(new Vector3(direction.x, -2f, direction.z));
         }
         else if ((verticalMovement == 0 && horizontalMovement == 0) && !player.isGrounded())
         {
-            player.Move(new Vector3(direction.x, -1f, direction.z));
+            player.Move(new Vector3(direction.x, -2f, direction.z));
         }
         else if (verticalMovement == 0 && horizontalMovement == 0 && player.isGrounded())
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStatus : EnemyData, IDamageable
 {
-    
+
     public void Start()
     {
         _currentHp = _maxHp;
@@ -13,13 +13,21 @@ public class EnemyStatus : EnemyData, IDamageable
     {
         _currentHp -= (int)(dmg * _dmgMitigation);
         if (_currentHp <= 0)
+        {
             gameObject.SetActive(false);
-            //Estaria bueno hacer un pool de enemigos e irlos spawneando cada tanto
+
+            //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO MÁS
+            if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
+            {
+                TargetLock.enemiesClose.Remove(this.GetComponent<Enemy>());
+            }
+        }
+        //Estaria bueno hacer un pool de enemigos e irlos spawneando cada tanto
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == _hitboxLayermask)
+        if (other.gameObject.layer == _hitboxLayermask)
         {
             Debug.Log("toy pegando jeje");
             TakeDamage(Combo.swordDmg);

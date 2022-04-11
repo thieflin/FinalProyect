@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing;
 
     [Header("Target Lock")]
-    [SerializeField] private TargetLock _targetLock;
     [SerializeField] public bool isTargeting;
     [SerializeField] private float _combatSpeed;
     [SerializeField] private Enemy _lockedEnemy;
@@ -45,8 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
         _rb = GetComponent<Rigidbody>();
 
-        _targetLock = GetComponentInChildren<TargetLock>();
-
         animator = GetComponent<Animator>();
     }
 
@@ -58,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Dash"))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash"))
             Dash();
 
         //Para testear unicamente
@@ -170,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
             //    }
             //}
 
-            if (!_targetLock.enemiesClose.Contains(_lockedEnemy))
+            if (!TargetLock.enemiesClose.Contains(_lockedEnemy))
             {
                 isTargeting = false;
                 //enemyDistance.Clear();
@@ -218,9 +215,10 @@ public class PlayerMovement : MonoBehaviour
     public void Dash()
     {
         if (canDash)
-
+        {
             _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
-
+            animator.SetTrigger("Rol");
+        }
         StartCoroutine(waitDash());
         //switch (lastMoveToDash)
         //{

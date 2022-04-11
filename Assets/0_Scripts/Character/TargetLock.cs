@@ -12,7 +12,7 @@ public class TargetLock : MonoBehaviour
     public LayerMask enemyLayer;
     public LayerMask obstacleMask;
 
-    public List<Enemy> enemiesClose = new List<Enemy>();
+    public static List<Enemy> enemiesClose = new List<Enemy>();
 
     public PlayerMovement player;
 
