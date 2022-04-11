@@ -69,6 +69,5 @@ public class Zombie : Enemy
         canFollow = false;
         timeLeft = 3f;
 
-
     }
 }
