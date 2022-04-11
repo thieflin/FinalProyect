@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Combo : MonoBehaviour
 {
+    //Maneja toda la logica del combo
     bool _isIdle = true;
     public Animator ani;
     int _nextCombo = 0;
@@ -11,9 +12,11 @@ public class Combo : MonoBehaviour
     public List<GameObject> meleeHitboxesUpgraded = new List<GameObject>();
     public bool upgradedHitbox;
     private PlayerMovement _pm;
+    public static int swordDmg;
 
     private void Start()
     {
+        swordDmg = 10;
         upgradedHitbox = false;
         EventManager.Instance.Subscribe("OnGettingBiggerHitbox", UpgradedHitboxTrue);
         _pm = GetComponent<PlayerMovement>();
@@ -31,7 +34,7 @@ public class Combo : MonoBehaviour
 
     void InputController()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("AttackNA"))
         {
             if (_isIdle == true)
             {
@@ -55,7 +58,7 @@ public class Combo : MonoBehaviour
         {
             case 0:
                 ani.SetTrigger("Idle");
-                _pm._movementSpeed = 1000;
+                _pm._movementSpeed = 450;
 
 
 
@@ -83,7 +86,7 @@ public class Combo : MonoBehaviour
     public void FinishCombo()
     {
         _nextCombo = 0;
-                _pm._movementSpeed = 1000;
+                _pm._movementSpeed = 450;
         ani.SetTrigger("Idle");
         _pm.enabled = true;
         _isIdle = true;

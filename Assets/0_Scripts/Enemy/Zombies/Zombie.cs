@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Zombie : Enemy
 {
+    public bool canFollow;
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        canFollow = true;
     }
 
 
@@ -20,14 +22,20 @@ public class Zombie : Enemy
             lookAt.y = 0f;
             transform.forward = lookAt;
             FollowPlayer();
-            
+
         }
         else
         {
             animator.SetFloat("Speed", 0);
         }
-    }
 
+        if (!canFollow)
+        {
+
+        }
+
+    }
+    float timeLeft;
     private void FollowPlayer()
     {
 
@@ -37,15 +45,30 @@ public class Zombie : Enemy
         }
         else if (Vector3.Distance(player.transform.position, transform.position) > rangeAttack)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime);
-            animator.SetFloat("Speed", 1);
+            if (canFollow)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime);
+                animator.SetFloat("Speed", 1);
+            }
+            else
+            {
+                timeLeft -= Time.deltaTime;
+                if (timeLeft < 0)
+                {
+                    timeLeft = 3f;
+                    canFollow = true;
+                }
+            }
         }
 
     }
 
     private void Attack()
     {
-        animator.SetTrigger("Attack");
-    }
+        animator.SetTrigger("Attack"); 
+        canFollow = false;
+        timeLeft = 3f;
 
+
+    }
 }

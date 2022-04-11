@@ -27,7 +27,7 @@ public class TargetLock : MonoBehaviour
     {
         FieldOfView();
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("TargetLock"))
         {
             if (enemiesClose.Count > 0 && !player.isTargeting)
                 LookForClosestEnemy();
