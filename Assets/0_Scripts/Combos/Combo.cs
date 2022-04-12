@@ -13,6 +13,7 @@ public class Combo : MonoBehaviour
     public bool upgradedHitbox;
     private PlayerMovement _pm;
     public static int swordDmg;
+    [SerializeField] private Rigidbody _rb;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class Combo : MonoBehaviour
         upgradedHitbox = false;
         EventManager.Instance.Subscribe("OnGettingBiggerHitbox", UpgradedHitboxTrue);
         _pm = GetComponent<PlayerMovement>();
+        _rb = GetComponent<Rigidbody>();
 
     }
     void Update()
@@ -39,7 +41,8 @@ public class Combo : MonoBehaviour
             if (_isIdle == true)
             {
                 _isIdle = false;
-                _pm._movementSpeed = 10;
+                _pm._movementSpeed = 0;
+                _rb.constraints = RigidbodyConstraints.FreezeAll;
                 ani.SetTrigger("A1");
             }
             else
@@ -49,7 +52,7 @@ public class Combo : MonoBehaviour
         {
             _nextCombo = 2;
         }
-        
+
     }
 
     public void EventNextAnimation()
@@ -59,25 +62,20 @@ public class Combo : MonoBehaviour
             case 0:
                 ani.SetTrigger("Idle");
                 _pm._movementSpeed = 450;
-
-
-
+                _rb.constraints -= RigidbodyConstraints.FreezePosition;
                 _isIdle = true;
+                _pm.enabled = true;
                 break;
             case 1:
-                _pm._movementSpeed = 10;
-               
-
+                _rb.constraints = RigidbodyConstraints.FreezeAll;
+                _pm._movementSpeed = 0;
                 ani.SetTrigger("A1");
 
                 _nextCombo = 0;
                 break;
             case 2:
-                _pm._movementSpeed = 10;
-               
-
+                _pm._movementSpeed = 0;
                 ani.SetTrigger("A2");
-
                 _nextCombo = 0;
                 break;
         }
@@ -86,10 +84,11 @@ public class Combo : MonoBehaviour
     public void FinishCombo()
     {
         _nextCombo = 0;
-                _pm._movementSpeed = 450;
+        _pm._movementSpeed = 450;
         ani.SetTrigger("Idle");
         _pm.enabled = true;
         _isIdle = true;
+        _rb.constraints -= RigidbodyConstraints.FreezePosition;
     }
 
     public void HitBoxMelee1Activate()
@@ -135,5 +134,15 @@ public class Combo : MonoBehaviour
         if (!upgradedHitbox)
             meleeHitboxes[2].SetActive(false);
         else meleeHitboxesUpgraded[2].SetActive(false);
+    }
+
+    public void EnablePlayermovement()
+    {
+        _pm.enabled = true;
+    }
+
+    public void DisablePlayerMovement()
+    {
+        _pm.enabled = false;
     }
 }

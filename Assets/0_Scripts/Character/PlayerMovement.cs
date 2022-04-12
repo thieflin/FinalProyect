@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _dashForce;
     [SerializeField] private float _dashTime;
     [SerializeField] private float _timeBetweenDashes;
-    [SerializeField] private bool canDash = true;
+    public bool canDash = true;
     private bool isDashing;
 
     [Header("Target Lock")]
@@ -54,6 +54,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        ////Esto es porque por algun motivo me las desfreezea cuando combea medio xd el tema
+        //_rb.constraints = RigidbodyConstraints.FreezeRotation;
+
+
+
+
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash"))
             Dash();
 
