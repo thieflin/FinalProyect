@@ -51,7 +51,8 @@ public class TargetLock : MonoBehaviour
     {
         Enemy closestEnemy = null;
 
-        float closestDistance = (enemiesClose[0].transform.position - player.transform.position).magnitude;
+        float closestDistance = 10f;
+        //float closestDistance = (enemiesClose[0].transform.position - player.transform.position).magnitude;
 
         foreach (var enemy in enemiesClose)
         {

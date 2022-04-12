@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     float turnSmoothVelocity;
 
     [Header("Dash values")]
-    [SerializeField] private char lastMoveToDash;
     [SerializeField] private float _dashForce;
     [SerializeField] private float _dashTime;
     [SerializeField] private float _timeBetweenDashes;
@@ -154,18 +153,6 @@ public class PlayerMovement : MonoBehaviour
 
             transform.forward = lookAt;
 
-            //if (direction.x != 0 || direction.z != 0)
-            //{
-            //    if (enemyDistance.Count < 2)
-            //    {
-            //        enemyDistance.Add(Vector3.Distance(_lockedEnemy.transform.position, transform.position));
-            //        StartCoroutine(waitForDistanceEnemy());
-            //    }
-            //    else if (enemyDistance.Count == 2)
-            //    {
-            //        enemyDistance.Clear();
-            //    }
-            //}
 
             if (!TargetLock.enemiesClose.Contains(_lockedEnemy))
             {
@@ -174,27 +161,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //WHERE TO DASH
-        //if (Vector3.Distance(_lockedEnemy.transform.position, transform.position) < Vector3.Distance(_lockedEnemy.transform.position, transform.position) && isTargeting)
-        //{
-        //    lastMoveToDash = 'S';
-        //}
-        //else if ((_lockedEnemy.transform.position - transform.position).normalized == direction && isTargeting)
-        //{
-        //    lastMoveToDash = 'W';
-        //}
-        ////else if (direction.x == 0 && direction.z < 0 && isTargeting)
-        ////{
-        ////    lastMoveToDash = 'S';
-        ////}
-        ////else if (direction.x == 0 && direction.z > 0 && isTargeting)
-        ////{
-        ////    lastMoveToDash = 'W';
-        ////}
-        //else if (!isTargeting)
-        //{
-        //    lastMoveToDash = 'N';
-        //}
     }
 
     public void TargetEnemy(Enemy e, GameObject targetSign)
@@ -220,31 +186,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("Rol");
         }
         StartCoroutine(waitDash());
-        //switch (lastMoveToDash)
-        //{
-        //    case 'W':
-        //        _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
-        //        StartCoroutine(waitDash());
-        //        break;
-        //    case 'S':
-        //        _rb.AddForce(transform.forward * -1 * _dashForce, ForceMode.Impulse);
-        //        StartCoroutine(waitDash());
-        //        break;
-        //    case 'A':
-        //        _rb.AddForce(transform.right * _dashForce, ForceMode.Impulse);
-        //        StartCoroutine(waitDash());
-        //        break;
-        //    case 'D':
-        //        _rb.AddForce(transform.right * -1 * _dashForce, ForceMode.Impulse);
-        //        StartCoroutine(waitDash());
-        //        break;
-        //    case 'N':
-        //        _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
-        //        StartCoroutine(waitDash());
-        //        break;
-        //    default:
-        //        break;
-        //}
+
 
 
     }
