@@ -84,7 +84,7 @@ public class CharStatus : MonoBehaviour
             _currentExp = 0; //Resetea la exp de nivel
             _currentLvl++; //Aumenta nivel
             EventManager.Instance.Trigger("OnUpdatingLvl", _currentLvl);
-            _expToLvlUp += _expToLvlUp * _expToLvlUpMultiplier; //Aumenta exp necesaria
+            _expToLvlUp = _expToLvlUp * _expToLvlUpMultiplier; //Aumenta exp necesaria
         }
     }
 

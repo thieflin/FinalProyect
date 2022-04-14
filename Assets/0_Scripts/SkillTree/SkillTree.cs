@@ -23,6 +23,7 @@ public class SkillTree : MonoBehaviour
             if (_skillTree.activeSelf)
                 _skillTree.SetActive(false);
             else _skillTree.SetActive(true);
+        Debug.Log(_skillPoints);
     }
 
     private void Start()

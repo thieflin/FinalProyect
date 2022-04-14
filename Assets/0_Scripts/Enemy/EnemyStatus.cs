@@ -16,9 +16,15 @@ public class EnemyStatus : EnemyData, IDamageable
         _currentHp -= (int)(dmg * _dmgMitigation);
         
         _hpSlider.value = _currentHp / _maxHp;
+
+
+
         if (_currentHp <= 0)
         {
+            GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
+
             gameObject.SetActive(false);
+
 
             //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO MÁS
             if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
@@ -45,4 +51,5 @@ public class EnemyStatus : EnemyData, IDamageable
             TakeDamage(Combo.swordDmg);
         }
     }
+
 }

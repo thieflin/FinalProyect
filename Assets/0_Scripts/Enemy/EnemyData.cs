@@ -10,4 +10,12 @@ public abstract class EnemyData : MonoBehaviour
     [SerializeField] protected int _hitboxLayermask;
     [SerializeField] protected float _dmgMitigation;
     [SerializeField] protected Slider _hpSlider;
+    [SerializeField] protected float _expPoints;
+
+
+    public virtual void GetEXPPoints(float expPoints)
+    {
+        EventManager.Instance.Trigger("OnGettingExp", expPoints);
+    }
+
 }
