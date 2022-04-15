@@ -140,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Rotación
 
-        if (!isTargeting)
+        if (!isTargeting && !isDashing)
         {
             var newInputRotation = matrix.MultiplyPoint3x4(direction);
 
@@ -158,15 +158,12 @@ public class PlayerMovement : MonoBehaviour
         if (isTargeting)
         {
             if (!isDashing)
+            {
                 _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
-
-            Vector3 lookAt = (_lockedEnemy.transform.position - transform.position).normalized;
-
-            lookAt.y = 0f;
-
-            transform.forward = lookAt;
-
-
+                Vector3 lookAt = (_lockedEnemy.transform.position - transform.position).normalized;
+                lookAt.y = 0f;
+                transform.forward = lookAt;
+            }
             if (!TargetLock.enemiesClose.Contains(_lockedEnemy))
             {
                 isTargeting = false;
@@ -203,11 +200,13 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(waitDash());
     }
 
+    //Para cuando dashea y esta targeteando
     public void DashTarget()
     {
         if (canDash)
         {
             _rb.AddForce(whereToDash * _dashForce, ForceMode.Impulse);
+            transform.forward = whereToDash;
             Debug.Log("Im dashing while targeting");
             animator.SetTrigger("Rol");
         }
@@ -219,7 +218,8 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         yield return new WaitForSeconds(_dashTime);
-        _rb.velocity = Vector3.zero;
+        //_rb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(0.2f);
         isDashing = false;
         yield return new WaitForSeconds(_timeBetweenDashes);
         canDash = true;
