@@ -65,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
             Dash();
         else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting)
         {
-            Debug.Log("Aca si??");
             DashTarget();
         }
 
