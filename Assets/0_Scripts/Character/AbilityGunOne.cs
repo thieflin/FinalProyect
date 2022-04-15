@@ -15,6 +15,7 @@ public class AbilityGunOne : Abilities
         isActive = false;
         shieldActive = false;
         EventManager.Instance.Subscribe("OnGetShield", GetShield);
+        abilityId = 1;
     }
     public void GetShield(params object[] parametersk)
     {
@@ -42,7 +43,7 @@ public class AbilityGunOne : Abilities
         }
     }
 
-    public override void FinishAbility()
+    public  void FinishAbility()
     {
 
         _anim.SetTrigger("Idle");
@@ -50,12 +51,12 @@ public class AbilityGunOne : Abilities
 
     }
 
-    public override void ActivateColliderAndAnim()
+    public  void ActivateColliderAndAnim()
     {
         actionCollider.SetActive(true);
     }
 
-    public override void DeactivateCollider()
+    public  void DeactivateCollider()
     {
         actionCollider.SetActive(false);
     }

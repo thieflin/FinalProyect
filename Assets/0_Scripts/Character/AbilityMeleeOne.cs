@@ -4,44 +4,56 @@ using UnityEngine;
 
 public class AbilityMeleeOne : Abilities
 {
+
+
+
+    public int admg;
+    public int acd;
+    public AbilityMeleeOne(int dmg, int cd)
+    {
+        admg = dmg;
+        acd = cd;
+    }
+
+
     private void Start()
     {
-        _anim = GetComponent<Animator>();
-        isIdle = true;
-        isActive = false;
-        _cs = GetComponent<CharStatus>();
-        actionCollider.SetActive(false);
+        //_anim = GetComponent<Animator>();
+        //isIdle = true;
+        //isActive = false;
+        //_cs = GetComponent<CharStatus>();
+        //actionCollider.SetActive(false);
+        //abilityId = 0;
     }
-    private void Update()
+    public void OnUpdate()
     {
         Attack();
 
     }
     public override void Attack()
     {
-        if (_cs.GetPowerGaugeBarStatus() && isActive)
+        if (_cs.GetPowerGaugeBarStatus() && isActive && isOnUse)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                _cs.powerGauge -= 50;
-                Debug.Log("toy funcionando creo");
-                if (isIdle == true)
-                {
-                    isIdle = false;
-                    _anim.SetTrigger("MS1");
-                }
 
+            _cs.powerGauge -= 50;
+            Debug.Log("toy funcionando creo");
+            if (isIdle == true)
+            {
+                isIdle = false;
+                _anim.SetTrigger("MS1");
             }
+
+
 
         }
     }
 
-    public override void FinishAbility()
+    public void FinishAbility()
     {
 
         _anim.SetTrigger("Idle");
         isIdle = true;
-        
+
 
     }
 
