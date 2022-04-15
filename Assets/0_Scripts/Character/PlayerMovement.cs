@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _timeBetweenDashes;
     public bool canDash = true;
     private bool isDashing;
+    private Vector3 whereToDash;
 
     [Header("Target Lock")]
     [SerializeField] public bool isTargeting;
@@ -60,8 +61,13 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash"))
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting)
             Dash();
+        else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting)
+        {
+            Debug.Log("Aca si??");
+            DashTarget();
+        }
 
         //Para testear unicamente
         if (Input.GetKeyDown(KeyCode.I))
@@ -96,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
         var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, -45, 0));
 
         var newInput = matrix.MultiplyPoint3x4(direction);
+
 
         //Walking Animation
 
@@ -163,9 +170,11 @@ public class PlayerMovement : MonoBehaviour
             if (!TargetLock.enemiesClose.Contains(_lockedEnemy))
             {
                 isTargeting = false;
-                //enemyDistance.Clear();
             }
         }
+
+        //Hacia donde va a hacer el dash, segun movimiento
+        whereToDash = new Vector3(direction.x, 0f, direction.z);
 
     }
 
@@ -192,12 +201,18 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("Rol");
         }
         StartCoroutine(waitDash());
-
-
-
     }
 
-
+    public void DashTarget()
+    {
+        if (canDash)
+        {
+            _rb.AddForce(whereToDash * _dashForce, ForceMode.Impulse);
+            Debug.Log("Im dashing while targeting");
+            animator.SetTrigger("Rol");
+        }
+        StartCoroutine(waitDash());
+    }
 
     IEnumerator waitDash()
     {
