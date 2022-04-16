@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class SkillTree : MonoBehaviour
 {
 
-    public float _skillPoints = 0;
-    public float _upgradeSkillPoints = 0;
+    public int _skillPoints = 0;
+    public int _upgradeSkillPoints = 0;
     [SerializeField] private GameObject _skillTree = null;
     [SerializeField] private List<Image> _bluePrintImages = null;
     public GameObject canBuyImage;
@@ -37,14 +37,14 @@ public class SkillTree : MonoBehaviour
 
     private void EarningSp(params object[] parameters) // Obtiene SP
     {
-        _skillPoints += (float)parameters[0];
+        _skillPoints += (int)parameters[0];
         EventManager.Instance.Trigger("OnUpdatingSp", _skillPoints);
         Debug.Log(_skillPoints);
     }
 
     private void UpgrandingAbility(params object[] parameters) //Usa los SP
     {
-        _skillPoints -= (float)parameters[0];//Le saco los skillpoitns que cueste la habilidad
+        _skillPoints -= (int)parameters[0];//Le saco los skillpoitns que cueste la habilidad
     }
 
 

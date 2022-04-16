@@ -15,13 +15,17 @@ public class AbilitiesStatus : MonoBehaviour
 
     void Start()
     {
-        //currentMeleeAbility = meleeAbilities[0].OnUpdate;
-        //currentRangedAbility = rangedAbilities[0].OnUpdate;
+        currentMeleeAbility = Debugchan;
+        currentRangedAbility = Debugchan;
         EventManager.Instance.Subscribe("OnActivatingMeleeAbilities", SetMeleeAbility);
         EventManager.Instance.Subscribe("OnActivatingRangedAbilities", SetRangedAbility);
     }
     //Apreto un boton de seteo
     //a1 = am2.OnUpdate;
+    public void Debugchan()
+    {
+        Debug.Log("habilidad no existente");
+    }
 
     private void Update()
     {

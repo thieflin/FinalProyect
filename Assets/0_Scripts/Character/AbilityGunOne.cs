@@ -10,13 +10,19 @@ public class AbilityGunOne : Abilities
     {
         shieldActive = true;
     }
+
+    public void Start()
+    {
+        isPurchased = false;
+    }
+
     public override void OnUpdate()
     {
         Attack();
     }
     public override void Attack()
     {
-        Debug.Log("extoy atacando pero con la pistola teen titan");
+        Debug.Log("Habilidad 2");
         //if (_cs.GetPowerGaugeBarStatus() && isActive)
         //{
         //    if (Input.GetKeyDown(KeyCode.E))

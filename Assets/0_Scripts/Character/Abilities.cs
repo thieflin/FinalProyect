@@ -14,6 +14,8 @@ public abstract class Abilities : MonoBehaviour
     public Animator _anim;
     public GameObject actionCollider;
     public Image abilityIcon;
+
+
     public int abilityId;
 
     public bool isPurchased;

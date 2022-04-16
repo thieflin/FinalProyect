@@ -12,8 +12,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject noButton2;
     public GameObject lastPressedButton;
 
-    [SerializeField] private List<Button> _meleeAbilityButtons = new List<Button>();
-    [SerializeField] private List<Button> _rangedAbilityButtons = new List<Button>();
+    [SerializeField] private AbilitiesStatus _as;
 
     public List<Image> meleeImages = new List<Image>();
     public List<Image> rangedImages = new List<Image>();
@@ -30,16 +29,15 @@ public class ButtonManager : MonoBehaviour
 
     [SerializeField] private SkillTree _st;
 
-    public void OnButtonSelected() //Interacciona con el boton de skill
+    public void OnButtonSelectedRangedAbilities(int Id) //Interacciona con el boton de skill
     {
-        //En esta funcion chequeo si puedo comprar o no la habilidad
-        if (Input.GetButtonDown("Submit"))
+        //En esta funcion chequeo si puedo comprar o no la habilidad y si no la tengo comprada
+        if (Input.GetButtonDown("Submit") && !_as.rangedAbilities[Id].isPurchased)
         {
-            Debug.Log("si toy andando XD");
             //Si los puntos que tengo son menores a los que necesito para upgradear
             if (_st.CurrentSkillPoints() < _st.UpgradeSkillPointsNeeded())
             {
-                Debug.Log("que odna puta entra aca xfavor");
+                Debug.Log("No accedi al menu de compra");
                 //Desselecciono el boton anterior
                 EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de cant buy ability
@@ -49,12 +47,29 @@ public class ButtonManager : MonoBehaviour
             }
             else //Aca es si tengo suficientes puntos
             {
+                Debug.Log("Accedi al menu de compra");
                 //Desselecciono el boton anterior
                 EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de can buy ability
                 canBuyAbility.SetActive(true);
                 //Le pongo como seleccion en el boton de no por si se equivoco
                 EventSystem.current.SetSelectedGameObject(noButton2);
+            }
+            
+        }
+        else if(Input.GetButtonDown("Submit") && _as.rangedAbilities[Id].isPurchased)
+        {
+            //Hago que el delegate ejecute la funcion que yo quiera ejecutar
+            Debug.Log("Active la imagen de la habilidad");
+            EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilitiesId[Id]);
+
+            //Activo la imagen que le corresponda a ella
+            for (int i = 0; i < rangedImages.Count; i++)
+            {
+                if (i == Id)
+                    rangedImages[i].enabled = true;
+                else
+                    rangedImages[i].enabled = false;
             }
         }
 
@@ -73,10 +88,37 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    public void PurchaseSkillOneMelee() //Compra el skill
+    public void PurchaseSkillRanged() //Compra el skill
     {
-        meleeUpgrade++;
-        
+        if (Input.GetButtonDown("Submit"))
+        {
+            switch (rangedUpgrade)
+            {
+                case 0:
+                    EventManager.Instance.Trigger("OnSpendingSP", 3);
+                    _as.rangedAbilities[rangedUpgrade].isPurchased = true;
+                    EventSystem.current.SetSelectedGameObject(null);
+                    canBuyAbility.SetActive(false);
+                    cantBuyAbility.SetActive(false);
+                    EventSystem.current.SetSelectedGameObject(lastPressedButton);
+                    rangedUpgrade++;
+                    break;
+                case 1:
+                    EventManager.Instance.Trigger("OnSpendingSP", 3);
+                    _as.rangedAbilities[rangedUpgrade].isPurchased = true;
+                    EventSystem.current.SetSelectedGameObject(null);
+                    canBuyAbility.SetActive(false);
+                    cantBuyAbility.SetActive(false);
+                    EventSystem.current.SetSelectedGameObject(lastPressedButton);
+                    rangedUpgrade++;
+                    break;
+            }
+                
+            Debug.Log("Compre la habilidad");
+            
+            
+        }
+
         //Al comprarlo tengo que ponerle el iconito mas bonito para despues setearlo
         //Tambien tengo que desactivar al boton para que ya no moleste mas o marcarlo de alguna forma que se vea bien
 
@@ -85,7 +127,7 @@ public class ButtonManager : MonoBehaviour
     public void PurchaseSkillTwoMelee()
     {
         //Esto es a chequear igual porque simplemente podria activar el otro boton y seria mas facil 
-        if(meleeUpgrade > 1)
+        if (meleeUpgrade > 1)
         {
 
         }
@@ -98,13 +140,14 @@ public class ButtonManager : MonoBehaviour
     #region Melee skills
     public void SetMeleeSkillOne()
     {
-        EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[0]);
+        
         //Al setearlo tengo que activarle la imagen correspondiente
-    }    
-    
+    }
+
     public void SetMeleeSkillTwo()
     {
-
+        if (Input.GetButtonDown("Cancel"))
+            Debug.Log("pls funjciona");
         //EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[1]);
     }
 
