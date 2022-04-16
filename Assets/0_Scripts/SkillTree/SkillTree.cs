@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class SkillTree : MonoBehaviour
 {
 
-    private float _skillPoints = 0;
+    public float _skillPoints = 0;
+    public float _upgradeSkillPoints = 0;
     [SerializeField] private GameObject _skillTree = null;
     [SerializeField] private List<Image> _bluePrintImages = null;
+    public GameObject canBuyImage;
+    public GameObject cantBuyImage;
 
     private void Awake()
     {
         _skillTree.SetActive(false);
-
     }
 
 
@@ -40,20 +42,32 @@ public class SkillTree : MonoBehaviour
         Debug.Log(_skillPoints);
     }
 
-    private void UpgrandingAbility (params object[] parameters) //Usa los SP
+    private void UpgrandingAbility(params object[] parameters) //Usa los SP
+    {
+        _skillPoints -= (float)parameters[0];//Le saco los skillpoitns que cueste la habilidad
+       
+        EventManager.Instance.Trigger("OnEnablingNewAbility", (int)parameters[1]);
+
+    }
+
+
+    private void AdquireSkillAttempt(params object[] parameters)
     {
         var spSpent = (float)parameters[0];
         if (_skillPoints < spSpent)
-            Debug.Log("U cant buy this skill not enough SP");
+        {
+
+        }
         else
         {
-            EventManager.Instance.Trigger("OnUpdatingSp", _skillPoints); //Gasta skill point
-            EventManager.Instance.Trigger("OnEnablingNewAbility", (int)parameters[1]);
-            _skillPoints -= (float)parameters[0];
-        }
-        Debug.Log(_skillPoints);
 
+        }
     }
+
+
+
+
+
 
     private void BluePrintActivations(params object[] parameters) //Me activa el skill que yo compre (visualmente)
     {
@@ -69,5 +83,9 @@ public class SkillTree : MonoBehaviour
     public float CurrentSkillPoints()
     {
         return _skillPoints;
+    }
+    public float UpgradeSkillPointsNeeded()
+    {
+        return _upgradeSkillPoints;
     }
 }

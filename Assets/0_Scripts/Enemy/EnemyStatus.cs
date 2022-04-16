@@ -8,15 +8,11 @@ public class EnemyStatus : EnemyData, IDamageable
     public void Start()
     {
         _currentHp = _maxHp;
-        _hpSlider.maxValue = _maxHp;
-        _hpSlider.value = _currentHp;
     }
     public void TakeDamage(int dmg)
     {
         _currentHp -= (int)(dmg * _dmgMitigation);
         
-        _hpSlider.value = _currentHp / _maxHp;
-
 
 
         if (_currentHp <= 0)
@@ -33,15 +29,6 @@ public class EnemyStatus : EnemyData, IDamageable
             }
         }
         //Estaria bueno hacer un pool de enemigos e irlos spawneando cada tanto
-    }
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            _currentHp -= 10;
-            _hpSlider.value = _currentHp;
-        }
     }
     private void OnTriggerEnter(Collider other)
     {

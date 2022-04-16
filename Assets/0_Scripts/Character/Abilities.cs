@@ -16,7 +16,7 @@ public abstract class Abilities : MonoBehaviour
     public Image abilityIcon;
     public int abilityId;
 
-
+    public bool isPurchased;
 
 
     public virtual void Attack()
