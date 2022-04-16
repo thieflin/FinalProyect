@@ -11,7 +11,7 @@ public class AbilityGunOne : Abilities
         _anim = GetComponent<Animator>();
         _cs = GetComponent<CharStatus>();
         isIdle = true;
-        actionCollider.SetActive(false);
+        //actionCollider.SetActive(false);
         isActive = false;
         shieldActive = false;
         EventManager.Instance.Subscribe("OnGetShield", GetShield);
