@@ -45,9 +45,6 @@ public class SkillTree : MonoBehaviour
     private void UpgrandingAbility(params object[] parameters) //Usa los SP
     {
         _skillPoints -= (float)parameters[0];//Le saco los skillpoitns que cueste la habilidad
-       
-        EventManager.Instance.Trigger("OnEnablingNewAbility", (int)parameters[1]);
-
     }
 
 

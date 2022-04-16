@@ -4,48 +4,35 @@ using UnityEngine;
 
 public class AbilityMeleeOne : Abilities
 {
-
-
-
     public int admg;
-    public int acd;
-    public AbilityMeleeOne(int dmg, int cd)
+
+    public AbilityMeleeOne(int dmg)
     {
         admg = dmg;
-        acd = cd;
     }
 
-
-    private void Start()
-    {
-        //_anim = GetComponent<Animator>();
-        //isIdle = true;
-        //isActive = false;
-        //_cs = GetComponent<CharStatus>();
-        //actionCollider.SetActive(false);
-        //abilityId = 0;
-    }
-    public void OnUpdate()
+    public override void OnUpdate()
     {
         Attack();
 
     }
     public override void Attack()
     {
-        if (_cs.GetPowerGaugeBarStatus() && isActive && isOnUse)
-        {
+        Debug.Log("estoy atacando locura comsica con el melee");
+        //if (_cs.GetPowerGaugeBarStatus() && isActive && isOnUse)
+        //{
 
-            _cs.powerGauge -= 50;
-            Debug.Log("toy funcionando creo");
-            if (isIdle == true)
-            {
-                isIdle = false;
-                _anim.SetTrigger("MS1");
-            }
+        //    _cs.powerGauge -= 50;
+        //    Debug.Log("toy funcionando creo");
+        //    if (isIdle == true)
+        //    {
+        //        isIdle = false;
+        //        _anim.SetTrigger("MS1");
+        //    }
 
 
 
-        }
+        //}
     }
 
     public void FinishAbility()

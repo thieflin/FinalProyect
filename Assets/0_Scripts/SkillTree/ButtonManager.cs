@@ -14,6 +14,18 @@ public class ButtonManager : MonoBehaviour
     //[SerializeField] private List<float> _skillCosts = new List<float>();
     //[SerializeField] private List<int> _skillNumber = new List<int>();
 
+    public List<Image> meleeImages = new List<Image>();
+    public List<Image> rangedImages = new List<Image>();
+
+    [SerializeField] private List<int> _meleeAbilities = new List<int>();
+    [SerializeField] private List<int> _rangedAbilities = new List<int>();
+
+
+
+
+
+
+
     [SerializeField] private SkillTree _st;
 
     public void OnButtonSelected() //Interacciona con el boton de skill
@@ -49,8 +61,9 @@ public class ButtonManager : MonoBehaviour
 
     public void BackOrNoButton() //Vuelve para atras ya sea en compra o en no tener suficientes creditos
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit"))//Cuando apreto back o no
         {
+            //Me des selecciona, me apaga los menus y me selecciona el ultimo boton apretado jee
             EventSystem.current.SetSelectedGameObject(null);
             canBuyAbility.SetActive(false);
             cantBuyAbility.SetActive(false);
@@ -58,12 +71,35 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    public void PurchaseSkill() //Compra el skill
+    public void PurchaseSkill1(int currentAbilityPurchase) //Compra el skill
     {
         
-
     }
 
+    #region Melee skills
+    public void SetMeleeSkillOne()
+    {
+        EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilities[0]);
+    }    
+    
+    public void SetMeleeSkillTwo()
+    {
+        EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilities[1]);
+    }
 
+    #endregion
+
+    #region Melee skills
+    public void SetRangedSkillOne()
+    {
+        EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilities[0]);
+    }
+
+    public void SetRangedSkillTwo()
+    {
+        EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilities[1]);
+    }
+
+    #endregion
 
 }

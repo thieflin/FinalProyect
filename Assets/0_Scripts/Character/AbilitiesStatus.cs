@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,30 +6,19 @@ using UnityEngine.UI;
 
 public class AbilitiesStatus : MonoBehaviour
 {
-    public List<Abilities> abilities = new List<Abilities>();
-    public List<Abilities> abilitiesInUsage = new List<Abilities>();
-    private int _abilityId;
-    Abilities _currentAbility;
-    public int dmg;
-    public int cd;
+    public List<Abilities> rangedAbilities = new List<Abilities>();
+    public List<Abilities> meleeAbilities = new List<Abilities>();
+    public List<int> dmg = new List<int>();
 
-    AbilityMeleeOne am1;
-
-    public delegate void AbilityPicker();
-    AbilityPicker a1;    
-    AbilityPicker a2;
+    public static Action currentMeleeAbility;
+    public static Action currentRangedAbility;
 
     void Start()
     {
-        am1 = new AbilityMeleeOne(dmg , cd);
-        a1 = am1.OnUpdate;
-
-
-        EventManager.Instance.Subscribe("OnEnablingNewAbility", ActivateAbility);
-        for (int i = 0; i < abilities.Count; i++)
-        {
-            abilities[i].abilityId = i;
-        }
+        //currentMeleeAbility = meleeAbilities[0].OnUpdate;
+        //currentRangedAbility = rangedAbilities[0].OnUpdate;
+        EventManager.Instance.Subscribe("OnActivatingMeleeAbilities", SetMeleeAbility);
+        EventManager.Instance.Subscribe("OnActivatingRangedAbilities", SetRangedAbility);
     }
     //Apreto un boton de seteo
     //a1 = am2.OnUpdate;
@@ -37,29 +27,24 @@ public class AbilitiesStatus : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            a1();
-        }
-
-
-
-        if (Input.GetButtonDown("AbilitySwitch"))
-        {
-            if (_abilityId == 0)
-            {
-                _currentAbility = abilitiesInUsage[_abilityId];
-            }
-            else if(_abilityId == 1)
-            {
-                _currentAbility = abilitiesInUsage[_abilityId];
-            }
-        
+            currentRangedAbility();
         }
     }
 
     public void ActivateAbility(params object[] parameters)//Me lo hace true a la que yo quiera
     {
         Debug.Log("Toy Working");
-        abilities[(int)parameters[0]].isActive = true;
     }
     
+    //Esto basicamente lo que haces es definirme que on update voy a usar
+    public void SetMeleeAbility(params object[] parameters)
+    {
+        currentMeleeAbility = meleeAbilities[(int)parameters[0]].OnUpdate;
+    }
+
+    //Esto me define que on update voy a usar pero me lo ddefine para las habilidades que son ranged
+    public void SetRangedAbility(params object[] parameters)
+    {
+        currentRangedAbility = rangedAbilities[(int)parameters[0]].OnUpdate;
+    }
 }

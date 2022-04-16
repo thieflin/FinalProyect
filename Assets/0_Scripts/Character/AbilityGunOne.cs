@@ -6,41 +6,31 @@ public class AbilityGunOne : Abilities
 {
     public GameObject shieldCollider;
     public bool shieldActive;
-    private void Start()
-    {
-        _anim = GetComponent<Animator>();
-        _cs = GetComponent<CharStatus>();
-        isIdle = true;
-        //actionCollider.SetActive(false);
-        isActive = false;
-        shieldActive = false;
-        EventManager.Instance.Subscribe("OnGetShield", GetShield);
-        abilityId = 1;
-    }
     public void GetShield(params object[] parametersk)
     {
         shieldActive = true;
     }
-    private void Update()
+    public override void OnUpdate()
     {
         Attack();
     }
     public override void Attack()
     {
-        if (_cs.GetPowerGaugeBarStatus() && isActive)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                _cs.powerGauge -= 50;
-                Debug.Log("toy funcionando creo");
-                if (isIdle == true)
-                {
-                    isIdle = false;
-                    _anim.SetTrigger("GS1");
-                }
-            }
+        Debug.Log("extoy atacando pero con la pistola teen titan");
+        //if (_cs.GetPowerGaugeBarStatus() && isActive)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.E))
+        //    {
+        //        _cs.powerGauge -= 50;
+        //        Debug.Log("toy funcionando creo");
+        //        if (isIdle == true)
+        //        {
+        //            isIdle = false;
+        //            _anim.SetTrigger("GS1");
+        //        }
+        //    }
 
-        }
+        //}
     }
 
     public  void FinishAbility()

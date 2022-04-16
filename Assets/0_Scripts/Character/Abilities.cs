@@ -18,7 +18,10 @@ public abstract class Abilities : MonoBehaviour
 
     public bool isPurchased;
 
+    public virtual void OnUpdate()
+    {
 
+    }
     public virtual void Attack()
     {
         //Attack
