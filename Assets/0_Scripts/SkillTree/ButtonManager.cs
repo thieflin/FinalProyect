@@ -57,7 +57,7 @@ public class ButtonManager : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(noButton2);
             }
         }
-        
+
     }
 
 
@@ -104,7 +104,8 @@ public class ButtonManager : MonoBehaviour
     
     public void SetMeleeSkillTwo()
     {
-        EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[1]);
+
+        //EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[1]);
     }
 
     #endregion
