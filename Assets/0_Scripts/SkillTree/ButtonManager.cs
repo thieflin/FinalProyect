@@ -11,17 +11,19 @@ public class ButtonManager : MonoBehaviour
     public GameObject noButton;
     public GameObject noButton2;
     public GameObject lastPressedButton;
-    //[SerializeField] private List<float> _skillCosts = new List<float>();
-    //[SerializeField] private List<int> _skillNumber = new List<int>();
+
+    [SerializeField] private List<Button> _meleeAbilityButtons = new List<Button>();
+    [SerializeField] private List<Button> _rangedAbilityButtons = new List<Button>();
 
     public List<Image> meleeImages = new List<Image>();
     public List<Image> rangedImages = new List<Image>();
 
-    [SerializeField] private List<int> _meleeAbilities = new List<int>();
-    [SerializeField] private List<int> _rangedAbilities = new List<int>();
+    [SerializeField] private List<int> _meleeAbilitiesId = new List<int>();
+    [SerializeField] private List<int> _rangedAbilitiesId = new List<int>();
 
 
-
+    public int meleeUpgrade;
+    public int rangedUpgrade;
 
 
 
@@ -71,20 +73,38 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    public void PurchaseSkill1(int currentAbilityPurchase) //Compra el skill
+    public void PurchaseSkillOneMelee() //Compra el skill
     {
+        meleeUpgrade++;
         
+        //Al comprarlo tengo que ponerle el iconito mas bonito para despues setearlo
+        //Tambien tengo que desactivar al boton para que ya no moleste mas o marcarlo de alguna forma que se vea bien
+
+    }
+
+    public void PurchaseSkillTwoMelee()
+    {
+        //Esto es a chequear igual porque simplemente podria activar el otro boton y seria mas facil 
+        if(meleeUpgrade > 1)
+        {
+
+        }
+        else
+        {
+            //Hago el cartelito de no podes comprar porque no desbloqueaste el nivel anterior
+        }
     }
 
     #region Melee skills
     public void SetMeleeSkillOne()
     {
-        EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilities[0]);
+        EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[0]);
+        //Al setearlo tengo que activarle la imagen correspondiente
     }    
     
     public void SetMeleeSkillTwo()
     {
-        EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilities[1]);
+        EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[1]);
     }
 
     #endregion
@@ -92,12 +112,12 @@ public class ButtonManager : MonoBehaviour
     #region Melee skills
     public void SetRangedSkillOne()
     {
-        EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilities[0]);
+        EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilitiesId[0]);
     }
 
     public void SetRangedSkillTwo()
     {
-        EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilities[1]);
+        EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilitiesId[1]);
     }
 
     #endregion
