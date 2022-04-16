@@ -50,11 +50,8 @@ public class AbilityMeleeOne : Abilities
 
     public void FinishAbility()
     {
-
         _anim.SetTrigger("Idle");
         isIdle = true;
-
-
     }
 
     public void ActivateColliderAndAnim1() //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
