@@ -15,7 +15,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private AbilitiesStatus _as;
 
     public List<Image> meleeImages = new List<Image>();
-    public List<Image> rangedImages = new List<Image>();
+    public List<GameObject> rangedImages = new List<GameObject>();
 
     [SerializeField] private List<int> _meleeAbilitiesId = new List<int>();
     [SerializeField] private List<int> _rangedAbilitiesId = new List<int>();
@@ -67,9 +67,10 @@ public class ButtonManager : MonoBehaviour
             for (int i = 0; i < rangedImages.Count; i++)
             {
                 if (i == Id)
-                    rangedImages[i].enabled = true;
+                    rangedImages[i].SetActive(true);
                 else
-                    rangedImages[i].enabled = false;
+                    rangedImages[i].SetActive(false);
+
             }
         }
 
