@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class AbilityMeleeOne : Abilities
 {
-    public int admg;
-
-    public AbilityMeleeOne(int dmg)
-    {
-        admg = dmg;
-    }
 
     public override void OnUpdate()
     {
@@ -18,7 +12,7 @@ public class AbilityMeleeOne : Abilities
     }
     public override void Attack()
     {
-        Debug.Log("estoy atacando locura comsica con el melee");
+        Debug.Log("Melee1");
         //if (_cs.GetPowerGaugeBarStatus() && isActive && isOnUse)
         //{
 
