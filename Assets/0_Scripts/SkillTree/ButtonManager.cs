@@ -6,8 +6,11 @@ using UnityEngine.EventSystems;
 
 public class ButtonManager : MonoBehaviour
 {
+    [Header("Imagenes de menu")]
     public GameObject canBuyAbility;
     public GameObject cantBuyAbility;
+
+    [Header("Botones de imagenes de interacciones")]
     public GameObject noButton;
     public GameObject noButton2;
     public GameObject lastPressedButton;
