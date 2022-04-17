@@ -15,7 +15,7 @@ public class AbilityGunTwo : Abilities
     }
     public override void Attack()
     {
-        Debug.Log("Habilidad 1");
+        Debug.Log("Habilidad 2");
         //if (_cs.GetPowerGaugeBarStatus() && isActive)
         //{
         //    if (Input.GetKeyDown(KeyCode.E))

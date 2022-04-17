@@ -22,7 +22,7 @@ public class AbilityGunOne : Abilities
     }
     public override void Attack()
     {
-        Debug.Log("Habilidad 2");
+        Debug.Log("Habilidad 1");
         //if (_cs.GetPowerGaugeBarStatus() && isActive)
         //{
         //    if (Input.GetKeyDown(KeyCode.E))
