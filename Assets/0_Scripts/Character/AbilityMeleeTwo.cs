@@ -12,19 +12,27 @@ public class AbilityMeleeTwo : Abilities
     public override void Attack()
     {
         Debug.Log("Melee2");
-        //if (_cs.GetPowerGaugeBarStatus() && isActive && isOnUse)
-        //{
 
-        //    _cs.powerGauge -= 50;
-        //    Debug.Log("toy funcionando creo");
-        //    if (isIdle == true)
-        //    {
-        //        isIdle = false;
-        //        _anim.SetTrigger("MS1");
-        //    }
+        if (isIdle == true)
+        {
+            isIdle = false;
+            _anim.SetTrigger("MS2");
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
+    }
 
+    public void FinishAbilityTwoMelee()
+    {
+        _anim.SetTrigger("Idle");
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.constraints -= RigidbodyConstraints.FreezePosition;
+        isIdle = true;
+    }
 
-
-        //}
+    public void ColliderActivation(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
+    {
+        if (animColliders[ColliderNumber].activeSelf)
+            animColliders[ColliderNumber].SetActive(false);
+        else animColliders[ColliderNumber].SetActive(true);
     }
 }

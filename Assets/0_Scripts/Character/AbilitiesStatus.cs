@@ -10,6 +10,9 @@ public class AbilitiesStatus : MonoBehaviour
     public List<Abilities> meleeAbilities = new List<Abilities>();
     public List<int> dmg = new List<int>();
 
+
+    public PlayerMovement pm;
+
     public static Action currentMeleeAbility;
     public static Action currentRangedAbility;
 
@@ -29,9 +32,13 @@ public class AbilitiesStatus : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("RangedSkill"))
         {
             currentRangedAbility();
+        }
+        else if (Input.GetKeyDown(KeyCode.E)|| Input.GetButtonDown("MeleeSkill"))
+        {
+            currentMeleeAbility();
         }
     }
 
@@ -50,5 +57,15 @@ public class AbilitiesStatus : MonoBehaviour
     public void SetRangedAbility(params object[] parameters)
     {
         currentRangedAbility = rangedAbilities[(int)parameters[0]].OnUpdate;
+    }
+
+    public void EnablePM()
+    {
+        pm.enabled = true;
+    }
+
+    public void DisablePM()
+    {
+        pm.enabled = false;
     }
 }

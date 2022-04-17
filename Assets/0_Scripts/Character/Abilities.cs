@@ -5,16 +5,13 @@ using UnityEngine.UI;
 
 public abstract class Abilities : MonoBehaviour
 {
-    protected int requiredPowerGauge;
-    public bool isActive;
-    public bool isOnUse;
-    protected bool isIdle;
-    protected int _cost;
+    public bool isIdle;
+
     public CharStatus _cs;
     public Animator _anim;
-    public GameObject actionCollider;
-    public Image abilityIcon;
+    public Rigidbody rb;
 
+    public List<GameObject> animColliders = new List<GameObject>();
 
     public int abilityId;
 

@@ -42,19 +42,19 @@ public class AbilityGunOne : Abilities
     public  void FinishAbility()
     {
 
-        _anim.SetTrigger("Idle");
-        isIdle = true;
+        //_anim.SetTrigger("Idle");
+        //isIdle = true;
 
     }
 
     public  void ActivateColliderAndAnim()
     {
-        actionCollider.SetActive(true);
+
     }
 
     public  void DeactivateCollider()
     {
-        actionCollider.SetActive(false);
+
     }
 
     public void ActivateShieldOnAttack()

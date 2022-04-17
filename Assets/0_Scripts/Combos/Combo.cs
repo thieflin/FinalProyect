@@ -27,6 +27,12 @@ public class Combo : MonoBehaviour
     void Update()
     {
         InputController();
+
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            ani.SetTrigger("MS1");
+        }
     }
 
     public void UpgradedHitboxTrue(params object[] parameters)
@@ -48,9 +54,17 @@ public class Combo : MonoBehaviour
             else
                 _nextCombo = 1;
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse1))
+        else if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetButtonDown("AttackRangedNA"))
         {
-            _nextCombo = 2;
+            if (_isIdle == true)
+            {
+                _isIdle = false;
+                _pm._movementSpeed = 0;
+                _rb.constraints = RigidbodyConstraints.FreezeAll;
+                ani.SetTrigger("A2");
+            }
+            else
+                _nextCombo = 2;
         }
 
     }
@@ -75,6 +89,7 @@ public class Combo : MonoBehaviour
                 break;
             case 2:
                 _pm._movementSpeed = 0;
+                _rb.constraints = RigidbodyConstraints.FreezeAll;
                 ani.SetTrigger("A2");
                 _nextCombo = 0;
                 break;

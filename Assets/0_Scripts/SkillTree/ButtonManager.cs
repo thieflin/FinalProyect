@@ -34,7 +34,7 @@ public class ButtonManager : MonoBehaviour
 
     public int meleeUpgrade;
     public int rangedUpgrade;
-
+    public Button button;
 
     [SerializeField] private SkillTree _st;
 
