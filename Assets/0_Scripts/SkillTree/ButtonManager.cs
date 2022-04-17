@@ -48,25 +48,25 @@ public class ButtonManager : MonoBehaviour
         //En esta funcion chequeo si puedo comprar o no la habilidad y si no la tengo comprada
         if (Input.GetButtonDown("Submit") && !_as.rangedAbilities[Id].isPurchased)
         {
-            //Si los puntos que tengo son menores a los que necesito para upgradear
-            //No puedo comprarla, por lo tanto no se me abre mas menu
+            //Si me alcanzan los puntos para poder comprarlo, y estoy en el nivel correcto.
             if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded() && Id < rangedUpgrade + 1)
             {
+
                 Debug.Log("No accedi al menu de compra");
                 //Desselecciono el boton anterior
                 EventSystem.current.SetSelectedGameObject(null);
-                //Activo el menu de cant buy ability
+                //Activo el menu de can buy ability
                 canBuyAbility.SetActive(true);
+                //Activo el botton de no comprar por si me equivoque
                 EventSystem.current.SetSelectedGameObject(noButton2);
 
-                //Le selecciono el boton de back para que vuelva a lo anterior
             }
-            else //Aca es si tengo suficientes puntos me la deja comprar
+            else //Aca es si no tengo suficientes puntos me la deja comprar
             {
                 Debug.Log("Accedi al menu de compra");
                 //Desselecciono el boton anterior
                 EventSystem.current.SetSelectedGameObject(null);
-                //Activo el menu de can buy ability
+                //Activo el menu de cant buy ability
                 cantBuyAbility.SetActive(true);
                 //Le pongo como seleccion en el boton de no por si se equivoco
                 EventSystem.current.SetSelectedGameObject(noButton);
