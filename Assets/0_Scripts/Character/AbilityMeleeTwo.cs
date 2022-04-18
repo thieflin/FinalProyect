@@ -29,7 +29,7 @@ public class AbilityMeleeTwo : Abilities
         isIdle = true;
     }
 
-    public void ColliderActivation(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
+    public void ColliderActivationMS2(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
     {
         if (animColliders[ColliderNumber].activeSelf)
             animColliders[ColliderNumber].SetActive(false);

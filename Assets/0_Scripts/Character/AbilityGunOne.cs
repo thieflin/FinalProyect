@@ -4,71 +4,36 @@ using UnityEngine;
 
 public class AbilityGunOne : Abilities
 {
-    public GameObject shieldCollider;
-    public bool shieldActive;
-    public void GetShield(params object[] parametersk)
-    {
-        shieldActive = true;
-    }
-
-    public void Start()
-    {
-        isPurchased = false;
-    }
-
     public override void OnUpdate()
     {
         Attack();
+
     }
     public override void Attack()
     {
-        Debug.Log("Habilidad 1");
-        //if (_cs.GetPowerGaugeBarStatus() && isActive)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.E))
-        //    {
-        //        _cs.powerGauge -= 50;
-        //        Debug.Log("toy funcionando creo");
-        //        if (isIdle == true)
-        //        {
-        //            isIdle = false;
-        //            _anim.SetTrigger("GS1");
-        //        }
-        //    }
+        Debug.Log("GunOne");
 
-        //}
-    }
-
-    public  void FinishAbility()
-    {
-
-        //_anim.SetTrigger("Idle");
-        //isIdle = true;
-
-    }
-
-    public  void ActivateColliderAndAnim()
-    {
-
-    }
-
-    public  void DeactivateCollider()
-    {
-
-    }
-
-    public void ActivateShieldOnAttack()
-    {
-        if (shieldActive)
+        if (isIdle == true)
         {
-            shieldCollider.SetActive(true);
-            StartCoroutine(ShieldDecay());
+            isIdle = false;
+            _anim.SetTrigger("GS1");
+            rb.constraints = RigidbodyConstraints.FreezeAll;
         }
+
     }
 
-    IEnumerator ShieldDecay()
+    public void FinishAbilityOneGun()
     {
-        yield return new WaitForSeconds(3);
-        shieldCollider.SetActive(false);
+        _anim.SetTrigger("Idle");
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.constraints -= RigidbodyConstraints.FreezePosition;
+        isIdle = true;
+    }
+
+    public void ColliderActivationGS1(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
+    {
+        if (animColliders[ColliderNumber].activeSelf)
+            animColliders[ColliderNumber].SetActive(false);
+        else animColliders[ColliderNumber].SetActive(true);
     }
 }
