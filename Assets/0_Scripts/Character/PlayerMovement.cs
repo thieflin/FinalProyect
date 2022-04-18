@@ -58,15 +58,11 @@ public class PlayerMovement : MonoBehaviour
         ////Esto es porque por algun motivo me las desfreezea cuando combea medio xd el tema
         //_rb.constraints = RigidbodyConstraints.FreezeRotation;
 
-
-
-
         if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting)
             Dash();
         else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting)
-        {
-            DashTarget();
-        }
+            Dash();
+
 
         //Para testear unicamente
         if (Input.GetKeyDown(KeyCode.I))
@@ -121,8 +117,6 @@ public class PlayerMovement : MonoBehaviour
             Vector3 newVecX = direction.x * transform.right;
             Vector3 newVecZ = direction.z * transform.forward;
 
-
-
             animator.SetFloat("Speed", 1);
             animator.SetFloat("EjeX", newVecX.x);
             animator.SetFloat("EjeY", newVecZ.z);
@@ -170,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Hacia donde va a hacer el dash, segun movimiento
-        whereToDash = new Vector3(direction.x, 0f, direction.z);
+        whereToDash = new Vector3(newInput.x, 0f, newInput.z);
 
     }
 
@@ -189,23 +183,22 @@ public class PlayerMovement : MonoBehaviour
         isTargeting = true;
     }
 
+    //Para cuando dashea y esta targeteando
     public void Dash()
     {
         if (canDash)
         {
-            _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
-            animator.SetTrigger("Rol");
-        }
-        StartCoroutine(waitDash());
-    }
+            _rb.velocity = Vector3.zero;
 
-    //Para cuando dashea y esta targeteando
-    public void DashTarget()
-    {
-        if (canDash)
-        {
-            _rb.AddForce(whereToDash * _dashForce, ForceMode.Impulse);
-            transform.forward = whereToDash;
+            if (whereToDash != Vector3.zero)
+            {
+                _rb.AddForce(whereToDash * _dashForce, ForceMode.Impulse);
+                transform.forward = whereToDash;
+            }else if( whereToDash == Vector3.zero)
+            {
+                _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
+                transform.forward = transform.forward;
+            }
             Debug.Log("Im dashing while targeting");
             animator.SetTrigger("Rol");
         }

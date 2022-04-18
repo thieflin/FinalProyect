@@ -16,6 +16,12 @@ public class RangeEnemy : Enemy
     private Ray checkWallsRay;
     [SerializeField] LayerMask _wallMask;
 
+    [Header("Ranged Protector")]
+    public ProtectorEnemy protectorPrefab;
+    public float percentHPToInvoke;
+    public bool protectorInvoked;
+    public float offSetYProtector;
+
     void Update()
     {
         FieldOfView();
@@ -26,16 +32,20 @@ public class RangeEnemy : Enemy
             lookAt.y = 0f;
             transform.forward = lookAt;
             Attack();
-             
+
             //PARA QUE SE VAYA PARA ATRAS SOLO CUANDO NO HAYA UNA PARED
             if (!Physics.Raycast(transform.position, transform.forward * -1, 1f, _wallMask))
             {
                 Move();
             }
-           
         }
 
-       
+        if ((this.gameObject.GetComponent<EnemyData>().GetHP() / this.gameObject.GetComponent<EnemyData>().GetMaxHP()) < percentHPToInvoke)
+        {
+            if (!protectorInvoked) { 
+                InvocarProtector();
+            }
+        }
     }
 
     private void Attack()
@@ -67,6 +77,17 @@ public class RangeEnemy : Enemy
         {
             transform.position = Vector3.MoveTowards(transform.position, playerPosition, -movementSpeed * multiplierRunningAway * Time.deltaTime);
         }
+    }
+
+    private void InvocarProtector()
+    {
+        Debug.Log("InvocarProtector");
+
+        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + offSetYProtector, transform.position.z) + transform.forward * 3f;
+
+        var createdProtector = Instantiate(protectorPrefab, spawnPosition, Quaternion.identity);
+        createdProtector.owner = this;
+        protectorInvoked = true;
     }
 
     private void OnDrawGizmos()

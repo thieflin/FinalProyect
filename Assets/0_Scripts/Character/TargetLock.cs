@@ -50,18 +50,25 @@ public class TargetLock : MonoBehaviour
     void LookForClosestEnemy()
     {
         Enemy closestEnemy = null;
+        float closestDistance;
+        //float closestDistance = 10f;
+        if (enemiesClose[0] != null)
+            closestDistance = (enemiesClose[0].transform.position - player.transform.position).magnitude;
+        else
+            closestDistance = 15f;
 
-        float closestDistance = 10f;
-        //float closestDistance = (enemiesClose[0].transform.position - player.transform.position).magnitude;
 
         foreach (var enemy in enemiesClose)
         {
-            float distance = (enemy.transform.position - player.transform.position).magnitude;
-
-            if (distance <= closestDistance)
+            if (enemy != null)
             {
-                closestEnemy = enemy;
-                closestDistance = distance;
+                float distance = (enemy.transform.position - player.transform.position).magnitude;
+
+                if (distance <= closestDistance)
+                {
+                    closestEnemy = enemy;
+                    closestDistance = distance;
+                }
             }
         }
 
@@ -86,7 +93,7 @@ public class TargetLock : MonoBehaviour
                 }
             }
 
-            if((item.transform.position - transform.position).magnitude > viewRadius || !InSight(transform.position, item.transform.position))
+            if ((item.transform.position - transform.position).magnitude > viewRadius || !InSight(transform.position, item.transform.position))
             {
                 enemiesClose.Remove(item.GetComponent<Enemy>());
             }

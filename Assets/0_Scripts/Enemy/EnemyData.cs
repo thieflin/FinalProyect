@@ -18,4 +18,14 @@ public abstract class EnemyData : MonoBehaviour
         EventManager.Instance.Trigger("OnGettingExp", expPoints);
     }
 
+    public int GetHP()
+    {
+        return _currentHp;
+    }
+
+    public int GetMaxHP()
+    {
+        return _maxHp;
+    }
+
 }
