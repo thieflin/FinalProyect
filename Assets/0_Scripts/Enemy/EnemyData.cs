@@ -7,7 +7,7 @@ public abstract class EnemyData : MonoBehaviour
 {
     [SerializeField] protected int _currentHp;
     [SerializeField] protected int _maxHp;
-    [SerializeField] protected int _hitboxLayermask;
+    [SerializeField] protected int _hitboxLayermask, _abilityLayermask;
     [SerializeField] protected float _dmgMitigation;
     [SerializeField] protected Slider _hpSlider;
     [SerializeField] protected float _expPoints;

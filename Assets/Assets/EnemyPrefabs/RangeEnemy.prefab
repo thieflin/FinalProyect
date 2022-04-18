@@ -151,6 +151,7 @@ MonoBehaviour:
   _currentHp: 0
   _maxHp: 20
   _hitboxLayermask: 9
+  _abilityLayermask: 10
   _dmgMitigation: 1.5
   _hpSlider: {fileID: 0}
   _expPoints: 20

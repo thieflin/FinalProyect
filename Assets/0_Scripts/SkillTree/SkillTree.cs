@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class SkillTree : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class SkillTree : MonoBehaviour
     [SerializeField] private List<Image> _bluePrintImages = null;
     public GameObject canBuyImage;
     public GameObject cantBuyImage;
+    public GameObject startingButton;
 
     private void Awake()
     {
@@ -21,10 +23,14 @@ public class SkillTree : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.CapsLock))
+        if (Input.GetKeyDown(KeyCode.CapsLock) || Input.GetButtonDown("Pause"))
             if (_skillTree.activeSelf)
                 _skillTree.SetActive(false);
-            else _skillTree.SetActive(true);
+            else
+            {
+                EventSystem.current.SetSelectedGameObject(startingButton);
+                _skillTree.SetActive(true);
+            }
         Debug.Log(_skillPoints);
     }
 

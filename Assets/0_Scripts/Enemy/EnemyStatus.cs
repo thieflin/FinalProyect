@@ -37,6 +37,11 @@ public class EnemyStatus : EnemyData, IDamageable
             Debug.Log("toy pegando jeje");
             TakeDamage(Combo.swordDmg);
         }
+
+        if(other.gameObject.layer == _abilityLayermask)
+        {
+            TakeDamage(100);
+        }
     }
 
 }
