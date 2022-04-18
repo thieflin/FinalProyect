@@ -13,7 +13,7 @@ public class CharStatus : MonoBehaviour
     [SerializeField] private float _currentExp = 0; //Exp actual
     [SerializeField] private float _expToLvlUp = 0; //Exp para lvlear
     [SerializeField] private float _expToLvlUpMultiplier = 0; //Multiplicador de exp para lvlear
-    [SerializeField] private float _spPerLvlUp = 0; //SPs que me da lvlear
+    [SerializeField] private int _spPerLvlUp = 0; //SPs que me da lvlear
 
     [Header("Power Gauge")]
     public float powerGauge;
