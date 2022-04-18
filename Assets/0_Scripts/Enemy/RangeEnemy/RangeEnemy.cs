@@ -21,6 +21,7 @@ public class RangeEnemy : Enemy
     public float percentHPToInvoke;
     public bool protectorInvoked;
     public float offSetYProtector;
+    public float offSetForwardProtector;
 
     void Update()
     {
@@ -83,7 +84,7 @@ public class RangeEnemy : Enemy
     {
         Debug.Log("InvocarProtector");
 
-        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + offSetYProtector, transform.position.z) + transform.forward * 3f;
+        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + offSetYProtector, transform.position.z) + transform.forward * offSetForwardProtector;
 
         var createdProtector = Instantiate(protectorPrefab, spawnPosition, Quaternion.identity);
         createdProtector.owner = this;

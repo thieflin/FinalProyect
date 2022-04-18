@@ -32,13 +32,13 @@ public class EnemyStatus : EnemyData, IDamageable
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == _hitboxLayermask)
+        if (other.gameObject.layer == _hitboxLayermask && !other.CompareTag("Bullet"))
         {
             Debug.Log("toy pegando jeje");
             TakeDamage(Combo.swordDmg);
         }
 
-        if(other.gameObject.layer == _abilityLayermask)
+        if(other.gameObject.layer == _abilityLayermask && !other.CompareTag("Bullet"))
         {
             TakeDamage(100);
         }
