@@ -8,23 +8,42 @@ public class ImageChangerCollider : MonoBehaviour
     public int playerLayerMask;
     public Animator anim;
     public PlayerMovement pm;
+    public int thisZoneNumber;
+    public int enterCounter;
+
+    private void Start()
+    {
+        enterCounter = 0;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.layer == playerLayerMask) //Cuando entro a la zona apago todo y triggereo la anim
         {
-            anim.SetTrigger("IsInside");
-            pm._movementSpeed = 0;
+            if(enterCounter == 0)
+            {
+                ImageChange.zone = thisZoneNumber;
+                anim.SetTrigger("IsInside");
+                pm._movementSpeed = 0;
+                enterCounter= 1;
+            }
+            else
+            {
+                anim.SetTrigger("IsOutside");
+                pm._movementSpeed = 0;
+                enterCounter=0;
+            }
+
         }
     }
 
-    private void OnTriggerExit(Collider other) //CCuando salgo de la zona aviso y tambien paro la movespeed
-    {
-        if (other.gameObject.layer == playerLayerMask)
-        {
-            anim.SetTrigger("IsOutside");
-            pm._movementSpeed = 0;
-
-        }
-    }
+    //private void OnTriggerExit(Collider other) //CCuando salgo de la zona aviso y tambien paro la movespeed
+    //{
+    //    if (other.gameObject.layer == playerLayerMask)
+    //    {
+    //        anim.SetTrigger("IsOutside");
+    //        pm._movementSpeed = 0;
+    //    }
+    //}
 }

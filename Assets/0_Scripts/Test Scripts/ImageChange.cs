@@ -2,31 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ImageChange : MonoBehaviour
 {
-    public GameObject decorationElements;
-    public GameObject insideElements;
+    public GameObject deathFloor;
     public int returnalSpeed;
     public PlayerMovement pm;
 
-    public Dictionary<GameObject, GameObject> _extras = new Dictionary<GameObject, GameObject>();
+    public static int zone;
+
+
+    public List<GameObject> hiddenSpaces = new List<GameObject>();
+    public List<GameObject> realSpaces = new List<GameObject>();
 
     private void Start()
     {
-        insideElements.SetActive(false);
+        zone = 0;
+        foreach (var item in hiddenSpaces)
+        {
+            item.SetActive(false);
+        }
     }
     
 
     public void AnimEventIn() 
     {
-        decorationElements.SetActive(false);
-        insideElements.SetActive(true);
+        deathFloor.SetActive(false);
+        hiddenSpaces[zone].SetActive(true);
+        realSpaces[zone].SetActive(false);
     }    
     public void AnimEventOut() 
     {
-        decorationElements.SetActive(true);
-        insideElements.SetActive(false);
+        deathFloor.SetActive(true);
+        hiddenSpaces[zone].SetActive(false);
+        realSpaces[zone].SetActive(true);
     }
 
     public void ReturnMovement()
