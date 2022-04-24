@@ -10,6 +10,8 @@ public class ImageChange : MonoBehaviour
     public int returnalSpeed;
     public PlayerMovement pm;
 
+    public Dictionary<GameObject, GameObject> _extras = new Dictionary<GameObject, GameObject>();
+
     private void Start()
     {
         insideElements.SetActive(false);
