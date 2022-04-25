@@ -59,12 +59,12 @@ public class CharStatus : MonoBehaviour
 
         //Seteo de Power gauges
         //Ranged
-        _rangedPowerGauge = 50;
+        _rangedPowerGauge = 0;
         _rpgPercent = _rangedPowerGauge / _maxPowerGauge;
         _rpgBar.fillAmount = _rpgPercent;
 
         //Melee
-        _meleePowerGauge = 50;
+        _meleePowerGauge = 0;
         _mpgPercent = _meleePowerGauge / _maxPowerGauge;
         _mpgBar.fillAmount = _mpgPercent;
 

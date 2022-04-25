@@ -11,8 +11,10 @@ public class ButtonActivateBridge : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.PlaySound("puzzle");
             animBridge.SetTrigger("ActivateBridge");
             desactivateWallCollider.SetActive(false);
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ExpCollectable : MonoBehaviour, ICollectible
 {
-    [SerializeField] private int expValue;
+    [SerializeField] private float expValue;
 
 
     public void OnPickUp()
     {
         //Deberia correr una mini animacion
         EventManager.Instance.Trigger("OnGettingExp", expValue);
+        AudioManager.PlaySound("collect");
         Destroy(gameObject);
     }
 

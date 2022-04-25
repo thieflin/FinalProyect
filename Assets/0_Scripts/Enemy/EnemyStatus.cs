@@ -12,7 +12,8 @@ public class EnemyStatus : EnemyData, IDamageable
     public void TakeDamage(int dmg)
     {
         _currentHp -= (int)(dmg * _dmgMitigation);
-        
+
+        AudioManager.PlaySound("hit");
 
 
         if (_currentHp <= 0)

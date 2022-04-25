@@ -10,6 +10,10 @@ public class Combo : MonoBehaviour
     int _nextCombo = 0;
     public List<GameObject> meleeHitboxes = new List<GameObject>();
     public List<GameObject> meleeHitboxesUpgraded = new List<GameObject>();
+
+
+    public List<GameObject> rangedHitboxes = new List<GameObject>();
+
     public bool upgradedHitbox;
     private PlayerMovement _pm;
     public static int swordDmg;
@@ -159,5 +163,13 @@ public class Combo : MonoBehaviour
     public void DisablePlayerMovement()
     {
         _pm.enabled = false;
+    }
+
+
+    public void ColliderActivationRangedCombo(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
+    {
+        if (rangedHitboxes[ColliderNumber].activeSelf)
+            rangedHitboxes[ColliderNumber].SetActive(false);
+        else rangedHitboxes[ColliderNumber].SetActive(true);
     }
 }

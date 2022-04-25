@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SPColletibles : MonoBehaviour, ICollectible
 {
-    [SerializeField] private int spValue;
+    [SerializeField] private float spValue;
 
 
     public void OnPickUp()
