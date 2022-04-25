@@ -36,11 +36,13 @@ public class CharStatus : MonoBehaviour
     [SerializeField] private float _rangedPowerGauge;
     [SerializeField] private float _ultimatePowerGauge;
 
+    [Header("Skills borders")]
+    [SerializeField] private GameObject _meleeSkillUp;
+    [SerializeField] private GameObject _rangedSkillUp;
+    [SerializeField] private GameObject _ultimateSkillUp;
 
 
-    [SerializeField] private float _skillMultiplier;
-    [SerializeField] private bool _isFull;
-
+    [Header("Referencias")]
     [SerializeField] private Animator _anim;
     [SerializeField] private AbilitiesStatus _as;
 
@@ -99,9 +101,11 @@ public class CharStatus : MonoBehaviour
             _as.canCastAbility = true;
             _rangedPowerGauge = _maxPowerGauge;
             _as.canUseRangedAbility = true;
+            _rangedSkillUp.SetActive(true);
             //Le pregunto si esta maxeado
             if (_ultimatePowerGauge >= _maxPowerGauge * 2)
             {
+                _ultimateSkillUp.SetActive(true);
                 _as.canUseMixedAbility = true;
             }
         }
@@ -138,9 +142,11 @@ public class CharStatus : MonoBehaviour
             _as.canUseMeleeAbility = true;
             _meleePowerGauge = _maxPowerGauge;
             _as.canCastAbility = true;
+            _rangedSkillUp.SetActive(true);
             //Le pregunto si esta maxeado
             if (_ultimatePowerGauge >= _maxPowerGauge * 2)
             {
+                _ultimateSkillUp.SetActive(true);
                 _as.canUseMixedAbility = true;
             }
         }
@@ -218,6 +224,8 @@ public class CharStatus : MonoBehaviour
             _as.canUseMixedAbility = false;
             _meleePowerGauge = 0;
             _mpgBar.fillAmount = 0;
+            _meleeSkillUp.SetActive(false);
+            _ultimateSkillUp.SetActive(false);
         }
         else if (abilityId == 1) //Ranged ability
         {
@@ -225,6 +233,9 @@ public class CharStatus : MonoBehaviour
             _as.canUseMixedAbility = false;
             _rangedPowerGauge = 0;
             _rpgBar.fillAmount = 0;
+            _ultimateSkillUp.SetActive(false);
+            _rangedSkillUp.SetActive(false);
+
         }
         else //MixedAbility
         {
@@ -237,6 +248,10 @@ public class CharStatus : MonoBehaviour
             _rpgBar.fillAmount = 0;
             _mpgBar.fillAmount = 0;
             _upgBar.fillAmount = 0;
+            _ultimateSkillUp.SetActive(false);
+            _meleeSkillUp.SetActive(false);
+            _rangedSkillUp.SetActive(false);
+
         }
 
     }
