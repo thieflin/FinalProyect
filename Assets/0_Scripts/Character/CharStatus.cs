@@ -142,7 +142,7 @@ public class CharStatus : MonoBehaviour
             _as.canUseMeleeAbility = true;
             _meleePowerGauge = _maxPowerGauge;
             _as.canCastAbility = true;
-            _rangedSkillUp.SetActive(true);
+            _meleeSkillUp.SetActive(true);
             //Le pregunto si esta maxeado
             if (_ultimatePowerGauge >= _maxPowerGauge * 2)
             {
