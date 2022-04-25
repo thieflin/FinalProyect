@@ -30810,8 +30810,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.6333333
+  - time: 0.5
     functionName: HitBoxMelee1Activate
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.6
+    functionName: HitBoxMelee1Deactivate
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -30826,13 +30833,6 @@ AnimationClip:
     messageOptions: 0
   - time: 0.6666667
     functionName: EventNextAnimation
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.7
-    functionName: HitBoxMelee1Deactivate
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
