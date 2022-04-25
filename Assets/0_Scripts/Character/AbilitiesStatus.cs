@@ -16,6 +16,16 @@ public class AbilitiesStatus : MonoBehaviour
     public static Action currentMeleeAbility;
     public static Action currentRangedAbility;
 
+    public  bool canUseMeleeAbility;
+    public  bool canUseRangedAbility;
+    public  bool canUseMixedAbility;
+
+    public bool canCastAbility;
+    [SerializeField] private float _timerForAbility;
+
+    [SerializeField] private CharStatus _cs;
+
+
     void Start()
     {
         currentMeleeAbility = Debugchan;
@@ -23,8 +33,7 @@ public class AbilitiesStatus : MonoBehaviour
         EventManager.Instance.Subscribe("OnActivatingMeleeAbilities", SetMeleeAbility);
         EventManager.Instance.Subscribe("OnActivatingRangedAbilities", SetRangedAbility);
     }
-    //Apreto un boton de seteo
-    //a1 = am2.OnUpdate;
+
     public void Debugchan()
     {
         Debug.Log("habilidad no existente");
@@ -34,11 +43,24 @@ public class AbilitiesStatus : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("RangedSkill"))
         {
-            currentRangedAbility();
+            if (canUseRangedAbility && canCastAbility)
+            {
+
+                currentRangedAbility();
+                StartCoroutine(InnerAbilityCd());
+            }
+                
+            else Debug.Log("u cant use this yet ( ranged ) ");
         }
         else if (Input.GetKeyDown(KeyCode.E)|| Input.GetButtonDown("MeleeSkill"))
         {
-            currentMeleeAbility();
+            if (canUseMeleeAbility && canCastAbility)
+            {
+
+                currentMeleeAbility();
+                StartCoroutine(InnerAbilityCd());
+            }
+            else Debug.Log("u cant use this yet (melee)");
         }
     }
 
@@ -67,5 +89,13 @@ public class AbilitiesStatus : MonoBehaviour
     public void DisablePM()
     {
         pm.enabled = false;
+    }
+    
+    IEnumerator InnerAbilityCd()
+    {
+        canCastAbility = false;
+        yield return new WaitForSeconds(_timerForAbility);
+        canCastAbility = true;
+
     }
 }

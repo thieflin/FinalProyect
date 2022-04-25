@@ -44,7 +44,7 @@ public class SkillTree : MonoBehaviour
     private void EarningSp(params object[] parameters) // Obtiene SP
     {
         _skillPoints += (int)parameters[0];
-        EventManager.Instance.Trigger("OnUpdatingSp", _skillPoints);
+        //EventManager.Instance.Trigger("OnUpdatingSp", _skillPoints);
         Debug.Log(_skillPoints);
     }
 

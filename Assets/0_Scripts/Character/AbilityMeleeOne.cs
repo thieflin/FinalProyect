@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class AbilityMeleeOne : Abilities
 {
-    
+
+    private void Start()
+    {
+        _cs = GetComponent<CharStatus>();
+        id = 0;
+    }
+
     public override void OnUpdate()
     {
         Attack();
@@ -16,6 +22,7 @@ public class AbilityMeleeOne : Abilities
 
         if (isIdle == true)
         {
+            _cs.UseAbility(id);
             isIdle = false;
             _anim.SetTrigger("MS1");
             rb.constraints = RigidbodyConstraints.FreezeAll;

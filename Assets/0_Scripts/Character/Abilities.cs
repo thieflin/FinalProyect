@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public abstract class Abilities : MonoBehaviour
 {
     public bool isIdle;
+    public int id;
 
     public CharStatus _cs;
     public Animator _anim;

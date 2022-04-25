@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharStatus : MonoBehaviour
 {
     [Header("HP Vars")]
-    public int hp = 0;
-    public int maxHp = 0;
+    public float hp = 0;
+    public float maxHp = 0;
+    [SerializeField] private float hpPercent;
+    [SerializeField] private Image _hpBar;
 
     [Header("Level Up Vars")]
     private int _currentLvl = 0;
@@ -18,48 +21,153 @@ public class CharStatus : MonoBehaviour
     [Header("Power Gauge")]
     public float powerGauge;
     [SerializeField] private float _maxPowerGauge;
+
+    [SerializeField] private Image _mpgBar;
+    [SerializeField] private float _mpgPercent;
+
+    [SerializeField] private Image _rpgBar;
+    [SerializeField] private float _rpgPercent;
+
+    [SerializeField] private Image _upgBar;
+    [SerializeField] private float _upgPercent;
+
+
+    [SerializeField] private float _meleePowerGauge;
+    [SerializeField] private float _rangedPowerGauge;
+    [SerializeField] private float _ultimatePowerGauge;
+
+
+
     [SerializeField] private float _skillMultiplier;
     [SerializeField] private bool _isFull;
 
     [SerializeField] private Animator _anim;
+    [SerializeField] private AbilitiesStatus _as;
 
 
     private void Awake()
     {
         maxHp = hp = 100;
         _anim = GetComponent<Animator>();
+        _as = GetComponent<AbilitiesStatus>();
+
+        //Seteo de vida
+        hpPercent = hp / maxHp;
+        _hpBar.fillAmount = hpPercent;
+
+        //Seteo de Power gauges
+        //Ranged
+        _rangedPowerGauge = 50;
+        _rpgPercent = _rangedPowerGauge / _maxPowerGauge;
+        _rpgBar.fillAmount = _rpgPercent;
+
+        //Melee
+        _meleePowerGauge = 50;
+        _mpgPercent = _meleePowerGauge / _maxPowerGauge;
+        _mpgBar.fillAmount = _mpgPercent;
+
+        //Ultimate
+        //_upgPercent = _ultimatePowerGauge / _maxPowerGauge * 2f;
+        //_upgBar.fillAmount = _upgPercent;
     }
 
     void Start()
     {
         EventManager.Instance.Subscribe("OnIncreasingHp", IncreaseMaxHp); //Evento para generar mas vida
         EventManager.Instance.Subscribe("OnGettingExp", GetExp); //Evento para generar mas Nivel
-        EventManager.Instance.Subscribe("OnActivatingSkill", SkillActivation); //Evento para activar la habilidad deseada
+        EventManager.Instance.Subscribe("OnGettingMPG", GetPowerGaugeMelee); //Evento para generar powergaguge ( melee )
+        EventManager.Instance.Subscribe("OnGettingRPG", GetPowerGaugeRanged); //Evento para generar power gauge ( ranged )
     }
 
     private void Update()
     {
-        if(powerGauge < _maxPowerGauge)
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            powerGauge += Time.deltaTime*8;
-            EventManager.Instance.Trigger("OnUpdatingPG", powerGauge);
-            _isFull = false;
-            if (powerGauge < 0)
-                powerGauge = 0;
+            EventManager.Instance.Trigger("OnGettingMPG", 10f);
         }
 
-        if(powerGauge >= _maxPowerGauge*_skillMultiplier)
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            EventManager.Instance.Trigger("OnUpdatingPG", powerGauge);
-
-            _isFull = true;
+            EventManager.Instance.Trigger("OnGettingRPG", 10f);
         }
-        if(powerGauge > _maxPowerGauge)
-        {
-            _isFull = true;
-            EventManager.Instance.Trigger("OnUpdatingPG", powerGauge);
+    }
 
-            powerGauge = _maxPowerGauge;
+    private void GetPowerGaugeRanged(params object[] parameters)
+    {
+        if (_rangedPowerGauge >= _maxPowerGauge)
+        {
+            _as.canCastAbility = true;
+            _rangedPowerGauge = _maxPowerGauge;
+            _as.canUseRangedAbility = true;
+            //Le pregunto si esta maxeado
+            if (_ultimatePowerGauge >= _maxPowerGauge * 2)
+            {
+                _as.canUseMixedAbility = true;
+            }
+        }
+        else
+        {
+
+            //Le doy mas puntos a la power gauge
+            _rangedPowerGauge += (float)parameters[0];
+
+            //Le actualizo el fill amount
+            _rpgPercent = _rangedPowerGauge / _maxPowerGauge;
+            _rpgBar.fillAmount = _rpgPercent;
+
+            //Le doy puntos de la power gauge de la ulti
+            _ultimatePowerGauge += (float)parameters[0];
+
+            //Le actualizo el fill amount a la ulti
+            //_upgPercent = _ultimatePowerGauge / _maxPowerGauge * 2;
+            //_upgBar.fillAmount = _upgPercent;
+
+            //Le pregunto si esta maxeado
+            if(_ultimatePowerGauge >= _maxPowerGauge * 2)
+            {
+                _as.canUseMixedAbility = true;
+            }
+        }
+    }
+
+    private void GetPowerGaugeMelee(params object[] parameters)
+    {
+
+        if (_meleePowerGauge >= _maxPowerGauge)
+        {
+            _as.canUseMeleeAbility = true;
+            _meleePowerGauge = _maxPowerGauge;
+            _as.canCastAbility = true;
+            //Le pregunto si esta maxeado
+            if (_ultimatePowerGauge >= _maxPowerGauge * 2)
+            {
+                _as.canUseMixedAbility = true;
+            }
+        }
+        else
+        {
+            //Le doy mas puntos a la power gauge
+            _meleePowerGauge += (float)parameters[0];
+
+            //Le actualizo el fill amount al melee
+            _mpgPercent = _meleePowerGauge / _maxPowerGauge;
+            _mpgBar.fillAmount = _mpgPercent;
+
+
+            //Le doy puntos de la power gauge de la ulti
+            _ultimatePowerGauge += (float)parameters[0];
+
+
+            //Le actualizo el fill amount a la ulti
+            //_upgPercent = _ultimatePowerGauge / _maxPowerGauge * 2;
+            //_upgBar.fillAmount = _upgPercent;
+
+
+            //Le pregunto si esta maxeado
+            if (_ultimatePowerGauge >= _maxPowerGauge * 2)
+            {
+                _as.canUseMixedAbility = true;
+            }
         }
 
 
@@ -78,7 +186,7 @@ public class CharStatus : MonoBehaviour
     {
         _currentExp += (float)parameters[0]; //Le paso la experiencia que me dan
 
-        if(_currentExp >= _expToLvlUp)// Si tengo suficiente experiencia, me lo lvlea
+        if (_currentExp >= _expToLvlUp)// Si tengo suficiente experiencia, me lo lvlea
         {
             EventManager.Instance.Trigger("OnEarningSP", _spPerLvlUp); //Cuando Lvleo recibo Skill Points
             _currentExp = 0; //Resetea la exp de nivel
@@ -88,23 +196,51 @@ public class CharStatus : MonoBehaviour
         }
     }
 
-    private void SkillActivation(params object [] parameters) //Me setea TRUE el parametro que yo necesite del skill que quiera activar
-    {
-        _anim.SetBool((string)parameters[0], true);
-    }
-
-    public bool GetPowerGaugeBarStatus()
-    {
-        return _isFull;
-    }
-
-    public int GetCurrentLvl()
-    {
-        return _currentLvl;
-    }
 
     public void TakeDamage(int dmg)
     {
         hp -= dmg;
+        _hpBar.fillAmount = HpPercentCalculation(hp);
     }
+
+    public float HpPercentCalculation(float actualHp)
+    {
+        hpPercent = actualHp / maxHp;
+        return hpPercent;
+    }
+
+
+    public void UseAbility(int abilityId)
+    {
+        if (abilityId == 0) //Melee ability
+        {
+            _as.canUseMeleeAbility = false;
+            _as.canUseMixedAbility = false;
+            _meleePowerGauge = 0;
+            _mpgBar.fillAmount = 0;
+        }
+        else if (abilityId == 1) //Ranged ability
+        {
+            _as.canUseRangedAbility = false;
+            _as.canUseMixedAbility = false;
+            _rangedPowerGauge = 0;
+            _rpgBar.fillAmount = 0;
+        }
+        else //MixedAbility
+        {
+            _as.canUseMeleeAbility = false;
+            _as.canUseRangedAbility = false;
+            _as.canUseMixedAbility = false;
+            _meleePowerGauge = 0;
+            _rangedPowerGauge = 0;
+            _ultimatePowerGauge = 0;
+            _rpgBar.fillAmount = 0;
+            _mpgBar.fillAmount = 0;
+            _upgBar.fillAmount = 0;
+        }
+
+    }
+
+
+
 }

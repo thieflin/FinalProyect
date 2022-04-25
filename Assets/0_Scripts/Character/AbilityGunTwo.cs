@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class AbilityGunTwo : Abilities
 {
+
+    private void Start()
+    {
+        _cs = GetComponent<CharStatus>();
+        id = 1;
+
+    }
+
     public override void OnUpdate()
     {
         Attack();
@@ -15,6 +23,7 @@ public class AbilityGunTwo : Abilities
 
         if (isIdle == true)
         {
+            _cs.UseAbility(id);
             isIdle = false;
             _anim.SetTrigger("GS2");
             rb.constraints = RigidbodyConstraints.FreezeAll;

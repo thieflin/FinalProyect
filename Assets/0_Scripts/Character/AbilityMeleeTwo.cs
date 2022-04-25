@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class AbilityMeleeTwo : Abilities
 {
+    private void Start()
+    {
+        _cs = GetComponent<CharStatus>();
+        id = 0;
+
+    }
+
+
+
     public override void OnUpdate()
     {
         Attack();
@@ -15,6 +24,7 @@ public class AbilityMeleeTwo : Abilities
 
         if (isIdle == true)
         {
+            _cs.UseAbility(id); //Esto gasta el power gauge
             isIdle = false;
             _anim.SetTrigger("MS2");
             rb.constraints = RigidbodyConstraints.FreezeAll;
