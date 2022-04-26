@@ -2,14 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShaderPosTest : MonoBehaviour
+public class PlayerCutoutWall : MonoBehaviour
 {
     [SerializeField] private Material wallMaterial = null;
     [SerializeField] private Camera Camera = null;
     [SerializeField] private LayerMask wallMask = 0;
+    [Range(0f, 500f)]
     [SerializeField] private int maxCutout = 0;
-    private float opacity= 0;
+    [Range(0f, 1f)]
+    [SerializeField] private float opacity= 0;
     [SerializeField] private float speedOpacity = 0;
+
+    public void Start()
+    {
+        var view = Camera.WorldToViewportPoint(transform.position);
+        wallMaterial.SetVector("_PlayerPosition", -view);
+    }
 
     void Update()
     {

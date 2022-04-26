@@ -19,8 +19,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: e6998966218df754cbb41fc1c187c33c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 2fdd0f87b593db041bbb721ad54e0ecb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
@@ -35,7 +43,7 @@ Material:
     m_Floats:
     - _ChromaticAberration: 0.1
     - _CutoutSize: 0.21493149
-    - _CutoutSizee: 1.5
+    - _CutoutSizee: 1
     - _CutoutSizes: 1.37
     - _FallOff: 30
     - _FallOffSize: 0.08523523
@@ -51,7 +59,7 @@ Material:
     - _Opacity: 0.9
     - _Radius: 3.3
     - _Size: 1.37
-    - _SmoothBorder: 0.453
+    - _SmoothBorder: 0.4
     - _Smoothness: 0
     - _SphereMaskLess: 1
     - _Subtract: 3.25
@@ -70,7 +78,8 @@ Material:
     - _A4: {r: 0, g: 0, b: 0, a: 0}
     - _CenterCutout: {r: 0.02, g: -0.07, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _PlayerPosition: {r: -0.48508206, g: -0.581287, b: -13.972999, a: 0}
+    - _PlayerPosition: {r: -0.48508203, g: -0.581287, b: -13.972999, a: 0}
+    - _PlayerPosition1: {r: -0.485082, g: -0.581287, b: -13.973, a: 0}
     - _PlayerPositon: {r: 0, g: 0, b: 0, a: 0}
     - _Position: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _Vector0: {r: 0.02, g: -0.07, b: 0, a: 0}
