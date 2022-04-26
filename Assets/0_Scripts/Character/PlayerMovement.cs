@@ -58,9 +58,9 @@ public class PlayerMovement : MonoBehaviour
         ////Esto es porque por algun motivo me las desfreezea cuando combea medio xd el tema
         //_rb.constraints = RigidbodyConstraints.FreezeRotation;
 
-        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting)
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting && isGrounded())
             Dash();
-        else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting)
+        else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting && isGrounded())
             Dash();
 
 
@@ -97,7 +97,6 @@ public class PlayerMovement : MonoBehaviour
         var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, -45, 0));
 
         var newInput = matrix.MultiplyPoint3x4(direction);
-
 
         //Walking Animation
 
@@ -164,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Hacia donde va a hacer el dash, segun movimiento
-        whereToDash = new Vector3(newInput.x, 0f, newInput.z);
+        whereToDash = new Vector3(newInput.x, 0, newInput.z);
 
     }
 
@@ -194,15 +193,18 @@ public class PlayerMovement : MonoBehaviour
             {
                 _rb.AddForce(whereToDash * _dashForce, ForceMode.Impulse);
                 transform.forward = whereToDash;
-            }else if( whereToDash == Vector3.zero)
+                StartCoroutine(waitDash());
+            }
+            else if (whereToDash == Vector3.zero)
             {
                 _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
                 transform.forward = transform.forward;
+                StartCoroutine(waitDash());
             }
-            Debug.Log("Im dashing while targeting");
             animator.SetTrigger("Rol");
         }
-        StartCoroutine(waitDash());
+
+
     }
 
     IEnumerator waitDash()
@@ -210,7 +212,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         yield return new WaitForSeconds(_dashTime);
-        //_rb.velocity = Vector3.zero;
+
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
         yield return new WaitForSeconds(_timeBetweenDashes);
@@ -225,10 +227,12 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded()
     {
         //EL RANGO VA A VARIAR CUANDO AGREGUE PJ MAIN
-        if (Physics.Raycast(leftRayCast, Vector3.down, 0.3f) || Physics.Raycast(rightRayCast, Vector3.down, 0.3f) || Physics.Raycast(forwardRayCast, Vector3.down, 0.3f) ||
-        Physics.Raycast(backwardRayCast, Vector3.down, 0.3f))
+        if (Physics.Raycast(leftRayCast, Vector3.down, 0.2f) || Physics.Raycast(rightRayCast, Vector3.down, 0.2f) || Physics.Raycast(forwardRayCast, Vector3.down,0.2f) ||
+        Physics.Raycast(backwardRayCast, Vector3.down, 0.2f))
             return true;
         else
             return false;
     }
+
+
 }

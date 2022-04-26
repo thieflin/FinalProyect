@@ -29,16 +29,18 @@ public class Control
         }
         else if ((verticalMovement != 0 || horizontalMovement != 0) && !player.isGrounded())
         {
-            player.Move(new Vector3(direction.x, -2f, direction.z));
+            player.Move(new Vector3(direction.x, -80f, direction.z));
         }
         else if ((verticalMovement == 0 && horizontalMovement == 0) && !player.isGrounded())
         {
-            player.Move(new Vector3(direction.x, -2f, direction.z));
+            player.Move(new Vector3(direction.x, -80f, direction.z));
         }
         else if (verticalMovement == 0 && horizontalMovement == 0 && player.isGrounded())
         {
-            player.Move(Vector3.zero);
+            player.Move(new Vector3(0, -80f, 0));
         }
 
     }
+
+   
 }
