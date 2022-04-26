@@ -35,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animations")]
     [SerializeField] private Animator animator;
 
+    [Header("Slope values")]
+    public float maxSlopeAngle;
+    private RaycastHit _slopeHit;
+
     //Para testear unicamente
     public SphereCollider sph;
 
@@ -125,10 +129,22 @@ public class PlayerMovement : MonoBehaviour
 
 
         //NORMAL WALKING
-        if (!isDashing && !isTargeting)
+        if (!isDashing && !isTargeting && !OnSlope())
         {
             _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
         }
+
+        //EN ESCALERAS
+        if (OnSlope())
+        {
+            if (newInput.x != 0 && newInput.z != 0)
+                _rb.velocity = (GetSlopeMoveDirection(newInput) * _movementSpeed * Time.fixedDeltaTime);
+            else
+                _rb.velocity = Vector3.zero;
+        }
+
+        //QUITAR GRAVITY EN SLOPE
+        _rb.useGravity = !OnSlope();
 
         //Rotación
 
@@ -227,12 +243,26 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded()
     {
         //EL RANGO VA A VARIAR CUANDO AGREGUE PJ MAIN
-        if (Physics.Raycast(leftRayCast, Vector3.down, 0.2f) || Physics.Raycast(rightRayCast, Vector3.down, 0.2f) || Physics.Raycast(forwardRayCast, Vector3.down,0.2f) ||
+        if (Physics.Raycast(leftRayCast, Vector3.down, 0.2f) || Physics.Raycast(rightRayCast, Vector3.down, 0.2f) || Physics.Raycast(forwardRayCast, Vector3.down, 0.2f) ||
         Physics.Raycast(backwardRayCast, Vector3.down, 0.2f))
             return true;
         else
             return false;
     }
 
+    private bool OnSlope()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out _slopeHit, transform.localScale.y * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, _slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
 
+        return false;
+    }
+
+    private Vector3 GetSlopeMoveDirection(Vector3 direction)
+    {
+        return Vector3.ProjectOnPlane(direction, _slopeHit.normal).normalized;
+    }
 }
