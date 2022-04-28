@@ -9,6 +9,7 @@ public class Zombie : Enemy
     {
         animator = GetComponent<Animator>();
         canFollow = true;
+        _rb = GetComponent<Rigidbody>();
     }
 
 
@@ -29,9 +30,9 @@ public class Zombie : Enemy
             animator.SetFloat("Speed", 0);
         }
 
-        if (!canFollow)
+        if (!playerIsInSight)
         {
-
+            _rb.AddForce(Wander());
         }
 
     }

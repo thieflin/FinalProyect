@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Rigidbody _rb;
+
     [Header("Offset for target sign")]
     public float offsetYTargetLock;
 
@@ -28,7 +30,17 @@ public class Enemy : MonoBehaviour
     [Header("Animator")]
     public Animator animator;
 
+    [Header("Wander")]
+    public WanderVisualizer wanderVisualizer;
+    public float circleRadius;
+    public float circleDistance;
+
     public float rangeAttack;
+
+    private void Start()
+    {
+        wanderVisualizer = GetComponent<WanderVisualizer>();
+    }
 
     public void FieldOfView()
     {
@@ -71,16 +83,31 @@ public class Enemy : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.white;
+        //Gizmos.color = Color.white;
 
-        Vector3 lineA = DirFromAngle(_viewAngle / 2 + transform.eulerAngles.y);
-        Vector3 lineB = DirFromAngle(-_viewAngle / 2 + transform.eulerAngles.y);
-        Gizmos.DrawLine(transform.position, transform.position + lineA * _viewRadius);
-        Gizmos.DrawLine(transform.position, transform.position + lineB * _viewRadius);
+        //Vector3 lineA = DirFromAngle(_viewAngle / 2 + transform.eulerAngles.y);
+        //Vector3 lineB = DirFromAngle(-_viewAngle / 2 + transform.eulerAngles.y);
+        //Gizmos.DrawLine(transform.position, transform.position + lineA * _viewRadius);
+        //Gizmos.DrawLine(transform.position, transform.position + lineB * _viewRadius);
+
+    }
+
+    void DrawWander(Vector3 circleCenter)
+    {
+        if (wanderVisualizer)
+            wanderVisualizer.GetGizmosParams(circleCenter, circleRadius);
     }
 
     Vector3 DirFromAngle(float angle)
     {
         return new Vector3(Mathf.Sin(angle * Mathf.Deg2Rad), 0, Mathf.Cos(angle * Mathf.Deg2Rad));
+    }
+
+    public Vector3 Wander()
+    {
+        Vector3 circleCenter = transform.position + transform.forward * circleDistance;
+
+        DrawWander(circleCenter);
+        return default;
     }
 }
