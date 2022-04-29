@@ -13,7 +13,7 @@ public abstract class EnemyData : MonoBehaviour
     [SerializeField] protected float _expPoints;
 
 
-    public virtual void GetEXPPoints(float expPoints)
+    public virtual void GetEXPPoints(float expPoints) 
     {
         EventManager.Instance.Trigger("OnGettingExp", expPoints);
     }

@@ -126,6 +126,13 @@ MonoBehaviour:
   triggerAttack: {fileID: 0}
   player: {fileID: 0}
   animator: {fileID: 0}
+  wanderVisualizer: {fileID: 0}
+  circleRadius: 0
+  circleDistance: 0
+  smallCircleRadius: 0
+  velocity: {x: 0, y: 0, z: 0}
+  maxForce: 0
+  maxSpeed: 0
   rangeAttack: 0
   chargeForce: 50
   closeToAttack: 8
@@ -167,4 +174,4 @@ MonoBehaviour:
   _abilityLayermask: 10
   _dmgMitigation: 2
   _hpSlider: {fileID: 0}
-  _expPoints: 30
+  _expPoints: 35

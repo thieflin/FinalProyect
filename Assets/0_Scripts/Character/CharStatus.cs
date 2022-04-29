@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CharStatus : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class CharStatus : MonoBehaviour
     [SerializeField] private Image _hpBar;
 
     [Header("Level Up Vars")]
-    private int _currentLvl = 0;
+    [SerializeField] private int _currentLvl = 0;
     [SerializeField] private float _currentExp = 0; //Exp actual
     [SerializeField] private float _expToLvlUp = 0; //Exp para lvlear
     [SerializeField] private float _expToLvlUpMultiplier = 0; //Multiplicador de exp para lvlear
     [SerializeField] private int _spPerLvlUp = 0; //SPs que me da lvlear
+    [SerializeField] private Image _expBar;
+    [SerializeField] private TextMeshProUGUI _lvlText;
 
     [Header("Power Gauge")]
     public float powerGauge;
@@ -49,7 +52,7 @@ public class CharStatus : MonoBehaviour
 
     private void Awake()
     {
-        maxHp = hp = 100;
+        hp = maxHp;
         _anim = GetComponent<Animator>();
         _as = GetComponent<AbilitiesStatus>();
 
@@ -79,6 +82,7 @@ public class CharStatus : MonoBehaviour
         EventManager.Instance.Subscribe("OnGettingExp", GetExp); //Evento para generar mas Nivel
         EventManager.Instance.Subscribe("OnGettingMPG", GetPowerGaugeMelee); //Evento para generar powergaguge ( melee )
         EventManager.Instance.Subscribe("OnGettingRPG", GetPowerGaugeRanged); //Evento para generar power gauge ( ranged )
+        _expBar.fillAmount = 0;
     }
 
     private void Update()
@@ -87,7 +91,10 @@ public class CharStatus : MonoBehaviour
         {
             EventManager.Instance.Trigger("OnGettingMPG", 10f);
         }
-
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            EventManager.Instance.Trigger("OnGettingExp", 10f);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             EventManager.Instance.Trigger("OnGettingRPG", 10f);
@@ -191,12 +198,15 @@ public class CharStatus : MonoBehaviour
     private void GetExp(params object[] parameters) //Sirve para cualquier elemento que le de experiencia
     {
         _currentExp += (float)parameters[0]; //Le paso la experiencia que me dan
-
+        _expBar.fillAmount = _currentExp / _expToLvlUp;
         if (_currentExp >= _expToLvlUp)// Si tengo suficiente experiencia, me lo lvlea
         {
+            
             EventManager.Instance.Trigger("OnEarningSP", _spPerLvlUp); //Cuando Lvleo recibo Skill Points
             _currentExp = 0; //Resetea la exp de nivel
+            _expBar.fillAmount = 0f;
             _currentLvl++; //Aumenta nivel
+            _lvlText.text = _currentLvl.ToString();
             EventManager.Instance.Trigger("OnUpdatingLvl", _currentLvl);
             _expToLvlUp = _expToLvlUp * _expToLvlUpMultiplier; //Aumenta exp necesaria
         }
