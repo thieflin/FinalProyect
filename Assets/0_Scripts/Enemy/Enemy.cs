@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Rigidbody _rb;
-
     [Header("Offset for target sign")]
     public float offsetYTargetLock;
 
@@ -34,6 +32,11 @@ public class Enemy : MonoBehaviour
     public WanderVisualizer wanderVisualizer;
     public float circleRadius;
     public float circleDistance;
+    private float _previousAngle;
+    public float smallCircleRadius;
+    public Vector3 velocity;
+    public float maxForce;
+    public float maxSpeed;
 
     public float rangeAttack;
 
@@ -92,10 +95,11 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void DrawWander(Vector3 circleCenter)
+    void DrawWander(Vector3 circleCenter, Vector3 previousWanderPoint, Vector3 newPoint)
     {
-        if (wanderVisualizer)
-            wanderVisualizer.GetGizmosParams(circleCenter, circleRadius);
+        if (wanderVisualizer == null) return;
+
+        wanderVisualizer.GetGizmosParams(circleCenter, circleRadius, previousWanderPoint, smallCircleRadius, newPoint);
     }
 
     Vector3 DirFromAngle(float angle)
@@ -106,8 +110,38 @@ public class Enemy : MonoBehaviour
     public Vector3 Wander()
     {
         Vector3 circleCenter = transform.position + transform.forward * circleDistance;
+        Vector3 previousWanderAngle = DirFromAngle(_previousAngle + transform.eulerAngles.y);
+        Vector3 previousWanderPoint = circleCenter + previousWanderAngle * circleRadius;
 
-        DrawWander(circleCenter);
-        return default;
+        Vector3 randomVector = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+        randomVector = randomVector.normalized * smallCircleRadius;
+        Vector3 newPoint = previousWanderPoint + randomVector;
+
+        Vector3 linePoint = newPoint - circleCenter;
+        Vector3 newWanderPoint = circleCenter + linePoint.normalized * circleRadius;
+
+        Vector3 oldDir = circleCenter + previousWanderPoint;
+        Vector3 newDir = circleCenter + newWanderPoint;
+
+        float angle = Vector3.SignedAngle(oldDir, newDir, circleCenter + Vector3.up);
+        _previousAngle += angle;
+        if (_previousAngle > 360) _previousAngle -= 360;
+        if (_previousAngle < 0) _previousAngle += 360;
+
+
+        DrawWander(circleCenter, previousWanderPoint, newPoint);
+        return Seek(newWanderPoint);
+    }
+
+    Vector3 Seek(Vector3 target)
+    {
+        Vector3 desired = (target - transform.position).normalized * maxSpeed;
+        Vector3 steering = Vector3.ClampMagnitude(desired - velocity, maxForce);
+        return steering;
+    }
+
+    public void AddForce(Vector3 force)
+    {
+        velocity = Vector3.ClampMagnitude(velocity + force, maxSpeed);
     }
 }

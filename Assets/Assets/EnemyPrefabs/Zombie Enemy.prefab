@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e265f8aa90fc98c419ad696860b8bb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 0}
   offsetYTargetLock: 2
   movementSpeed: 5
   _viewRadius: 50
@@ -138,6 +137,10 @@ MonoBehaviour:
   wanderVisualizer: {fileID: 0}
   circleRadius: 2
   circleDistance: 1.7
+  smallCircleRadius: 1.4
+  velocity: {x: 0, y: 0, z: 0}
+  maxForce: 0.15
+  maxSpeed: 3
   rangeAttack: 2.5
   canFollow: 0
 --- !u!114 &-2390950006788396135

@@ -72,7 +72,8 @@ public class TargetLock : MonoBehaviour
             }
         }
 
-        player.TargetEnemy(closestEnemy, targetSignPrefab);
+        if (closestEnemy != null)
+            player.TargetEnemy(closestEnemy, targetSignPrefab);
 
     }
 
