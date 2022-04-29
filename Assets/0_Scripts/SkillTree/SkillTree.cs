@@ -25,9 +25,14 @@ public class SkillTree : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.CapsLock) || Input.GetButtonDown("Pause"))
             if (_skillTree.activeSelf)
+            {
                 _skillTree.SetActive(false);
+                Pause.UnpauseGame();
+            }
+                
             else
             {
+                Pause.PauseGame();
                 EventSystem.current.SetSelectedGameObject(startingButton);
                 _skillTree.SetActive(true);
             }
