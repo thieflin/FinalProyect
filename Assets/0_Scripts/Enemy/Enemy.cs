@@ -69,6 +69,8 @@ public class Enemy : MonoBehaviour
                         playerIsInSight = true;
                     }
                 }
+                else
+                    playerIsInSight = false;
             }
 
             if ((item.transform.position - transform.position).magnitude > _viewRadius || !InSight(transform.position, item.transform.position))

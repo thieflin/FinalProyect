@@ -126,7 +126,7 @@ MonoBehaviour:
   _viewAngle: 360
   _obstacleLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4160
   _playerMask:
     serializedVersion: 2
     m_Bits: 128
