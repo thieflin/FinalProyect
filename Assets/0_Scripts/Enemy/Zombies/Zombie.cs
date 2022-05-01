@@ -29,7 +29,7 @@ public class Zombie : Enemy
             animator.SetFloat("Speed", 0);
         }
 
-        if (!playerIsInSight)
+        if (!playerIsInSight && !isFacingWall())
         {
             animator.SetFloat("Speed", 1);
             AddForce(Wander());
@@ -37,6 +37,12 @@ public class Zombie : Enemy
             transform.forward = velocity.normalized;
         }
 
+        if (isFacingWall() && !playerIsInSight && canRotate)
+        {
+            transform.Rotate(0,180f,0);
+            velocity *= -1;
+            canRotate = false;
+        }
     }
     float timeLeft;
     private void FollowPlayer()
@@ -68,7 +74,7 @@ public class Zombie : Enemy
 
     private void Attack()
     {
-        animator.SetTrigger("Attack"); 
+        animator.SetTrigger("Attack");
         canFollow = false;
         timeLeft = 3f;
 

@@ -61,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
     {
         ////Esto es porque por algun motivo me las desfreezea cuando combea medio xd el tema
         //_rb.constraints = RigidbodyConstraints.FreezeRotation;
-
         if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting && isGrounded())
             Dash();
         else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting && isGrounded())

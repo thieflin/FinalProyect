@@ -141,6 +141,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   maxForce: 0.15
   maxSpeed: 3
+  canRotate: 0
   rangeAttack: 2.5
   canFollow: 0
 --- !u!114 &-2390950006788396135

@@ -37,12 +37,14 @@ public class Enemy : MonoBehaviour
     public Vector3 velocity;
     public float maxForce;
     public float maxSpeed;
+    public bool canRotate;
 
     public float rangeAttack;
 
     private void Start()
     {
         wanderVisualizer = GetComponent<WanderVisualizer>();
+        canRotate = true;
     }
 
     public void FieldOfView()
@@ -143,5 +145,21 @@ public class Enemy : MonoBehaviour
     public void AddForce(Vector3 force)
     {
         velocity = Vector3.ClampMagnitude(velocity + force, maxSpeed);
+    }
+
+    public bool isFacingWall()
+    {
+        if (Physics.Raycast(transform.position, transform.forward, 1.8f, _obstacleLayer))
+        {
+            StartCoroutine(WaitToRotate());
+            return true;
+        }
+        else return false;
+    }
+
+    public IEnumerator WaitToRotate()
+    {
+        yield return new WaitForSeconds(1f);
+        canRotate = true;
     }
 }
