@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-guid: f8980a24121130044ace85cc4638b50e
+guid: 68d2f78547ecf0a4eb96c6dce621ca9d
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PP1_MAT3
+    second: {fileID: 2100000, guid: 66729ae88a3436c42ac12ef4ff1f28c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -100,7 +102,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
