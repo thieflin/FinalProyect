@@ -11,6 +11,7 @@ public abstract class EnemyData : MonoBehaviour
     [SerializeField] protected float _dmgMitigation;
     [SerializeField] protected Slider _hpSlider;
     [SerializeField] protected float _expPoints;
+    public bool isWaveEnemy;
 
 
     public virtual void GetEXPPoints(float expPoints) 

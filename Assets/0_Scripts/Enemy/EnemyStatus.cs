@@ -22,6 +22,10 @@ public class EnemyStatus : EnemyData, IDamageable
 
             gameObject.SetActive(false);
 
+            if (isWaveEnemy)
+            {
+                EventManager.Instance.Trigger("OnKillingWaveEnemy");
+            }
 
             //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO MÁS
             if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
