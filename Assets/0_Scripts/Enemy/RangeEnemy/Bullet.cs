@@ -14,6 +14,7 @@ public class Bullet : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         target = new Vector3(player.transform.position.x, player.transform.position.y + (player.transform.localScale.y), player.transform.position.z);
+
     }
 
     private void Update()
@@ -28,8 +29,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")) {
+            other.GetComponent<CharStatus>().TakeDamage(5);
             DestroyBullet();
+        }
     }
 
     void DestroyBullet()

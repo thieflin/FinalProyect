@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     public Collider triggerAttack;
 
     public GameObject player;
-
+    
     [Header("Animator")]
     public Animator animator;
 

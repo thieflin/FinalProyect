@@ -10,7 +10,6 @@ public class AttackTrigger : MonoBehaviour
         {
             other.GetComponent<CharStatus>().TakeDamage(5);
             Debug.Log("PEGUE");
-            
         }
     }
 

@@ -34,6 +34,20 @@ public class ChargeEnemy : Enemy
             CloseToPlayer();
             timeBtwAttacks -= Time.deltaTime;
         }
+
+        if (!playerIsInSight && !isFacingWall())
+        {
+            AddForce(Wander());
+            transform.position += velocity * Time.deltaTime;
+            transform.forward = velocity.normalized;
+        }
+
+        if (isFacingWall() && !playerIsInSight && canRotate)
+        {
+            transform.Rotate(0, 180f, 0);
+            velocity *= -1;
+            canRotate = false;
+        }
     }
 
     void CloseToPlayer()
@@ -76,5 +90,14 @@ public class ChargeEnemy : Enemy
         yield return new WaitForSeconds(chargeAttackDuration);
         rb.velocity = Vector3.zero;
         isResting = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && isResting)
+        {
+            collision.gameObject.GetComponent<CharStatus>().TakeDamage(20);
+            Debug.Log("PEGUE AL PLAYER CON CHARGER");
+        }
     }
 }

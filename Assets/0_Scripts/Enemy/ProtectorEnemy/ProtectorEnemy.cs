@@ -18,9 +18,15 @@ public class ProtectorEnemy : Enemy
     public LayerMask floorMask;
     public Rigidbody rbProtector;
 
+    public Rigidbody playerRb;
+
     private void Start()
     {
         rbProtector = GetComponent<Rigidbody>();
+
+        playerRb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+
+        //StartCoroutine(AddForceToPlayer());
 
         if (Physics.Raycast(transform.position, transform.up * -1, out RaycastHit hitInfo, Mathf.Infinity, floorMask))
         {
@@ -50,43 +56,36 @@ public class ProtectorEnemy : Enemy
             signLandPrefab.transform.position = new Vector3(transform.position.x, landsAt.y + 0.2f, transform.position.z);
             signLandPrefab.transform.forward = transform.forward;
         }
+
+        float distanceWithPlayer = Vector3.Distance(playerRb.transform.position, transform.position);
+
+        if (distanceWithPlayer <= 5 && !didExplote)
+        {
+            playerRb.velocity = Vector3.zero;
+            playerRb.AddForce(playerRb.transform.forward * -1 * explosionForce, ForceMode.Impulse);
+            playerRb.GetComponent<CharStatus>().TakeDamage(20);
+            didExplote = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Player") && !didExplote)
-        {
-            Explosion();
-            fallDownFaster = false;
-        }
-        if (collision.gameObject.CompareTag("Player") && !didExplote)
-        {
-            Debug.Log("GOLPEO AL PLAYER CON EL PROTECTOR");
 
-            Explosion();
-        }
-    }
+        ////var playerRb = collision.gameObject.GetComponent<Rigidbody>();
 
-    private void Explosion()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radiusExplosion);
-
-
-        foreach (var player in colliders)
-        {
-            Rigidbody rb = player.GetComponent<Rigidbody>();
-
-            Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
-
-            if (rb != null && rb.gameObject.CompareTag("Player"))
-            {
-                //rb.AddExplosionForce(explosionForce, signLandPrefab.transform.position, radiusExplosion);
-                rb.AddForce(directionToPlayer * explosionForce * Time.fixedDeltaTime, ForceMode.Impulse);
-            }
-        }
+        ////playerRb.AddForce(playerRb.transform.forward * -1 * explosionForce, ForceMode.Impulse);
+        //if (collision.gameObject.CompareTag("Player") && !didExplote)
+        //{
+        //    playerRb.velocity = Vector3.zero;
+        //    playerRb.AddForce(playerRb.transform.forward * -1 * explosionForce, ForceMode.VelocityChange);
+        //    collision.gameObject.GetComponent<CharStatus>().TakeDamage(20);
+        //    didExplote = true;
+        //}
 
         signLandPrefab.SetActive(false);
 
         didExplote = true;
+
     }
+
 }

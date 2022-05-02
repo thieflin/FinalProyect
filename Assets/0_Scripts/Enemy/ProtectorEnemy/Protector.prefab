@@ -126,21 +126,30 @@ MonoBehaviour:
   triggerAttack: {fileID: 0}
   player: {fileID: 0}
   animator: {fileID: 0}
+  wanderVisualizer: {fileID: 0}
+  circleRadius: 0
+  circleDistance: 0
+  smallCircleRadius: 0
+  velocity: {x: 0, y: 0, z: 0}
+  maxForce: 0
+  maxSpeed: 0
+  canRotate: 0
   rangeAttack: 0
   owner: {fileID: 0}
   signLand: {fileID: 4443115043700917824, guid: c11d198465180a840b49e97baa29c978, type: 3}
   signLandPrefab: {fileID: 0}
   signCreated: 0
   fallDownFaster: 0
-  fallDownValue: 6000
+  fallDownValue: 3000
   didExplote: 0
-  radiusExplosion: 50
-  explosionForce: 1000
+  radiusExplosion: 10
+  explosionForce: 20
   landsAt: {x: 0, y: 0, z: 0}
   floorMask:
     serializedVersion: 2
     m_Bits: 2048
   rbProtector: {fileID: 0}
+  playerRb: {fileID: 0}
 --- !u!54 &2731562339618483677
 Rigidbody:
   m_ObjectHideFlags: 0

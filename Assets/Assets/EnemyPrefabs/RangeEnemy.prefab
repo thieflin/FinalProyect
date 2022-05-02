@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetYTargetLock: 0.1
   movementSpeed: 3
-  _viewRadius: 30
+  _viewRadius: 15
   _viewAngle: 360
   _obstacleLayer:
     serializedVersion: 2
@@ -134,6 +134,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   maxForce: 0
   maxSpeed: 0
+  canRotate: 0
   rangeAttack: 0
   bulletPrefab: {fileID: 7430886202154253611, guid: 111f0b1563ce9aa47aad67ddfea70188, type: 3}
   _timeBtwShots: 0

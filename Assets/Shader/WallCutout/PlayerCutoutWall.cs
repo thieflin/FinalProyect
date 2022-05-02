@@ -17,7 +17,7 @@ public class PlayerCutoutWall : MonoBehaviour
     {
         var view = Camera.WorldToViewportPoint(transform.position);
         wallMaterial.SetVector("_PlayerPosition", -view);
-        wallMaterial.SetFloat("_CutoutSizee", 1);
+        wallMaterial.SetFloat("_CutoutSizee", 0);
     }
 
     void Update()

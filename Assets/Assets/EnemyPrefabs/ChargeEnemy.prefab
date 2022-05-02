@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5394635484024493427}
   - component: {fileID: 5394635484024493426}
   - component: {fileID: 5394635484024493425}
+  - component: {fileID: -8649110931760336338}
   m_Layer: 8
   m_Name: ChargeEnemy
   m_TagString: Enemy
@@ -127,12 +128,13 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   wanderVisualizer: {fileID: 0}
-  circleRadius: 0
-  circleDistance: 0
-  smallCircleRadius: 0
+  circleRadius: 2
+  circleDistance: 1.7
+  smallCircleRadius: 1.4
   velocity: {x: 0, y: 0, z: 0}
-  maxForce: 0
-  maxSpeed: 0
+  maxForce: 0.15
+  maxSpeed: 3
+  canRotate: 0
   rangeAttack: 0
   chargeForce: 50
   closeToAttack: 8
@@ -175,3 +177,15 @@ MonoBehaviour:
   _dmgMitigation: 2
   _hpSlider: {fileID: 0}
   _expPoints: 35
+--- !u!114 &-8649110931760336338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394635484024493384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de64dd232c7b8f4bbbfecffffb528cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
