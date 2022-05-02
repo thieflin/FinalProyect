@@ -25,7 +25,7 @@ public class PlayerCutoutWall : MonoBehaviour
         var dir = Camera.transform.position - transform.position;
         var ray = new Ray(transform.position, dir);
 
-        if (Physics.Raycast(ray, maxCutout, wallMask) && opacity < 1)
+        if (Physics.Raycast(ray, maxCutout, wallMask) && opacity < 1.69f)
         {
             opacity += Time.deltaTime * speedOpacity;
             wallMaterial.SetFloat("_CutoutSizee", opacity);

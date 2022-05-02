@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class DesactivateRoof : MonoBehaviour
 {
-    public GameObject roofToDesactivate;
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            roofToDesactivate.SetActive(false);
-        }
-    }
+    //public GameObject roofToDesactivate;
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        roofToDesactivate.SetActive(false);
+    //    }
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            roofToDesactivate.SetActive(true);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        roofToDesactivate.SetActive(true);
+    //    }
+    //}
 }

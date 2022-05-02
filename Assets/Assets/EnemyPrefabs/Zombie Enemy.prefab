@@ -162,7 +162,8 @@ MonoBehaviour:
   _abilityLayermask: 10
   _dmgMitigation: 1
   _hpSlider: {fileID: 0}
-  _expPoints: 40
+  _expPoints: 10
+  isWaveEnemy: 0
 --- !u!54 &1989758057329770485
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonActivateBridge : MonoBehaviour
 {
     public Animator animBridge;
-    public GameObject desactivateWallCollider;
+    //public GameObject desactivateWallCollider;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +13,7 @@ public class ButtonActivateBridge : MonoBehaviour
         {
             AudioManager.PlaySound("puzzle");
             animBridge.SetTrigger("ActivateBridge");
-            desactivateWallCollider.SetActive(false);
+            //desactivateWallCollider.SetActive(false);
             gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
