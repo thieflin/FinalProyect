@@ -62,30 +62,29 @@ public class ProtectorEnemy : Enemy
         if (distanceWithPlayer <= 5 && !didExplote)
         {
             playerRb.velocity = Vector3.zero;
+            //StartCoroutine(WaitToActivateConstraints());
             playerRb.AddForce(playerRb.transform.forward * -1 * explosionForce, ForceMode.Impulse);
+
             playerRb.GetComponent<CharStatus>().TakeDamage(20);
+            
             didExplote = true;
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        ////var playerRb = collision.gameObject.GetComponent<Rigidbody>();
-
-        ////playerRb.AddForce(playerRb.transform.forward * -1 * explosionForce, ForceMode.Impulse);
-        //if (collision.gameObject.CompareTag("Player") && !didExplote)
-        //{
-        //    playerRb.velocity = Vector3.zero;
-        //    playerRb.AddForce(playerRb.transform.forward * -1 * explosionForce, ForceMode.VelocityChange);
-        //    collision.gameObject.GetComponent<CharStatus>().TakeDamage(20);
-        //    didExplote = true;
-        //}
-
         signLandPrefab.SetActive(false);
 
         didExplote = true;
-
     }
+
+    //IEnumerator WaitToActivateConstraints()
+    //{
+    //    RigidbodyConstraints saveConstraints = playerRb.constraints;
+    //    playerRb.constraints = RigidbodyConstraints.None;
+    //    yield return new WaitForSeconds(0.2f);
+    //    playerRb.constraints = saveConstraints;
+
+    //}
 
 }
