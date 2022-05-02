@@ -10,7 +10,6 @@ public class WaveManager : MonoBehaviour
         var player = other.GetComponent<PlayerMovement>();
         if (other)
         {
-            waves.SpawnEnemies();
         }
     }
 }

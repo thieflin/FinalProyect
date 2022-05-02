@@ -18,14 +18,15 @@ public class EnemyStatus : EnemyData, IDamageable
 
         if (_currentHp <= 0)
         {
-            GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
-
-            gameObject.SetActive(false);
-
             if (isWaveEnemy)
             {
                 EventManager.Instance.Trigger("OnKillingWaveEnemy");
             }
+            GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
+
+            gameObject.SetActive(false);
+
+
 
             //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO MÁS
             if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
@@ -41,6 +42,7 @@ public class EnemyStatus : EnemyData, IDamageable
         {
             Debug.Log("toy pegando jeje");
             TakeDamage(Combo.swordDmg);
+
         }
 
         if(other.gameObject.layer == _abilityLayermask && !other.CompareTag("Bullet"))
