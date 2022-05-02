@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class PuertaPalanca : MonoBehaviour
 {
-    public List<GameObject> levers = new List<GameObject>();
+    //Locks de la puerta
+    public List<GameObject> locks = new List<GameObject>();
     public int requiredLevers;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int currentLevers;
 }
