@@ -99,7 +99,9 @@ public class CharStatus : MonoBehaviour
         {
             EventManager.Instance.Trigger("OnGettingRPG", 10f);
         }
+
     }
+
 
     private void GetPowerGaugeRanged(params object[] parameters)
     {
@@ -134,7 +136,7 @@ public class CharStatus : MonoBehaviour
             //_upgBar.fillAmount = _upgPercent;
 
             //Le pregunto si esta maxeado
-            if(_ultimatePowerGauge >= _maxPowerGauge * 2)
+            if (_ultimatePowerGauge >= _maxPowerGauge * 2)
             {
                 _as.canUseMixedAbility = true;
             }
@@ -201,7 +203,7 @@ public class CharStatus : MonoBehaviour
         _expBar.fillAmount = _currentExp / _expToLvlUp;
         if (_currentExp >= _expToLvlUp)// Si tengo suficiente experiencia, me lo lvlea
         {
-            
+
             EventManager.Instance.Trigger("OnEarningSP", _spPerLvlUp); //Cuando Lvleo recibo Skill Points
             _currentExp = 0; //Resetea la exp de nivel
             _expBar.fillAmount = 0f;

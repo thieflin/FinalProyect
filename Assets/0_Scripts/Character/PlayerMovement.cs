@@ -200,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
     //Para cuando dashea y esta targeteando
     public void Dash()
     {
-        if (canDash)
+        if (canDash && !OnSlope())
         {
             _rb.velocity = Vector3.zero;
 
@@ -227,7 +227,6 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         yield return new WaitForSeconds(_dashTime);
-
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
         yield return new WaitForSeconds(_timeBetweenDashes);

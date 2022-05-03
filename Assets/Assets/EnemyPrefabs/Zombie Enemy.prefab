@@ -126,10 +126,13 @@ MonoBehaviour:
   _viewAngle: 360
   _obstacleLayer:
     serializedVersion: 2
-    m_Bits: 4160
+    m_Bits: 8256
   _playerMask:
     serializedVersion: 2
     m_Bits: 128
+  _enemyWallMask:
+    serializedVersion: 2
+    m_Bits: 12352
   playerIsInSight: 0
   triggerAttack: {fileID: 727175087956358457}
   player: {fileID: 0}

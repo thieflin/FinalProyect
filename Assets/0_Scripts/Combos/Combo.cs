@@ -37,9 +37,9 @@ public class Combo : MonoBehaviour
 
         if (isMoving)
         {
-            transform.position += transform.forward * Time.deltaTime * 8;
+            _rb.AddForce(transform.forward * Time.deltaTime * 250, ForceMode.Force);
         }
-        else if(isMovingBack) transform.position -= transform.forward * Time.deltaTime * 8;
+        else if (isMovingBack) _rb.AddForce(transform.forward * Time.deltaTime * -250, ForceMode.Force);
 
         if (Input.GetKeyDown(KeyCode.Y))
         {

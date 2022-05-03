@@ -13,7 +13,7 @@ public class InstrucLootables : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(0))
         {
             if (looted)
             {

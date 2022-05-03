@@ -123,22 +123,25 @@ MonoBehaviour:
   _playerMask:
     serializedVersion: 2
     m_Bits: 128
+  _enemyWallMask:
+    serializedVersion: 2
+    m_Bits: 4096
   playerIsInSight: 0
   triggerAttack: {fileID: 0}
   player: {fileID: 0}
   animator: {fileID: 0}
   wanderVisualizer: {fileID: 0}
-  circleRadius: 0
-  circleDistance: 0
-  smallCircleRadius: 0
+  circleRadius: 2
+  circleDistance: 1.7
+  smallCircleRadius: 1.4
   velocity: {x: 0, y: 0, z: 0}
-  maxForce: 0
-  maxSpeed: 0
+  maxForce: 0.15
+  maxSpeed: 2
   canRotate: 0
   rangeAttack: 0
   bulletPrefab: {fileID: 7430886202154253611, guid: 111f0b1563ce9aa47aad67ddfea70188, type: 3}
   _timeBtwShots: 0
-  startTimeBtwShots: 4
+  startTimeBtwShots: 2
   stoppingDistance: 10
   goBackDistance: 5
   multiplierRunningAway: 3

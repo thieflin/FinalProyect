@@ -47,6 +47,20 @@ public class RangeEnemy : Enemy
                 InvocarProtector();
             }
         }
+
+        if (!playerIsInSight && !isFacingWall())
+        {
+            AddForce(Wander());
+            transform.position += velocity * Time.deltaTime;
+            transform.forward = velocity.normalized;
+        }
+
+        if (isFacingWall() && !playerIsInSight && canRotate)
+        {
+            transform.Rotate(0, 180f, 0);
+            velocity *= -1;
+            canRotate = false;
+        }
     }
 
     private void Attack()

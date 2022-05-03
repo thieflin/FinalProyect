@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _viewAngle;
     [SerializeField] private LayerMask _obstacleLayer;
     [SerializeField] private LayerMask _playerMask;
+    [SerializeField] private LayerMask _enemyWallMask;
     public bool playerIsInSight;
 
     [Header("Attack Trigger")]
@@ -151,7 +152,7 @@ public class Enemy : MonoBehaviour
 
     public bool isFacingWall()
     {
-        if (Physics.Raycast(transform.position, transform.forward, 1.8f, _obstacleLayer))
+        if (Physics.Raycast(transform.position, transform.forward, 1.8f, _enemyWallMask))
         {
             StartCoroutine(WaitToRotate());
             return true;

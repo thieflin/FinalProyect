@@ -15,7 +15,7 @@ public class InstructionsTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(0))
         {
             if (triggerable)
             {
