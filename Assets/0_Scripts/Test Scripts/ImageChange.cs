@@ -10,6 +10,8 @@ public class ImageChange : MonoBehaviour
     public int returnalSpeed;
     public PlayerMovement pm;
 
+    public GameObject allEnemies;
+
     public static int zone;
 
 
@@ -28,12 +30,14 @@ public class ImageChange : MonoBehaviour
 
     public void AnimEventIn() 
     {
+        allEnemies.SetActive(false);
         deathFloor.SetActive(false);
         hiddenSpaces[zone].SetActive(true);
         realSpaces[zone].SetActive(false);
     }    
     public void AnimEventOut() 
     {
+        allEnemies.SetActive(true);
         deathFloor.SetActive(true);
         hiddenSpaces[zone].SetActive(false);
         realSpaces[zone].SetActive(true);
