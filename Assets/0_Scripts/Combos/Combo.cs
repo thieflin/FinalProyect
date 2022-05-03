@@ -19,6 +19,9 @@ public class Combo : MonoBehaviour
     public static int swordDmg;
     [SerializeField] private Rigidbody _rb;
 
+    public bool isMovingBack;
+    public bool isMoving;
+
     private void Start()
     {
         swordDmg = 10;
@@ -32,6 +35,11 @@ public class Combo : MonoBehaviour
     {
         InputController();
 
+        if (isMoving)
+        {
+            transform.position += transform.forward * Time.deltaTime * 8;
+        }
+        else if(isMovingBack) transform.position -= transform.forward * Time.deltaTime * 8;
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
@@ -87,6 +95,7 @@ public class Combo : MonoBehaviour
             case 1:
                 _rb.constraints = RigidbodyConstraints.FreezeAll;
                 _pm._movementSpeed = 0;
+                
                 ani.SetTrigger("A1");
 
                 _nextCombo = 0;
@@ -107,6 +116,7 @@ public class Combo : MonoBehaviour
         ani.SetTrigger("Idle");
         _pm.enabled = true;
         _isIdle = true;
+        isMoving = false;
         _rb.constraints -= RigidbodyConstraints.FreezePosition;
     }
 
@@ -115,6 +125,7 @@ public class Combo : MonoBehaviour
         if (!upgradedHitbox)
             meleeHitboxes[0].SetActive(true);
         else meleeHitboxesUpgraded[0].SetActive(true);
+        isMoving = true;
     }
 
 
@@ -123,6 +134,7 @@ public class Combo : MonoBehaviour
         if (!upgradedHitbox)
             meleeHitboxes[1].SetActive(true);
         else meleeHitboxesUpgraded[1].SetActive(true);
+        isMoving = true;
 
     }
 
@@ -131,6 +143,7 @@ public class Combo : MonoBehaviour
         if (!upgradedHitbox)
             meleeHitboxes[2].SetActive(true);
         else meleeHitboxesUpgraded[2].SetActive(true);
+        isMoving = true;
 
     }
 
@@ -139,6 +152,7 @@ public class Combo : MonoBehaviour
         if (!upgradedHitbox)
             meleeHitboxes[0].SetActive(false);
         else meleeHitboxesUpgraded[0].SetActive(false);
+        isMoving = false;
 
     }
     public void HitBoxMelee2Deactivate()
@@ -146,6 +160,8 @@ public class Combo : MonoBehaviour
         if (!upgradedHitbox)
             meleeHitboxes[1].SetActive(false);
         else meleeHitboxesUpgraded[1].SetActive(false);
+        isMoving = false;
+
 
     }
     public void HitBoxMelee3Deactivate()
@@ -153,6 +169,8 @@ public class Combo : MonoBehaviour
         if (!upgradedHitbox)
             meleeHitboxes[2].SetActive(false);
         else meleeHitboxesUpgraded[2].SetActive(false);
+        isMoving = false;
+
     }
 
     public void EnablePlayermovement()
@@ -169,7 +187,14 @@ public class Combo : MonoBehaviour
     public void ColliderActivationRangedCombo(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
     {
         if (rangedHitboxes[ColliderNumber].activeSelf)
+        {
+            isMovingBack = false;
             rangedHitboxes[ColliderNumber].SetActive(false);
-        else rangedHitboxes[ColliderNumber].SetActive(true);
+        }
+        else
+        {
+            isMovingBack = true;
+            rangedHitboxes[ColliderNumber].SetActive(true);
+        }
     }
 }
