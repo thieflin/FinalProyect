@@ -26,6 +26,7 @@ public class Palanca : MonoBehaviour
             assignedDoor.currentLevers++;
             //Self trigger de animacion
             _anim.SetTrigger("LeverHit");
+            AudioManager.PlaySound("hit");
             //Le desactivo el collider para que no le pegue mas
             gameObject.GetComponent<BoxCollider>().enabled = false;
 

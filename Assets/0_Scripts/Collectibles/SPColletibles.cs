@@ -11,6 +11,7 @@ public class SPColletibles : MonoBehaviour, ICollectible
     {
         //Deberia correr una mini animacion
         EventManager.Instance.Trigger("OnEarningSP", spValue);
+        AudioManager.PlaySound("collect");
         Destroy(gameObject);
     }
 
@@ -21,6 +22,7 @@ public class SPColletibles : MonoBehaviour, ICollectible
         var player = other.GetComponent<PlayerMovement>();
         if (player)
         {
+
             OnPickUp();
         }
     }
