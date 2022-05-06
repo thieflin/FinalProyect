@@ -43,7 +43,7 @@ Material:
     m_Floats:
     - _ChromaticAberration: 0.1
     - _CutoutSize: 0.21493149
-    - _CutoutSizee: 0
+    - _CutoutSizee: -0.011782404
     - _CutoutSizes: 1.37
     - _FallOff: 30
     - _FallOffSize: 0.08523523
@@ -56,7 +56,7 @@ Material:
     - _Float6: 0.11
     - _Glossiness: 0
     - _Metallic: 0
-    - _Opacity: 0.9
+    - _Opacity: 0.8
     - _Radius: 3.3
     - _Size: 1.37
     - _SmoothBorder: 0.15
@@ -68,7 +68,7 @@ Material:
     - _XRayBias: 0
     - _XRayPower: 1.25
     - _XRayScale: 1
-    - __dirty: 1
+    - __dirty: 0
     - _a: 1.5
     - _aaaaa: 0
     m_Colors:
@@ -78,7 +78,7 @@ Material:
     - _A4: {r: 0, g: 0, b: 0, a: 0}
     - _CenterCutout: {r: 0.03, g: 0.12, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _PlayerPosition: {r: -0.48411548, g: -0.30945903, b: -21.671967, a: 0}
+    - _PlayerPosition: {r: -0.48411542, g: -0.3094589, b: -21.671963, a: 0}
     - _PlayerPosition1: {r: -0.485082, g: -0.581287, b: -13.973, a: 0}
     - _PlayerPositon: {r: 0, g: 0, b: 0, a: 0}
     - _Position: {r: 0.5, g: 0.5, b: 0.5, a: 0}
