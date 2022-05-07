@@ -33,7 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CutoutSizee: -0.011782404
+    - _CutoutSizee: 1.6984633
     - _Metallic: 0
     - _Opacity: 0.9
     - _SmoothBorder: 0.176

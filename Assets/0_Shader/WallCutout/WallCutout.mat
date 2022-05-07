@@ -43,7 +43,7 @@ Material:
     m_Floats:
     - _ChromaticAberration: 0.1
     - _CutoutSize: 0.21493149
-    - _CutoutSizee: -0.011782404
+    - _CutoutSizee: 1.6984633
     - _CutoutSizes: 1.37
     - _FallOff: 30
     - _FallOffSize: 0.08523523
@@ -68,7 +68,7 @@ Material:
     - _XRayBias: 0
     - _XRayPower: 1.25
     - _XRayScale: 1
-    - __dirty: 0
+    - __dirty: 1
     - _a: 1.5
     - _aaaaa: 0
     m_Colors:

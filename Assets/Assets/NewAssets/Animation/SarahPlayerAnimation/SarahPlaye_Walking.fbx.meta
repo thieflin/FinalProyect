@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 9ef775561cc7bf849b538801fd74b487
+guid: 9a3a36abc7355a3498315d1b12c7ca67
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PP1_MAT
-    second: {fileID: 2100000, guid: 66729ae88a3436c42ac12ef4ff1f28c1, type: 2}
+      74: -1610863427237328480
+    second: Walking
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -21,7 +19,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
+      does not match:\n\tCannot find root motion transform 'SarahRiggingPlayer_Ctrl_Reference'.\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -98,11 +97,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 9ef775561cc7bf849b538801fd74b487, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
