@@ -37,9 +37,16 @@ public class Combo : MonoBehaviour
 
         if (isMoving)
         {
-            _rb.AddForce(transform.forward * Time.deltaTime * 250, ForceMode.Force);
+            _rb.velocity = Vector3.zero;
+            _rb.AddForce(transform.forward * Time.deltaTime * 1000, ForceMode.Force);
         }
-        else if (isMovingBack) _rb.AddForce(transform.forward * Time.deltaTime * -250, ForceMode.Force);
+        else if (isMovingBack)
+        {
+            _rb.velocity = Vector3.zero;
+
+            _rb.AddForce(transform.forward * Time.deltaTime * -1000, ForceMode.Force);
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
@@ -60,7 +67,9 @@ public class Combo : MonoBehaviour
             {
                 _isIdle = false;
                 _pm._movementSpeed = 0;
-                _rb.constraints = RigidbodyConstraints.FreezeAll;
+                _rb.velocity = Vector3.zero;
+                //_rb.AddForce(transform.forward * Time.deltaTime * 1000, ForceMode.Force);
+                //_rb.constraints = RigidbodyConstraints.FreezeAll;
                 ani.SetTrigger("A1");
             }
             else
@@ -72,7 +81,9 @@ public class Combo : MonoBehaviour
             {
                 _isIdle = false;
                 _pm._movementSpeed = 0;
-                _rb.constraints = RigidbodyConstraints.FreezeAll;
+                _rb.velocity = Vector3.zero;
+                //_rb.AddForce(transform.forward * Time.deltaTime * -1000, ForceMode.Force);
+                //_rb.constraints = RigidbodyConstraints.FreezeAll;
                 ani.SetTrigger("A2");
             }
             else
@@ -88,21 +99,24 @@ public class Combo : MonoBehaviour
             case 0:
                 ani.SetTrigger("Idle");
                 _pm._movementSpeed = 450;
-                _rb.constraints -= RigidbodyConstraints.FreezePosition;
+                //_rb.constraints -= RigidbodyConstraints.FreezePosition;
                 _isIdle = true;
                 _pm.enabled = true;
                 break;
             case 1:
-                _rb.constraints = RigidbodyConstraints.FreezeAll;
+                //_rb.constraints = RigidbodyConstraints.FreezeAll;
                 _pm._movementSpeed = 0;
-                
+                //_rb.velocity = Vector3.zero;
+                //_rb.AddForce(transform.forward * Time.deltaTime * 1000, ForceMode.Force);
                 ani.SetTrigger("A1");
 
                 _nextCombo = 0;
                 break;
             case 2:
                 _pm._movementSpeed = 0;
-                _rb.constraints = RigidbodyConstraints.FreezeAll;
+                //_rb.velocity = Vector3.zero;
+                //_rb.AddForce(transform.forward * Time.deltaTime * -1000, ForceMode.Force);
+                //_rb.constraints = RigidbodyConstraints.FreezeAll;
                 ani.SetTrigger("A2");
                 _nextCombo = 0;
                 break;
@@ -117,7 +131,7 @@ public class Combo : MonoBehaviour
         _pm.enabled = true;
         _isIdle = true;
         isMoving = false;
-        _rb.constraints -= RigidbodyConstraints.FreezePosition;
+        //_rb.constraints -= RigidbodyConstraints.FreezePosition;
     }
 
     public void HitBoxMelee1Activate()
