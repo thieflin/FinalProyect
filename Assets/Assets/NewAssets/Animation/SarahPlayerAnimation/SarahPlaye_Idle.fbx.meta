@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 9a3a36abc7355a3498315d1b12c7ca67
+guid: 182e0e446bf1a3042a147973391052ff
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -1610863427237328480
-    second: Walking
+      74: -3100369314251171874
+    second: Idle
   externalObjects:
   - first:
       type: UnityEngine:Material

@@ -33,7 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CutoutSizee: 1.6984633
+    - _CutoutSizee: 0
     - _Metallic: 0
     - _Opacity: 0.9
     - _SmoothBorder: 0.176
@@ -41,5 +41,5 @@ Material:
     - __dirty: 0
     m_Colors:
     - _CenterCutout: {r: 0.03, g: 0.12, b: 0, a: 0}
-    - _PlayerPosition: {r: -0.48411542, g: -0.3094589, b: -21.671963, a: 0}
+    - _PlayerPosition: {r: -0.48409054, g: -0.30945885, b: -21.671959, a: 0}
   m_BuildTextureStacks: []
