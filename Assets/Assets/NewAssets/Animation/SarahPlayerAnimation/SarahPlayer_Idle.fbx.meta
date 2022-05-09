@@ -1,17 +1,12 @@
 fileFormatVersion: 2
-guid: 9a3a36abc7355a3498315d1b12c7ca67
+guid: a8da70a712b08504f844f4a6627ed90e
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -1610863427237328480
-    second: Walking
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PP1_MAT
-    second: {fileID: 2100000, guid: 66729ae88a3436c42ac12ef4ff1f28c1, type: 2}
+      74: -3100369314251171874
+    second: Idle
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
