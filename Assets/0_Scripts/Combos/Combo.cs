@@ -22,6 +22,8 @@ public class Combo : MonoBehaviour
     public bool isMovingBack;
     public bool isMoving;
 
+    public ParticleSystem shotGunParticleSystem;
+
     private void Start()
     {
         swordDmg = 10;
@@ -84,6 +86,7 @@ public class Combo : MonoBehaviour
                 _rb.velocity = Vector3.zero;
                 //_rb.AddForce(transform.forward * Time.deltaTime * -1000, ForceMode.Force);
                 //_rb.constraints = RigidbodyConstraints.FreezeAll;
+                //INSTANCIO PARTICULAS
                 ani.SetTrigger("A2");
             }
             else
@@ -200,6 +203,16 @@ public class Combo : MonoBehaviour
 
     public void ColliderActivationRangedCombo(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
     {
+        //if (rangedHitboxes == null)
+        //    return;
+
+        shotGunParticleSystem.transform.position = gameObject.transform.position + (gameObject.transform.forward) * 2f + new Vector3(0, 2.5f, 0);
+        shotGunParticleSystem.transform.rotation = gameObject.transform.rotation;
+
+        shotGunParticleSystem.Play();
+
+        //COMENTO POR AHORA PARA SACAR LOS COLLIDERS Y AGREGO EL SISTEMA DE PARTICULAS DIRECTAMENTE ACA
+
         if (rangedHitboxes[ColliderNumber].activeSelf)
         {
             isMovingBack = false;

@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyStatus : EnemyData, IDamageable
 {
 
+    public ParticleSystem onMeleeHittedParticles;
+
     public void Start()
     {
         _currentHp = _maxHp;
@@ -42,7 +44,7 @@ public class EnemyStatus : EnemyData, IDamageable
         {
             Debug.Log("toy pegando jeje");
             TakeDamage(Combo.swordDmg);
-
+            var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
         }
 
         if(other.gameObject.layer == _abilityLayermask && !other.CompareTag("Bullet"))

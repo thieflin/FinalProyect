@@ -122,6 +122,9 @@ MonoBehaviour:
   _playerMask:
     serializedVersion: 2
     m_Bits: 128
+  _enemyWallMask:
+    serializedVersion: 2
+    m_Bits: 0
   playerIsInSight: 0
   triggerAttack: {fileID: 0}
   player: {fileID: 0}
@@ -185,3 +188,5 @@ MonoBehaviour:
   _dmgMitigation: 1.5
   _hpSlider: {fileID: 0}
   _expPoints: 40
+  isWaveEnemy: 0
+  onMeleeHittedParticles: {fileID: 1769056738706212166, guid: 4c574dcfe0b4f274dbfa42310bda3f95, type: 3}

@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Debug.DrawRay(leftRayCast, Vector3.down, Color.green);
+        Debug.DrawRay(leftRayCast, Vector3.down * 0.2f, Color.green);
     }
 
     public void Move(Vector3 direction)
@@ -200,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
     //Para cuando dashea y esta targeteando
     public void Dash()
     {
-        if (canDash && !OnSlope())
+        if (canDash)
         {
             _rb.velocity = Vector3.zero;
 
@@ -233,10 +233,6 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
-    IEnumerator waitForDistanceEnemy()
-    {
-        yield return new WaitForSeconds(0.2f);
-    }
 
     public bool isGrounded()
     {
