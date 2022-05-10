@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ExtraScriptTest : MonoBehaviour
 {
-    public GameObject colliderTest;
+    public GameObject puenteActivate;
+    public GameObject colliderToDestroy;
     public int normalAttackLayer;
 
     private void OnTriggerEnter(Collider other)
@@ -12,8 +13,10 @@ public class ExtraScriptTest : MonoBehaviour
         if (other.gameObject.layer == normalAttackLayer)
         {
             gameObject.GetComponent<BoxCollider>().enabled = false;
+            AudioManager.PlaySound("puzzle");
+            puenteActivate.GetComponent<Animator>().SetTrigger("Work");
 
-            Destroy(colliderTest);
+            Destroy(colliderToDestroy);
         }
     }
 }
