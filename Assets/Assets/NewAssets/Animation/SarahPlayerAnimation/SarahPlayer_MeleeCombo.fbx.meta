@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e008b167d51d8314c86c1a6fb5a2c103
+guid: 3ab7c15efbb77084483f71cf890ca56b
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -8444228808809566427
-    second: Dash
+      74: -4540392424113157848
+    second: MeleeCombo
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -92,15 +92,15 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Lowpoly
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 9ef775561cc7bf849b538801fd74b487, type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
