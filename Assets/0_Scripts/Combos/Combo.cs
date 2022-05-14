@@ -137,58 +137,6 @@ public class Combo : MonoBehaviour
         //_rb.constraints -= RigidbodyConstraints.FreezePosition;
     }
 
-    public void HitBoxMelee1Activate()
-    {
-        if (!upgradedHitbox)
-            meleeHitboxes[0].SetActive(true);
-        else meleeHitboxesUpgraded[0].SetActive(true);
-        isMoving = true;
-    }
-
-
-    public void HitBoxMelee2Activate()
-    {
-        if (!upgradedHitbox)
-            meleeHitboxes[1].SetActive(true);
-        else meleeHitboxesUpgraded[1].SetActive(true);
-        isMoving = true;
-
-    }
-
-    public void HitBoxMelee3Activate()
-    {
-        if (!upgradedHitbox)
-            meleeHitboxes[2].SetActive(true);
-        else meleeHitboxesUpgraded[2].SetActive(true);
-        isMoving = true;
-
-    }
-
-    public void HitBoxMelee1Deactivate()
-    {
-        if (!upgradedHitbox)
-            meleeHitboxes[0].SetActive(false);
-        else meleeHitboxesUpgraded[0].SetActive(false);
-        isMoving = false;
-
-    }
-    public void HitBoxMelee2Deactivate()
-    {
-        if (!upgradedHitbox)
-            meleeHitboxes[1].SetActive(false);
-        else meleeHitboxesUpgraded[1].SetActive(false);
-        isMoving = false;
-
-
-    }
-    public void HitBoxMelee3Deactivate()
-    {
-        if (!upgradedHitbox)
-            meleeHitboxes[2].SetActive(false);
-        else meleeHitboxesUpgraded[2].SetActive(false);
-        isMoving = false;
-
-    }
 
     public void MeleeColliderActivationCombo(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
     {
@@ -221,10 +169,10 @@ public class Combo : MonoBehaviour
         //if (rangedHitboxes == null)
         //    return;
 
-        shotGunParticleSystem.transform.position = gameObject.transform.position + (gameObject.transform.forward) * 2f + new Vector3(0, 2.5f, 0);
-        shotGunParticleSystem.transform.rotation = gameObject.transform.rotation;
+        //shotGunParticleSystem.transform.position = gameObject.transform.position + (gameObject.transform.forward) * 2f + new Vector3(0, 2.5f, 0);
+        //shotGunParticleSystem.transform.rotation = gameObject.transform.rotation;
 
-        shotGunParticleSystem.Play();
+        //shotGunParticleSystem.Play();
 
         //COMENTO POR AHORA PARA SACAR LOS COLLIDERS Y AGREGO EL SISTEMA DE PARTICULAS DIRECTAMENTE ACA
 
