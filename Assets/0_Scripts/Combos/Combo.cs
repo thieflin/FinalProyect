@@ -190,6 +190,21 @@ public class Combo : MonoBehaviour
 
     }
 
+    public void MeleeColliderActivationCombo(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
+    {
+        if (meleeHitboxes[ColliderNumber].activeSelf)
+        {
+            isMoving = false;
+            meleeHitboxes[ColliderNumber].SetActive(false);
+        }
+        else
+        {
+            isMoving = true;
+            meleeHitboxes[ColliderNumber].SetActive(true);
+        }
+    }
+
+
     public void EnablePlayermovement()
     {
         _pm.enabled = true;
