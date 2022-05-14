@@ -11,6 +11,11 @@ public abstract class EnemyData : MonoBehaviour
     [SerializeField] protected float _dmgMitigation;
     [SerializeField] protected Slider _hpSlider;
     [SerializeField] protected float _expPoints;
+    [SerializeField] protected Animator _anim;
+    [SerializeField] protected Rigidbody _rb;
+    [SerializeField] protected float knockBackForce;
+
+
     public bool isWaveEnemy;
 
 

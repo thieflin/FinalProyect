@@ -10,6 +10,7 @@ public class EnemyStatus : EnemyData, IDamageable
     public void Start()
     {
         _currentHp = _maxHp;
+        
     }
     public void TakeDamage(int dmg)
     {
@@ -17,6 +18,7 @@ public class EnemyStatus : EnemyData, IDamageable
 
         AudioManager.PlaySound("hit");
 
+        _anim.SetTrigger("Hit");
 
         if (_currentHp <= 0)
         {
@@ -38,6 +40,13 @@ public class EnemyStatus : EnemyData, IDamageable
         }
         //Estaria bueno hacer un pool de enemigos e irlos spawneando cada tanto
     }
+
+    public void KnockBack()
+    {
+        _rb.AddForce(transform.forward * Time.deltaTime * -knockBackForce, ForceMode.Force);
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == _hitboxLayermask && !other.CompareTag("Bullet"))
