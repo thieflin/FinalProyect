@@ -11,7 +11,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcess
   - Water
   - UI
   - Wall
@@ -22,7 +22,7 @@ TagManager:
   - Floor
   - EnemyWalls
   - SeethroughWalls
-  - 
+  - Glow
   - 
   - 
   - 

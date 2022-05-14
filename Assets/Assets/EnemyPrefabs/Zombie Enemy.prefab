@@ -170,7 +170,7 @@ MonoBehaviour:
   _rb: {fileID: 1989758057329770485}
   knockBackForce: 50000
   isWaveEnemy: 0
-  onMeleeHittedParticles: {fileID: 1769056738706212166, guid: 4c574dcfe0b4f274dbfa42310bda3f95, type: 3}
+  onMeleeHittedParticles: {fileID: 3708499870752648174, guid: 4c6f231e5def29d41927b5fb58fb827a, type: 3}
 --- !u!54 &1989758057329770485
 Rigidbody:
   m_ObjectHideFlags: 0
