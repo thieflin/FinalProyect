@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2100660948284126811}
   - component: {fileID: 2731562339618483677}
   - component: {fileID: -5303358754469412671}
+  - component: {fileID: -8287569447107041169}
   m_Layer: 8
   m_Name: Protector
   m_TagString: Enemy
@@ -188,5 +189,28 @@ MonoBehaviour:
   _dmgMitigation: 1.5
   _hpSlider: {fileID: 0}
   _expPoints: 40
+  _anim: {fileID: 0}
+  _rb: {fileID: 0}
+  knockBackForce: 0
   isWaveEnemy: 0
   onMeleeHittedParticles: {fileID: 1769056738706212166, guid: 4c574dcfe0b4f274dbfa42310bda3f95, type: 3}
+--- !u!95 &-8287569447107041169
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100660948284126814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

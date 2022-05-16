@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public abstract class EnemyData : MonoBehaviour
 {
-    [SerializeField] protected int _currentHp;
+    public int _currentHp;
+    public Vector3 startPos;
     [SerializeField] protected int _maxHp;
     [SerializeField] protected int _hitboxLayermask, _abilityLayermask;
     [SerializeField] protected float _dmgMitigation;

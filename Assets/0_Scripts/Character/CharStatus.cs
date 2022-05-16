@@ -10,7 +10,7 @@ public class CharStatus : MonoBehaviour
     public float hp = 0;
     public float maxHp = 0;
     [SerializeField] private float hpPercent;
-    [SerializeField] private Image _hpBar;
+    [SerializeField] public Image _hpBar;
 
     [Header("Level Up Vars")]
     [SerializeField] private int _currentLvl = 0;
@@ -48,6 +48,7 @@ public class CharStatus : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private Animator _anim;
     [SerializeField] private AbilitiesStatus _as;
+    [SerializeField] private RespawnManager respawnManager;
 
 
     private void Awake()
@@ -219,6 +220,10 @@ public class CharStatus : MonoBehaviour
     {
         hp -= dmg;
         _hpBar.fillAmount = HpPercentCalculation(hp);
+        if(hp <= 0)
+        {
+            respawnManager.RespawnCharacter();
+        }
     }
 
     public float HpPercentCalculation(float actualHp)

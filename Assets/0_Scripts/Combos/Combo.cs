@@ -169,10 +169,10 @@ public class Combo : MonoBehaviour
         //if (rangedHitboxes == null)
         //    return;
 
-        //shotGunParticleSystem.transform.position = gameObject.transform.position + (gameObject.transform.forward) * 2f + new Vector3(0, 2.5f, 0);
-        //shotGunParticleSystem.transform.rotation = gameObject.transform.rotation;
+        shotGunParticleSystem.transform.position = gameObject.transform.position + (gameObject.transform.forward) * 1f + new Vector3(0, 2.5f, 0);
+        shotGunParticleSystem.transform.rotation = gameObject.transform.rotation;
 
-        //shotGunParticleSystem.Play();
+        shotGunParticleSystem.Play();
 
         //COMENTO POR AHORA PARA SACAR LOS COLLIDERS Y AGREGO EL SISTEMA DE PARTICULAS DIRECTAMENTE ACA
 

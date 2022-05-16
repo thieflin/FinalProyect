@@ -88,7 +88,7 @@ public class TargetLock : MonoBehaviour
             {
                 if (InSight(transform.position, item.transform.position))
                 {
-                    if (!enemiesClose.Contains(item.GetComponent<Enemy>()))
+                    if (!enemiesClose.Contains(item.GetComponent<Enemy>()) && item.gameObject.activeSelf)
                         enemiesClose.Add(item.GetComponent<Enemy>());
                     Debug.DrawLine(transform.position, item.transform.position, Color.green);
                 }

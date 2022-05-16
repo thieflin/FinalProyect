@@ -125,7 +125,10 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsTargeting", true);
         }
 
-
+        if(OnSlope() && newInput.x == 0 && newInput.z == 0)
+        {
+            _rb.velocity = Vector3.zero;
+        }
 
         //NORMAL WALKING
         if (!isDashing && !isTargeting && !OnSlope())
@@ -244,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
             return false;
     }
 
-    private bool OnSlope()
+    public bool OnSlope()
     {
         if (Physics.Raycast(transform.position, Vector3.down, out _slopeHit, transform.localScale.y * 0.5f + 0.3f))
         {
