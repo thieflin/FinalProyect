@@ -15,6 +15,7 @@ public class ExtraScriptTest : MonoBehaviour
             gameObject.GetComponent<BoxCollider>().enabled = false;
             AudioManager.PlaySound("puzzle");
             puenteActivate.GetComponent<Animator>().SetTrigger("Work");
+            GetComponent<Animator>().SetTrigger("LeverHit");
 
             Destroy(colliderToDestroy);
         }

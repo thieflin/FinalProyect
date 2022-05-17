@@ -8,14 +8,15 @@ public class Combo : MonoBehaviour
     bool _isIdle = true;
     public Animator ani;
     int _nextCombo = 0;
+
     public List<GameObject> meleeHitboxes = new List<GameObject>();
-    public List<GameObject> meleeHitboxesUpgraded = new List<GameObject>();
 
 
     public List<GameObject> rangedHitboxes = new List<GameObject>();
 
     public bool upgradedHitbox;
     private PlayerMovement _pm;
+    
     public static int swordDmg;
     [SerializeField] private Rigidbody _rb;
 
@@ -23,6 +24,8 @@ public class Combo : MonoBehaviour
     public bool isMoving;
 
     public ParticleSystem shotGunParticleSystem;
+
+    [SerializeField] private float _regularSpeed;
 
     private void Start()
     {
@@ -101,7 +104,7 @@ public class Combo : MonoBehaviour
         {
             case 0:
                 ani.SetTrigger("Idle");
-                _pm._movementSpeed = 450;
+                _pm._movementSpeed = _regularSpeed;
                 //_rb.constraints -= RigidbodyConstraints.FreezePosition;
                 _isIdle = true;
                 _pm.enabled = true;
@@ -129,7 +132,7 @@ public class Combo : MonoBehaviour
     public void FinishCombo()
     {
         _nextCombo = 0;
-        _pm._movementSpeed = 450;
+        _pm._movementSpeed = _regularSpeed;
         ani.SetTrigger("Idle");
         _pm.enabled = true;
         _isIdle = true;
