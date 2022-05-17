@@ -31,13 +31,15 @@ public class EnemyStatus : EnemyData, IDamageable
             }
             GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
 
-            gameObject.SetActive(false);
-
             //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO MÁS
             if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
             {
                 TargetLock.enemiesClose.Remove(this.GetComponent<Enemy>());
             }
+
+            gameObject.SetActive(false);
+
+
         }
         //Estaria bueno hacer un pool de enemigos e irlos spawneando cada tanto
     }
