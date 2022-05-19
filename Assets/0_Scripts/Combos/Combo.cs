@@ -29,6 +29,10 @@ public class Combo : MonoBehaviour
 
     private void Start()
     {
+        for (int i = 0; i < meleeHitboxes.Count; i++)
+        {
+            //meleeHitboxes[i].SetActive(false);
+        }
         swordDmg = 10;
         upgradedHitbox = false;
         EventManager.Instance.Subscribe("OnGettingBiggerHitbox", UpgradedHitboxTrue);
