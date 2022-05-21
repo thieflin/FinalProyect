@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class ColliderPG : MonoBehaviour
 {
     public float meleePG;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,6 +14,7 @@ public class ColliderPG : MonoBehaviour
 
         if (enemy)
         {
+            CameraShaker.Instance.ShakeOnce(1.5f, 1.5f, .1f, 1f);
             EventManager.Instance.Trigger("OnGettingMPG", meleePG);
         }
     }
