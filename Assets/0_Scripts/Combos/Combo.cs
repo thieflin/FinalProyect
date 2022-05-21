@@ -10,7 +10,9 @@ public class Combo : MonoBehaviour
     int _nextCombo = 0;
 
     public List<GameObject> meleeHitboxes = new List<GameObject>();
+    public List<ParticleSystem> pss = new List<ParticleSystem>(); 
 
+    public ParticleSystem ps;
 
     public List<GameObject> rangedHitboxes = new List<GameObject>();
 
@@ -29,10 +31,6 @@ public class Combo : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < meleeHitboxes.Count; i++)
-        {
-            //meleeHitboxes[i].SetActive(false);
-        }
         swordDmg = 10;
         upgradedHitbox = false;
         EventManager.Instance.Subscribe("OnGettingBiggerHitbox", UpgradedHitboxTrue);
@@ -156,6 +154,7 @@ public class Combo : MonoBehaviour
         {
             isMoving = true;
             meleeHitboxes[ColliderNumber].SetActive(true);
+            pss[ColliderNumber].Play();
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyStatus : EnemyData, IDamageable
 {
 
-    public ParticleSystem onMeleeHittedParticles;
+    public GameObject onMeleeHittedParticles;
     public bool enemyHitted = false;
 
     public void Start()
@@ -56,7 +56,9 @@ public class EnemyStatus : EnemyData, IDamageable
         {
             Debug.Log("toy pegando jeje");
             TakeDamage(Combo.swordDmg);
-            var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
+            var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
+            //no
+
         }
 
         if (other.gameObject.layer == _abilityLayermask && !other.CompareTag("Bullet"))
@@ -70,7 +72,8 @@ public class EnemyStatus : EnemyData, IDamageable
         if (other.CompareTag("Bullet") && !enemyHitted)
         {
             TakeDamage(10);
-            var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
+
+            var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
             if (this.gameObject.activeSelf)
                 StartCoroutine(WaitForEnemyHitted());
         }
