@@ -14,7 +14,7 @@ public class ColliderPG : MonoBehaviour
 
         if (enemy)
         {
-            CameraShaker.Instance.ShakeOnce(1.5f, 1.5f, .1f, 1f);
+            CameraShaker.Instance.ShakeOnce(1.2f, 1.2f, .1f, 1f);
             EventManager.Instance.Trigger("OnGettingMPG", meleePG);
         }
     }

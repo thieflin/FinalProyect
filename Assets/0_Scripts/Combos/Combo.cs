@@ -29,6 +29,9 @@ public class Combo : MonoBehaviour
 
     [SerializeField] private float _regularSpeed;
 
+    public GameObject particleDustSlide;
+    public ParticleSystem particleDustStep;
+
     private void Start()
     {
         swordDmg = 10;
@@ -158,6 +161,17 @@ public class Combo : MonoBehaviour
         }
     }
 
+    public void ActivateStepParticleStep()
+    {
+        particleDustStep.Play();
+    }
+
+    public void ActSlideSmokePart()
+    {
+        if (particleDustSlide.activeSelf)
+            particleDustSlide.SetActive(false);
+        else particleDustSlide.SetActive(true);
+    }
 
     public void EnablePlayermovement()
     {
