@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _timeBetweenDashes;
     public bool canDash = true;
     private bool isDashing;
+    public GameObject dashPart;
     private Vector3 whereToDash;
 
     [Header("Target Lock")]
@@ -229,11 +230,15 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        dashPart.SetActive(true);
         yield return new WaitForSeconds(_dashTime);
         yield return new WaitForSeconds(0.2f);
+
         isDashing = false;
         yield return new WaitForSeconds(_timeBetweenDashes);
-        canDash = true;
+        canDash = true; 
+        dashPart.SetActive(false);
+
     }
 
 
