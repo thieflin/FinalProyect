@@ -41,5 +41,5 @@ Material:
     - __dirty: 0
     m_Colors:
     - _CenterCutout: {r: 0.03, g: 0.12, b: 0, a: 0}
-    - _PlayerPosition: {r: -0.48410276, g: -0.30945885, b: -21.671963, a: 0}
+    - _PlayerPosition: {r: -0.4840923, g: -0.30945885, b: -21.671963, a: 0}
   m_BuildTextureStacks: []
