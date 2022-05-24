@@ -9,6 +9,8 @@ public class Control
     public float verticalMovement;
     public float horizontalMovement;
 
+    public float speedMultiplier = 200f;
+
 
     public Control(PlayerMovement p)
     {
@@ -29,15 +31,15 @@ public class Control
         }
         else if ((verticalMovement != 0 || horizontalMovement != 0) && !player.isGrounded())
         {
-            player.Move(new Vector3(direction.x, -80f, direction.z));
+            player.Move(new Vector3(direction.x * speedMultiplier, -10000f * Time.fixedDeltaTime, direction.z * speedMultiplier));
         }
         else if ((verticalMovement == 0 && horizontalMovement == 0) && !player.isGrounded())
         {
-            player.Move(new Vector3(direction.x, -80f, direction.z));
+            player.Move(new Vector3(direction.x, -10000f * Time.fixedDeltaTime, direction.z));
         }
         else if (verticalMovement == 0 && horizontalMovement == 0 && player.isGrounded())
         {
-            player.Move(new Vector3(0, -80f, 0));
+            player.Move(new Vector3(0, -10000f * Time.fixedDeltaTime, 0));
         }
 
     }

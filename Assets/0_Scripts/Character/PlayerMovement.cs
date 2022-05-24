@@ -126,24 +126,20 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsTargeting", true);
         }
 
-        if(OnSlope() && newInput.x == 0 && newInput.z == 0)
-        {
-            _rb.velocity = Vector3.zero;
-        }
 
         //NORMAL WALKING
-        if (!isDashing && !isTargeting && !OnSlope())
+        if (!isDashing && !isTargeting)
         {
             _rb.velocity = newInput * _movementSpeed * Time.fixedDeltaTime;
-        }
 
+        }
+   
         //EN ESCALERAS
         if (OnSlope())
         {
-            if (newInput.x != 0 && newInput.z != 0)
+            if (newInput.x != 0 && newInput.z != 0 && !isDashing)
                 _rb.velocity = (GetSlopeMoveDirection(newInput) * _movementSpeed * Time.fixedDeltaTime);
-            else
-                _rb.velocity = Vector3.zero;
+
         }
 
         //QUITAR GRAVITY EN SLOPE
@@ -197,7 +193,6 @@ public class PlayerMovement : MonoBehaviour
         targetSign.transform.parent = _lockedEnemy.transform;
         //Lo activo
         targetSign.SetActive(true);
-
         isTargeting = true;
     }
 
@@ -206,20 +201,42 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canDash)
         {
-            _rb.velocity = Vector3.zero;
+            //_rb.velocity = Vector3.zero;
+
+            if (whereToDash == Vector3.zero)
+                whereToDash = transform.forward;
+
+            if (OnSlope())
+            {
+                whereToDash = GetSlopeMoveDirection(whereToDash);
+            }
+
 
             if (whereToDash != Vector3.zero)
             {
-                _rb.AddForce(whereToDash * _dashForce, ForceMode.Impulse);
+                _rb.AddForce(whereToDash * _dashForce * Time.fixedDeltaTime, ForceMode.Impulse);
                 transform.forward = whereToDash;
                 StartCoroutine(waitDash());
             }
-            else if (whereToDash == Vector3.zero)
-            {
-                _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
-                transform.forward = transform.forward;
-                StartCoroutine(waitDash());
-            }
+            //else if (whereToDash == Vector3.zero)
+            //{
+            //    _rb.AddForce(transform.forward * _dashForce * Time.fixedDeltaTime, ForceMode.Impulse);
+            //    transform.forward = transform.forward;
+            //    StartCoroutine(waitDash());
+            //}
+            //else if (whereToDash == Vector3.zero && OnSlope())
+            //{
+            //    _rb.AddForce(GetSlopeMoveDirection(whereToDash) * _dashForce * Time.fixedDeltaTime, ForceMode.Impulse);
+            //    transform.forward = transform.forward;
+            //    StartCoroutine(waitDash());
+            //}
+            //else if(whereToDash != Vector3.zero && OnSlope())
+            //{
+
+            //    _rb.AddForce(GetSlopeMoveDirection(whereToDash) * _dashForce * Time.fixedDeltaTime, ForceMode.Impulse);
+            //    transform.forward = transform.forward;
+            //    StartCoroutine(waitDash());
+            //}
             animator.SetTrigger("Rol");
         }
 
@@ -228,15 +245,17 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator waitDash()
     {
+        _rb.velocity = Vector3.zero;
         canDash = false;
         isDashing = true;
         dashPart.SetActive(true);
+        var saveYRotation = transform.eulerAngles.y;
         yield return new WaitForSeconds(_dashTime);
         yield return new WaitForSeconds(0.2f);
-
+        transform.eulerAngles = new Vector3(0f, saveYRotation, 0f);
         isDashing = false;
         yield return new WaitForSeconds(_timeBetweenDashes);
-        canDash = true; 
+        canDash = true;
         dashPart.SetActive(false);
 
     }

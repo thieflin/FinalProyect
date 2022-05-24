@@ -48,13 +48,13 @@ public class Combo : MonoBehaviour
         if (isMoving)
         {
             _rb.velocity = Vector3.zero;
-            _rb.AddForce(transform.forward * Time.deltaTime * 1000, ForceMode.Force);
+            _rb.AddForce(transform.forward * Time.deltaTime * 100000, ForceMode.Force);
         }
         else if (isMovingBack)
         {
             _rb.velocity = Vector3.zero;
 
-            _rb.AddForce(transform.forward * Time.deltaTime * -1000, ForceMode.Force);
+            _rb.AddForce(transform.forward * Time.deltaTime * -100000, ForceMode.Force);
         }
 
 
