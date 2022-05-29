@@ -8,13 +8,13 @@ public abstract class EnemyData : MonoBehaviour
     public int _currentHp;
     public Vector3 startPos;
     [SerializeField] protected int _maxHp;
-    [SerializeField] protected int _hitboxLayermask, _abilityLayermask;
+    [SerializeField] protected int _hitboxLayermask, _abilityLayermask, _hitKnockbackLayerMask;
     [SerializeField] protected float _dmgMitigation;
     [SerializeField] protected Slider _hpSlider;
     [SerializeField] protected float _expPoints;
     [SerializeField] protected Animator _anim;
     [SerializeField] protected Rigidbody _rb;
-    [SerializeField] protected float knockBackForce;
+    [SerializeField] protected float knockBackForce, littleKnockbackForce;
 
 
     public bool isWaveEnemy;
