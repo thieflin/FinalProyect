@@ -42,6 +42,9 @@ public class Enemy : MonoBehaviour
 
     public float rangeAttack;
 
+
+    public bool waitForNextWanderPoint;
+
     private void Start()
     {
         wanderVisualizer = GetComponent<WanderVisualizer>();
@@ -114,11 +117,13 @@ public class Enemy : MonoBehaviour
 
     public Vector3 Wander()
     {
+
+        
         Vector3 circleCenter = transform.position + transform.forward * circleDistance;
         Vector3 previousWanderAngle = DirFromAngle(_previousAngle + transform.eulerAngles.y);
         Vector3 previousWanderPoint = circleCenter + previousWanderAngle * circleRadius;
 
-        Vector3 randomVector = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+        Vector3 randomVector = new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
         randomVector = randomVector.normalized * smallCircleRadius;
         Vector3 newPoint = previousWanderPoint + randomVector;
 
@@ -136,7 +141,14 @@ public class Enemy : MonoBehaviour
 
         DrawWander(circleCenter, previousWanderPoint, newPoint);
         return Seek(newWanderPoint);
+
     }
+
+    IEnumerator stopPls()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
 
     Vector3 Seek(Vector3 target)
     {

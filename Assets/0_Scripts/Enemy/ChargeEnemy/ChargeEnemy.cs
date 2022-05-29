@@ -50,6 +50,7 @@ public class ChargeEnemy : Enemy
         }
     }
 
+
     void CloseToPlayer()
     {
         Vector3 playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
