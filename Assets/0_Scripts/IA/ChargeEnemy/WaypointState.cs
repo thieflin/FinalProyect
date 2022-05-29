@@ -37,24 +37,28 @@ public class WaypointState : MonoBehaviour, IState
     {
 
         Vector3 dir = _hunter.allWaypoints[_hunter.currentWaypoint].transform.position - _hunter.transform.position;
-        transform.forward = dir;
+        _hunter.transform.forward = dir;
 
-        transform.position += transform.forward * _hunter.speed * Time.deltaTime;
+
+        _hunter.transform.position += _hunter.transform.forward * _hunter.speed * Time.deltaTime;
 
         if (dir.magnitude < 0.1f)
         {
-            
+            //Guarda el ultimo wp al que fui
             var lastWp = _hunter.currentWaypoint;
             //Le digo que elija uno al azar de los 9
             _hunter.currentWaypoint = Random.Range(0, _hunter.allWaypoints.Count - 1);
+            //Sumo para saber cuantos wp va
             _hunter.wpCounter++;
+
             //Si eligio el mismo, entonces le digo que elija a otro
             if (_hunter.currentWaypoint == lastWp)
                 while (_hunter.currentWaypoint == lastWp)
                     _hunter.currentWaypoint = Random.Range(0, _hunter.allWaypoints.Count - 1);
+            _fsm.ChangeState(PlayerStatesEnum.Idle);
         }
 
-
+        //Cuando llega a la cantidad maxima de wps que quiero que recorra
         if (_hunter.wpCounter == 4)
         {
 

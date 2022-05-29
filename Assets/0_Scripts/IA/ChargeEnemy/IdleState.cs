@@ -26,6 +26,8 @@ public class IdleState : MonoBehaviour, IState
     public void OnStart()
     {
 
+
+        _hunter.anim.SetTrigger("Idle");
         //if (_hunter.staminaBar <= 0) //Si la stamina es menor que 0 le activo para que descanse
         //    isResting = true;
         //else //Si no, en el start directamente me voy al patrol 
