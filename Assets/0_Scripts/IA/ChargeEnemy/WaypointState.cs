@@ -18,30 +18,31 @@ public class WaypointState : MonoBehaviour, IState
 
     public void OnExit()
     {
-        
+        _hunter.anim.SetBool("PatrolB", false);
     }
 
     public void OnStart()
     {
-       
+        _hunter.anim.SetBool("PatrolB", true);
 
     }
     
     public void OnUpdate() //OnUpdate arranco con esto
     {
-
+        Debug.Log("im on patrol");
+        //Movimiento base
         Move();
+
+        //Detectar enemigo cambio el estado
+        DetectEnemy();
     }
 
     public void Move() //Funcion de movimiento de waypoints
     {
 
         Vector3 dir = _hunter.allWaypoints[_hunter.currentWaypoint].transform.position - _hunter.transform.position;
-        _hunter.transform.forward = dir;
-
-
-        _hunter.transform.position += _hunter.transform.forward * _hunter.speed * Time.deltaTime;
-
+        _hunter.transform.position += dir.normalized * _hunter.speed * Time.deltaTime;
+        
         if (dir.magnitude < 0.1f)
         {
             //Guarda el ultimo wp al que fui
@@ -68,5 +69,12 @@ public class WaypointState : MonoBehaviour, IState
 
     }
 
+    //Hace un vector direccion entre el Player y este enemigo, si esta en rango, pasa a ChaseState
+    public void DetectEnemy()
+    {
+        Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
 
+        if (dir.magnitude < _hunter.detectDistance)
+            _fsm.ChangeState(PlayerStatesEnum.Chase);
+    }
 }

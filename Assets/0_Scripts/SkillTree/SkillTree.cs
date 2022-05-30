@@ -38,7 +38,7 @@ public class SkillTree : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(startingButton);
                 _skillTree.SetActive(true);
             }
-        Debug.Log(_skillPoints);
+
     }
 
     private void Start()

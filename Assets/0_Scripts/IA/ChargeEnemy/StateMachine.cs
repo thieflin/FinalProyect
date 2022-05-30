@@ -6,7 +6,8 @@ public enum PlayerStatesEnum
 {
     Idle,
     Chase,
-    Patrol
+    Patrol,
+    Attack
 }
 
 public class StateMachine

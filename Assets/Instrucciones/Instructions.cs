@@ -7,10 +7,7 @@ public class Instructions : MonoBehaviour
     public static int currentInstruction;
     public List<GameObject> instructions = new List<GameObject>();
 
-    private void Update()
-    {
-        Debug.Log(currentInstruction);
-    }
+
     private void OnTriggerEnter(Collider other)
     {
         var instTrigger = other.GetComponent<InstructionsTrigger>();
