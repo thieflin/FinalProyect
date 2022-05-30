@@ -73905,16 +73905,23 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 5000
+    intParameter: 45000
     messageOptions: 0
-  - time: 0.8333333
+  - time: 0.33333334
     functionName: MovementInAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 5000
+    intParameter: 25000
     messageOptions: 0
-  - time: 0.96666664
+  - time: 0.6333333
+    functionName: MovementInAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 1000
+    messageOptions: 0
+  - time: 0.7
     functionName: MovementInAttack
     data: 
     objectReferenceParameter: {fileID: 0}
