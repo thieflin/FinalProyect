@@ -60,9 +60,6 @@ public class EnemyStatus : EnemyData, IDamageable
             //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
             var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
 
-
-            //Simula irse hiteado
-            _anim.SetTrigger("Hit");
         }
 
         //Si le pego con el ultimo hit, el que knockbackea PIOLI
@@ -75,9 +72,6 @@ public class EnemyStatus : EnemyData, IDamageable
             //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
             //Instancia las partic
             var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
-
-            //Simula irse hiteado
-            _anim.SetTrigger("Hit");
         }
     }
 
