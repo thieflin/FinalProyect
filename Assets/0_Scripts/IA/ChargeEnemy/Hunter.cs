@@ -11,19 +11,20 @@ public class Hunter : MonoBehaviour
     public List<Transform> allWaypoints = new List<Transform>(); //Lista de waypoints en los cuales se va a mover la IA
 
     [Header("Idle")]
-    public bool isThinking;
-    public float thinkingmeter;
-    public float rotationSpeedOnIdle;
+    public float rotationSpeedOnIdle; //Que tan rapido rota en el idle
 
     [Header("Target & Others")]
     public PlayerMovement target; //El player
-    public float attackDistance;
-    public float detectDistance;
-    public float loseTargetDistance;
-    public int attackForces;
-    public int knockbackForce;
-    public int layerHit;
-    public bool isTargetting;
+    public float attackDistance; //Distancia para que ejecute el ataque
+    public float detectDistance; //Distancia para que lo detecte y lo persiga
+    public float loseTargetDistance; //Distancia a lo cual lo pierde y vuelve a lo suyo
+    public int attackForces; //Cuanta fuerza tiene el movimiento con el que se desplaza
+    public int knockbackForce; //Fuerza del knock back
+    public int layerHit; //Layer de colision
+    public bool isTargetting; //Variable para que cuadno carga el ataque me mire
+
+    [Header("Cosmetics")]
+    public List<GameObject> clawAttackParticles = new List<GameObject>();
 
     public Rigidbody rb;
     public Animator anim;
