@@ -15,25 +15,28 @@ public class HitState : MonoBehaviour, IState
         _hunter = h;
     }
 
-
+    
 
     public void OnExit()
     {
-        
+        _hunter.anim.SetBool("HitB", false);
     }
 
     public void OnStart()
     {
-        _hunter.anim.SetTrigger("Hit");
+        _hunter.anim.SetBool("HitB", true);
+        Debug.Log("entre hit");
     }
 
     public void OnUpdate()
     {
-        
+        SmallKnockBack();
+        Debug.Log("sigo hit state");
+
     }
 
     public void SmallKnockBack()
     {
-        //_hunter.rb.AddForce(_hunter.transform.forward * )
+        _hunter.rb.AddForce(_hunter.transform.forward * _hunter.knockbackForce * Time.deltaTime, ForceMode.Impulse);
     }
 }

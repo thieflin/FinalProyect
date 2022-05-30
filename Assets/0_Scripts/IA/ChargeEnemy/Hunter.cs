@@ -22,6 +22,8 @@ public class Hunter : MonoBehaviour
     public float loseTargetDistance;
     public int attackForces;
     public int knockbackForce;
+    public int layerHit;
+    public bool isTargetting;
 
     public Rigidbody rb;
     public Animator anim;
@@ -53,16 +55,34 @@ public class Hunter : MonoBehaviour
         
     }
 
-    //Esta funcion hace que despues de atacar vuelva por defecto a idle
-    public void AttackIsFinished()
+    public void TargetEnemyOnPreparation()
     {
-        _fsm.ChangeState(PlayerStatesEnum.Idle);
+        if (!isTargetting) isTargetting = true;
+        else if (isTargetting) isTargetting = false;
+    }
+
+
+    //Esta funcion hace que despues de atacar vuelva por defecto a idle
+    public void BackToIdle()
+    {
+        _fsm.ChangeState(PlayerStatesEnum.Chase);
     }
 
     //Esta funcion modifica la fuerza en la animacion con Animation Events
     public void MovementInAttack(int pushForce)
     {
         attackForces = pushForce;
+    }
+
+    //Cuando le pegan cambia el estado
+    private void OnTriggerEnter(Collider other)
+    {
+        //if(other.gameObject.layer == layerHit)
+        //{
+        //    //_fsm.ChangeState(PlayerStatesEnum.Hit);
+        //    //anim.SetTrigger("Hit");
+        //}
+           
     }
 
 }

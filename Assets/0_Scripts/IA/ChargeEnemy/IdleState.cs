@@ -8,7 +8,6 @@ public class IdleState : MonoBehaviour, IState
 
     StateMachine _fms;
     Hunter _hunter;
-    bool isResting;
 
     public IdleState(StateMachine fms, Hunter h)
     {
@@ -16,6 +15,7 @@ public class IdleState : MonoBehaviour, IState
         _hunter = h;
     }
 
+    private float idleHold;
 
 
     public void OnExit()
@@ -26,10 +26,15 @@ public class IdleState : MonoBehaviour, IState
     public void OnStart()
     {
         _hunter.anim.SetBool("IdleB", true);
+        _hunter.anim.SetBool("HitB", false);
+        idleHold = 3;
     }
 
     public void OnUpdate()
     {
+        Debug.Log("en idle");
+        idleHold -= Time.deltaTime;
+
         //Busco el vector al cual yo quiero rotar es decir donde llegue ahi freno
         Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.allWaypoints[_hunter.currentWaypoint].transform.position);
 
@@ -37,7 +42,7 @@ public class IdleState : MonoBehaviour, IState
         _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
 
         //Cuando llega ahi deja de rotar
-        if(_hunter.transform.rotation == Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime))
+        if(_hunter.transform.rotation == Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime) || idleHold < 0)
             _fms.ChangeState(PlayerStatesEnum.Patrol);
     }
 

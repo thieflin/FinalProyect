@@ -16,23 +16,39 @@ public class AttackState : MonoBehaviour, IState
         _hunter = h;
     }
 
-
+    private float meassure;
 
     public void OnExit()
     {
-        _hunter.anim.SetTrigger("Idle");
-
     }
 
     public void OnStart()
     {
         _hunter.anim.SetTrigger("Attack");
+        meassure = 5f;
     }
 
+    //Falta hacer que cuando cargue te mire
     public void OnUpdate()
     {
+        Debug.Log("en attack");
         AttackAnimation();
-        Debug.Log(_hunter.attackForces);
+
+        if(_hunter.isTargetting)
+            FocusPlayer();
+
+
+
+        meassure -= Time.deltaTime;
+        if (meassure < 0) _fms.ChangeState(PlayerStatesEnum.Idle);
+    }
+
+    public void FocusPlayer()
+    {
+        //Esto hace que lo mire al perseguirlo
+        Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.target.transform.position);
+        //Hago que la rotacion sea un rotate towards hacia el vector calculado antes
+        _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
     }
 
     public void AttackAnimation()
