@@ -31,11 +31,11 @@ public class AttackState : MonoBehaviour, IState
     public void OnUpdate()
     {
         AttackAnimation();
-        Debug.Log(_hunter.walkBackForce);
+        Debug.Log(_hunter.attackForces);
     }
 
     public void AttackAnimation()
     {
-        _hunter.rb.AddForce(_hunter.transform.forward * _hunter.walkBackForce * Time.deltaTime, ForceMode.Impulse);
+        _hunter.rb.AddForce(_hunter.transform.forward * _hunter.attackForces * Time.deltaTime, ForceMode.Impulse);
     }
 }

@@ -20,7 +20,8 @@ public class Hunter : MonoBehaviour
     public float attackDistance;
     public float detectDistance;
     public float loseTargetDistance;
-    public int walkBackForce;
+    public int attackForces;
+    public int knockbackForce;
 
     public Rigidbody rb;
     public Animator anim;
@@ -40,6 +41,7 @@ public class Hunter : MonoBehaviour
         _fsm.AddState(PlayerStatesEnum.Idle, new IdleState(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Chase, new ChaseState(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Attack, new AttackState(_fsm, this));
+        _fsm.AddState(PlayerStatesEnum.Hit, new HitState(_fsm, this));
         _fsm.ChangeState(PlayerStatesEnum.Patrol); //Lo hago arrancar con Idle
         _fsm.OnStart(); //Starteo la FSM
 
@@ -60,7 +62,7 @@ public class Hunter : MonoBehaviour
     //Esta funcion modifica la fuerza en la animacion con Animation Events
     public void MovementInAttack(int pushForce)
     {
-        walkBackForce = pushForce;
+        attackForces = pushForce;
     }
 
 }
