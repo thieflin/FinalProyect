@@ -60,6 +60,11 @@ public class ChaseState : IState
             
     }
 
+    void AttackCd()
+    {
+
+    }
+
 
 
 

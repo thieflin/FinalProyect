@@ -13,6 +13,7 @@ public class Hunter : MonoBehaviour
 
     [Header("Idle")]
     public float rotationSpeedOnIdle; //Que tan rapido rota en el idle
+    public float waitForNextAttack;
 
     [Header("Target & Others")]
     public PlayerMovement target; //El player
@@ -70,6 +71,7 @@ public class Hunter : MonoBehaviour
     //Esta funcion hace que despues de atacar vuelva por defecto a Chasear, de ahi sale
     public void BackToIdle()
     {
+        isTargetting = false;
         _fsm.ChangeState(PlayerStatesEnum.Chase);
     }
 
@@ -101,7 +103,20 @@ public class Hunter : MonoBehaviour
         if (player)
             player.TakeDamage(damageDone);
 
-        
+        var sword = other.GetComponent<ColliderPG>();
+
+        //Hit SOLO transiciona si estoy CARGANDO EL ATAQUE, sino no lo stunea sino no funciona ni pal pingovich
+        if (sword && isTargetting)
+        {
+            foreach (var item in clawAttackParticles)
+            {
+                item.SetActive(false);
+            }
+            //_fsm.ChangeState(PlayerStatesEnum.Hit);
+            anim.SetTrigger("Hit");
+            _fsm.ChangeState(PlayerStatesEnum.Chase);
+        }
+            
            
     }
 

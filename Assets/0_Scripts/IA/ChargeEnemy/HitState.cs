@@ -5,7 +5,7 @@ using UnityEngine;
 public class HitState : MonoBehaviour, IState
 {
 
-
+    
     StateMachine _fms;
     Hunter _hunter;
 
@@ -24,6 +24,7 @@ public class HitState : MonoBehaviour, IState
 
     public void OnStart()
     {
+        _hunter.anim.SetTrigger("Hit");
         _hunter.anim.SetBool("HitB", true);
         Debug.Log("entre hit");
     }
