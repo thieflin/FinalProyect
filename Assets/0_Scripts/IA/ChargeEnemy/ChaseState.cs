@@ -64,6 +64,8 @@ public class ChaseState : IState
         {
             _fsm.ChangeState(PlayerStatesEnum.Attack);
         }
+        else if(dir.magnitude >= _hunter.loseTargetDistance)
+            _fsm.ChangeState(PlayerStatesEnum.Idle);
         
 
                

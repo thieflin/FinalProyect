@@ -51,13 +51,13 @@ public class Hunter : MonoBehaviour
         
     }
 
-    //Esta funcion actualiza la FUERZA PARA EL ATAQUE, es una funcion de animaciones
-
+    //Esta funcion hace que despues de atacar vuelva por defecto a idle
     public void AttackIsFinished()
     {
         _fsm.ChangeState(PlayerStatesEnum.Idle);
     }
 
+    //Esta funcion modifica la fuerza en la animacion con Animation Events
     public void MovementInAttack(int pushForce)
     {
         walkBackForce = pushForce;

@@ -69,7 +69,7 @@ public class WaypointState : MonoBehaviour, IState
 
     }
 
-    //Hace un vector direccion entre el Player y este enemigo, si esta en rango, pasa a ChaseState
+    //Hace un vector direccion entre el Player y este enemigo, si esta en rango, 
     public void DetectEnemy()
     {
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
