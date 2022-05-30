@@ -60,7 +60,7 @@ public class WaypointState : MonoBehaviour, IState
         }
 
         //Cuando llega a la cantidad maxima de wps que quiero que recorra
-        if (_hunter.wpCounter == 4)
+        if (_hunter.wpCounter == _hunter.waypointTracker)
         {
 
             _hunter.currentWaypoint = 0;

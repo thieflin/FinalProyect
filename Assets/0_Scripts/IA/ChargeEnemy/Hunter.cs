@@ -9,6 +9,7 @@ public class Hunter : MonoBehaviour
     public int currentWaypoint; //Al waypoint al que voy
     public int wpCounter; //Contador de wayPoints
     public List<Transform> allWaypoints = new List<Transform>(); //Lista de waypoints en los cuales se va a mover la IA
+    public int waypointTracker; //Cantidad de waypoints por los que quiero que pase
 
     [Header("Idle")]
     public float rotationSpeedOnIdle; //Que tan rapido rota en el idle
