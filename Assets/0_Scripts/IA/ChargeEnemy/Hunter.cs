@@ -22,6 +22,8 @@ public class Hunter : MonoBehaviour
     public int knockbackForce; //Fuerza del knock back
     public int layerHit; //Layer de colision
     public bool isTargetting; //Variable para que cuadno carga el ataque me mire
+    public List<GameObject> hitColliders = new List<GameObject>(); //Colliders de las garras
+    public int damageDone;//Da;o que hace al player
 
     [Header("Cosmetics")]
     public List<GameObject> clawAttackParticles = new List<GameObject>();
@@ -56,6 +58,7 @@ public class Hunter : MonoBehaviour
         
     }
 
+    //Funcion de animation event, se encarga de hacer que triggere el booleano que le permite trackear al jugador antes de saltar
     public void TargetEnemyOnPreparation()
     {
         if (!isTargetting) isTargetting = true;
@@ -63,7 +66,7 @@ public class Hunter : MonoBehaviour
     }
 
 
-    //Esta funcion hace que despues de atacar vuelva por defecto a idle
+    //Esta funcion hace que despues de atacar vuelva por defecto a Chasear, de ahi sale
     public void BackToIdle()
     {
         _fsm.ChangeState(PlayerStatesEnum.Chase);
@@ -75,15 +78,32 @@ public class Hunter : MonoBehaviour
         attackForces = pushForce;
     }
 
-    //Cuando le pegan cambia el estado
+    //Esta funcion hace que se activen los collider trigger de las garras
+    public void ActivateColliderTriggerClaws()
+    {
+        //Activacion y desactivacion de colliders, esto podria hacerlo un collider singular despues si quisiera
+        foreach (var item in hitColliders)
+        {
+            if (!item.GetComponent<BoxCollider>().enabled) item.GetComponent<BoxCollider>().enabled = true;
+            else item.GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
+    //Colisiones
     private void OnTriggerEnter(Collider other)
     {
-        //if(other.gameObject.layer == layerHit)
-        //{
-        //    //_fsm.ChangeState(PlayerStatesEnum.Hit);
-        //    //anim.SetTrigger("Hit");
-        //}
+
+        
+        var player = other.GetComponent<CharStatus>();
+
+        //Si colision con algo de tipo PLAYER, entonces le hago el dmg que este bicho haga a player
+        if (player)
+            player.TakeDamage(damageDone);
+
+        
            
     }
+
+
 
 }
