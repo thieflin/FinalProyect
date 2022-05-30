@@ -26,6 +26,7 @@ public class Hunter : MonoBehaviour
     public bool isTargetting; //Variable para que cuadno carga el ataque me mire
     public List<GameObject> hitColliders = new List<GameObject>(); //Colliders de las garras
     public int damageDone;//Da;o que hace al player
+    public bool justAttacked;
 
     [Header("Cosmetics")]
     public List<GameObject> clawAttackParticles = new List<GameObject>();
@@ -67,6 +68,14 @@ public class Hunter : MonoBehaviour
         else if (isTargetting) isTargetting = false;
     }
 
+    public void ActivateClawParticles()
+    {
+        foreach (var item in clawAttackParticles)
+        {
+            if (!item.activeSelf) item.SetActive(true);
+            else item.SetActive(false);
+        }
+    }
 
     //Esta funcion hace que despues de atacar vuelva por defecto a Chasear, de ahi sale
     public void BackToIdle()

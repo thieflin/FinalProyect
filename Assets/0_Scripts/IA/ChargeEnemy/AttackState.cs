@@ -21,22 +21,12 @@ public class AttackState : MonoBehaviour, IState
     public void OnExit()
     {
         //Desactivo las particulas cuando salgo del attack state
-        foreach (var item in _hunter.clawAttackParticles)
-        {
-            item.SetActive(false);
-        }
     }
 
     public void OnStart()
     {
         _hunter.anim.SetTrigger("Attack");
         meassure = 5f;
-
-        //Activo las particulas cuando arranca el attack state
-        foreach (var item in _hunter.clawAttackParticles)
-        {
-            item.SetActive(true);
-        }
     }
 
     //Falta hacer que cuando cargue te mire

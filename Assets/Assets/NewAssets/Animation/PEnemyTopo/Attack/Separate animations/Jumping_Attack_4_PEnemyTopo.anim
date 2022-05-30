@@ -73907,12 +73907,26 @@ AnimationClip:
     floatParameter: 0
     intParameter: 45000
     messageOptions: 0
+  - time: 0.13333334
+    functionName: ActivateColliderTriggerClaws
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.33333334
     functionName: MovementInAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 25000
+    messageOptions: 0
+  - time: 0.5
+    functionName: ActivateClawParticles
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
     messageOptions: 0
   - time: 0.6333333
     functionName: MovementInAttack
