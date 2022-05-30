@@ -50,35 +50,35 @@ public class EnemyStatus : EnemyData, IDamageable
 
     private void OnTriggerEnter(Collider other)
     {
-        ////Cuando le pego con los ataques normales
-        //if (other.gameObject.layer == _hitboxLayermask && !other.CompareTag("Bullet"))
-        //{
-        //    //Recibe dmg de lo que sea que valga el sword dmg, esto lo defino en combo asi siempre vale lo que yo quiero
-        //    TakeDamage(Combo.swordDmg);
+        //Cuando le pego con los ataques normales
+        if (other.gameObject.layer == _hitboxLayermask && !other.CompareTag("Bullet"))
+        {
+            //Recibe dmg de lo que sea que valga el sword dmg, esto lo defino en combo asi siempre vale lo que yo quiero
+            TakeDamage(Combo.swordDmg);
 
-        //    //Instancia particulas
-        //    //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
-        //    var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
-
-
-        //    //Simula irse hiteado
-        //    _anim.SetTrigger("Hit");
-        //}
-
-        ////Si le pego con el ultimo hit, el que knockbackea PIOLI
-        //else if(other.gameObject.layer == _hitKnockbackLayerMask)
-        //{
-        //    //Recibe dmg
-        //    TakeDamage(Combo.swordDmg);
+            //Instancia particulas
+            //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
+            var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
 
 
-        //    //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
-        //    //Instancia las partic
-        //    var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
+            //Simula irse hiteado
+            _anim.SetTrigger("Hit");
+        }
 
-        //    //Simula irse hiteado
-        //    _anim.SetTrigger("Hit");
-        //}
+        //Si le pego con el ultimo hit, el que knockbackea PIOLI
+        else if (other.gameObject.layer == _hitKnockbackLayerMask)
+        {
+            //Recibe dmg
+            TakeDamage(Combo.swordDmg);
+
+
+            //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
+            //Instancia las partic
+            var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
+
+            //Simula irse hiteado
+            _anim.SetTrigger("Hit");
+        }
     }
 
     private void OnParticleCollision(GameObject other)
