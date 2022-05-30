@@ -24,26 +24,17 @@ public class ChaseState : IState
 
     public void OnExit()
     {
-        
+        _hunter.anim.SetBool("PatrolB", false);
+
     }
 
     public void OnStart()
     {
-        
+        _hunter.anim.SetBool("PatrolB", true);
     }
 
     public void OnUpdate()
     {
-        //_hunter.staminaBar -= Time.deltaTime; //Perdida de Stamina, cuadno chasea pierde una cantidad
-
-        //if (_hunter.staminaBar <= 0) //Si chaseando se queda en 0, se cambia a Idle
-        //    _fsm.ChangeState(PlayerStatesEnum.Idle);
-
-
-        //_hunter.transform.position += _velocity * Time.deltaTime;
-        //_hunter.transform.forward = _velocity;
-        //Pursuit();
-
         Pursuit();
         Debug.Log("on chase");
     }

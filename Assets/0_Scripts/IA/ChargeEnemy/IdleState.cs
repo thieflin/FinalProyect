@@ -25,17 +25,7 @@ public class IdleState : MonoBehaviour, IState
 
     public void OnStart()
     {
-
-
         _hunter.anim.SetBool("IdleB", true);
-        _hunter.thinkingmeter = 3f;
-
-        //if (_hunter.staminaBar <= 0) //Si la stamina es menor que 0 le activo para que descanse
-        //    isResting = true;
-        //else //Si no, en el start directamente me voy al patrol 
-        //    _fms.ChangeState(PlayerStatesEnum.Patrol);
-
-
     }
 
     public void OnUpdate()
@@ -49,24 +39,13 @@ public class IdleState : MonoBehaviour, IState
         //Cuando llega ahi deja de rotar
         if(_hunter.transform.rotation == Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime))
             _fms.ChangeState(PlayerStatesEnum.Patrol);
+    }
 
+    public void DetectEnemy()
+    {
+        Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
 
-        //Thinking time 
-        //_hunter.thinkingmeter -= Time.deltaTime;
-        //if (_hunter.thinkingmeter < 0) _fms.ChangeState(PlayerStatesEnum.Patrol);
-
-
-        //if (isResting && _hunter.staminaBar <=10) //una vez que me quedo sin stamina vengo aca, si se hizo true resting en el start
-        //{
-        //    _hunter.waypointSpeed = 0; //Le hago 0 la speed de movimiento
-        //    _hunter.staminaBar += 4*Time.deltaTime; //Lo pongo a recargar energia
-
-        //}
-        //else //Si no estoy en resting, lo paso como false, le doy su speed, y me vuelvo a patrol
-        //{
-        //    //_hunter.waypointSpeed = 4;
-        //    isResting = false;
-        //    _fms.ChangeState(PlayerStatesEnum.Patrol);
-        //}
+        if (dir.magnitude < _hunter.detectDistance)
+            _fms.ChangeState(PlayerStatesEnum.Chase);
     }
 }

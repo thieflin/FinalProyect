@@ -21,6 +21,7 @@ public class AttackState : MonoBehaviour, IState
     public void OnExit()
     {
         _hunter.anim.SetTrigger("Idle");
+
     }
 
     public void OnStart()
