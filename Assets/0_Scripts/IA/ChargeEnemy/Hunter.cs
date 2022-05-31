@@ -115,6 +115,7 @@ public class Hunter : MonoBehaviour
             player.TakeDamage(damageDone);
             justAttacked = true;
             attackForces = 0;
+            anim.SetTrigger("Collided");
         }
             
 
