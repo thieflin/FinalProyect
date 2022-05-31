@@ -121,14 +121,17 @@ public class Hunter : MonoBehaviour
             {
                 item.SetActive(false);
             }
-            //_fsm.ChangeState(PlayerStatesEnum.Hit);
-            anim.SetTrigger("Hit");
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Reciving_PEnemyTopo"))
+            {
+
+                Debug.Log("Toy ahciendo hitttt");
+            }
+            else anim.SetTrigger("Hit");
+
             _fsm.ChangeState(PlayerStatesEnum.Chase);
         }
-            
-           
+
+
     }
-
-
 
 }
