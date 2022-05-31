@@ -21,19 +21,19 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+    value: {r: 0, g: 0, b: 0, a: 1}
   center:
     overrideState: 0
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.462
+    value: 0.562
   smoothness:
     overrideState: 1
-    value: 1
+    value: 0.466
   roundness:
     overrideState: 1
-    value: 0.643
+    value: 0.688
   rounded:
     overrideState: 0
     value: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
     value: 0
   colorFilter:
     overrideState: 1
-    value: {r: 0.9575472, g: 0.97207135, b: 1, a: 1}
+    value: {r: 0.8457191, g: 0.8983907, b: 0.990566, a: 1}
   hueShift:
     overrideState: 0
     value: 0

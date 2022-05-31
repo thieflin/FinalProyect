@@ -471,7 +471,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69098
+  m_Name: pb_Mesh26060
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -629,6 +629,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &115004960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7853573293536893852, guid: 7cdd06fa5d163c943a4736e1b6cb3125, type: 3}
+  m_PrefabInstance: {fileID: 7853573293593975951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &134889588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -741,6 +746,10 @@ PrefabInstance:
       propertyPath: dashBar
       value: 
       objectReference: {fileID: 159535267}
+    - target: {fileID: 3948558187734990759, guid: fd4c1c18e7d02f14ab47115b7a863dc8, type: 3}
+      propertyPath: simulationSpeed
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3948558188258248645, guid: fd4c1c18e7d02f14ab47115b7a863dc8, type: 3}
       propertyPath: targetSignPrefab
       value: 
@@ -752,6 +761,18 @@ PrefabInstance:
     - target: {fileID: 4183123949691980479, guid: fd4c1c18e7d02f14ab47115b7a863dc8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787160853067792082, guid: fd4c1c18e7d02f14ab47115b7a863dc8, type: 3}
+      propertyPath: simulationSpeed
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787160853890209192, guid: fd4c1c18e7d02f14ab47115b7a863dc8, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787160853890209192, guid: fd4c1c18e7d02f14ab47115b7a863dc8, type: 3}
+      propertyPath: simulationSpeed
+      value: 2.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd4c1c18e7d02f14ab47115b7a863dc8, type: 3}
@@ -1147,7 +1168,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69426
+  m_Name: pb_Mesh26166
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1491,7 +1512,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69452
+  m_Name: pb_Mesh26192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2727,7 +2748,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9198113, g: 0.9910844, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2737,7 +2758,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.6
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -2923,7 +2944,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69752
+  m_Name: pb_Mesh26340
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3581,7 +3602,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69596
+  m_Name: pb_Mesh26262
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7923,7 +7944,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69556
+  m_Name: pb_Mesh26234
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8307,6 +8328,7 @@ GameObject:
   - component: {fileID: 8807130727932210024}
   - component: {fileID: 8807130727932210037}
   - component: {fileID: 8807130727932210038}
+  - component: {fileID: 8807130727932210039}
   m_Layer: 3
   m_Name: Main Camera New
   m_TagString: MainCamera
@@ -8441,3 +8463,16 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &8807130727932210039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807130727932210028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80555fafd2715ea47b7dd6bf5aa42391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pp: {fileID: 115004960}
