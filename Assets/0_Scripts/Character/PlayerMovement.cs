@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     bool dashBarIsEmpty;
     public GameObject dashPart;
     private Vector3 whereToDash;
+    [SerializeField] DashBar dashBar;
 
     [Header("Target Lock")]
     [SerializeField] public bool isTargeting;
@@ -52,8 +53,9 @@ public class PlayerMovement : MonoBehaviour
 
         animator = GetComponent<Animator>();
 
-        DashBar.instance.dashSlider.maxValue = _timeBetweenDashes;
-        DashBar.instance.dashSlider.value = _timeBetweenDashes;
+
+        dashBar.dashSlider.maxValue = _timeBetweenDashes;
+        dashBar.dashSlider.value = _timeBetweenDashes;
     }
 
     private void FixedUpdate()
@@ -67,10 +69,27 @@ public class PlayerMovement : MonoBehaviour
         ////Esto es porque por algun motivo me las desfreezea cuando combea medio xd el tema
         //_rb.constraints = RigidbodyConstraints.FreezeRotation;
         if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting && isGrounded())
-            Dash();
+            Dash(Vector3.zero);
         else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting && isGrounded())
-            Dash();
+            Dash(Vector3.zero);
 
+        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+        {
+            if (canDash)
+            {
+                var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, -45, 0));
+
+                var newInput = matrix.MultiplyPoint3x4(new Vector3(Input.GetAxisRaw("Mouse X"), 0f,Input.GetAxisRaw("Mouse Y")));
+
+                newInput.Normalize();
+
+                Debug.Log(Input.GetAxisRaw("Mouse X") + " MOUSE X");
+
+                Debug.Log(Input.GetAxisRaw("Mouse Y") + " MOUSE Y");
+
+                Dash(newInput);
+            }
+        }
 
         //Para testear unicamente
         if (Input.GetKeyDown(KeyCode.I))
@@ -93,8 +112,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (dashBarIsEmpty)
         {
-            if (DashBar.instance.dashSlider.value < _timeBetweenDashes)
-                DashBar.instance.dashSlider.value += Time.deltaTime;
+            if (dashBar.dashSlider.value < _timeBetweenDashes)
+                dashBar.dashSlider.value += Time.deltaTime;
             else
                 dashBarIsEmpty = false;
         }
@@ -222,8 +241,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Para cuando dashea y esta targeteando
-    public void Dash()
+    public void Dash(Vector3 whereToDashes)
     {
+        if (whereToDashes != Vector3.zero)
+        {
+            whereToDash = whereToDashes;
+        }
+
         if (canDash)
         {
             //_rb.velocity = Vector3.zero;
@@ -256,7 +280,8 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         dashPart.SetActive(true);
-        DashBar.instance.dashSlider.value -= _timeBetweenDashes;
+        Debug.Log("ESTOY ACA!!");
+        dashBar.dashSlider.value -= _timeBetweenDashes;
         dashBarIsEmpty = true;
         var saveYRotation = transform.eulerAngles.y;
         yield return new WaitForSeconds(_dashTime);

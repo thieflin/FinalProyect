@@ -12,11 +12,12 @@ public class DashBar : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
+        else
+            Destroy(this);
     }
 
-    
 }
