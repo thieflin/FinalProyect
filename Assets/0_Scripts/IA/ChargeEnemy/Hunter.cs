@@ -26,7 +26,7 @@ public class Hunter : MonoBehaviour
     public bool isTargetting; //Variable para que cuadno carga el ataque me mire
     public List<GameObject> hitColliders = new List<GameObject>(); //Colliders de las garras
     public int damageDone;//Da;o que hace al player
-    public bool justAttacked;
+    public bool justAttacked; //Booleano para saber si le pego al player
 
     [Header("Cosmetics")]
     public List<GameObject> clawAttackParticles = new List<GameObject>();
@@ -87,7 +87,8 @@ public class Hunter : MonoBehaviour
     //Esta funcion modifica la fuerza en la animacion con Animation Events
     public void MovementInAttack(int pushForce)
     {
-        attackForces = pushForce;
+        if(!justAttacked)
+            attackForces = pushForce;
     }
 
     //Esta funcion hace que se activen los collider trigger de las garras
@@ -110,7 +111,12 @@ public class Hunter : MonoBehaviour
 
         //Si colision con algo de tipo PLAYER, entonces le hago el dmg que este bicho haga a player
         if (player)
+        {
             player.TakeDamage(damageDone);
+            justAttacked = true;
+            attackForces = 0;
+        }
+            
 
         var sword = other.GetComponent<ColliderPG>();
 

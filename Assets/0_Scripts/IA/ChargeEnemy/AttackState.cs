@@ -21,6 +21,7 @@ public class AttackState : MonoBehaviour, IState
     public void OnExit()
     {
         //Desactivo las particulas cuando salgo del attack state
+        _hunter.justAttacked = false;
     }
 
     public void OnStart()
