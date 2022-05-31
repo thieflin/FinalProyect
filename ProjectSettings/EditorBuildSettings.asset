@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arte.unity
     guid: 87fba056779092b40856fe8c0c6c2e78
+  - enabled: 1
+    path: Assets/Scenes/LevelNewBuildings.unity
+    guid: 12fb524a20440ae48a606d026b3ed101
   m_configObjects: {}

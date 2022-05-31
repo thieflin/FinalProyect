@@ -26,5 +26,7 @@ public class Quit : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(2);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+            UnityEngine.SceneManagement.SceneManager.LoadScene(3);
     }
 }
