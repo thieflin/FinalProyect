@@ -77,24 +77,26 @@ public class PlayerMovement : MonoBehaviour
                 Dash(Vector3.zero);
             else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting && isGrounded() && flagDash)
                 Dash(Vector3.zero);
-        }
 
-        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
-        {
-            if (canDash)
+
+            if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
             {
-                var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, -45, 0));
+                if (canDash)
+                {
+                    var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, -45, 0));
 
-                var newInput = matrix.MultiplyPoint3x4(new Vector3(Input.GetAxisRaw("Mouse X"), 0f, Input.GetAxisRaw("Mouse Y")));
+                    var newInput = matrix.MultiplyPoint3x4(new Vector3(Input.GetAxisRaw("Mouse X"), 0f, Input.GetAxisRaw("Mouse Y")));
 
-                newInput.Normalize();
+                    newInput.Normalize();
 
-                //Debug.Log(Input.GetAxisRaw("Mouse X") + " MOUSE X");
+                    //Debug.Log(Input.GetAxisRaw("Mouse X") + " MOUSE X");
 
-                //Debug.Log(Input.GetAxisRaw("Mouse Y") + " MOUSE Y");
+                    //Debug.Log(Input.GetAxisRaw("Mouse Y") + " MOUSE Y");
 
-                Dash(newInput);
+                    Dash(newInput);
+                }
             }
+
         }
 
         //Para testear unicamente
