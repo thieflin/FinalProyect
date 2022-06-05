@@ -11,7 +11,7 @@ public class Combo : MonoBehaviour
 
 
     public List<GameObject> meleeHitboxes = new List<GameObject>();
-    public List<ParticleSystem> pss = new List<ParticleSystem>(); 
+    public List<ParticleSystem> pss = new List<ParticleSystem>();
 
     public ParticleSystem ps;
 
@@ -19,7 +19,7 @@ public class Combo : MonoBehaviour
 
     public bool upgradedHitbox;
     public PlayerMovement _pm;
-    
+
     public static int swordDmg;
     [SerializeField] private Rigidbody _rb;
 
@@ -50,7 +50,21 @@ public class Combo : MonoBehaviour
     }
     void Update()
     {
-        
+        if (ani.GetCurrentAnimatorStateInfo(0).IsName("AttackOne") || ani.GetCurrentAnimatorStateInfo(0).IsName("AttackTwo")
+                                || ani.GetCurrentAnimatorStateInfo(0).IsName("AttackThree"))
+        {
+            Debug.Log("tukination");
+            _pm.flagDash = false;
+            Debug.Log(_pm.flagDash);
+        }
+        else
+        {
+            _pm.flagDash = true; Debug.Log(_pm.flagDash);
+
+        }
+
+
+
         InputController();
 
         if (isMoving)

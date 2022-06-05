@@ -68,13 +68,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        
+
         ////Esto es porque por algun motivo me las desfreezea cuando combea medio xd el tema
         //_rb.constraints = RigidbodyConstraints.FreezeRotation;
-        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting && isGrounded() && flagDash)
-            Dash(Vector3.zero);
-        else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting && isGrounded() && flagDash)
-            Dash(Vector3.zero);
+        if (flagDash)
+        {
+            if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting && isGrounded() && flagDash)
+                Dash(Vector3.zero);
+            else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting && isGrounded() && flagDash)
+                Dash(Vector3.zero);
+        }
 
         if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
         {
@@ -82,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, -45, 0));
 
-                var newInput = matrix.MultiplyPoint3x4(new Vector3(Input.GetAxisRaw("Mouse X"), 0f,Input.GetAxisRaw("Mouse Y")));
+                var newInput = matrix.MultiplyPoint3x4(new Vector3(Input.GetAxisRaw("Mouse X"), 0f, Input.GetAxisRaw("Mouse Y")));
 
                 newInput.Normalize();
 
