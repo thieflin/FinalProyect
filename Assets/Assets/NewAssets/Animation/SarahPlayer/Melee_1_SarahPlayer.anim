@@ -55419,6 +55419,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: DeactivateDahsOnAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.33333334
     functionName: MeleeColliderActivationCombo
     data: 
@@ -55449,6 +55456,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.6
     functionName: EventNextAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.6666667
+    functionName: ActivateDashOnAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

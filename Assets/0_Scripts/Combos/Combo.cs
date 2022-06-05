@@ -9,6 +9,7 @@ public class Combo : MonoBehaviour
     public Animator ani;
     int _nextCombo = 0;
 
+
     public List<GameObject> meleeHitboxes = new List<GameObject>();
     public List<ParticleSystem> pss = new List<ParticleSystem>(); 
 
@@ -17,7 +18,7 @@ public class Combo : MonoBehaviour
     public List<GameObject> rangedHitboxes = new List<GameObject>();
 
     public bool upgradedHitbox;
-    private PlayerMovement _pm;
+    public PlayerMovement _pm;
     
     public static int swordDmg;
     [SerializeField] private Rigidbody _rb;
@@ -32,17 +33,24 @@ public class Combo : MonoBehaviour
     public GameObject particleDustSlide;
     public ParticleSystem particleDustStep;
 
+    public bool canAttack;
+    private void Awake()
+    {
+        _pm = GetComponent<PlayerMovement>();
+        _rb = GetComponent<Rigidbody>();
+    }
     private void Start()
     {
         swordDmg = 10;
         upgradedHitbox = false;
+        canAttack = true;
         EventManager.Instance.Subscribe("OnGettingBiggerHitbox", UpgradedHitboxTrue);
-        _pm = GetComponent<PlayerMovement>();
-        _rb = GetComponent<Rigidbody>();
+
 
     }
     void Update()
     {
+        
         InputController();
 
         if (isMoving)
@@ -71,7 +79,8 @@ public class Combo : MonoBehaviour
 
     void InputController()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("AttackNA"))
+        Debug.Log(canAttack);
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("AttackNA") && canAttack)
         {
             if (_isIdle == true)
             {
@@ -85,7 +94,7 @@ public class Combo : MonoBehaviour
             else
                 _nextCombo = 1;
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetButtonDown("AttackRangedNA"))
+        else if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetButtonDown("AttackRangedNA") && canAttack)
         {
             if (_isIdle == true)
             {
@@ -161,6 +170,8 @@ public class Combo : MonoBehaviour
         }
     }
 
+
+
     public void ActivateStepParticleStep()
     {
         particleDustStep.Play();
@@ -183,6 +194,26 @@ public class Combo : MonoBehaviour
         _pm.enabled = false;
     }
 
+    public void StopDash()
+    {
+        _pm.canDash = false;
+    }
+
+    public void AllowDash()
+    {
+        _pm.canDash = true;
+    }
+
+    //Animation events 
+    public void DisableAttack()
+    {
+        canAttack = false;
+    }
+
+    public void EnableAttack()
+    {
+        canAttack = true;
+    }
 
     public void ColliderActivationRangedCombo(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
     {

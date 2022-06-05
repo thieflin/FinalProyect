@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject dashPart;
     private Vector3 whereToDash;
     [SerializeField] DashBar dashBar;
+    public bool flagDash; //Esta variable me sirve para desahabilitar el dash pero no con el cd, simplemente desactivarlo
+    //para que no se pueda usarlo
 
     [Header("Target Lock")]
     [SerializeField] public bool isTargeting;
@@ -66,11 +68,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        
         ////Esto es porque por algun motivo me las desfreezea cuando combea medio xd el tema
         //_rb.constraints = RigidbodyConstraints.FreezeRotation;
-        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting && isGrounded())
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && !isTargeting && isGrounded() && flagDash)
             Dash(Vector3.zero);
-        else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting && isGrounded())
+        else if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Dash")) && isTargeting && isGrounded() && flagDash)
             Dash(Vector3.zero);
 
         if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
@@ -83,9 +86,9 @@ public class PlayerMovement : MonoBehaviour
 
                 newInput.Normalize();
 
-                Debug.Log(Input.GetAxisRaw("Mouse X") + " MOUSE X");
+                //Debug.Log(Input.GetAxisRaw("Mouse X") + " MOUSE X");
 
-                Debug.Log(Input.GetAxisRaw("Mouse Y") + " MOUSE Y");
+                //Debug.Log(Input.GetAxisRaw("Mouse Y") + " MOUSE Y");
 
                 Dash(newInput);
             }
@@ -277,12 +280,11 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator waitDash()
     {
         _rb.velocity = Vector3.zero;
-        canDash = false;
-        isDashing = true;
-        dashPart.SetActive(true);
-        Debug.Log("ESTOY ACA!!");
-        dashBar.dashSlider.value -= _timeBetweenDashes;
-        dashBarIsEmpty = true;
+        canDash = false; //Is dashing
+        isDashing = true; //Esta dashing
+        dashPart.SetActive(true);//Particulas
+        dashBar.dashSlider.value -= _timeBetweenDashes; //Slider
+        dashBarIsEmpty = true;//Slider
         var saveYRotation = transform.eulerAngles.y;
         yield return new WaitForSeconds(_dashTime);
         yield return new WaitForSeconds(0.2f);
@@ -320,4 +322,15 @@ public class PlayerMovement : MonoBehaviour
     {
         return Vector3.ProjectOnPlane(direction, _slopeHit.normal).normalized;
     }
+
+    public void DeactivateDahsOnAttack()
+    {
+        flagDash = false;
+    }
+
+    public void ActivateDashOnAttack()
+    {
+        flagDash = true;
+    }
+
 }

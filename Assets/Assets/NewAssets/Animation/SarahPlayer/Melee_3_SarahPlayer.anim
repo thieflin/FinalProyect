@@ -63483,6 +63483,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: DeactivateDahsOnAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.2
     functionName: ActSlideSmokePart
     data: 
@@ -63513,6 +63520,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.93333334
     functionName: FinishCombo
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.93333334
+    functionName: ActivateDashOnAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
