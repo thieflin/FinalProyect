@@ -13,7 +13,7 @@ public class ExtraScriptTest : MonoBehaviour
         if (other.gameObject.layer == normalAttackLayer)
         {
             gameObject.GetComponent<BoxCollider>().enabled = false;
-            AudioManager.PlaySound("puzzle");
+            //AudioManager.PlaySound("puzzle");
             puenteActivate.GetComponent<Animator>().SetTrigger("Work");
             GetComponent<Animator>().SetTrigger("LeverHit");
 
