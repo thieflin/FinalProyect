@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelNewBuildings.unity
     guid: 12fb524a20440ae48a606d026b3ed101
+  - enabled: 1
+    path: Assets/Scenes/Arena.unity
+    guid: 9a4b361f21bced146aa8ad850c2f5509
   m_configObjects: {}
