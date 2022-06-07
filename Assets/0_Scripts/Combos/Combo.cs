@@ -59,7 +59,7 @@ public class Combo : MonoBehaviour
         }
         else
         {
-            _pm.flagDash = true; Debug.Log(_pm.flagDash);
+            _pm.flagDash = true;
 
         }
 
@@ -93,7 +93,6 @@ public class Combo : MonoBehaviour
 
     void InputController()
     {
-        Debug.Log(canAttack);
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("AttackNA") && canAttack)
         {
             if (_isIdle == true)
@@ -252,4 +251,10 @@ public class Combo : MonoBehaviour
             rangedHitboxes[ColliderNumber].SetActive(true);
         }
     }
+
+    public void Sound()
+    {
+        AudioManager.PlaySound("slash");
+    }
+    
 }

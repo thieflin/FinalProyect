@@ -32,7 +32,6 @@ public class IdleState : MonoBehaviour, IState
 
     public void OnUpdate()
     {
-        Debug.Log("en idle");
         idleHold -= Time.deltaTime;
 
         //Busco el vector al cual yo quiero rotar es decir donde llegue ahi freno
