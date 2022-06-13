@@ -9,13 +9,16 @@ public class Combo : MonoBehaviour
     public Animator ani;
     int _nextCombo = 0;
 
-
+    [Header("Hitboxes")]
     public List<GameObject> meleeHitboxes = new List<GameObject>();
+    public List<GameObject> rangedHitboxes = new List<GameObject>();
+
+    [Header("Particulas melee y ranged")]
     public List<ParticleSystem> pss = new List<ParticleSystem>();
+    public List<ParticleSystem> rangedPss = new List<ParticleSystem>();
 
     public ParticleSystem ps;
 
-    public List<GameObject> rangedHitboxes = new List<GameObject>();
 
     public bool upgradedHitbox;
     public PlayerMovement _pm;
@@ -23,8 +26,10 @@ public class Combo : MonoBehaviour
     public static int swordDmg;
     [SerializeField] private Rigidbody _rb;
 
+    [Header("Movimiento al atacar")]
     public bool isMovingBack;
     public bool isMoving;
+    public int shotgunKnockbackForce;
 
     public ParticleSystem shotGunParticleSystem;
 
@@ -53,9 +58,7 @@ public class Combo : MonoBehaviour
         if (ani.GetCurrentAnimatorStateInfo(0).IsName("AttackOne") || ani.GetCurrentAnimatorStateInfo(0).IsName("AttackTwo")
                                 || ani.GetCurrentAnimatorStateInfo(0).IsName("AttackThree"))
         {
-            Debug.Log("tukination");
             _pm.flagDash = false;
-            Debug.Log(_pm.flagDash);
         }
         else
         {
@@ -67,6 +70,8 @@ public class Combo : MonoBehaviour
 
         InputController();
 
+
+        //Movimiento rigidbody al atacar
         if (isMoving)
         {
             _rb.velocity = Vector3.zero;
@@ -76,14 +81,9 @@ public class Combo : MonoBehaviour
         {
             _rb.velocity = Vector3.zero;
 
-            _rb.AddForce(transform.forward * Time.deltaTime * -100000, ForceMode.Force);
+            _rb.AddForce(transform.forward * Time.deltaTime * -shotgunKnockbackForce, ForceMode.Force);
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            ani.SetTrigger("MS1");
-        }
     }
 
     public void UpgradedHitboxTrue(params object[] parameters)
@@ -233,10 +233,10 @@ public class Combo : MonoBehaviour
         //if (rangedHitboxes == null)
         //    return;
 
-        shotGunParticleSystem.transform.position = gameObject.transform.position + (gameObject.transform.forward) * 1f + new Vector3(0, 2.5f, 0);
-        shotGunParticleSystem.transform.rotation = gameObject.transform.rotation;
+        //rangedPss[ColliderNumber].transform.position = gameObject.transform.position + (gameObject.transform.forward) * 1f + new Vector3(0, 5f, 0);
+        //rangedPss[ColliderNumber].transform.rotation = gameObject.transform.rotation;
 
-        shotGunParticleSystem.Play();
+        rangedPss[ColliderNumber].Play();
 
         //COMENTO POR AHORA PARA SACAR LOS COLLIDERS Y AGREGO EL SISTEMA DE PARTICULAS DIRECTAMENTE ACA
 
@@ -251,6 +251,14 @@ public class Combo : MonoBehaviour
             rangedHitboxes[ColliderNumber].SetActive(true);
         }
     }
+
+    //Esta es una funcion de animacion, lo que hace es cambiar la fuerza que usa al atacar para deslizarse hacia atras
+    public void BackwardsJump(int pushForce)
+    {
+            shotgunKnockbackForce = pushForce;
+    }
+
+
 
     public void Sound()
     {

@@ -80,7 +80,7 @@ public class EnemyStatus : EnemyData, IDamageable
         if (other.CompareTag("Bullet") && !enemyHitted)
         {
             TakeDamage(10);
-
+            Debug.Log("xd");
             var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
             if (this.gameObject.activeSelf)
                 StartCoroutine(WaitForEnemyHitted());

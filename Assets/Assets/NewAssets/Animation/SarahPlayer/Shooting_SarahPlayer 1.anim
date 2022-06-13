@@ -56794,6 +56794,20 @@ AnimationClip:
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
+  - time: 0.33333334
+    functionName: BackwardsJump
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 130000
+    messageOptions: 0
+  - time: 0.53333336
+    functionName: BackwardsJump
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.53333336
     functionName: ColliderActivationRangedCombo
     data: 
@@ -56808,8 +56822,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.73333335
-    functionName: EventNextAnimation
+  - time: 0.76666665
+    functionName: FinishCombo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
