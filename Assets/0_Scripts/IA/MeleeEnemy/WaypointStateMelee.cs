@@ -56,7 +56,7 @@ public class WaypointStateMelee : MonoBehaviour, IState
             if (_hunter.currentWaypoint == lastWp)
                 while (_hunter.currentWaypoint == lastWp)
                     _hunter.currentWaypoint = Random.Range(0, _hunter.allWaypoints.Count - 1);
-            _fsm.ChangeState(PlayerStatesEnum.Idle);
+            _fsm.ChangeState(PlayerStatesEnum.IdleCDState);
         }
 
         //Cuando llega a la cantidad maxima de wps que quiero que recorra

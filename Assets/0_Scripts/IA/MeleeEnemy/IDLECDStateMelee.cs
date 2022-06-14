@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IDLECDStateMelee : MonoBehaviour
+public class IDLECDStateMelee : MonoBehaviour, IState
 {
     StateMachine _fms;
     HunterMelee _hunter;
@@ -16,7 +16,7 @@ public class IDLECDStateMelee : MonoBehaviour
 
     public void OnExit()
     {
-       
+        _hunter.anim.SetTrigger("Patrol");
     }
 
     public void OnStart()
@@ -27,7 +27,7 @@ public class IDLECDStateMelee : MonoBehaviour
 
     public void OnUpdate()
     {
-        Debug.Log("en cd");
+        Debug.Log("en idle cd");
 
         _hunter.idleWpCd -= Time.deltaTime;
         if (_hunter.idleWpCd < 0)
@@ -52,6 +52,5 @@ public class IDLECDStateMelee : MonoBehaviour
         //Si estoy en posicion de detectarlo lo chaseo
         else if (dir.magnitude < _hunter.detectDistance)
             _fms.ChangeState(PlayerStatesEnum.Chase);
-        else _fms.ChangeState(PlayerStatesEnum.Chase);
     }
 }
