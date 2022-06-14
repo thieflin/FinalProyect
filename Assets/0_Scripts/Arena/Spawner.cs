@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Vector3 randomPosition = new Vector3(transform.position.x + Random.Range(-5f, 5f), transform.position.y, transform.position.x + Random.Range(-5f, 5f));
+        Vector3 randomPosition = new Vector3(transform.localPosition.x + Random.Range(-5f, 5f), transform.position.y, transform.localPosition.z + Random.Range(-5f, 5f));
         var spawnedEnemy = Instantiate(enemyToSpawn, randomPosition, Quaternion.identity);
         
         instance.AddEnemy(spawnedEnemy);

@@ -27,11 +27,11 @@ public class TargetLock : MonoBehaviour
     {
         FieldOfView();
 
-        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("TargetLock"))
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("TargetLock") && targetSignPrefab != null)
         {
             if (enemiesClose.Count > 0 && !player.isTargeting)
                 LookForClosestEnemy();
-            else if (enemiesClose.Count > 0 && player.isTargeting)
+            else if (enemiesClose.Count > 0 && player.isTargeting && targetSignPrefab != null)
             {
                 player.isTargeting = false;
                 targetSignPrefab.SetActive(false);
@@ -40,7 +40,7 @@ public class TargetLock : MonoBehaviour
                 Debug.Log("No hay enemigos cercanos");
         }
 
-        if (!player.isTargeting)
+        if (!player.isTargeting && targetSignPrefab != null)
         {
             targetSignPrefab.SetActive(false);
             targetSignPrefab.transform.parent = null;
@@ -72,7 +72,7 @@ public class TargetLock : MonoBehaviour
             }
         }
 
-        if (closestEnemy != null)
+        if (closestEnemy != null && targetSignPrefab != null)
             player.TargetEnemy(closestEnemy, targetSignPrefab);
 
     }
