@@ -8,7 +8,8 @@ public enum PlayerStatesEnum
     Chase,
     Patrol,
     Attack,
-    Hit
+    Hit,
+    CDState
 }
 
 public class StateMachine
