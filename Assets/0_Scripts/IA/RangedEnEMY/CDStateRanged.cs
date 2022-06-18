@@ -21,7 +21,7 @@ public class CDStateRanged : MonoBehaviour, IState
 
     public void OnStart()
     {
-        _hunter.attackCd = Random.Range(3,6);
+        _hunter.attackCd = Random.Range(3, 6);
     }
 
     public void OnUpdate()
@@ -36,7 +36,6 @@ public class CDStateRanged : MonoBehaviour, IState
         _hunter.transform.position += dir.normalized * _hunter.speed * .5f /*para que chasee mas rapdio*/ * Time.deltaTime;
         //Hace que mire al player mientras espera y espere en idle (esto podria ponerse una animacion de transicion tambien)
         RotationTowardsPlayer();
-
 
         if (_hunter.attackCd < 0)
         {
@@ -58,6 +57,7 @@ public class CDStateRanged : MonoBehaviour, IState
         //Trazo un vector del player al jugador
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
 
+        Debug.Log((int)dir.magnitude);
 
         ////Si estoy en posicion de ataque lo ataco
         //if (dir.magnitude < _hunter.attackDistance)
@@ -88,7 +88,6 @@ public class CDStateRanged : MonoBehaviour, IState
                 _hunter.anim.SetTrigger("AttackAgain");
                 _fms.ChangeState(PlayerStatesEnum.Attack);
             }
-            
             else if (dir.magnitude < _hunter.detectDistance)
                 _fms.ChangeState(PlayerStatesEnum.Chase);
         }
