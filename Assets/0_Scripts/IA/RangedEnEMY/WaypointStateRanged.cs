@@ -32,13 +32,20 @@ public class WaypointStateRanged : MonoBehaviour, IState
         Debug.Log("im on patrol");
         //Movimiento base
         Move();
-
+        LookAtWps();
         //Detectar enemigo cambio el estado
         DetectEnemy();
     }
 
     public void Move() //Funcion de movimiento de waypoints
     {
+
+
+        //Busco el vector al cual yo quiero rotar es decir donde llegue ahi freno
+        Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.allWaypoints[_hunter.currentWaypoint].transform.position);
+
+        //Hago que la rotacion sea un rotate towards hacia el vector calculado antes
+        _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
 
         Vector3 dir = _hunter.allWaypoints[_hunter.currentWaypoint].transform.position - _hunter.transform.position;
         _hunter.transform.position += dir.normalized * _hunter.speed * Time.deltaTime;
@@ -76,5 +83,14 @@ public class WaypointStateRanged : MonoBehaviour, IState
 
         if (dir.magnitude < _hunter.detectDistance)
             _fsm.ChangeState(PlayerStatesEnum.DetectionState);
+    }
+
+    public void LookAtWps()
+    {
+        //Busco el vector al cual yo quiero rotar es decir donde llegue ahi freno
+        Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.allWaypoints[_hunter.currentWaypoint].transform.position);
+
+        //Hago que la rotacion sea un rotate towards hacia el vector calculado antes
+        _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
     }
 }

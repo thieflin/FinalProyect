@@ -57,7 +57,7 @@ public class HunterRanged : MonoBehaviour
         _fsm.AddState(PlayerStatesEnum.Chase, new ChaseStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Attack, new AttackStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.StepbackState, new StepbackStateRanged(_fsm, this));
-        _fsm.AddState(PlayerStatesEnum.CDState, new AttackStateRanged(_fsm, this));
+        _fsm.AddState(PlayerStatesEnum.CDState, new CDStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.DetectionState, new DetectedStateRanged(_fsm, this));
         _fsm.ChangeState(PlayerStatesEnum.Patrol); //Lo hago arrancar con Idle
         _fsm.OnStart(); //Starteo la FSM
@@ -94,9 +94,16 @@ public class HunterRanged : MonoBehaviour
             attackForces = pushForce;
     }
 
+    //Animation event al final de la animacion de stepback, procede a atacar cuadno temrina
     public void StartAttack()
     {
         _fsm.ChangeState(PlayerStatesEnum.Attack);
+    }
+
+    //Animation event final del ataque para ir al cd
+    public void EndAttack()
+    {
+        _fsm.ChangeState(PlayerStatesEnum.CDState);
     }
 
     public void EndOfDetection()

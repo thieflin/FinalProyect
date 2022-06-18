@@ -30,6 +30,8 @@ public class CDStateRanged : MonoBehaviour, IState
 
         _hunter.attackCd -= Time.deltaTime;
 
+
+
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
         _hunter.transform.position += dir.normalized * _hunter.speed * .5f /*para que chasee mas rapdio*/ * Time.deltaTime;
         //Hace que mire al player mientras espera y espere en idle (esto podria ponerse una animacion de transicion tambien)
@@ -86,7 +88,7 @@ public class CDStateRanged : MonoBehaviour, IState
                 _hunter.anim.SetTrigger("AttackAgain");
                 _fms.ChangeState(PlayerStatesEnum.Attack);
             }
-                
+            
             else if (dir.magnitude < _hunter.detectDistance)
                 _fms.ChangeState(PlayerStatesEnum.Chase);
         }
