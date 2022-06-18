@@ -32,7 +32,10 @@ public class WaypointStateMelee : MonoBehaviour, IState
         Debug.Log("im on patrol");
         //Movimiento base
         Move();
+        Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.allWaypoints[_hunter.currentWaypoint].transform.position);
 
+        //Hago que la rotacion sea un rotate towards hacia el vector calculado antes
+        _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
         //Detectar enemigo cambio el estado
         DetectEnemy();
     }
@@ -56,7 +59,7 @@ public class WaypointStateMelee : MonoBehaviour, IState
             if (_hunter.currentWaypoint == lastWp)
                 while (_hunter.currentWaypoint == lastWp)
                     _hunter.currentWaypoint = Random.Range(0, _hunter.allWaypoints.Count - 1);
-            _fsm.ChangeState(PlayerStatesEnum.IdleCDState);
+            _fsm.ChangeState(PlayerStatesEnum.Idle);
         }
 
         //Cuando llega a la cantidad maxima de wps que quiero que recorra

@@ -38,10 +38,10 @@ public class AttackStateMelee : MonoBehaviour, IState
 
         //FocusPlayer();
 
+        //comenta3 x s ilas dudas este codigo si algo no anda borralo y proba de vuelta XD
 
-
-        meassure -= Time.deltaTime;
-        if (meassure < 0) _fms.ChangeState(PlayerStatesEnum.Idle);
+        //meassure -= Time.deltaTime;
+        //if (meassure < 0) _fms.ChangeState(PlayerStatesEnum.Idle);
     }
 
     public void FocusPlayer()

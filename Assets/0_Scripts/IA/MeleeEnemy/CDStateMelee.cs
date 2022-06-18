@@ -21,7 +21,6 @@ public class CDStateMelee : MonoBehaviour, IState
 
     public void OnStart()
     {
-        _hunter.anim.SetTrigger("Idle");
         _hunter.attackCd = 4f;
     }
 
@@ -58,23 +57,24 @@ public class CDStateMelee : MonoBehaviour, IState
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
 
 
-        //Si estoy en posicion de ataque lo ataco
-        if (dir.magnitude < _hunter.attackDistance)
-        {
-            _hunter.anim.SetTrigger("Attack");
-            _fms.ChangeState(PlayerStatesEnum.Attack);
-        }
+        ////Si estoy en posicion de ataque lo ataco
+        //if (dir.magnitude < _hunter.attackDistance)
+        //{
+        //    _hunter.anim.SetTrigger("Attack");
+        //    _fms.ChangeState(PlayerStatesEnum.Attack);
+        //}
 
-        //Si estoy en posicion de detectarlo lo chaseo
-        else if (dir.magnitude > _hunter.loseTargetDistance)
+        if (dir.magnitude > _hunter.loseTargetDistance)
         {
             Debug.Log("NO LO TENGO EN RANGO ME VOY A CASA");
+            //Este trigger podria pasarlo por animation event me parece seria mejor
             _hunter.anim.SetTrigger("BackToPatrol");
             _fms.ChangeState(PlayerStatesEnum.Patrol);
 
         }
-        else if (dir.magnitude < _hunter.loseTargetDistance && dir.magnitude > _hunter.attackDistance)
+        else if (dir.magnitude < _hunter.loseTargetDistance)
         {
+            //Tamb animation event
             Debug.Log("LO PUEDO SEGUIR PERSIGUIENDO");
             _hunter.anim.SetTrigger("ChaseAgain");
             _fms.ChangeState(PlayerStatesEnum.Chase);

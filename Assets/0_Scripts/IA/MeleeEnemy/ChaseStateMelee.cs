@@ -24,13 +24,13 @@ public class ChaseStateMelee : IState
 
     public void OnExit()
     {
-        _hunter.anim.SetBool("PatrolB", false);
+        
 
     }
 
     public void OnStart()
     {
-        _hunter.anim.SetBool("PatrolB", true);
+        
     }
 
     public void OnUpdate()
@@ -58,7 +58,8 @@ public class ChaseStateMelee : IState
         }
         else if ( dir.magnitude > _hunter.loseTargetDistance)
         {
-            _fsm.ChangeState(PlayerStatesEnum.Idle);
+            _hunter.anim.SetTrigger("Idle");
+            _fsm.ChangeState(PlayerStatesEnum.Patrol);
         }
     }
 

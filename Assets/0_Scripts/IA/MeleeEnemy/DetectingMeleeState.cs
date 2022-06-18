@@ -21,13 +21,19 @@ public class DetectingMeleeState : MonoBehaviour, IState
 
     public void OnStart()
     {
+        //Aca al final de esta animacion entra una funcion de trigger que hace que pase a el estado de chase
         _hunter.anim.SetTrigger("Detected");
+        _hunter.anim.SetBool("PatrolB", false);
+        _hunter.anim.SetBool("IdleB", false);
     }
 
     public void OnUpdate()
     {
+        //Para que lo mire mientras detecta
+        Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.allWaypoints[_hunter.currentWaypoint].transform.position);
 
-        Debug.Log("entre en deteccion");
+        //Hago que la rotacion sea un rotate towards hacia el vector calculado antes
+        _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
 
     }
 
