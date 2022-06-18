@@ -22,7 +22,6 @@ public class StepbackStateRanged : MonoBehaviour, IState
 
     public void OnExit()
     {
-        
 
     }
 
@@ -33,7 +32,22 @@ public class StepbackStateRanged : MonoBehaviour, IState
 
     public void OnUpdate()
     {
-        Debug.Log("on chase");
+        LookAtPlayer();
+        StepbackAnimation();
     }
 
+    public void LookAtPlayer()
+    {
+        //Esto hace que lo mire al perseguirlo
+        Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.target.transform.position);
+        //Hago que la rotacion sea un rotate towards hacia el vector calculado antes
+        _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
+    }
+
+
+    //Esta funcion hace que agarre fuerza en el rigid body para saltar hacia atras, esto salta CUANDO
+    public void StepbackAnimation()
+    {
+        _hunter.rb.AddForce(_hunter.transform.forward * _hunter.attackForces * Time.deltaTime, ForceMode.Impulse);
+    }
 }

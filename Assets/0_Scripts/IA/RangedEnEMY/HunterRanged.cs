@@ -10,6 +10,7 @@ public class HunterRanged : MonoBehaviour
     public int wpCounter; //Contador de wayPoints
     public List<Transform> allWaypoints = new List<Transform>(); //Lista de waypoints en los cuales se va a mover la IA
     public int waypointTracker; //Cantidad de waypoints por los que quiero que pase
+    public float idleWpCd; //CD De cada waypoint
 
     [Header("Idle")]
     public float rotationSpeedOnIdle; //Que tan rapido rota en el idle
@@ -59,6 +60,7 @@ public class HunterRanged : MonoBehaviour
         _fsm.AddState(PlayerStatesEnum.Attack, new AttackStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.StepbackState, new StepbackStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.CDState, new AttackStateRanged(_fsm, this));
+        _fsm.AddState(PlayerStatesEnum.DetectionState, new DetectedStateRanged(_fsm, this));
         _fsm.ChangeState(PlayerStatesEnum.Patrol); //Lo hago arrancar con Idle
         _fsm.OnStart(); //Starteo la FSM
 
@@ -91,17 +93,14 @@ public class HunterRanged : MonoBehaviour
     //Esta funcion modifica la fuerza en la animacion con Animation Events
     public void BackwardsJump(int pushForce)
     {
-        if (!justAttacked)
             attackForces = pushForce;
     }
 
 
-    //Colisiones
-    private void OnTriggerEnter(Collider other)
+    public void EndOfDetection()
     {
-
-
-
+        _fsm.ChangeState(PlayerStatesEnum.StepbackState);
+        Debug.Log("cambio a chase");
     }
 
 }

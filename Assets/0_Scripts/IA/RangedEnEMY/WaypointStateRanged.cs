@@ -67,14 +67,14 @@ public class WaypointStateRanged : MonoBehaviour, IState
             _hunter.wpCounter = 0;
         }
 
+        DetectEnemy();
     }
 
-    //Hace un vector direccion entre el Player y este enemigo, si esta en rango, 
     public void DetectEnemy()
     {
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
 
         if (dir.magnitude < _hunter.detectDistance)
-            _fsm.ChangeState(PlayerStatesEnum.Chase);
+            _fsm.ChangeState(PlayerStatesEnum.DetectionState);
     }
 }

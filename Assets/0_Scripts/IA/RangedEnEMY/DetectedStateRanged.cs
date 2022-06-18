@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectedStateRanged : MonoBehaviour
+public class DetectedStateRanged : MonoBehaviour, IState
 {
     StateMachine _fms;
-    HunterMelee _hunter;
+    HunterRanged _hunter;
 
 
-    public DetectedStateRanged(StateMachine fms, HunterMelee h)
+    public DetectedStateRanged(StateMachine fms, HunterRanged h)
     {
         _fms = fms;
         _hunter = h;
@@ -30,7 +30,7 @@ public class DetectedStateRanged : MonoBehaviour
     public void OnUpdate()
     {
         RotationTowardsPlayer();
-        CourseOfAction();
+        //CourseOfAction();
     }
 
     public void RotationTowardsPlayer()
