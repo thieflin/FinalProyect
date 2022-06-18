@@ -50,6 +50,6 @@ public class IdleStateMelee : MonoBehaviour, IState
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
 
         if (dir.magnitude < _hunter.detectDistance)
-            _fms.ChangeState(PlayerStatesEnum.Chase);
+            _fms.ChangeState(PlayerStatesEnum.DetectionState);
     }
 }

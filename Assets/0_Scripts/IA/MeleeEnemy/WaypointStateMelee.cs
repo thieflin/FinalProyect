@@ -75,6 +75,6 @@ public class WaypointStateMelee : MonoBehaviour, IState
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
 
         if (dir.magnitude < _hunter.detectDistance)
-            _fsm.ChangeState(PlayerStatesEnum.Chase);
+            _fsm.ChangeState(PlayerStatesEnum.DetectionState);
     }
 }

@@ -63,8 +63,12 @@ public class CDStateMelee : MonoBehaviour, IState
         if (dir.magnitude < _hunter.attackDistance)
             _fms.ChangeState(PlayerStatesEnum.Attack);
         //Si estoy en posicion de detectarlo lo chaseo
-        else if (dir.magnitude < _hunter.detectDistance)
+        else if (dir.magnitude > _hunter.detectDistance)
+            _fms.ChangeState(PlayerStatesEnum.Patrol);
+        else
+        {
+            _hunter.anim.SetTrigger("ChaseAgain");
             _fms.ChangeState(PlayerStatesEnum.Chase);
-        else _fms.ChangeState(PlayerStatesEnum.Chase);
+        }
     }
 }

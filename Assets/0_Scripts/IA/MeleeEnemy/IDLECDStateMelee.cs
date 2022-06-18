@@ -51,6 +51,6 @@ public class IDLECDStateMelee : MonoBehaviour, IState
             _fms.ChangeState(PlayerStatesEnum.Attack);
         //Si estoy en posicion de detectarlo lo chaseo
         else if (dir.magnitude < _hunter.detectDistance)
-            _fms.ChangeState(PlayerStatesEnum.Chase);
+            _fms.ChangeState(PlayerStatesEnum.DetectionState);
     }
 }

@@ -10,7 +10,8 @@ public enum PlayerStatesEnum
     Attack,
     Hit,
     CDState,
-    IdleCDState
+    IdleCDState,
+    DetectionState
 }
 
 public class StateMachine

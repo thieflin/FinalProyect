@@ -53,6 +53,7 @@ public class HunterMelee : MonoBehaviour
         _fsm.AddState(PlayerStatesEnum.Attack, new AttackStateMelee(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.CDState, new CDStateMelee(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.IdleCDState, new IDLECDStateMelee(_fsm, this));
+        _fsm.AddState(PlayerStatesEnum.DetectionState, new DetectingMeleeState(_fsm, this));
         _fsm.ChangeState(PlayerStatesEnum.Patrol); //Lo hago arrancar con Idle
         _fsm.OnStart(); //Starteo la FSM
 
@@ -78,5 +79,10 @@ public class HunterMelee : MonoBehaviour
             attackForces = pushForce;
     }
 
+    public void EndingDetectionAnimation()
+    {
+        _fsm.ChangeState(PlayerStatesEnum.Chase);
+        Debug.Log("cambio a chase");
+    }
 
 }

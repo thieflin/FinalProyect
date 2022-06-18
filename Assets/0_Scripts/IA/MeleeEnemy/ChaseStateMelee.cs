@@ -58,6 +58,7 @@ public class ChaseStateMelee : IState
         }
         else if ( dir.magnitude > _hunter.loseTargetDistance)
         {
+            _hunter.anim.SetTrigger("Idle");
             _fsm.ChangeState(PlayerStatesEnum.Idle);
         }
     }
