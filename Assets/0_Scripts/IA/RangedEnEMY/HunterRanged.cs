@@ -17,8 +17,16 @@ public class HunterRanged : MonoBehaviour
 
     [Header("Target & Others")]
     public PlayerMovement target; //El player
-    public float attackDistance; //Attack distance es para poder hacer que se vaya hacia atras
+
+    //Estas 3 distancias sirven para que cuando lo detecte, en base a la distancia en la que este, haga una de las acciones
+    /// <summary>
+    /// Digamos que la distancia de deteccion es 30, entonces
+    /// </summary>
     public float detectDistance; //Distancia para que lo detecte y lo persiga
+    public float stepbackDistance; //Distancia para tomar el stepback
+    public float chaseDistance; //Esta distancia es post deteccion
+
+    public float attackDistance; //Attack distance es para poder hacer que se vaya hacia atras
     public float loseTargetDistance; //Distancia a lo cual lo pierde y vuelve a lo suyo
     public int attackForces; //Cuanta fuerza tiene el movimiento con el que se desplaza
     public int knockbackForce; //Fuerza del knock back
@@ -49,6 +57,8 @@ public class HunterRanged : MonoBehaviour
         _fsm.AddState(PlayerStatesEnum.Idle, new IdleStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Chase, new ChaseStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Attack, new AttackStateRanged(_fsm, this));
+        _fsm.AddState(PlayerStatesEnum.StepbackState, new StepbackStateRanged(_fsm, this));
+        _fsm.AddState(PlayerStatesEnum.CDState, new AttackStateRanged(_fsm, this));
         _fsm.ChangeState(PlayerStatesEnum.Patrol); //Lo hago arrancar con Idle
         _fsm.OnStart(); //Starteo la FSM
 

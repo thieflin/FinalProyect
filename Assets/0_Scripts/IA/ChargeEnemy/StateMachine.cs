@@ -11,7 +11,8 @@ public enum PlayerStatesEnum
     Hit,
     CDState,
     IdleCDState,
-    DetectionState
+    DetectionState,
+    StepbackState
 }
 
 public class StateMachine
