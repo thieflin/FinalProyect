@@ -30,7 +30,6 @@ public class DetectedStateRanged : MonoBehaviour, IState
     public void OnUpdate()
     {
         RotationTowardsPlayer();
-        //CourseOfAction();
     }
 
     public void RotationTowardsPlayer()
@@ -41,11 +40,4 @@ public class DetectedStateRanged : MonoBehaviour, IState
         _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
     }
 
-    public void CourseOfAction()
-    {
-        Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
-        _hunter.transform.position += dir.normalized * _hunter.speed * .5f /*para que chasee mas rapdio*/ * Time.deltaTime;
-
-
-    }
 }

@@ -20,9 +20,6 @@ public class HunterRanged : MonoBehaviour
     public PlayerMovement target; //El player
 
     //Estas 3 distancias sirven para que cuando lo detecte, en base a la distancia en la que este, haga una de las acciones
-    /// <summary>
-    /// Digamos que la distancia de deteccion es 30, entonces
-    /// </summary>
     public float detectDistance; //Distancia para que lo detecte y lo persiga
     public float stepbackDistance; //Distancia para tomar el stepback
     public float chaseDistance; //Esta distancia es post deteccion
@@ -36,6 +33,7 @@ public class HunterRanged : MonoBehaviour
     public List<GameObject> hitColliders = new List<GameObject>(); //Colliders de las garras
     public int damageDone;//Da;o que hace al player
     public bool justAttacked; //Booleano para saber si le pego al player
+    public float attackCd;
 
     [Header("Cosmetics")]
     public GameObject particleSystemXD;
@@ -96,6 +94,10 @@ public class HunterRanged : MonoBehaviour
             attackForces = pushForce;
     }
 
+    public void StartAttack()
+    {
+        _fsm.ChangeState(PlayerStatesEnum.Attack);
+    }
 
     public void EndOfDetection()
     {

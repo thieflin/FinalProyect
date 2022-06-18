@@ -20,14 +20,12 @@ public class AttackStateRanged : MonoBehaviour, IState
 
     public void OnExit()
     {
-        //Desactivo las particulas cuando salgo del attack state
-        _hunter.justAttacked = false;
+
     }
 
     public void OnStart()
     {
         _hunter.anim.SetTrigger("Attack");
-        meassure = 5f;
     }
 
     //Falta hacer que cuando cargue te mire
@@ -36,12 +34,7 @@ public class AttackStateRanged : MonoBehaviour, IState
         Debug.Log("en attack el ranged");
         AttackAnimation();
 
-            FocusPlayer();
-
-
-
-        meassure -= Time.deltaTime;
-        if (meassure < 0) _fms.ChangeState(PlayerStatesEnum.Idle);
+        FocusPlayer();
     }
 
     public void FocusPlayer()
@@ -56,4 +49,6 @@ public class AttackStateRanged : MonoBehaviour, IState
     {
         _hunter.rb.AddForce(_hunter.transform.forward * _hunter.attackForces * Time.deltaTime, ForceMode.Impulse);
     }
+
+
 }
