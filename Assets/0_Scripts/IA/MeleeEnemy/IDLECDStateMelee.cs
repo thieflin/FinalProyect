@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class IDLECDStateMelee : MonoBehaviour, IState
 {
+    /// <summary>
+    /// ESTE SCRIPT NO SE USA LO DEJO PORQUE NO TENGO TIEMPO DE VER SI ROMPE ALGO O NO XZD
+    /// </summary>
     StateMachine _fms;
     HunterMelee _hunter;
 

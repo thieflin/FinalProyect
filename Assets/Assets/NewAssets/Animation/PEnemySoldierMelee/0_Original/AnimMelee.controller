@@ -154,7 +154,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle-PESoldierTwo
+  m_Name: Idle-LookingSides
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -169,7 +169,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d3bcb7fac8fdbc040b4a62918b45d0d5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0b380289feeb7184ea94f9a8df41deda, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -186,38 +186,38 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -606134235195982157}
-    m_Position: {x: 300, y: 90, z: 0}
+    m_Position: {x: 300, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2848972309958496790}
-    m_Position: {x: 300, y: 290, z: 0}
+    m_Position: {x: 300, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7696557849984029403}
     m_Position: {x: 710, y: 640, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2394416686781321633}
-    m_Position: {x: 120, y: 190, z: 0}
+    m_Position: {x: 300, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6343132245092324033}
-    m_Position: {x: 300, y: 400, z: 0}
+    m_Position: {x: 300, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8258439042360732018}
     m_Position: {x: 800, y: 550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8810389903583852082}
-    m_Position: {x: 660, y: 400, z: 0}
+    m_Position: {x: 700, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3812355524360592963}
     m_Position: {x: 750, y: -40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4926281749511734323}
-    m_Position: {x: 670, y: 90, z: 0}
+    m_Position: {x: 700, y: 60, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 40, y: 100, z: 0}
+  m_AnyStatePosition: {x: 40, y: 10, z: 0}
+  m_EntryPosition: {x: 40, y: 70, z: 0}
   m_ExitPosition: {x: 1010, y: 220, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -606134235195982157}
