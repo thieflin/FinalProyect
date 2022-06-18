@@ -43,7 +43,7 @@ public class ChaseStateMelee : IState
     {
         //Esto hace que lo chasee
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
-        _hunter.transform.position += dir.normalized * _hunter.speed* 1.3f /*para que chasee mas rapdio*/ * Time.deltaTime;
+        _hunter.transform.position += dir.normalized * _hunter.speed* 1.6f /*para que chasee mas rapdio*/ * Time.deltaTime;
 
         //Esto hace que lo mire al perseguirlo
         Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.target.transform.position);
@@ -58,7 +58,6 @@ public class ChaseStateMelee : IState
         }
         else if ( dir.magnitude > _hunter.loseTargetDistance)
         {
-            _hunter.anim.SetTrigger("Idle");
             _fsm.ChangeState(PlayerStatesEnum.Idle);
         }
     }
