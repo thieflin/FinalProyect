@@ -29,9 +29,9 @@ public class DetectingMeleeState : MonoBehaviour, IState
 
     public void OnUpdate()
     {
-        //Para que lo mire mientras detecta
-        Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.allWaypoints[_hunter.currentWaypoint].transform.position);
 
+        //Esto hace que lo mire al perseguirlo
+        Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.target.transform.position);
         //Hago que la rotacion sea un rotate towards hacia el vector calculado antes
         _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
 
