@@ -54,17 +54,7 @@ public class CDStateRanged : MonoBehaviour, IState
 
     public void CheckNextActionAfterCd()
     {
-        //Trazo un vector del player al jugador
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
-
-        Debug.Log((int)dir.magnitude);
-
-        ////Si estoy en posicion de ataque lo ataco
-        //if (dir.magnitude < _hunter.attackDistance)
-        //{
-        //    _hunter.anim.SetTrigger("Attack");
-        //    _fms.ChangeState(PlayerStatesEnum.Attack);
-        //}
 
         //Si estoy en distancia de perderlo VUELVO A PATROL
         if (dir.magnitude > _hunter.loseTargetDistance)

@@ -43,7 +43,7 @@ public class ChaseStateRanged : IState
     {
         //Esto hace que lo chasee
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
-        _hunter.transform.position += dir.normalized * _hunter.speed * 1.6f * Time.deltaTime;
+        _hunter.transform.position += dir.normalized * _hunter.speed * 2f * Time.deltaTime;
 
         //Esto hace que lo mire al perseguirlo
         Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.target.transform.position);
@@ -51,12 +51,12 @@ public class ChaseStateRanged : IState
         _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
 
         //Si estoy en distancia de atacar, paso a atacar
-        if (dir.magnitude < _hunter.attackDistance)
+        if (dir.magnitude <= _hunter.attackDistance)
         {
             _fsm.ChangeState(PlayerStatesEnum.Attack);
 
         }
-        else if(dir.magnitude > _hunter.loseTargetDistance)
+        else if(dir.magnitude >= _hunter.loseTargetDistance)
         {
             _hunter.anim.SetTrigger("BackToPatrol");
             _fsm.ChangeState(PlayerStatesEnum.Patrol);
