@@ -24,13 +24,14 @@ public class ChaseState : IState
 
     public void OnExit()
     {
-        _hunter.anim.SetBool("PatrolB", false);
-
+        
     }
 
     public void OnStart()
     {
-        _hunter.anim.SetBool("PatrolB", true);
+        _hunter.anim.SetTrigger("Detected");
+        _hunter.anim.SetBool("IdleB", false);
+        _hunter.anim.SetBool("PatrolB", false);
     }
 
     public void OnUpdate()
@@ -43,7 +44,7 @@ public class ChaseState : IState
     {
         //Esto hace que lo chasee
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
-        _hunter.transform.position += dir.normalized * _hunter.speed * Time.deltaTime;
+        _hunter.transform.position += dir.normalized * _hunter.speed * 1.5f * Time.deltaTime;
 
         //Esto hace que lo mire al perseguirlo
         Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.target.transform.position);
@@ -56,16 +57,13 @@ public class ChaseState : IState
             _fsm.ChangeState(PlayerStatesEnum.Attack);
         }
         else if(dir.magnitude >= _hunter.loseTargetDistance)
-            _fsm.ChangeState(PlayerStatesEnum.Idle);
+        {
+            _hunter.anim.SetTrigger("Idle");
+            _fsm.ChangeState(PlayerStatesEnum.Patrol);
+        }
+           
             
     }
-
-    void AttackCd()
-    {
-
-    }
-
-
 
 
 }

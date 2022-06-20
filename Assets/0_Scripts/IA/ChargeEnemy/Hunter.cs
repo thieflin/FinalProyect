@@ -14,6 +14,8 @@ public class Hunter : MonoBehaviour
     [Header("Idle")]
     public float rotationSpeedOnIdle; //Que tan rapido rota en el idle
     public float waitForNextAttack;
+    public float idleWpCd; //Cd waypoints
+    public float attackCd;
 
     [Header("Target & Others")]
     public PlayerMovement target; //El player
@@ -50,6 +52,7 @@ public class Hunter : MonoBehaviour
         _fsm.AddState(PlayerStatesEnum.Chase, new ChaseState(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Attack, new AttackState(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Hit, new HitState(_fsm, this));
+        _fsm.AddState(PlayerStatesEnum.CDState, new CDState(_fsm, this));
         _fsm.ChangeState(PlayerStatesEnum.Patrol); //Lo hago arrancar con Idle
         _fsm.OnStart(); //Starteo la FSM
 
@@ -81,7 +84,7 @@ public class Hunter : MonoBehaviour
     public void BackToIdle()
     {
         isTargetting = false;
-        _fsm.ChangeState(PlayerStatesEnum.Chase);
+        _fsm.ChangeState(PlayerStatesEnum.CDState);
     }
 
     //Esta funcion modifica la fuerza en la animacion con Animation Events

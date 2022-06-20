@@ -27,7 +27,6 @@ public class AttackState : MonoBehaviour, IState
     public void OnStart()
     {
         _hunter.anim.SetTrigger("Attack");
-        meassure = 5f;
     }
 
     //Falta hacer que cuando cargue te mire
@@ -40,9 +39,6 @@ public class AttackState : MonoBehaviour, IState
             FocusPlayer();
 
 
-
-        meassure -= Time.deltaTime;
-        if (meassure < 0) _fms.ChangeState(PlayerStatesEnum.Idle);
     }
 
     public void FocusPlayer()

@@ -32,12 +32,20 @@ public class WaypointState : MonoBehaviour, IState
         //Movimiento base
         Move();
 
+        Debug.Log("en wp");
         //Detectar enemigo cambio el estado
         DetectEnemy();
     }
 
+   
+
     public void Move() //Funcion de movimiento de waypoints
     {
+        //Busco el vector al cual yo quiero rotar es decir donde llegue ahi freno
+        Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.allWaypoints[_hunter.currentWaypoint].transform.position);
+
+        //Hago que la rotacion sea un rotate towards hacia el vector calculado antes
+        _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
 
         Vector3 dir = _hunter.allWaypoints[_hunter.currentWaypoint].transform.position - _hunter.transform.position;
         _hunter.transform.position += dir.normalized * _hunter.speed * Time.deltaTime;
