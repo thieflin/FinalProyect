@@ -49,7 +49,7 @@ Material:
     - _Vertex: 0.05
     - __dirty: 0
     - _m: 0.59
-    - _sub2: 0.003
+    - _sub2: 0.193
     m_Colors:
     - _Vector0: {r: 0, g: 0.03, b: 0, a: 0}
     - _Velocidad2: {r: 0, g: 0.03, b: 0, a: 0}

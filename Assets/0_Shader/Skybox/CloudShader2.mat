@@ -38,8 +38,8 @@ Material:
     - _Tilling: 1
     - _Tilling2: 2
     - _Vertex: 0.05
-    - __dirty: 1
-    - _sub2: 0.253
+    - __dirty: 0
+    - _sub2: 0.083
     m_Colors:
     - _Vector0: {r: 0, g: 0.01, b: 0, a: 0}
     - _Velocidad2: {r: 0, g: 0.01, b: 0, a: 0}
