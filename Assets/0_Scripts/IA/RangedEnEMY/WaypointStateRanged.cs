@@ -26,7 +26,7 @@ public class WaypointStateRanged : MonoBehaviour, IState
         _hunter.anim.SetBool("PatrolB", true);
 
     }
-    
+
     public void OnUpdate() //OnUpdate arranco con esto
     {
         Debug.Log("im on patrol");
@@ -49,7 +49,7 @@ public class WaypointStateRanged : MonoBehaviour, IState
 
         Vector3 dir = _hunter.allWaypoints[_hunter.currentWaypoint].transform.position - _hunter.transform.position;
         _hunter.transform.position += dir.normalized * _hunter.speed * Time.deltaTime;
-        
+
         if (dir.magnitude < 0.1f)
         {
             //Guarda el ultimo wp al que fui
@@ -83,6 +83,7 @@ public class WaypointStateRanged : MonoBehaviour, IState
 
         if (dir.magnitude < _hunter.detectDistance)
             _fsm.ChangeState(PlayerStatesEnum.DetectionState);
+        
     }
 
     public void LookAtWps()

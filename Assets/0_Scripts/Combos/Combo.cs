@@ -255,7 +255,7 @@ public class Combo : MonoBehaviour
     //Esta es una funcion de animacion, lo que hace es cambiar la fuerza que usa al atacar para deslizarse hacia atras
     public void BackwardsJump(int pushForce)
     {
-            shotgunKnockbackForce = pushForce;
+        shotgunKnockbackForce = pushForce;
     }
 
 
@@ -264,5 +264,5 @@ public class Combo : MonoBehaviour
     {
         AudioManager.PlaySound("slash");
     }
-    
+
 }
