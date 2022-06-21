@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
-  controlID: 55699
+  controlID: 24195
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 300}
   m_MaxSize: {x: 16192, y: 24288}
   vertical: 1
-  controlID: 55700
+  controlID: 24196
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 55701
+  controlID: 24096
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_MinSize: {x: 480, y: 270}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: CloudShad..
+    m_Text: CloudSha..*
     m_Image: {fileID: 5596697988196858232, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
@@ -507,31 +507,31 @@ MonoBehaviour:
     m_expandedDependencies: 0
     m_expandedBlendModeModule: 0
     m_expandedDepth: 1
-    m_expandedTesselation: 1
+    m_expandedTesselation: 0
     m_expandedProperties: 0
     m_expandedUsePass: 0
-  m_lastpath: Assets/0_Shader/Skybox/CloudShader2.mat
+  m_lastpath: Assets/0_Shader/Skybox/CloudShader.mat
   m_selectionMode: 1
   m_duplicatePreventionBuffer:
     m_availableUVChannelsArray: ffffffffffffffffffffffffffffffff
-  m_inactivityTime: 14642.345987
-  m_lastTimeSaved: 14204.2909316
+  m_inactivityTime: 3301.1241409000004
+  m_lastTimeSaved: 3291.9466307000002
   m_cacheSaveOp: 0
   m_mainGraphInstance: {fileID: 0}
-  m_cameraOffset: {x: 2352.082, y: 1540.195}
-  m_cameraZoom: 3.889434
-  m_minNodePos: {x: -1612.565, y: -552.6218}
-  m_maxNodePos: {x: 664.6878, y: 457.5446}
+  m_cameraOffset: {x: 524.17535, y: 764.7595}
+  m_cameraZoom: 1
+  m_minNodePos: {x: -1612.565, y: -640.17535}
+  m_maxNodePos: {x: 870.6635, y: 457.5446}
   m_isDirty: 0
   m_saveIsDirty: 0
-  m_repaintIsDirty: 1
+  m_repaintIsDirty: 0
   m_liveShaderEditing: 0
-  m_shaderIsModified: 0
+  m_shaderIsModified: 1
   m_lastOpenedLocation: Assets/0_Shader/Skybox/CloudShader.shader
   m_zoomChanged: 0
   m_lastWindowWidth: 879
   m_graphCount: 1
-  m_currentInactiveTime: 286.0902963999997
+  m_currentInactiveTime: 1.5468378000000484
   m_currentNodeAvailability: 1
   m_nodeParametersWindowMaximized: 1
   m_paletteWindowMaximized: 1
@@ -549,7 +549,7 @@ MonoBehaviour:
 
       This message can be turned
       off via Preferences > Amplify Shader Editor > Show Async Message.'
-    ItemTime: 95.85733032226562
+    ItemTime: 33.81779479980469
     ItemOwnerId: -1
   m_maxMsgWidth: 400
   m_maximizeMessages: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 55702
+  controlID: 24087
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -861,9 +861,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2049.9731, y: -1349.6208, z: 349.52002}
+    m_Target: {x: -4.92844, y: -101.69753, z: 23.40269}
     speed: 2
-    m_Value: {x: -2049.9731, y: -1349.6208, z: 349.52002}
+    m_Value: {x: -4.92844, y: -101.69753, z: 23.40269}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -910,20 +910,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.13950159, y: 0.8097687, z: -0.21305934, w: -0.5293771}
+    m_Target: {x: 0.3504854, y: -0.34793556, z: 0.14266187, w: 0.85827416}
     speed: 2
-    m_Value: {x: -0.1394444, y: 0.80943674, z: -0.212972, w: -0.5291601}
+    m_Value: {x: 0.35033023, y: -0.3477815, z: 0.1425987, w: 0.8578941}
   m_Size:
-    m_Target: 5102.921
+    m_Target: 94.31117
     speed: 2
-    m_Value: 5102.921
+    m_Value: 94.31117
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.005
-    m_SpeedNormalized: 0.5
+    m_Speed: 0.8856
+    m_SpeedNormalized: 0.44
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 55484
+  controlID: 24197
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1022,10 +1022,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 117}
+      scrollPos: {x: 0, y: 213}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: bea8bcff1c77bdffd68ebdff0afbffff2afbffff52640000
+      m_ExpandedIDs: fcfaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1130,9 +1130,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0480300
-    m_LastClickedID: 215248
-    m_ExpandedIDs: 00000000ae880000b0880000b2880000b4880000b6880000b8880000ba880000e888000000ca9a3bffffff7f
+    m_SelectedIDs: e08c0000
+    m_LastClickedID: 36064
+    m_ExpandedIDs: 00000000788b00007a8b00007c8b00007e8b0000808b0000848b0000748c0000768c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1160,7 +1160,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ae880000b0880000b2880000b4880000b6880000b8880000ba88000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000788b00007a8b00007c8b00007e8b0000808b0000848b0000748c0000768c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1185,9 +1185,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 1e770000
+    m_LastClickedInstanceID: 30494
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300009a62000052790800
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1204,7 +1204,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 16}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1263,8 +1263,8 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -1305,7 +1305,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 30494
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
