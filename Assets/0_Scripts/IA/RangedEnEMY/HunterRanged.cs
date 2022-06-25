@@ -34,6 +34,7 @@ public class HunterRanged : MonoBehaviour
     public int damageDone;//Da;o que hace al player
     public bool justAttacked; //Booleano para saber si le pego al player
     public float attackCd;
+    public bool enemyHitted;//Cuando recibe dmg que entre en cd
 
     [Header("Cosmetics")]
     public GameObject particleSystemXD;
@@ -59,6 +60,7 @@ public class HunterRanged : MonoBehaviour
         _fsm.AddState(PlayerStatesEnum.StepbackState, new StepbackStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.CDState, new CDStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.DetectionState, new DetectedStateRanged(_fsm, this));
+        _fsm.AddState(PlayerStatesEnum.Hit, new HitStateRanged(_fsm, this));
         _fsm.ChangeState(PlayerStatesEnum.Patrol); //Lo hago arrancar con Idle
         _fsm.OnStart(); //Starteo la FSM
 
@@ -110,6 +112,35 @@ public class HunterRanged : MonoBehaviour
     {
         _fsm.ChangeState(PlayerStatesEnum.StepbackState);
         Debug.Log("cambio a chase");
+    }
+
+
+    private void OnParticleCollision(GameObject other)
+    {
+        //Si me pega la bala de la shotgun Y NO ME PEGARON Y no estoy atacando Y no estoy en cd, triggereo hit state
+        if (other.CompareTag("Bullet")/* && !enemyHitted*/&& !enemyHitted
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("Stepback_PESoldierOne")
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("Shooting_PESoldierOne")
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("CooldownSoldierRanged"))
+        {
+            Debug.Log("entre en cd anashe");
+            _fsm.ChangeState(PlayerStatesEnum.Hit);
+            if (this.gameObject.activeSelf)
+                StartCoroutine(WaitForEnemyHitted());
+        }
+    }
+
+    //Con esta funcion voy a cd state despues de que me pega la hueva, va al final de la animacion de hit
+    public void ReturnToCdStateAfterGettingHit()
+    {
+        _fsm.ChangeState(PlayerStatesEnum.CDState);
+    }
+
+    IEnumerator WaitForEnemyHitted()
+    {
+        enemyHitted = true;
+        yield return new WaitForSeconds(0.3f);
+        enemyHitted = false;
     }
 
 }

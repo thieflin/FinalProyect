@@ -53,6 +53,7 @@ public class ChaseStateRanged : IState
         //Si estoy en distancia de atacar, paso a atacar
         if (dir.magnitude <= _hunter.attackDistance)
         {
+            _hunter.anim.SetTrigger("AttackChase");
             _fsm.ChangeState(PlayerStatesEnum.Attack);
 
         }
