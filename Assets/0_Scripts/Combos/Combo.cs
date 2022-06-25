@@ -62,10 +62,10 @@ public class Combo : MonoBehaviour
     }
     void Update()
     {
-
+        Debug.Log(canAttack);
         //Dash activation negated
         if (ani.GetCurrentAnimatorStateInfo(0).IsName("AttackOne") || ani.GetCurrentAnimatorStateInfo(0).IsName("AttackTwo")
-                                || ani.GetCurrentAnimatorStateInfo(0).IsName("AttackThree"))
+                                || ani.GetCurrentAnimatorStateInfo(0).IsName("AttackThree") || ani.GetCurrentAnimatorStateInfo(0).IsName("Gun1"))
         {
             _pm.flagDash = false;
         }
