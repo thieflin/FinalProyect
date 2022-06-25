@@ -29,16 +29,18 @@ public class HunterMelee : MonoBehaviour
     public int damageDone;//Da;o que hace al player
     public bool justAttacked; //Booleano para saber si le pego al player
     public float attackCd;//Cd despues de atacar
+    public bool enemyHitted;//Esto es para saber que entro, lo hago por separado a enemy status para que sea mas comodo
 
     [Header("Cosmetics")]
     public GameObject particleSystemXD;
 
     public Rigidbody rb;
     public Animator anim;
+    public EnemyStatus es;
 
 
 
-    private StateMachine _fsm;
+    public StateMachine _fsm;
 
 
     void Start()
@@ -46,6 +48,7 @@ public class HunterMelee : MonoBehaviour
         _fsm = new StateMachine();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        es = GetComponent<EnemyStatus>();
 
         _fsm.AddState(PlayerStatesEnum.Patrol, new WaypointStateMelee(_fsm, this)); //Agrego todos los estados
         _fsm.AddState(PlayerStatesEnum.Idle, new IdleStateMelee(_fsm, this));
@@ -54,6 +57,7 @@ public class HunterMelee : MonoBehaviour
         _fsm.AddState(PlayerStatesEnum.CDState, new CDStateMelee(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.IdleCDState, new IDLECDStateMelee(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.DetectionState, new DetectingMeleeState(_fsm, this));
+        _fsm.AddState(PlayerStatesEnum.Hit, new HitMeleeState(_fsm, this));
         _fsm.ChangeState(PlayerStatesEnum.Patrol); //Lo hago arrancar con Idle
         _fsm.OnStart(); //Starteo la FSM
 
@@ -62,7 +66,6 @@ public class HunterMelee : MonoBehaviour
     void Update()
     {
         _fsm.OnUpdate();
-        
     }
 
     //Esta funcion hace que despues de atacar vuelva por defecto a Chasear, de ahi sale
@@ -85,4 +88,30 @@ public class HunterMelee : MonoBehaviour
         Debug.Log("cambio a chase");
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        //Si me pega la bala de la shotgun Y NO ME PEGARON Y no estoy atacando Y no estoy en cd, triggereo hit state
+        if (other.CompareTag("Bullet")/* && !enemyHitted*/&& !enemyHitted 
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("AttackOne-PESoldierTwo")
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("CooldownAnimationState"))
+        {
+            Debug.Log("entre en cd anashe");
+            _fsm.ChangeState(PlayerStatesEnum.Hit);
+            if (this.gameObject.activeSelf)
+               StartCoroutine(WaitForEnemyHitted());
+        }
+    }
+
+    //Con esta funcion voy a cd state despues de que me pega la hueva, va al final de la animacion de hit
+    public void ReturnToCdStateAfterGettingHit()
+    {
+        _fsm.ChangeState(PlayerStatesEnum.CDState);
+    }
+
+    IEnumerator WaitForEnemyHitted()
+    {
+        enemyHitted = true;
+        yield return new WaitForSeconds(0.3f);
+        enemyHitted = false;
+    }
 }

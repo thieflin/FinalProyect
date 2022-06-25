@@ -8,8 +8,10 @@ public class EnemyStatus : EnemyData, IDamageable
     public GameObject onMeleeHittedParticles;
     public bool enemyHitted = false;
 
+
     public void Start()
     {
+
         _currentHp = _maxHp;
         _anim = GetComponent<Animator>();
         startPos = transform.position;
@@ -79,8 +81,8 @@ public class EnemyStatus : EnemyData, IDamageable
     {
         if (other.CompareTag("Bullet") && !enemyHitted)
         {
+            Debug.Log("estoy pegando anashe");
             TakeDamage(10);
-            Debug.Log("xd");
             var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
             if (this.gameObject.activeSelf)
                 StartCoroutine(WaitForEnemyHitted());
