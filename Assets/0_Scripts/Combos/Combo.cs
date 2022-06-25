@@ -75,6 +75,15 @@ public class Combo : MonoBehaviour
 
         }
 
+        if (ani.GetCurrentAnimatorStateInfo(0).IsName("Rol"))
+        {
+            canAttack = false;
+        }
+        else
+        {
+            canAttack = true;
+        }
+
         //CD Shotgun
         if (reloadingShotgun)
         {
