@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Combo : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class Combo : MonoBehaviour
     public GameObject particleDustSlide;
     public ParticleSystem particleDustStep;
 
+    [Header("Shotgun UI")]
+    public Image shotgunImage;
+    public bool reloadingShotgun;
+
     public bool canAttack;
     private void Awake()
     {
@@ -50,11 +55,15 @@ public class Combo : MonoBehaviour
         upgradedHitbox = false;
         canAttack = true;
         EventManager.Instance.Subscribe("OnGettingBiggerHitbox", UpgradedHitboxTrue);
+        reloadingShotgun = false;
+        shotgunImage.fillAmount = 1;
 
 
     }
     void Update()
     {
+
+        //Dash activation negated
         if (ani.GetCurrentAnimatorStateInfo(0).IsName("AttackOne") || ani.GetCurrentAnimatorStateInfo(0).IsName("AttackTwo")
                                 || ani.GetCurrentAnimatorStateInfo(0).IsName("AttackThree"))
         {
@@ -66,12 +75,24 @@ public class Combo : MonoBehaviour
 
         }
 
+        //CD Shotgun
+        if (reloadingShotgun)
+        {
+            shotgunImage.fillAmount += 0.3f*Time.deltaTime;
+            if (shotgunImage.fillAmount >= 1)
+            {
+                shotgunImage.fillAmount = 1;
+                reloadingShotgun = false;
+            }
+
+        }
 
 
+        //Inputs para disparar y atacar
         InputController();
 
 
-        //Movimiento rigidbody al atacar
+        //Movimiento rigidbody al atacar y disparar
         if (isMoving)
         {
             _rb.velocity = Vector3.zero;
@@ -109,18 +130,25 @@ public class Combo : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetButtonDown("AttackRangedNA") && canAttack)
         {
-            if (_isIdle == true)
+            if (reloadingShotgun == false)
             {
-                _isIdle = false;
-                _pm._movementSpeed = 0;
-                _rb.velocity = Vector3.zero;
-                //_rb.AddForce(transform.forward * Time.deltaTime * -1000, ForceMode.Force);
-                //_rb.constraints = RigidbodyConstraints.FreezeAll;
-                //INSTANCIO PARTICULAS
-                ani.SetTrigger("A2");
+
+
+                if (_isIdle == true)
+                {
+                    _isIdle = false;
+                    _pm._movementSpeed = 0;
+                    _rb.velocity = Vector3.zero;
+                    //_rb.AddForce(transform.forward * Time.deltaTime * -1000, ForceMode.Force);
+                    //_rb.constraints = RigidbodyConstraints.FreezeAll;
+                    //INSTANCIO PARTICULAS
+                    shotgunImage.fillAmount = 0;
+                    reloadingShotgun = true;
+                    ani.SetTrigger("A2");
+                }
+                else
+                    _nextCombo = 2;
             }
-            else
-                _nextCombo = 2;
         }
 
     }
@@ -151,6 +179,7 @@ public class Combo : MonoBehaviour
                 //_rb.AddForce(transform.forward * Time.deltaTime * -1000, ForceMode.Force);
                 //_rb.constraints = RigidbodyConstraints.FreezeAll;
                 ani.SetTrigger("A2");
+
                 _nextCombo = 0;
                 break;
         }
