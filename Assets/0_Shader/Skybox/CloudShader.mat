@@ -48,7 +48,7 @@ Material:
     - _Tilling: 1
     - _Tilling2: 1
     - _Vertex: 0.36
-    - __dirty: 0
+    - __dirty: 1
     - _m: 0.59
     - _sub2: 0.14
     m_Colors:
