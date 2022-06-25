@@ -26,7 +26,7 @@ public class AttackState : MonoBehaviour, IState
 
     public void OnStart()
     {
-        _hunter.anim.SetTrigger("Attack");
+        
     }
 
     //Falta hacer que cuando cargue te mire

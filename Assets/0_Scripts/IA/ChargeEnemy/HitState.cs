@@ -19,14 +19,18 @@ public class HitState : MonoBehaviour, IState
 
     public void OnExit()
     {
-        _hunter.anim.SetBool("HitB", false);
+
     }
 
     public void OnStart()
     {
         _hunter.anim.SetTrigger("Hit");
-        _hunter.anim.SetBool("HitB", true);
-        Debug.Log("entre hit");
+        _hunter.anim.SetBool("PatrolB", false);
+        _hunter.anim.SetBool("IdleB", true);
+        for (int i = 0; i < _hunter.clawAttackParticles.Count; i++)
+        {
+            _hunter.clawAttackParticles[i].SetActive(false);
+        }
     }
 
     public void OnUpdate()

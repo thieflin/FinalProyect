@@ -29,6 +29,7 @@ public class Hunter : MonoBehaviour
     public List<GameObject> hitColliders = new List<GameObject>(); //Colliders de las garras
     public int damageDone;//Da;o que hace al player
     public bool justAttacked; //Booleano para saber si le pego al player
+    public bool enemyHitted;
 
     [Header("Cosmetics")]
     public List<GameObject> clawAttackParticles = new List<GameObject>();
@@ -120,28 +121,57 @@ public class Hunter : MonoBehaviour
             attackForces = 0;
             anim.SetTrigger("Collided");
         }
-            
+           
+        //var sword = other.GetComponent<ColliderPG>();
 
-        var sword = other.GetComponent<ColliderPG>();
+        ////Hit SOLO transiciona si estoy CARGANDO EL ATAQUE, sino no lo stunea sino no funciona ni pal pingovich
+        //if (sword && isTargetting)
+        //{
+        //    foreach (var item in clawAttackParticles)
+        //    {
+        //        item.SetActive(false);
+        //    }
+        //    if (anim.GetCurrentAnimatorStateInfo(0).IsName("Reciving_PEnemyTopo"))
+        //    {
 
-        //Hit SOLO transiciona si estoy CARGANDO EL ATAQUE, sino no lo stunea sino no funciona ni pal pingovich
-        if (sword && isTargetting)
+        //        Debug.Log("Toy ahciendo hitttt");
+        //    }
+        //    else anim.SetTrigger("Hit");
+
+        //    _fsm.ChangeState(PlayerStatesEnum.Chase);
+        //}
+
+
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        //Si me pega la bala de la shotgun Y NO ME PEGARON Y no estoy atacando Y no estoy en cd, triggereo hit state
+        if (other.CompareTag("Bullet")/* && !enemyHitted*/&& !enemyHitted
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("CDTopoState")
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("Reciving_PEnemyTopo")
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping_Attack_4_PEnemyTopo")
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping_Attack_2_PEnemyTopo")
+                && !anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping_Attack_3_PEnemyTopo"))
         {
-            foreach (var item in clawAttackParticles)
-            {
-                item.SetActive(false);
-            }
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Reciving_PEnemyTopo"))
-            {
-
-                Debug.Log("Toy ahciendo hitttt");
-            }
-            else anim.SetTrigger("Hit");
-
-            _fsm.ChangeState(PlayerStatesEnum.Chase);
+            Debug.Log("entre en cd anashe");
+            _fsm.ChangeState(PlayerStatesEnum.Hit);
+            if (this.gameObject.activeSelf)
+                StartCoroutine(WaitForEnemyHitted());
         }
+    }
 
+    //Con esta funcion voy a cd state despues de que me pega la hueva, va al final de la animacion de hit
+    public void ReturnToCdStateAfterGettingHit()
+    {
+        _fsm.ChangeState(PlayerStatesEnum.CDState);
+    }
 
+    IEnumerator WaitForEnemyHitted()
+    {
+        enemyHitted = true;
+        yield return new WaitForSeconds(0.3f);
+        enemyHitted = false;
     }
 
 }

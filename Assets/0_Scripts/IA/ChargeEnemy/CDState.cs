@@ -77,7 +77,7 @@ public class CDState : MonoBehaviour, IState
             if (dir.magnitude < _hunter.attackDistance)
             {
                 Debug.Log("LO PUEDO SEGUIR PERSIGUIENDO");
-                _hunter.anim.SetTrigger("Attack");
+                _hunter.anim.SetTrigger("AttackAgain");
                 _fms.ChangeState(PlayerStatesEnum.Attack);
             }
             else
