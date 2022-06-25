@@ -36,6 +36,7 @@ public class Hunter : MonoBehaviour
 
     public Rigidbody rb;
     public Animator anim;
+    public GameObject detectionBox;
 
 
 
