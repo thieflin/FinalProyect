@@ -34,7 +34,8 @@ public class WaypointStateRanged : MonoBehaviour, IState
         Move();
         LookAtWps();
         //Detectar enemigo cambio el estado
-        DetectEnemy();
+        if (_hunter.detectionBox.playerInBox)
+            DetectEnemy();
     }
 
     public void Move() //Funcion de movimiento de waypoints
@@ -74,7 +75,6 @@ public class WaypointStateRanged : MonoBehaviour, IState
             _hunter.wpCounter = 0;
         }
 
-        DetectEnemy();
     }
 
     public void DetectEnemy()

@@ -53,7 +53,10 @@ public class IdleState : MonoBehaviour, IState
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
 
         if (dir.magnitude < _hunter.detectDistance)
+        {
+            _hunter.anim.SetTrigger("Detected");
             _fms.ChangeState(PlayerStatesEnum.Chase);
+        }
     }
 
     public void LeaveIdleAfterCD()

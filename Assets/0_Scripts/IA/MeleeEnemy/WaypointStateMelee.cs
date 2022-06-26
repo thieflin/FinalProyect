@@ -37,7 +37,8 @@ public class WaypointStateMelee : MonoBehaviour, IState
         //Hago que la rotacion sea un rotate towards hacia el vector calculado antes
         _hunter.transform.rotation = Quaternion.RotateTowards(_hunter.transform.rotation, toRotation, _hunter.rotationSpeedOnIdle * Time.deltaTime);
         //Detectar enemigo cambio el estado
-        DetectEnemy();
+        if (_hunter.detectionBox.playerInBox)
+            DetectEnemy();
     }
 
     public void Move() //Funcion de movimiento de waypoints

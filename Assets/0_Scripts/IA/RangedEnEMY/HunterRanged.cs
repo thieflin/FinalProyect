@@ -42,7 +42,7 @@ public class HunterRanged : MonoBehaviour
     public Rigidbody rb;
     public Animator anim;
 
-
+    public DetectionBox detectionBox;
 
     private StateMachine _fsm;
 

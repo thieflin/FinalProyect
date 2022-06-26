@@ -29,7 +29,7 @@ public class ChaseState : IState
 
     public void OnStart()
     {
-        _hunter.anim.SetTrigger("Detected");
+        
         _hunter.anim.SetBool("IdleB", false);
         _hunter.anim.SetBool("PatrolB", false);
     }

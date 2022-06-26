@@ -38,7 +38,7 @@ public class HunterMelee : MonoBehaviour
     public Animator anim;
     public EnemyStatus es;
 
-
+    public DetectionBox detectionBox;
 
     public StateMachine _fsm;
 

@@ -113,8 +113,6 @@ public class Hunter : MonoBehaviour
     //Colisiones
     private void OnTriggerEnter(Collider other)
     {
-
-        
         var player = other.GetComponent<CharStatus>();
 
         //Si colision con algo de tipo PLAYER, entonces le hago el dmg que este bicho haga a player
@@ -125,27 +123,6 @@ public class Hunter : MonoBehaviour
             attackForces = 0;
             anim.SetTrigger("Collided");
         }
-           
-        //var sword = other.GetComponent<ColliderPG>();
-
-        ////Hit SOLO transiciona si estoy CARGANDO EL ATAQUE, sino no lo stunea sino no funciona ni pal pingovich
-        //if (sword && isTargetting)
-        //{
-        //    foreach (var item in clawAttackParticles)
-        //    {
-        //        item.SetActive(false);
-        //    }
-        //    if (anim.GetCurrentAnimatorStateInfo(0).IsName("Reciving_PEnemyTopo"))
-        //    {
-
-        //        Debug.Log("Toy ahciendo hitttt");
-        //    }
-        //    else anim.SetTrigger("Hit");
-
-        //    _fsm.ChangeState(PlayerStatesEnum.Chase);
-        //}
-
-
     }
 
     private void OnParticleCollision(GameObject other)
