@@ -43,6 +43,8 @@ public class Combo : MonoBehaviour
     public Image shotgunImage;
     public bool reloadingShotgun;
 
+    public Slider staminaSlider;
+
     public bool canAttack;
     private void Awake()
     {
@@ -57,6 +59,10 @@ public class Combo : MonoBehaviour
         EventManager.Instance.Subscribe("OnGettingBiggerHitbox", UpgradedHitboxTrue);
         reloadingShotgun = false;
         shotgunImage.fillAmount = 1;
+
+        staminaSlider.maxValue = _pm._timeBetweenDashes;
+        staminaSlider.value = _pm._timeBetweenDashes;
+
 
 
     }
@@ -84,10 +90,20 @@ public class Combo : MonoBehaviour
             canAttack = true;
         }
 
+        if (_pm.recoveringStaminaBar)
+        {
+            staminaSlider.value += Time.deltaTime;
+
+            if (staminaSlider.value >= _pm._timeBetweenDashes)
+            {
+                _pm.recoveringStaminaBar = false;
+            }
+        }
+
         //CD Shotgun
         if (reloadingShotgun)
         {
-            shotgunImage.fillAmount += 0.3f*Time.deltaTime;
+            shotgunImage.fillAmount += 0.3f * Time.deltaTime;
             if (shotgunImage.fillAmount >= 1)
             {
                 shotgunImage.fillAmount = 1;
@@ -98,7 +114,8 @@ public class Combo : MonoBehaviour
 
 
         //Inputs para disparar y atacar
-        InputController();
+        if (canAttack)
+            InputController();
 
 
         //Movimiento rigidbody al atacar y disparar
@@ -115,6 +132,7 @@ public class Combo : MonoBehaviour
         }
 
     }
+
 
     public void UpgradedHitboxTrue(params object[] parameters)
     {

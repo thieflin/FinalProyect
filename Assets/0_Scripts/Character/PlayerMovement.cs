@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,13 +22,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("Dash values")]
     [SerializeField] private float _dashForce;
     [SerializeField] private float _dashTime;
-    [SerializeField] private float _timeBetweenDashes;
+    public float _timeBetweenDashes;
+    public bool recoveringStaminaBar;
     public bool canDash = true;
-    private bool isDashing;
+    public bool isDashing;
     bool dashBarIsEmpty;
     public GameObject dashPart;
     private Vector3 whereToDash;
-    [SerializeField] DashBar dashBar;
+    [SerializeField] Slider dashBar;
+    public bool canAttack = true;
     public bool flagDash; //Esta variable me sirve para desahabilitar el dash pero no con el cd, simplemente desactivarlo
     //para que no se pueda usarlo
 
@@ -55,9 +58,6 @@ public class PlayerMovement : MonoBehaviour
 
         animator = GetComponent<Animator>();
 
-
-        dashBar.dashSlider.maxValue = _timeBetweenDashes;
-        dashBar.dashSlider.value = _timeBetweenDashes;
     }
 
     private void FixedUpdate()
@@ -118,14 +118,26 @@ public class PlayerMovement : MonoBehaviour
         backwardRayCast = new Vector3(-0.3f, 0, 0);
         backwardRayCast += transform.position;
 
-        if (dashBarIsEmpty)
-        {
-            if (dashBar.dashSlider.value < _timeBetweenDashes)
-                dashBar.dashSlider.value += Time.deltaTime;
-            else
-                dashBarIsEmpty = false;
-        }
+        //if (dashBarIsEmpty)
+        //{
+        //    recoveringStaminaBar = true;
 
+        //    if (dashBar.dashSlider.value >= _timeBetweenDashes)
+        //    {
+        //        recoveringStaminaBar = false;
+        //    }
+
+        //    dashBarIsEmpty = false;
+
+        //}
+
+        //if (recoveringStaminaBar)
+        //{
+        //    dashBar.value += Time.deltaTime;
+
+        //    if (dashBar.value >= _timeBetweenDashes)
+        //        recoveringStaminaBar = false;
+        //}
     }
 
     private void OnDrawGizmos()
@@ -255,11 +267,9 @@ public class PlayerMovement : MonoBehaviour
         {
             whereToDash = whereToDashes;
         }
-
+        
         if (canDash)
         {
-            //_rb.velocity = Vector3.zero;
-
             if (whereToDash == Vector3.zero)
                 whereToDash = transform.forward;
 
@@ -273,29 +283,32 @@ public class PlayerMovement : MonoBehaviour
             {
                 _rb.AddForce(whereToDash * _dashForce * Time.fixedDeltaTime, ForceMode.Impulse);
                 transform.forward = whereToDash;
-                StartCoroutine(waitDash());
             }
+
+            StartCoroutine(waitDash());
 
             animator.SetTrigger("Rol");
         }
-
+      
 
     }
 
     IEnumerator waitDash()
     {
+        canAttack = false;
+        recoveringStaminaBar = true;
         _rb.velocity = Vector3.zero;
         canDash = false; //Is dashing
         isDashing = true; //Esta dashing
         dashPart.SetActive(true);//Particulas
-        dashBar.dashSlider.value -= _timeBetweenDashes; //Slider
-        dashBarIsEmpty = true;//Slider
+        dashBar.value -= _timeBetweenDashes; //Slider
         var saveYRotation = transform.eulerAngles.y;
         yield return new WaitForSeconds(_dashTime);
         yield return new WaitForSeconds(0.2f);
         transform.eulerAngles = new Vector3(0f, saveYRotation, 0f);
         isDashing = false;
-        yield return new WaitForSeconds(_timeBetweenDashes - 0.2f);
+        canAttack = true;
+        yield return new WaitForSeconds(_timeBetweenDashes+0.1f);
         canDash = true;
         dashPart.SetActive(false);
 
