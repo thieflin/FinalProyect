@@ -36,7 +36,10 @@ public class Hunter : MonoBehaviour
 
     public Rigidbody rb;
     public Animator anim;
-    public GameObject detectionBox;
+
+    [Header("Detection")]
+    public DetectionBox detectionBox;
+    public bool detectedPlayer;
 
 
 

@@ -34,7 +34,8 @@ public class WaypointState : MonoBehaviour, IState
 
         Debug.Log("en wp");
         //Detectar enemigo cambio el estado
-        DetectEnemy();
+        if(_hunter.detectionBox.playerInBox)
+            DetectEnemy();
     }
 
    

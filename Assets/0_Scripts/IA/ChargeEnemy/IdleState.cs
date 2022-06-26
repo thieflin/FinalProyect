@@ -43,7 +43,8 @@ public class IdleState : MonoBehaviour, IState
 
         //Siempre uso detect enemy para ir al estado de DETECCION en caso de que si esta en idle lo busque y haga la animacion
         //de que lo encontro
-        DetectEnemy();
+        if (_hunter.detectionBox.playerInBox)
+            DetectEnemy();
         Debug.Log("estoy en idle");
     }
 
