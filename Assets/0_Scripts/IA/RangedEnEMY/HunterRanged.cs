@@ -36,6 +36,9 @@ public class HunterRanged : MonoBehaviour
     public float attackCd;
     public bool enemyHitted;//Cuando recibe dmg que entre en cd
 
+    public RangedBullet bullet;
+    public GameObject spawnBulletPos;
+
     [Header("Cosmetics")]
     public GameObject particleSystemXD;
 
@@ -141,6 +144,11 @@ public class HunterRanged : MonoBehaviour
         enemyHitted = true;
         yield return new WaitForSeconds(0.3f);
         enemyHitted = false;
+    }
+
+    public void IsntantiateBullet()
+    {
+        var instantiateBullet = Instantiate(bullet, spawnBulletPos.transform.position, transform.rotation);
     }
 
 }

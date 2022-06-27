@@ -25,7 +25,10 @@ public class HunterMelee : MonoBehaviour
     public int knockbackForce; //Fuerza del knock back
     public int layerHit; //Layer de colision
     public bool isTargetting; //Variable para que cuadno carga el ataque me mire
-    public List<GameObject> hitColliders = new List<GameObject>(); //Colliders de las garras
+
+    public GameObject hitCollider; //Colliders para cuadno pega
+
+
     public int damageDone;//Da;o que hace al player
     public bool justAttacked; //Booleano para saber si le pego al player
     public float attackCd;//Cd despues de atacar
@@ -113,5 +116,14 @@ public class HunterMelee : MonoBehaviour
         enemyHitted = true;
         yield return new WaitForSeconds(0.3f);
         enemyHitted = false;
+    }
+
+    //Funcion de animation event para activar y desactivar los colliders
+    public void AttackingColliders()
+    {
+        if (!hitCollider.activeSelf)
+            hitCollider.SetActive(true);
+        else
+            hitCollider.SetActive(false);
     }
 }
