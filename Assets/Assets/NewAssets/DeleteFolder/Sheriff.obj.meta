@@ -3,7 +3,22 @@ guid: e4feb241577f7d542940ef5c21e69a71
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_40_Sheriff_Body_0.1_16_16Mat
+    second: {fileID: 2100000, guid: 088dbbb9f5c7fc2479f41590fb534423, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_5_Sight_Sight_0.1_16_16Mat
+    second: {fileID: 2100000, guid: 088dbbb9f5c7fc2479f41590fb534423, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_Material001
+    second: {fileID: 2100000, guid: 088dbbb9f5c7fc2479f41590fb534423, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
