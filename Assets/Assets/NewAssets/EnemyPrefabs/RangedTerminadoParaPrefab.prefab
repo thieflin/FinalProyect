@@ -1160,11 +1160,11 @@ MonoBehaviour:
   rotationSpeedOnIdle: 600
   waitForNextAttack: 0
   target: {fileID: 0}
-  detectDistance: 17
+  detectDistance: 12
   stepbackDistance: 4
   chaseDistance: 0
   attackDistance: 9
-  loseTargetDistance: 23
+  loseTargetDistance: 16
   attackForces: 0
   knockbackForce: 5000
   layerHit: 17

@@ -695,8 +695,8 @@ MonoBehaviour:
   idleWpCd: 0
   target: {fileID: 0}
   attackDistance: 2
-  detectDistance: 6
-  loseTargetDistance: 10
+  detectDistance: 8
+  loseTargetDistance: 12
   attackForces: 0
   knockbackForce: 5000
   layerHit: 17
