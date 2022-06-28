@@ -10,11 +10,10 @@ public class RespawnManager : MonoBehaviour
 
     public Animator fadeAnimation;
 
-    public static int playerRespawnNumber;
+    public static Transform playerRespawn;
 
     private void Start()
     {
-        playerRespawnNumber = 0;
     }
 
     public void RespawnCharacter()
@@ -24,35 +23,24 @@ public class RespawnManager : MonoBehaviour
 
     IEnumerator RespawnAnimation()
     {
-        fadeAnimation.SetTrigger("FadeIn");
+        fadeAnimation.SetBool("FadeIn", true);
+
         yield return new WaitForSeconds(2f);
 
-        //ACCEDO A LA LISTA DE ENEMIGOS QUE TENGA EL RESPAWN
-        foreach (var respawn in respawnList[playerRespawnNumber].GetComponent<RespawnTrigger>().enemiesToRespawn)
-        {
-            //VUELVO A ACTIVAR LOS ENEMIGOS MUERTOS
-            if (!respawn.gameObject.activeSelf)
-            {
-                respawn.gameObject.SetActive(true);
-            }
+        fadeAnimation.SetBool("FadeIn", false);
 
-            var enemy = respawn.GetComponent<EnemyStatus>();
-
-            //PARA QUE NO LO SIGAN APENAS RESPAWNEA
-            enemy.GetComponent<Enemy>().player = null;
-            enemy.GetComponent<Enemy>().playerIsInSight = false;
-            enemy._currentHp = enemy.GetMaxHP();
-            enemy.transform.position = enemy.startPos;
-
-        
-        }
-
-        player.transform.position = respawnList[playerRespawnNumber].transform.position;
+        player.transform.position = playerRespawn.transform.position;
         var charStatus = player.GetComponent<CharStatus>();
         charStatus.hp = charStatus.maxHp;
         charStatus._hpBar.fillAmount = charStatus.HpPercentCalculation(charStatus.hp);
-        player.GetComponent<PlayerMovement>().isTargeting = false;
-        fadeAnimation.SetTrigger("FadeOut");
+
+        //player.GetComponent<PlayerMovement>().isTargeting = false;
+
+        fadeAnimation.SetBool("FadeOut",true);
+
+        yield return new WaitForSeconds(0.75f);
+
+        fadeAnimation.SetBool("FadeOut", false);
         
     }
 }
