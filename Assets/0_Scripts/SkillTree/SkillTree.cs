@@ -25,7 +25,7 @@ public class SkillTree : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.CapsLock) || Input.GetButtonDown("Pause"))
+        if (Input.GetKeyDown(KeyCode.CapsLock) /*|| Input.GetButtonDown("Pause")*/)
             if (_skillTree.activeSelf)
             {
                 _skillTree.SetActive(false);
