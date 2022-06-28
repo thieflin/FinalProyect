@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -15,6 +16,14 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
 
     public GameObject settingsMenu;
+
+
+    [Header("Botones")]
+    public GameObject settingsButton;
+    public GameObject backButton;
+    public GameObject exitButtoin;
+
+
 
     private void Start()
     {
@@ -70,23 +79,67 @@ public class SettingsMenu : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
+
+
+
+    //Botones de PLAY
     public void BTN_Play()
     {
-        SceneManager.LoadScene(1);
+        if (Input.GetButtonDown("Submit"))
+        {
+            SceneManager.LoadScene(1);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
+
+    //Botones para abrir settings
     public void BTN_Settings()
     {
-        settingsMenu.SetActive(true);
+        if (Input.GetButtonDown("Submit"))
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            settingsMenu.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(backButton);
+
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            settingsMenu.SetActive(true);
+        }
     }
 
+    //Botones de Exit
     public void BTN_Exit()
     {
-        Application.Quit();
+        if (Input.GetButtonDown("Submit"))
+            Application.Quit();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Application.Quit();
+        }
     }
+
+    //Botones de VOLVER ATRAS
 
     public void BTN_Back()
     {
-        settingsMenu.SetActive(false);
+        if (Input.GetButtonDown("Submit"))
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            settingsMenu.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(settingsButton);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            settingsMenu.SetActive(false);
+        }
     }
 }
