@@ -2668,7 +2668,7 @@ GameObject:
   - component: {fileID: 1817780345237584844}
   - component: {fileID: 1817780345237584845}
   - component: {fileID: 1817780345237584850}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: WallDestroy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2703,8 +2703,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 15.164038, z: 16.788948}
-  m_Center: {x: 4.3910214e-17, y: -1.0279818, z: -0.010902405}
+  m_Size: {x: 2.8779132, y: 15.164038, z: 16.788948}
+  m_Center: {x: -0.018206775, y: -1.0279818, z: -0.010902405}
 --- !u!95 &1817780345237584845
 Animator:
   serializedVersion: 4
