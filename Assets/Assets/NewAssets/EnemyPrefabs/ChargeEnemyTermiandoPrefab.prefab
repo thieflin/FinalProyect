@@ -849,6 +849,7 @@ GameObject:
   - component: {fileID: 2673467120391476077}
   - component: {fileID: 2673467120391476066}
   - component: {fileID: 2673467120391476072}
+  - component: {fileID: 5593533087575136588}
   m_Layer: 18
   m_Name: ChargeEnemyTermiandoPrefab
   m_TagString: Untagged
@@ -910,7 +911,7 @@ BoxCollider:
   m_GameObject: {fileID: 2673467120391476067}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.0454102, y: 5.312237, z: 1.4463806}
   m_Center: {x: 0.053833004, y: 2.6397953, z: 0.22319037}
@@ -1029,6 +1030,20 @@ MonoBehaviour:
   anim: {fileID: 0}
   detectionBox: {fileID: 0}
   detectedPlayer: 0
+--- !u!136 &5593533087575136588
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673467120391476067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.15
+  m_Height: 6.9
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.27, z: 0}
 --- !u!1 &2678449110581423067
 GameObject:
   m_ObjectHideFlags: 0

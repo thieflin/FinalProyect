@@ -539,6 +539,7 @@ GameObject:
   - component: {fileID: 4317881520172153415}
   - component: {fileID: 4317881520172153414}
   - component: {fileID: 4317881520172153411}
+  - component: {fileID: 7200421404112265987}
   m_Layer: 18
   m_Name: MeleeTerminadoParaPrefab
   m_TagString: Untagged
@@ -600,7 +601,7 @@ BoxCollider:
   m_GameObject: {fileID: 4317881520172153465}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.16, y: 4.35917, z: 1.4463806}
   m_Center: {x: 0.053833004, y: 2.180859, z: 0.22319037}
@@ -710,6 +711,20 @@ MonoBehaviour:
   anim: {fileID: 0}
   es: {fileID: 0}
   detectionBox: {fileID: 0}
+--- !u!136 &7200421404112265987
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317881520172153465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.15
+  m_Height: 5.88
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.76, z: 0}
 --- !u!1 &4317881520188041565
 GameObject:
   m_ObjectHideFlags: 0
