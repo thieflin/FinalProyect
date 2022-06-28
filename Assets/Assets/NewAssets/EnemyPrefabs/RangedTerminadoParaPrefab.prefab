@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHp: 0
   startPos: {x: 0, y: 0, z: 0}
-  _maxHp: 20
+  _maxHp: 40
   _hitboxLayermask: 9
   _abilityLayermask: 10
   _hitKnockbackLayerMask: 0
@@ -1160,17 +1160,17 @@ MonoBehaviour:
   rotationSpeedOnIdle: 600
   waitForNextAttack: 0
   target: {fileID: 0}
-  detectDistance: 12
+  detectDistance: 15
   stepbackDistance: 4
   chaseDistance: 0
   attackDistance: 9
-  loseTargetDistance: 16
+  loseTargetDistance: 18
   attackForces: 0
   knockbackForce: 5000
   layerHit: 17
   isTargetting: 0
   hitColliders: []
-  damageDone: 20
+  damageDone: 15
   justAttacked: 0
   attackCd: 0
   enemyHitted: 0

@@ -578,7 +578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHp: 0
   startPos: {x: 0, y: 0, z: 0}
-  _maxHp: 40
+  _maxHp: 50
   _hitboxLayermask: 9
   _abilityLayermask: 10
   _hitKnockbackLayerMask: 0

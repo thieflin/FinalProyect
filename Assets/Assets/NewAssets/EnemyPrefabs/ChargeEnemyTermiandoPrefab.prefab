@@ -888,7 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHp: 0
   startPos: {x: 0, y: 0, z: 0}
-  _maxHp: 30
+  _maxHp: 35
   _hitboxLayermask: 9
   _abilityLayermask: 10
   _hitKnockbackLayerMask: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   isTargetting: 0
   hitColliders:
   - {fileID: 2673467119621716608}
-  damageDone: 20
+  damageDone: 15
   justAttacked: 0
   enemyHitted: 0
   clawAttackParticles:
