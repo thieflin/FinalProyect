@@ -14,6 +14,7 @@ public class RespawnManager : MonoBehaviour
 
     private void Start()
     {
+
     }
 
     public void RespawnCharacter()
