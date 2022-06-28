@@ -23,7 +23,7 @@ public class SettingsMenu : MonoBehaviour
     public GameObject backButton;
     public GameObject exitButtoin;
 
-
+    
 
     private void Start()
     {
