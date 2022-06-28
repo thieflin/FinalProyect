@@ -57,24 +57,24 @@ public class EnemyStatus : EnemyData, IDamageable
         {
             //Recibe dmg de lo que sea que valga el sword dmg, esto lo defino en combo asi siempre vale lo que yo quiero
             TakeDamage(Combo.swordDmg);
-
+            Debug.Log("colisiona en el primero");
             //Instancia particulas
             //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
             var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
             AudioManager.PlaySound("hit");
         }
 
-        //Si le pego con el ultimo hit, el que knockbackea PIOLI
-        else if (other.gameObject.layer == _hitKnockbackLayerMask)
-        {
-            //Recibe dmg
-            TakeDamage(Combo.swordDmg);
-            AudioManager.PlaySound("hit");
-
-            //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
-            //Instancia las partic
-            var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
-        }
+        ////Si le pego con el ultimo hit, el que knockbackea PIOLI
+        //else if (other.gameObject.layer == _hitKnockbackLayerMask)
+        //{
+        //    //Recibe dmg
+        //    TakeDamage(Combo.swordDmg);
+        //    AudioManager.PlaySound("hit");
+        //    Debug.Log("colisiona en el 2do");
+        //    //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
+        //    //Instancia las partic
+        //    var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
+        //}
     }
 
     private void OnParticleCollision(GameObject other)
