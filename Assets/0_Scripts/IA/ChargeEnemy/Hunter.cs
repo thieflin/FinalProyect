@@ -52,6 +52,8 @@ public class Hunter : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
 
+        target = FindObjectOfType<PlayerMovement>();
+
         _fsm.AddState(PlayerStatesEnum.Patrol, new WaypointState(_fsm, this)); //Agrego todos los estados
         _fsm.AddState(PlayerStatesEnum.Idle, new IdleState(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Chase, new ChaseState(_fsm, this));

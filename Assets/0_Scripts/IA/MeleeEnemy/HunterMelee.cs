@@ -53,6 +53,9 @@ public class HunterMelee : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         es = GetComponent<EnemyStatus>();
 
+        target = FindObjectOfType<PlayerMovement>();
+
+
         _fsm.AddState(PlayerStatesEnum.Patrol, new WaypointStateMelee(_fsm, this)); //Agrego todos los estados
         _fsm.AddState(PlayerStatesEnum.Idle, new IdleStateMelee(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Chase, new ChaseStateMelee(_fsm, this));
