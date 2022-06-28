@@ -56,6 +56,9 @@ public class HunterRanged : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
 
+        target = FindObjectOfType<PlayerMovement>();
+
+
         _fsm.AddState(PlayerStatesEnum.Patrol, new WaypointStateRanged(_fsm, this)); //Agrego todos los estados
         _fsm.AddState(PlayerStatesEnum.Idle, new IdleStateRanged(_fsm, this));
         _fsm.AddState(PlayerStatesEnum.Chase, new ChaseStateRanged(_fsm, this));
