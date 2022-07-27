@@ -22,7 +22,8 @@ public class AbilityMeleeOne : Abilities
 
         if (isIdle == true)
         {
-            _cs.UseAbility(id);
+            //Que la pueda cstear por deporte por ahora
+            //_cs.UseAbility(id);
             isIdle = false;
             _anim.SetTrigger("MS1");
             rb.constraints = RigidbodyConstraints.FreezeAll;
@@ -30,6 +31,7 @@ public class AbilityMeleeOne : Abilities
         
     }
 
+    //Event animation ultimo frame para raetornar a idle
     public void FinishAbilityOneMelee()
     {
         _anim.SetTrigger("Idle");
@@ -38,6 +40,7 @@ public class AbilityMeleeOne : Abilities
         isIdle = true;
     }
 
+    //Aactvacion de collidersssss
     public void ColliderActivationMS1(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
     {
         if (animColliders[ColliderNumber].activeSelf)

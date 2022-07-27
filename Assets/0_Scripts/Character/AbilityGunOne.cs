@@ -25,7 +25,8 @@ public class AbilityGunOne : Abilities
 
         if (isIdle == true)
         {
-            _cs.UseAbility(id);
+            //Que la pueda castear por deporte ahora nomas
+            //_cs.UseAbility(id);
             isIdle = false;
             _anim.SetTrigger("GS1");
             rb.constraints = RigidbodyConstraints.FreezeAll;
@@ -42,6 +43,7 @@ public class AbilityGunOne : Abilities
         isIdle = true;
     }
 
+    //Event animation para activar los colliders
     public void ColliderActivationGS1(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
     {
         if (animColliders[ColliderNumber].activeSelf)

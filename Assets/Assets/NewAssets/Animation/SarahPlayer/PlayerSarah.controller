@@ -495,7 +495,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PrimerHabilidadMelee
-  m_Speed: 4
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -524522887062194094}
@@ -508,7 +508,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2a1a9b5574d9ef74c91675a3cd6a90a1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6d9f5ad32bcceec499b72e581522fefd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -971,7 +971,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GunS1
-  m_Speed: 5
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7843489770916500008}
@@ -984,7 +984,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a89f487723542fc4cbf7939825e96970, type: 2}
+  m_Motion: {fileID: 7400000, guid: 23e6dd971d6df214082f08b6515fe066, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1151,13 +1151,13 @@ AnimatorStateMachine:
     m_Position: {x: 950, y: 630, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5526295750446494103}
-    m_Position: {x: 1280, y: 480, z: 0}
+    m_Position: {x: 1270, y: 500, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7104341821896659482}
-    m_Position: {x: 1450, y: 300, z: 0}
+    m_Position: {x: 1530, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4182151623964263020}
-    m_Position: {x: 500, y: -150, z: 0}
+    m_Position: {x: 490, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2333631371252493149}
     m_Position: {x: 450, y: -560, z: 0}
@@ -1172,7 +1172,7 @@ AnimatorStateMachine:
     m_Position: {x: 940, y: 910, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2588062849196574222}
-    m_Position: {x: 1560, y: 630, z: 0}
+    m_Position: {x: 1400, y: 610, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: -428511265254797406}

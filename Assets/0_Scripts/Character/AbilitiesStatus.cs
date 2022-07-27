@@ -28,8 +28,8 @@ public class AbilitiesStatus : MonoBehaviour
 
     void Start()
     {
-        currentMeleeAbility = Debugchan;
-        currentRangedAbility = Debugchan;
+        currentMeleeAbility = meleeAbilities[0].OnUpdate;
+        currentRangedAbility = rangedAbilities[0].OnUpdate;
         EventManager.Instance.Subscribe("OnActivatingMeleeAbilities", SetMeleeAbility);
         EventManager.Instance.Subscribe("OnActivatingRangedAbilities", SetRangedAbility);
     }
@@ -43,24 +43,22 @@ public class AbilitiesStatus : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("RangedSkill"))
         {
-            if (canUseRangedAbility && canCastAbility)
-            {
+            //if (/*canUseRangedAbility && canCastAbility*/)
+            //{
+            currentRangedAbility();
+            StartCoroutine(InnerAbilityCd());
+            //}
 
-                currentRangedAbility();
-                StartCoroutine(InnerAbilityCd());
-            }
-                
-            else Debug.Log("u cant use this yet ( ranged ) ");
+            //else Debug.Log("u cant use this yet ( ranged ) ");
         }
         else if (Input.GetKeyDown(KeyCode.E)|| Input.GetButtonDown("MeleeSkill"))
         {
-            if (canUseMeleeAbility && canCastAbility)
-            {
-
-                currentMeleeAbility();
-                StartCoroutine(InnerAbilityCd());
-            }
-            else Debug.Log("u cant use this yet (melee)");
+            //if (/*canUseMeleeAbility &&*/ canCastAbility)
+            //{
+            currentMeleeAbility();
+            StartCoroutine(InnerAbilityCd());
+            //}
+            //else Debug.Log("u cant use this yet (melee)");
         }
     }
 
