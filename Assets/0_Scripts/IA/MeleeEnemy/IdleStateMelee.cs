@@ -25,6 +25,14 @@ public class IdleStateMelee : MonoBehaviour, IState
 
     public void OnStart()
     {
+        //Para que no gire mal
+
+        _hunter.rb.constraints = RigidbodyConstraints.FreezeAll;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionX;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionZ;
+
+
+
         _hunter.anim.SetBool("IdleB", true);
         idleHold = 3;
         _hunter.idleWpCd = Random.Range(4, 8);

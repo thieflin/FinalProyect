@@ -25,6 +25,12 @@ public class DetectingMeleeState : MonoBehaviour, IState
         _hunter.anim.SetTrigger("Detected");
         _hunter.anim.SetBool("PatrolB", false);
         _hunter.anim.SetBool("IdleB", false);
+
+        //cUANDO Lo detecta le desfreezeo asi no rebota a lo tonto
+        _hunter.rb.constraints = RigidbodyConstraints.FreezeAll;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionX;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionZ;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionY;
     }
 
     public void OnUpdate()

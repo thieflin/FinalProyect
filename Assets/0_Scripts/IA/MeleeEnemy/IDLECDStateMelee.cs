@@ -26,6 +26,11 @@ public class IDLECDStateMelee : MonoBehaviour, IState
     {
         _hunter.anim.SetTrigger("Idle");
         _hunter.idleWpCd = Random.Range(4, 8);
+
+        _hunter.rb.constraints = RigidbodyConstraints.FreezeAll;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionX;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionZ;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionY;
     }
 
     public void OnUpdate()

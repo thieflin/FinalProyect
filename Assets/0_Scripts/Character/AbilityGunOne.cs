@@ -17,6 +17,8 @@ public class AbilityGunOne : Abilities
         Attack();
 
     }
+
+    //Esto es el ataque que usa
     public override void Attack()
     {
         Debug.Log("GunOne");
@@ -31,6 +33,7 @@ public class AbilityGunOne : Abilities
 
     }
 
+    //Event animation al final de la animacion
     public void FinishAbilityOneGun()
     {
         _anim.SetTrigger("Idle");
