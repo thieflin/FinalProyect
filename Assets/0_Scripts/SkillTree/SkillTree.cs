@@ -11,8 +11,6 @@ public class SkillTree : MonoBehaviour
     public int _skillPoints = 0;
     public TextMeshProUGUI _skillPointsText;
     public int _upgradeSkillPoints = 0;
-    [SerializeField] private GameObject _skillTree = null;
-    [SerializeField] private List<Image> _bluePrintImages = null;
     public GameObject canBuyImage;
     public GameObject cantBuyImage;
     public GameObject startingButton;
@@ -20,15 +18,12 @@ public class SkillTree : MonoBehaviour
     public Animator openingAnimation;
     public bool treeOpen;
 
-    private void Awake()
-    {
-        _skillTree.SetActive(false);
-    }
 
     
     private void Update()
     {
         
+        //Abre y cierra el skill tree con animacion
         if (Input.GetKeyDown(KeyCode.CapsLock) || Input.GetButtonDown("SkillTree"))
         {
             if (treeOpen)
@@ -39,7 +34,7 @@ public class SkillTree : MonoBehaviour
                 
             else
             {
-                //EventSystem.current.SetSelectedGameObject(startingButton);
+                EventSystem.current.SetSelectedGameObject(startingButton);
                 openingAnimation.SetTrigger("Open");
                 treeOpen = true;
             }
@@ -69,25 +64,6 @@ public class SkillTree : MonoBehaviour
         _skillPoints -= (int)parameters[0];//Le saco los skillpoitns que cueste la habilidad
         _skillPointsText.text = _skillPoints.ToString();
     }
-
-
-    private void AdquireSkillAttempt(params object[] parameters)
-    {
-        var spSpent = (float)parameters[0];
-        if (_skillPoints < spSpent)
-        {
-
-        }
-        else
-        {
-
-        }
-    }
-
-
-
-
-
 
     //private void BluePrintActivations(params object[] parameters) //Me activa el skill que yo compre (visualmente)
     //{

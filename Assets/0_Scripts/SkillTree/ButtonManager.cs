@@ -50,22 +50,37 @@ public class ButtonManager : MonoBehaviour
 
                 Debug.Log("No accedi al menu de compra");
                 //Desselecciono el boton anterior
-                EventSystem.current.SetSelectedGameObject(null);
+                //EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de can buy ability
-                canBuyAbility.SetActive(true);
+                //canBuyAbility.SetActive(true);
                 //Activo el botton de no comprar por si me equivoque
-                EventSystem.current.SetSelectedGameObject(noButton2);
+                //EventSystem.current.SetSelectedGameObject(noButton2);
+
+
+                /*Pongo un sonidito de que nofucniona*/ 
+
 
             }
             else //Aca es si no tengo suficientes puntos me la deja comprar
             {
                 Debug.Log("Accedi al menu de compra");
                 //Desselecciono el boton anterior
-                EventSystem.current.SetSelectedGameObject(null);
+                //EventSystem.current.SetSelectedGameObject(null);
+
+                //Esto lo cambio: Ahora en lugar de un cuadro opto por un ruido de QUE NO FUCNIONA
+                //Igual lo dej commentado x si las dudas
+
                 //Activo el menu de cant buy ability
-                cantBuyAbility.SetActive(true);
+                //cantBuyAbility.SetActive(true);
                 //Le pongo como seleccion en el boton de no por si se equivoco
-                EventSystem.current.SetSelectedGameObject(noButton);
+                //EventSystem.current.SetSelectedGameObject(noButton);
+
+
+
+                //Aca iria el sonido
+
+                /*introducir sonido*/
+
             }
             
         }
@@ -78,6 +93,8 @@ public class ButtonManager : MonoBehaviour
             //Hago que el delegate ejecute la funcion que yo quiera ejecutar
             Debug.Log("Active la imagen de la habilidad");
             EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilitiesId[Id]);
+
+            //ACA HAY QUE AGREGAR UN SONIDITO DE SUCCESS
 
             //Activo la imagen que le corresponda a ella (esto se podria mejorar y pasarlo en el delegate directamente pero esas
             //upgrades se ven despues, rpimero que ande)
@@ -93,6 +110,7 @@ public class ButtonManager : MonoBehaviour
 
     }
 
+    //Esta funcion por el momento no la vamos a usar
 
     public void BackOrNoButton() //Vuelve para atras ya sea en compra o en no tener suficientes creditos
     {
@@ -120,14 +138,14 @@ public class ButtonManager : MonoBehaviour
                     _as.rangedAbilities[rangedUpgrade].isPurchased = true;
 
                     //Me hace null la seleccion de boton
-                    EventSystem.current.SetSelectedGameObject(null);
+                    //EventSystem.current.SetSelectedGameObject(null);
                     
                     //Desactiva las pantallas de opciones
-                    canBuyAbility.SetActive(false);
-                    cantBuyAbility.SetActive(false);
+                    //canBuyAbility.SetActive(false);
+                    //cantBuyAbility.SetActive(false);
 
                     //Vuelve al ultimo boton apretado esto falta hotfixearlo igual
-                    EventSystem.current.SetSelectedGameObject(lastPressedButton);
+                    //EventSystem.current.SetSelectedGameObject(lastPressedButton);
 
                     //Activo el boton para poder comprar la proxima, esto no me gusta quiero que tenga algo mas que se note
                     //_rangedAbilitiesButtons[0].interactable = true;
@@ -138,10 +156,10 @@ public class ButtonManager : MonoBehaviour
                 case 1:
                     EventManager.Instance.Trigger("OnSpendingSP", 3);
                     _as.rangedAbilities[rangedUpgrade].isPurchased = true;
-                    EventSystem.current.SetSelectedGameObject(null);
-                    canBuyAbility.SetActive(false);
-                    cantBuyAbility.SetActive(false);
-                    EventSystem.current.SetSelectedGameObject(lastPressedButton);
+                    //EventSystem.current.SetSelectedGameObject(null);
+                    //canBuyAbility.SetActive(false);
+                    //cantBuyAbility.SetActive(false);
+                    //EventSystem.current.SetSelectedGameObject(lastPressedButton);
                     rangedUpgrade++;
                     break;
             }
@@ -167,24 +185,29 @@ public class ButtonManager : MonoBehaviour
             if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded() && Id < meleeUpgrade + 1)
             {
 
-                Debug.Log("Accedi al menu de compra");
+                //Debug.Log("Accedi al menu de compra");
                 //Desselecciono el boton anterior
-                EventSystem.current.SetSelectedGameObject(null);
+                //EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de can buy ability
-                canBuyAbilityMelee.SetActive(true);
+                //canBuyAbilityMelee.SetActive(true);
                 //Activo el botton de no comprar por si me equivoque
-                EventSystem.current.SetSelectedGameObject(noButtonMelee);
+                //EventSystem.current.SetSelectedGameObject(noButtonMelee);
 
+                //Aca va el sonido de que funciono
             }
             else //Aca es si no tengo suficientes puntos me la deja comprar
             {
                 Debug.Log("No accedi al menu de compra");
                 //Desselecciono el boton anterior
-                EventSystem.current.SetSelectedGameObject(null);
+                //EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de cant buy ability
-                cantBuyAbilityMelee.SetActive(true);
+                //cantBuyAbilityMelee.SetActive(true);
                 //Le pongo como seleccion en el boton de no por si se equivoco
-                EventSystem.current.SetSelectedGameObject(backButtonMele);
+                //EventSystem.current.SetSelectedGameObject(backButtonMele);
+
+
+
+                //ACA VA EL SONIDO DE QUE FALLO
             }
 
         }
@@ -197,6 +220,8 @@ public class ButtonManager : MonoBehaviour
             //Hago que el delegate ejecute la funcion que yo quiera ejecutar
             Debug.Log("Active la imagen de la habilidad");
             EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[Id]);
+
+            //Sonidito de activacion
 
             //Activo la imagen que le corresponda a ella
             for (int i = 0; i < meleeImages.Count; i++)
@@ -211,6 +236,7 @@ public class ButtonManager : MonoBehaviour
 
     }
 
+    //Esta no se usa por ahora
 
     public void BackOrNoButtonMelee() //Vuelve para atras ya sea en compra o en no tener suficientes creditos
     {
@@ -238,14 +264,14 @@ public class ButtonManager : MonoBehaviour
                     _as.meleeAbilities[meleeUpgrade].isPurchased = true;
 
                     //Me hace null la seleccion de boton
-                    EventSystem.current.SetSelectedGameObject(null);
+                    //EventSystem.current.SetSelectedGameObject(null);
 
                     //Desactiva las pantallas de opciones
-                    cantBuyAbilityMelee.SetActive(false);
-                    canBuyAbilityMelee.SetActive(false);
+                    //cantBuyAbilityMelee.SetActive(false);
+                    //canBuyAbilityMelee.SetActive(false);
 
                     //Vuelve al ultimo boton apretado esto falta hotfixearlo igual
-                    EventSystem.current.SetSelectedGameObject(lastPressedButton);
+                    //EventSystem.current.SetSelectedGameObject(lastPressedButton);
 
                     //Activo el boton para poder comprar la proxima, esto no me gusta quiero que tenga algo mas que se note
                     //_rangedAbilitiesButtons[0].interactable = true;
@@ -256,10 +282,10 @@ public class ButtonManager : MonoBehaviour
                 case 1:
                     EventManager.Instance.Trigger("OnSpendingSP", 3);
                     _as.meleeAbilities[meleeUpgrade].isPurchased = true;
-                    EventSystem.current.SetSelectedGameObject(null);
-                    cantBuyAbilityMelee.SetActive(false);
-                    canBuyAbilityMelee.SetActive(false);
-                    EventSystem.current.SetSelectedGameObject(lastPressedButton);
+                    //EventSystem.current.SetSelectedGameObject(null);
+                    //cantBuyAbilityMelee.SetActive(false);
+                    //canBuyAbilityMelee.SetActive(false);
+                    //EventSystem.current.SetSelectedGameObject(lastPressedButton);
                     meleeUpgrade++;
                     break;
             }
