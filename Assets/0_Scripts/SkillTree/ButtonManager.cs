@@ -48,7 +48,8 @@ public class ButtonManager : MonoBehaviour
             if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded() && Id < rangedUpgrade + 1)
             {
 
-                Debug.Log("No accedi al menu de compra");
+                Debug.Log("Puedo comprar ranged");
+                PurchaseSkillRanged();
                 //Desselecciono el boton anterior
                 //EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de can buy ability
@@ -57,13 +58,14 @@ public class ButtonManager : MonoBehaviour
                 //EventSystem.current.SetSelectedGameObject(noButton2);
 
 
-                /*Pongo un sonidito de que nofucniona*/ 
+                /*Pongo un sonidito de que nofucniona*/
 
 
             }
             else //Aca es si no tengo suficientes puntos me la deja comprar
             {
-                Debug.Log("Accedi al menu de compra");
+                Debug.Log("No puedo comprar ranged");
+                
                 //Desselecciono el boton anterior
                 //EventSystem.current.SetSelectedGameObject(null);
 
@@ -98,14 +100,14 @@ public class ButtonManager : MonoBehaviour
 
             //Activo la imagen que le corresponda a ella (esto se podria mejorar y pasarlo en el delegate directamente pero esas
             //upgrades se ven despues, rpimero que ande)
-            for (int i = 0; i < rangedImages.Count; i++)
-            {
-                if (i == Id)
-                    rangedImages[i].SetActive(true);
-                else
-                    rangedImages[i].SetActive(false);
+            //for (int i = 0; i < rangedImages.Count; i++)
+            //{
+            //    if (i == Id)
+            //        rangedImages[i].SetActive(true);
+            //    else
+            //        rangedImages[i].SetActive(false);
 
-            }
+            //}
         }
 
     }
@@ -185,7 +187,8 @@ public class ButtonManager : MonoBehaviour
             if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded() && Id < meleeUpgrade + 1)
             {
 
-                //Debug.Log("Accedi al menu de compra");
+                Debug.Log("Puedo comprar melee");
+                PurchaseSkillMelee();
                 //Desselecciono el boton anterior
                 //EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de can buy ability
@@ -197,7 +200,7 @@ public class ButtonManager : MonoBehaviour
             }
             else //Aca es si no tengo suficientes puntos me la deja comprar
             {
-                Debug.Log("No accedi al menu de compra");
+                Debug.Log("No puedo comprar melee");
                 //Desselecciono el boton anterior
                 //EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de cant buy ability
@@ -224,14 +227,14 @@ public class ButtonManager : MonoBehaviour
             //Sonidito de activacion
 
             //Activo la imagen que le corresponda a ella
-            for (int i = 0; i < meleeImages.Count; i++)
-            {
-                if (i == Id)
-                    meleeImages[i].SetActive(true);
-                else
-                    meleeImages[i].SetActive(false);
+            //for (int i = 0; i < meleeImages.Count; i++)
+            //{
+            //    if (i == Id)
+            //        meleeImages[i].SetActive(true);
+            //    else
+            //        meleeImages[i].SetActive(false);
 
-            }
+            //}
         }
 
     }

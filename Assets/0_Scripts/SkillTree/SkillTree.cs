@@ -18,7 +18,7 @@ public class SkillTree : MonoBehaviour
     public Animator openingAnimation;
     public bool treeOpen;
 
-
+    
     
     private void Update()
     {
@@ -49,6 +49,8 @@ public class SkillTree : MonoBehaviour
         EventManager.Instance.Subscribe("OnSpendingSP", UpgrandingAbility);
         //EventManager.Instance.Subscribe("OnObtainingBlueprint", BluePrintActivations);
         treeOpen = false;
+
+        _skillPointsText.text = _skillPoints.ToString();
     }
 
     private void EarningSp(params object[] parameters) // Obtiene SP

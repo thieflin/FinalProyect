@@ -28,8 +28,8 @@ public class AbilitiesStatus : MonoBehaviour
 
     void Start()
     {
-        currentMeleeAbility = meleeAbilities[0].OnUpdate;
-        currentRangedAbility = rangedAbilities[0].OnUpdate;
+        currentMeleeAbility = Debugchan;
+        currentRangedAbility = Debugchan;
         EventManager.Instance.Subscribe("OnActivatingMeleeAbilities", SetMeleeAbility);
         EventManager.Instance.Subscribe("OnActivatingRangedAbilities", SetRangedAbility);
     }
