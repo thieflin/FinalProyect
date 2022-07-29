@@ -17,35 +17,43 @@ public class SkillTree : MonoBehaviour
     public GameObject cantBuyImage;
     public GameObject startingButton;
 
+    public Animator openingAnimation;
+    public bool treeOpen;
+
     private void Awake()
     {
         _skillTree.SetActive(false);
     }
 
-
+    
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.CapsLock) /*|| Input.GetButtonDown("Pause")*/)
-            if (_skillTree.activeSelf)
+        
+        if (Input.GetKeyDown(KeyCode.CapsLock) || Input.GetButtonDown("SkillTree"))
+        {
+            if (treeOpen)
             {
-                _skillTree.SetActive(false);
-                Pause.UnpauseGame();
+                openingAnimation.SetTrigger("Close");
+                treeOpen = false;
             }
                 
             else
             {
-                Pause.PauseGame();
-                EventSystem.current.SetSelectedGameObject(startingButton);
-                _skillTree.SetActive(true);
+                //EventSystem.current.SetSelectedGameObject(startingButton);
+                openingAnimation.SetTrigger("Open");
+                treeOpen = true;
             }
-
+        }
     }
+
+    //Event Animation boolean para no spamear el open y close del skill tree
 
     private void Start()
     {
         EventManager.Instance.Subscribe("OnEarningSP", EarningSp);
         EventManager.Instance.Subscribe("OnSpendingSP", UpgrandingAbility);
-        EventManager.Instance.Subscribe("OnObtainingBlueprint", BluePrintActivations);
+        //EventManager.Instance.Subscribe("OnObtainingBlueprint", BluePrintActivations);
+        treeOpen = false;
     }
 
     private void EarningSp(params object[] parameters) // Obtiene SP
@@ -81,16 +89,16 @@ public class SkillTree : MonoBehaviour
 
 
 
-    private void BluePrintActivations(params object[] parameters) //Me activa el skill que yo compre (visualmente)
-    {
-        for (int i = 0; i < _bluePrintImages.Count; i++)
-        {
-            _bluePrintImages[(int)parameters[0]].enabled = true;
-            var tempColor = _bluePrintImages[(int)parameters[0]].color;
-            tempColor.a = 255;
-            _bluePrintImages[(int)parameters[0]].color = tempColor;
-        }
-    }
+    //private void BluePrintActivations(params object[] parameters) //Me activa el skill que yo compre (visualmente)
+    //{
+    //    for (int i = 0; i < _bluePrintImages.Count; i++)
+    //    {
+    //        _bluePrintImages[(int)parameters[0]].enabled = true;
+    //        var tempColor = _bluePrintImages[(int)parameters[0]].color;
+    //        tempColor.a = 255;
+    //        _bluePrintImages[(int)parameters[0]].color = tempColor;
+    //    }
+    //}
 
     public float CurrentSkillPoints()
     {
