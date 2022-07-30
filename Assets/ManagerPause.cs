@@ -5,6 +5,7 @@ using UnityEngine;
 public class ManagerPause : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject optionsMenu;
 
     // Update is called once per frame
     void Update()
@@ -18,12 +19,19 @@ public class ManagerPause : MonoBehaviour
                 Debug.Log("ENTRE ACA TAMBIEN");
                 pauseMenu.SetActive(true);
                 Pause.PauseGame();
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
             }
             else if(Pause.isPaused)
             {
                 Debug.Log("ENTRE ACA");
                 pauseMenu.SetActive(false);
                 Pause.UnpauseGame();
+                optionsMenu.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
             }
         }
 

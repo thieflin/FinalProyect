@@ -17,6 +17,7 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
 
     public GameObject settingsMenu;
+    public GameObject pauseMenu;
 
     public GameObject selector;
 
@@ -24,6 +25,7 @@ public class SettingsMenu : MonoBehaviour
     public GameObject settingsButton;
     public GameObject backButton;
     public GameObject exitButtoin;
+    
 
     
 
@@ -146,5 +148,11 @@ public class SettingsMenu : MonoBehaviour
         //{
             settingsMenu.SetActive(false);
         //}
+    }
+
+    public void BTN_BackInGame()
+    {
+        Pause.UnpauseGame();
+        pauseMenu.SetActive(false);
     }
 }
