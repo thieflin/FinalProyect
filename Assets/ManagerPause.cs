@@ -9,17 +9,21 @@ public class ManagerPause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        Debug.Log(Pause.isPaused);
+
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause"))
         {
-            if (Pause.isPaused)
+            if (!Pause.isPaused)
             {
-                pauseMenu.SetActive(false);
-                Pause.UnpauseGame();
-            }
-            else
-            {
+                Debug.Log("ENTRE ACA TAMBIEN");
                 pauseMenu.SetActive(true);
                 Pause.PauseGame();
+            }
+            else if(Pause.isPaused)
+            {
+                Debug.Log("ENTRE ACA");
+                pauseMenu.SetActive(false);
+                Pause.UnpauseGame();
             }
         }
 

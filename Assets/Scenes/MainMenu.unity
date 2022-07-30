@@ -500,6 +500,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5774434673781106753, guid: f47458c60b1e9e84b892cd5029d5bf5d, type: 3}
+      propertyPath: m_Value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774434673781106753, guid: f47458c60b1e9e84b892cd5029d5bf5d, type: 3}
       propertyPath: m_Options.m_Options.Array.size
       value: 6
       objectReference: {fileID: 0}
