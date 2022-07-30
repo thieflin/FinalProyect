@@ -15,6 +15,11 @@ public class TwoButtons : MonoBehaviour
 
     public int normalAttackLayer;
 
+    private void Start()
+    {
+        buttonsPressed = 0;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

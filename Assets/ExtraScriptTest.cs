@@ -17,7 +17,7 @@ public class ExtraScriptTest : MonoBehaviour
         if (other.gameObject.layer == normalAttackLayer)
         {
             Debug.Log("ENTREE ACAAAA");
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            //gameObject.GetComponent<BoxCollider>().enabled = false;
             //AudioManager.PlaySound("puzzle");
 
             if (puenteActivate != null)
