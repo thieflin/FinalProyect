@@ -78,7 +78,7 @@ Material:
     - _A4: {r: 0, g: 0, b: 0, a: 0}
     - _CenterCutout: {r: 0.03, g: 0.12, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _PlayerPosition: {r: -0.5158662, g: -0.39159775, b: -21.296242, a: 0}
+    - _PlayerPosition: {r: -0.5138866, g: -0.3918155, b: -21.299505, a: 0}
     - _PlayerPosition1: {r: -0.485082, g: -0.581287, b: -13.973, a: 0}
     - _PlayerPositon: {r: 0, g: 0, b: 0, a: 0}
     - _Position: {r: 0.5, g: 0.5, b: 0.5, a: 0}
