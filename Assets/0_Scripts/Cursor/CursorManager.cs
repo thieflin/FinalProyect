@@ -13,6 +13,7 @@ public class CursorManager : MonoBehaviour
 
     private void Update()
     {
+        
         if (Pause.isPaused)
         {
             Cursor.lockState = CursorLockMode.None;

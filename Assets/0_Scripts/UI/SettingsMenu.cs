@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Linq;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class SettingsMenu : MonoBehaviour
 
     public GameObject settingsMenu;
 
+    public GameObject selector;
 
     [Header("Botones")]
     public GameObject settingsButton;
@@ -50,7 +52,10 @@ public class SettingsMenu : MonoBehaviour
 
         resolutionDropDown.AddOptions(options);
         resolutionDropDown.value = currentResolutionIndex;
+
         resolutionDropDown.RefreshShownValue();
+
+        Screen.SetResolution(resolutions.Last().width, resolutions.Last().height, Screen.fullScreen);
     }
 
     public void SetResolution(int resolutionIndex)
@@ -79,9 +84,6 @@ public class SettingsMenu : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
-
-
-
     //Botones de PLAY
     public void BTN_Play()
     {
@@ -90,12 +92,15 @@ public class SettingsMenu : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
+        //if (Input.GetMouseButtonDown(0))
+        //{
             SceneManager.LoadScene(1);
-        }
+        //}
     }
 
+    public void SetPositionSelector()
+    {
+    }
 
     //Botones para abrir settings
     public void BTN_Settings()
@@ -108,10 +113,10 @@ public class SettingsMenu : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
+        //if (Input.GetMouseButtonDown(0))
+        //{
             settingsMenu.SetActive(true);
-        }
+        //}
     }
 
     //Botones de Exit
@@ -120,10 +125,10 @@ public class SettingsMenu : MonoBehaviour
         if (Input.GetButtonDown("Submit"))
             Application.Quit();
 
-        if (Input.GetMouseButtonDown(0))
-        {
+        //if (Input.GetMouseButtonDown(0))
+        //{
             Application.Quit();
-        }
+        //}
     }
 
     //Botones de VOLVER ATRAS
@@ -137,9 +142,9 @@ public class SettingsMenu : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(settingsButton);
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
+        //if (Input.GetMouseButtonDown(0))
+        //{
             settingsMenu.SetActive(false);
-        }
+        //}
     }
 }
