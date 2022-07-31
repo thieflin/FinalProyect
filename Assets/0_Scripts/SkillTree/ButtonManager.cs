@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -41,6 +42,10 @@ public class ButtonManager : MonoBehaviour
     public GameObject meleeUIImage;
     public GameObject rangedUIImage;
     public GameObject hybridUIImage;
+
+    [Header("Descripcion de habilidades")]
+    public List<TextMeshProUGUI> _abilityDescriptions = new List<TextMeshProUGUI>();
+
 
 
     public int meleeUpgrade;
