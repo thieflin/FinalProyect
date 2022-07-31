@@ -32,11 +32,51 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private List<int> _rangedAbilitiesId = new List<int>();
 
 
+    [Header("Imagenes De SkillTree")]
+    public GameObject meleeSkillTreeImage;
+    public GameObject rangedSkillTreeImage;
+    public GameObject hybridSkillTreeImage;
+
+    [Header("Imagenes De UI")]
+    public GameObject meleeUIImage;
+    public GameObject rangedUIImage;
+    public GameObject hybridUIImage;
+
+
     public int meleeUpgrade;
     public int rangedUpgrade;
 
     [SerializeField] private SkillTree _st;
+    #region HybridAbility
 
+    private void Start()
+    {
+        meleeSkillTreeImage.SetActive(false);
+        rangedSkillTreeImage.SetActive(false);
+        hybridSkillTreeImage.SetActive(false);
+
+        hybridUIImage.SetActive(false);
+        rangedUIImage.SetActive(false);
+        meleeUIImage.SetActive(false);
+    }
+
+    public void OnButtonSelectHybridAbility(int id)
+    {
+        if(Input.GetButtonDown("Submit") && rangedUpgrade >= 1 && meleeUpgrade >= 1)
+        {
+            if(_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded())
+            {
+                Debug.Log("Compra osea activa el delegate");
+            }
+            else
+            {
+                Debug.Log("No puedo comprar la hibrida");
+            }
+        }
+    }
+
+
+    #endregion
     #region RangedAbilities
     //Esta funcion es para interactura con el boton
     public void OnButtonSelectedRangedAbilities(int Id) //Al apretar el boton revisa la Id de la habilidad
@@ -49,7 +89,12 @@ public class ButtonManager : MonoBehaviour
             {
 
                 Debug.Log("Puedo comprar ranged");
+
                 PurchaseSkillRanged();
+
+                EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilitiesId[Id]);
+                rangedUIImage.SetActive(true); //Activo la imagen de la UI
+                rangedSkillTreeImage.SetActive(true); //Activo la imagen de el skilltree
                 //Desselecciono el boton anterior
                 //EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de can buy ability
@@ -90,11 +135,22 @@ public class ButtonManager : MonoBehaviour
 
 
         //Esto esta a hcequear porque podria activarla ni bien la compro pero veremos porque hay pasivas
-        else if(Input.GetButtonDown("Submit") && _as.rangedAbilities[Id].isPurchased)
+
+        //Esto lo comento por si las dudas seguramente lo necesite pero ahora HOTFIX 
+
+
+        else if (Input.GetButtonDown("Submit") && _as.rangedAbilities[Id].isPurchased)
         {
             //Hago que el delegate ejecute la funcion que yo quiera ejecutar
             Debug.Log("Active la imagen de la habilidad");
             EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilitiesId[Id]);
+
+
+            rangedUIImage.SetActive(true);
+
+            rangedSkillTreeImage.SetActive(true);
+
+
 
             //ACA HAY QUE AGREGAR UN SONIDITO DE SUCCESS
 
@@ -188,7 +244,14 @@ public class ButtonManager : MonoBehaviour
             {
 
                 Debug.Log("Puedo comprar melee");
+
                 PurchaseSkillMelee();
+
+                EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[Id]);
+
+                meleeSkillTreeImage.SetActive(true);
+
+                meleeUIImage.SetActive(true);
                 //Desselecciono el boton anterior
                 //EventSystem.current.SetSelectedGameObject(null);
                 //Activo el menu de can buy ability
@@ -222,8 +285,12 @@ public class ButtonManager : MonoBehaviour
         {
             //Hago que el delegate ejecute la funcion que yo quiera ejecutar
             Debug.Log("Active la imagen de la habilidad");
+
             EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[Id]);
 
+            meleeSkillTreeImage.SetActive(true);
+
+            meleeUIImage.SetActive(true);
             //Sonidito de activacion
 
             //Activo la imagen que le corresponda a ella
