@@ -8,6 +8,8 @@ public class Boss : MonoBehaviour
     Animator anim;
     Rigidbody rb;
 
+    
+
 
     [SerializeField] GameObject player;
     Vector3 toPlayerVector;
@@ -19,6 +21,9 @@ public class Boss : MonoBehaviour
     public float timeFirstAttack;
 
     [Header("Boss Settings")]
+    public float maxHP;
+    public float HP;
+    public bool dead;
     public float distanceToAttack;
     public bool attacking;
     public bool shooting;
@@ -37,6 +42,8 @@ public class Boss : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+
+        HP = maxHP;
     }
 
     // Update is called once per frame
@@ -45,15 +52,25 @@ public class Boss : MonoBehaviour
         toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
         transform.forward = toPlayerVector;
 
+        if (dead)
+        {
+            anim.SetTrigger("Dead");
+            transform.forward = Vector3.zero;
+        }
+
         if (startShooting)
         {
             SpawnBullets();
         }
 
+        if (Vector3.Distance(transform.position, player.transform.position) > distanceToAttack)
+        {
+            attacking = false;
+        }
+
         if (Vector3.Distance(transform.position, player.transform.position) < distanceToAttack)
         {
             attacking = true;
-            
         }
 
         if (attacking)
@@ -66,7 +83,7 @@ public class Boss : MonoBehaviour
             if (timerAttacking <= timeFirstAttack && Vector3.Distance(transform.position, player.transform.position) > distanceToAttack)
             {
                 StopAttacking();
-                
+
             }
             else
             {
@@ -74,10 +91,12 @@ public class Boss : MonoBehaviour
             }
         }
 
-        //if (/*Vector3.Distance(transform.position, player.transform.position) >= distanceToAttack && timerToCancel <= timeFirstAttack*/!attacking)
-        //{
-        //    StopAttacking();
-        //}
+        if (!attacking)
+        {
+            timerAttacking = 0f;
+            timerToCancel = 0f;
+            anim.SetBool("IsAttackingMelee", false);
+        }
 
     }
 
@@ -85,7 +104,7 @@ public class Boss : MonoBehaviour
     {
         timerShooting += Time.deltaTime;
 
-        if(timerShooting >= timeBetweenShoots)
+        if (timerShooting >= timeBetweenShoots)
         {
             timerShooting = 0f;
 
@@ -96,16 +115,22 @@ public class Boss : MonoBehaviour
 
     IEnumerator Spawner()
     {
-        Vector3 shootingDirection = player.transform.position + player.transform.forward * 1;
-
         
         foreach (var positions in spawnPositionsBullet)
         {
             yield return new WaitForSeconds(timeBetweenInternalShoots);
+
+            Vector3 shootingDirection = player.transform.position + player.transform.forward * 1;
+
+            shootingDirection = new Vector3(shootingDirection.x, shootingDirection.y + 3f, shootingDirection.z);
+
             var bullet = Instantiate(bulletPrefab, positions.transform.position, Quaternion.identity);
             var newBullet = bullet.GetComponent<BulletBoss>();
+            
 
             var direction = (shootingDirection - newBullet.transform.position).normalized;
+
+            newBullet.transform.forward = direction;
 
             newBullet.GetComponent<Rigidbody>().AddForce(direction * newBullet.speed * Time.fixedDeltaTime, ForceMode.Force);
         }
@@ -114,15 +139,22 @@ public class Boss : MonoBehaviour
     IEnumerator WaitToFinishAttackAnimation()
     {
         attacking = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         attacking = false;
+    }
+
+    void TakeDamage(float dmg)
+    {
+        HP -= dmg;
+        if(HP <= 0)
+        {
+            dead = true;
+        }
     }
 
     void StartAttacking()
     {
         anim.SetBool("IsAttackingMelee", true);
-
-        
 
         if (timerAttacking >= timeToAttack)
         {
