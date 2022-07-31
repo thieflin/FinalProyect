@@ -18,6 +18,11 @@ public class BulletBoss : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
