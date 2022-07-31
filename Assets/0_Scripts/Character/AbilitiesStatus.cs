@@ -53,11 +53,11 @@ public class AbilitiesStatus : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.E)|| Input.GetButtonDown("MeleeSkill"))
         {
-            //if (/*canUseMeleeAbility &&*/ canCastAbility)
-            //{
+            if (canUseMeleeAbility && canCastAbility)
+            {
             currentMeleeAbility();
             StartCoroutine(InnerAbilityCd());
-            //}
+            }
             //else Debug.Log("u cant use this yet (melee)");
         }
     }

@@ -23,7 +23,7 @@ public class AbilityMeleeOne : Abilities
         if (isIdle == true)
         {
             //Que la pueda cstear por deporte por ahora
-            //_cs.UseAbility(id);
+            _cs.UseAbility(id);
             isIdle = false;
             _anim.SetTrigger("MS1");
             rb.constraints = RigidbodyConstraints.FreezeAll;

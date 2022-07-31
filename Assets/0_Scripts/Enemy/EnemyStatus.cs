@@ -7,10 +7,12 @@ public class EnemyStatus : EnemyData, IDamageable
 
     public GameObject onMeleeHittedParticles;
     public bool enemyHitted = false;
-
+    private ButtonManager _bm;
 
     public void Start()
     {
+
+        _bm = FindObjectOfType<ButtonManager>();
 
         _currentHp = _maxHp;
         _anim = GetComponent<Animator>();
@@ -83,6 +85,11 @@ public class EnemyStatus : EnemyData, IDamageable
         {
             Debug.Log("estoy pegando anashe");
             TakeDamage(10);
+
+            if(_bm.rangedUpgrade >= 1)
+                EventManager.Instance.Trigger("OnGettingRPG", 25f/*Este valor es lo que me da de gauge*/);
+
+
             var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
             if (this.gameObject.activeSelf)
                 StartCoroutine(WaitForEnemyHitted());

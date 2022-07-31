@@ -26,7 +26,7 @@ public class AbilityGunOne : Abilities
         if (isIdle == true)
         {
             //Que la pueda castear por deporte ahora nomas
-            //_cs.UseAbility(id);
+            _cs.UseAbility(id);
             isIdle = false;
             _anim.SetTrigger("GS1");
             rb.constraints = RigidbodyConstraints.FreezeAll;

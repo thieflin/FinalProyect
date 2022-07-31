@@ -73,8 +73,8 @@ public class CharStatus : MonoBehaviour
         _mpgBar.fillAmount = _mpgPercent;
 
         //Ultimate
-        //_upgPercent = _ultimatePowerGauge / _maxPowerGauge * 2f;
-        //_upgBar.fillAmount = _upgPercent;
+        _upgPercent = _ultimatePowerGauge / _maxPowerGauge * 2f;
+        _upgBar.fillAmount = _upgPercent;
     }
 
     void Start()
@@ -83,7 +83,14 @@ public class CharStatus : MonoBehaviour
         EventManager.Instance.Subscribe("OnGettingExp", GetExp); //Evento para generar mas Nivel
         EventManager.Instance.Subscribe("OnGettingMPG", GetPowerGaugeMelee); //Evento para generar powergaguge ( melee )
         EventManager.Instance.Subscribe("OnGettingRPG", GetPowerGaugeRanged); //Evento para generar power gauge ( ranged )
+
+
         _expBar.fillAmount = 0;
+
+
+        _meleeSkillUp.SetActive(false);
+        _rangedSkillUp.SetActive(false);
+        _ultimateSkillUp.SetActive(false);
     }
 
     private void Update()
@@ -98,7 +105,7 @@ public class CharStatus : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            EventManager.Instance.Trigger("OnGettingRPG", 10f);
+            EventManager.Instance.Trigger("OnGettingRPG", 25f);
         }
 
     }
@@ -109,8 +116,11 @@ public class CharStatus : MonoBehaviour
         if (_rangedPowerGauge >= _maxPowerGauge)
         {
             _as.canCastAbility = true;
+
             _rangedPowerGauge = _maxPowerGauge;
+
             _as.canUseRangedAbility = true;
+
             _rangedSkillUp.SetActive(true);
             //Le pregunto si esta maxeado
             if (_ultimatePowerGauge >= _maxPowerGauge * 2)
@@ -248,8 +258,10 @@ public class CharStatus : MonoBehaviour
         {
             _as.canUseRangedAbility = false;
             _as.canUseMixedAbility = false;
+
             _rangedPowerGauge = 0;
             _rpgBar.fillAmount = 0;
+
             _ultimateSkillUp.SetActive(false);
             _rangedSkillUp.SetActive(false);
 
