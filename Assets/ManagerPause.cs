@@ -16,7 +16,6 @@ public class ManagerPause : MonoBehaviour
         {
             if (!Pause.isPaused)
             {
-                Debug.Log("ENTRE ACA TAMBIEN");
                 pauseMenu.SetActive(true);
                 Pause.PauseGame();
                 Cursor.lockState = CursorLockMode.None;
@@ -25,7 +24,6 @@ public class ManagerPause : MonoBehaviour
             }
             else if(Pause.isPaused)
             {
-                Debug.Log("ENTRE ACA");
                 pauseMenu.SetActive(false);
                 Pause.UnpauseGame();
                 optionsMenu.SetActive(false);
