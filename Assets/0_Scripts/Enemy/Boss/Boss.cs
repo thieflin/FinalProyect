@@ -21,6 +21,15 @@ public class Boss : MonoBehaviour
     [Header("Boss Settings")]
     public float distanceToAttack;
     public bool attacking;
+    public bool shooting;
+    public float timeBetweenShoots;
+    public float timeBetweenInternalShoots;
+    public float timerShooting;
+
+    public GameObject bulletPrefab;
+    public Transform[] spawnPositionsBullet;
+    public bool startShooting;
+
 
 
     // Start is called before the first frame update
@@ -36,7 +45,10 @@ public class Boss : MonoBehaviour
         toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
         transform.forward = toPlayerVector;
 
-
+        if (startShooting)
+        {
+            SpawnBullets();
+        }
 
         if (Vector3.Distance(transform.position, player.transform.position) < distanceToAttack)
         {
@@ -67,6 +79,36 @@ public class Boss : MonoBehaviour
         //    StopAttacking();
         //}
 
+    }
+
+    void SpawnBullets()
+    {
+        timerShooting += Time.deltaTime;
+
+        if(timerShooting >= timeBetweenShoots)
+        {
+            timerShooting = 0f;
+
+            StartCoroutine(Spawner());
+
+        }
+    }
+
+    IEnumerator Spawner()
+    {
+        Vector3 shootingDirection = player.transform.position + player.transform.forward * 1;
+
+        
+        foreach (var positions in spawnPositionsBullet)
+        {
+            yield return new WaitForSeconds(timeBetweenInternalShoots);
+            var bullet = Instantiate(bulletPrefab, positions.transform.position, Quaternion.identity);
+            var newBullet = bullet.GetComponent<BulletBoss>();
+
+            var direction = (shootingDirection - newBullet.transform.position).normalized;
+
+            newBullet.GetComponent<Rigidbody>().AddForce(direction * newBullet.speed * Time.fixedDeltaTime, ForceMode.Force);
+        }
     }
 
     IEnumerator WaitToFinishAttackAnimation()
