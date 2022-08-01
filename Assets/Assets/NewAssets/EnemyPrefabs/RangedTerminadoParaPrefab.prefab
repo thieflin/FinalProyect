@@ -1046,7 +1046,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   _maxHp: 40
   _hitboxLayermask: 9
-  _abilityLayermask: 10
+  _abilityLayermask: 23
   _hitKnockbackLayerMask: 0
   _dmgMitigation: 2
   _hpSlider: {fileID: 0}
@@ -1174,7 +1174,7 @@ MonoBehaviour:
   justAttacked: 0
   attackCd: 0
   enemyHitted: 0
-  bullet: {fileID: 1053521865423940241, guid: b9db26aaa3a9b6449b3aaaca09f0e4a5, type: 3}
+  bullet: {fileID: -6757709886621573434, guid: 12d39adc28b63b34ea21aa6c23ea54f4, type: 3}
   spawnBulletPos: {fileID: 512750485146953733}
   particleSystemXD: {fileID: 512750484003026535}
   rb: {fileID: 0}
@@ -1191,9 +1191,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.15
-  m_Height: 5.88
+  m_Height: 9.407397
   m_Direction: 1
-  m_Center: {x: 0, y: 2.76, z: 0}
+  m_Center: {x: 0, y: 4.5236983, z: 0}
 --- !u!1 &512750483772694919
 GameObject:
   m_ObjectHideFlags: 0
