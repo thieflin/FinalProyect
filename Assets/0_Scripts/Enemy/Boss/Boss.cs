@@ -29,9 +29,16 @@ public class Boss : MonoBehaviour
     public float timerToCancel;
     public float timeFirstAttack;
 
+    public float timerForGrabBack;
+    public float timeToGrabBack;
+
+    public float timerBetweenAbilities;
+    public float timeBetweenAbilities;
+
     public float meleeDuration;
     public float shootingDuration;
     public float grabDuration;
+
 
 
     [Header("Boss Settings")]
@@ -50,6 +57,13 @@ public class Boss : MonoBehaviour
     public float timerShooting;
 
     public GameObject handLeft, handRight;
+    public bool grabLaunched;
+    public bool grabBack;
+    public float speedGrab;
+    int randomOptionForGrab;
+    Vector3 savePositionPlayer;
+    Vector3 savePositionRightHand;
+    Vector3 savePositionLeftHand;
 
     public GameObject bulletPrefab;
     public Transform[] spawnPositionsBullet;
@@ -69,8 +83,7 @@ public class Boss : MonoBehaviour
 
         //Empieza con un ataque random
         //randomAttack = Random.Range(0, abilities.Length - 1);
-        randomAttack = 0;
-
+        randomAttack = 2;
 
     }
 
@@ -78,10 +91,10 @@ public class Boss : MonoBehaviour
     void Update()
     {
 
-        if (!attacked)
+        if (attacked)
         {
-            toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
-            transform.forward = toPlayerVector;
+            rb.velocity = Vector3.zero;
+            transform.Rotate(0f, 0f, 0f);
         }
 
         if (dead)
@@ -101,6 +114,10 @@ public class Boss : MonoBehaviour
         else if (randomAttack == 2)
         {
             SelectAttack(Abilities.Grab);
+        }
+        else if (randomAttack == 3)
+        {
+            return;
         }
 
 
@@ -190,15 +207,20 @@ public class Boss : MonoBehaviour
     IEnumerator FinishAttack()
     {
         randomAttack = Random.Range(0, 3);
+
         timerOnEachAttack = 0;
-        Debug.Log("ENTRE ACA");
+
         startShooting = false;
+
         yield return new WaitForSeconds(0);
     }
 
     void StartAttackingMelee()
     {
         timerOnEachAttack += Time.deltaTime;
+
+        toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
+        transform.forward = toPlayerVector;
 
         if (Vector3.Distance(transform.position, player.transform.position) > distanceToAttack)
         {
@@ -219,7 +241,7 @@ public class Boss : MonoBehaviour
         if (timerOnEachAttack >= meleeDuration)
         {
             timerOnEachAttack = 0;
-            StartCoroutine(FinishAttack());
+            RestAfterAbility();
         }
     }
 
@@ -234,9 +256,127 @@ public class Boss : MonoBehaviour
 
     void StartGrabbing()
     {
+        anim.SetBool("Walking", false);
+        timerOnEachAttack += Time.deltaTime;
 
+        StartCoroutine(WaitForGrabbing());
     }
 
+    void RestAfterAbility()
+    {
+        attacking = false;
+        shooting = false;
+        grabing = false;
+
+        rb.velocity = Vector3.zero;
+
+        timerBetweenAbilities += Time.deltaTime;
+
+        anim.SetTrigger("GoToIdle");
+
+        if (timerBetweenAbilities >= timeBetweenAbilities)
+        {
+            timerBetweenAbilities = 0f;
+            StartCoroutine(FinishAttack());
+        }
+    }
+
+    IEnumerator WaitForGrabbing()
+    {
+        if (!grabLaunched)
+        {
+            grabLaunched = true;
+
+            toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
+            transform.forward = toPlayerVector;
+
+            randomOptionForGrab = Random.Range(0, 2);
+
+            yield return new WaitForSeconds(0.1f); //ESPERO UN POCO
+
+            savePositionPlayer = player.transform.position;
+
+            if (randomOptionForGrab == 0) //RIGHT HAND
+            {
+                anim.SetBool("HookRight", true);
+            }
+            else if (randomOptionForGrab == 1) //LEFT HAND
+            {
+                anim.SetBool("HookLeft", true);
+            }
+
+
+            savePositionLeftHand = handLeft.transform.localPosition;
+            savePositionRightHand = handRight.transform.localPosition;
+
+            yield return new WaitForSeconds(0.5f);
+
+
+
+            //LA MANO TIENE QUE SALIR DISPARADA EN ESTE MOMENTO
+
+            rb.velocity = Vector3.zero;
+
+
+            grabing = true;
+
+        }
+
+        //SI YA EMPECE A GRABBEAR
+        if (grabing && !grabBack)
+        {
+            yield return new WaitForSeconds(0.5f); // ESPERO A QUE TERMINE LA ANIMACION PARA LANZAR LA MANO
+
+            if (randomOptionForGrab == 0)
+            {
+                handRight.transform.position = Vector3.MoveTowards(handRight.transform.position, savePositionPlayer, speedGrab * Time.deltaTime);
+            }
+
+            else if (randomOptionForGrab == 1)
+            {
+                handLeft.transform.position = Vector3.MoveTowards(handLeft.transform.position, savePositionPlayer, speedGrab * Time.deltaTime);
+            }
+
+            yield return new WaitForSeconds(0.5f);
+
+            grabing = false;
+        }
+
+        if (timerOnEachAttack >= grabDuration)
+        {
+            grabBack = true;
+
+            timerForGrabBack += Time.deltaTime;
+
+            if (grabBack)
+            {
+
+                if (randomOptionForGrab == 0)
+                {
+                    Debug.Log(savePositionRightHand);
+                    handRight.transform.localPosition = Vector3.MoveTowards(handRight.transform.localPosition, savePositionRightHand, speedGrab * Time.deltaTime);
+                }
+                else if (randomOptionForGrab == 1)
+                {
+                    Debug.Log(savePositionLeftHand);
+                    handLeft.transform.localPosition = Vector3.MoveTowards(handLeft.transform.localPosition, savePositionLeftHand, speedGrab * Time.deltaTime);
+                }
+            }
+            //LE DOY ALGO DE TIEMPO PARA QUE VUELVA LA MANO
+            if (timerForGrabBack >= timeToGrabBack)
+            {
+                grabBack = false;
+                grabLaunched = false;
+                timerForGrabBack = 0;
+                timerOnEachAttack = 0;
+                anim.SetBool("HookLeft", false);
+                anim.SetBool("HookRight", false);
+                RestAfterAbility();
+            }
+
+        }
+
+    }
     IEnumerator WaitBeforeShoot()
     {
         yield return new WaitForSeconds(0.1f);
@@ -247,12 +387,14 @@ public class Boss : MonoBehaviour
         if (timerOnEachAttack >= shootingDuration)
         {
             anim.SetBool("Shooting", false);
-           
-            StartCoroutine(FinishAttack());
+
+            RestAfterAbility();
         }
 
 
     }
+
+
 
     IEnumerator Spawner()
     {
@@ -301,8 +443,6 @@ public class Boss : MonoBehaviour
 
         attacked = true;
 
-        transform.forward = transform.forward;
-
         if (timerAttacking >= timeToAttack)
         {
             timerAttacking = 0f;
@@ -321,6 +461,7 @@ public class Boss : MonoBehaviour
         timerToCancel = 0f;
         return;
     }
+
 
 
 }
