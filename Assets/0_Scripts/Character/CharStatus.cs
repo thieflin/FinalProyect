@@ -73,6 +73,7 @@ public class CharStatus : MonoBehaviour
         _mpgBar.fillAmount = _mpgPercent;
 
         //Ultimate
+        _ultimatePowerGauge = 0;
         _upgPercent = _ultimatePowerGauge / _maxPowerGauge * 2f;
         _upgBar.fillAmount = _upgPercent;
     }
@@ -83,6 +84,7 @@ public class CharStatus : MonoBehaviour
         EventManager.Instance.Subscribe("OnGettingExp", GetExp); //Evento para generar mas Nivel
         EventManager.Instance.Subscribe("OnGettingMPG", GetPowerGaugeMelee); //Evento para generar powergaguge ( melee )
         EventManager.Instance.Subscribe("OnGettingRPG", GetPowerGaugeRanged); //Evento para generar power gauge ( ranged )
+        EventManager.Instance.Subscribe("OnGettingHPG", GetPowerGaugeHybrid); //Evento para generar power gauge ( hybrid )
 
 
         _expBar.fillAmount = 0;
@@ -93,23 +95,7 @@ public class CharStatus : MonoBehaviour
         _ultimateSkillUp.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            EventManager.Instance.Trigger("OnGettingMPG", 10f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            EventManager.Instance.Trigger("OnGettingExp", 10f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            EventManager.Instance.Trigger("OnGettingRPG", 25f);
-        }
-
-    }
-
+    //Las gauges tnego que reworkearlos para que den para cada uno en especifica
 
     private void GetPowerGaugeRanged(params object[] parameters)
     {
@@ -117,40 +103,20 @@ public class CharStatus : MonoBehaviour
         {
             _as.canCastAbility = true;
 
-            _rangedPowerGauge = _maxPowerGauge;
+            _rangedPowerGauge = _maxPowerGauge;//Igualo
 
             _as.canUseRangedAbility = true;
 
             _rangedSkillUp.SetActive(true);
-            //Le pregunto si esta maxeado
-            if (_ultimatePowerGauge >= _maxPowerGauge * 2)
-            {
-                _ultimateSkillUp.SetActive(true);
-                _as.canUseMixedAbility = true;
-            }
         }
         else
         {
-
             //Le doy mas puntos a la power gauge
             _rangedPowerGauge += (float)parameters[0];
 
             //Le actualizo el fill amount
             _rpgPercent = _rangedPowerGauge / _maxPowerGauge;
             _rpgBar.fillAmount = _rpgPercent;
-
-            //Le doy puntos de la power gauge de la ulti
-            _ultimatePowerGauge += (float)parameters[0];
-
-            //Le actualizo el fill amount a la ulti
-            //_upgPercent = _ultimatePowerGauge / _maxPowerGauge * 2;
-            //_upgBar.fillAmount = _upgPercent;
-
-            //Le pregunto si esta maxeado
-            if (_ultimatePowerGauge >= _maxPowerGauge * 2)
-            {
-                _as.canUseMixedAbility = true;
-            }
         }
     }
 
@@ -163,12 +129,6 @@ public class CharStatus : MonoBehaviour
             _meleePowerGauge = _maxPowerGauge;
             _as.canCastAbility = true;
             _meleeSkillUp.SetActive(true);
-            //Le pregunto si esta maxeado
-            if (_ultimatePowerGauge >= _maxPowerGauge * 2)
-            {
-                _ultimateSkillUp.SetActive(true);
-                _as.canUseMixedAbility = true;
-            }
         }
         else
         {
@@ -178,26 +138,28 @@ public class CharStatus : MonoBehaviour
             //Le actualizo el fill amount al melee
             _mpgPercent = _meleePowerGauge / _maxPowerGauge;
             _mpgBar.fillAmount = _mpgPercent;
+        }
+    }
 
+    private void GetPowerGaugeHybrid(params object[] parameters)
+    {
 
-            //Le doy puntos de la power gauge de la ulti
+        if (_ultimatePowerGauge >= _maxPowerGauge)
+        {
+            _as.canUseMixedAbility = true;
+            _ultimatePowerGauge = _maxPowerGauge;
+            _as.canCastAbility = true;
+            _ultimateSkillUp.SetActive(true);
+        }
+        else
+        {
+            //Le doy mas puntos a la power gauge
             _ultimatePowerGauge += (float)parameters[0];
 
-
-            //Le actualizo el fill amount a la ulti
-            //_upgPercent = _ultimatePowerGauge / _maxPowerGauge * 2;
-            //_upgBar.fillAmount = _upgPercent;
-
-
-            //Le pregunto si esta maxeado
-            if (_ultimatePowerGauge >= _maxPowerGauge * 2)
-            {
-                _as.canUseMixedAbility = true;
-            }
+            //Le actualizo el fill amount al melee
+            _upgPercent = _ultimatePowerGauge / _maxPowerGauge;
+            _upgBar.fillAmount = _upgPercent;
         }
-
-
-
     }
 
     //Esta funcion se llama junto con el que gasta skill points
@@ -248,7 +210,6 @@ public class CharStatus : MonoBehaviour
         if (abilityId == 0) //Melee ability
         {
             _as.canUseMeleeAbility = false;
-            _as.canUseMixedAbility = false;
             _meleePowerGauge = 0;
             _mpgBar.fillAmount = 0;
             _meleeSkillUp.SetActive(false);
@@ -257,7 +218,6 @@ public class CharStatus : MonoBehaviour
         else if (abilityId == 1) //Ranged ability
         {
             _as.canUseRangedAbility = false;
-            _as.canUseMixedAbility = false;
 
             _rangedPowerGauge = 0;
             _rpgBar.fillAmount = 0;

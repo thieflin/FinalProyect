@@ -8,6 +8,7 @@ public class AbilitiesStatus : MonoBehaviour
 {
     public List<Abilities> rangedAbilities = new List<Abilities>();
     public List<Abilities> meleeAbilities = new List<Abilities>();
+    public List<Abilities> hybridAbilities = new List<Abilities>();
     public List<int> dmg = new List<int>();
 
 
@@ -15,10 +16,11 @@ public class AbilitiesStatus : MonoBehaviour
 
     public static Action currentMeleeAbility;
     public static Action currentRangedAbility;
+    public static Action currentHybridAbility;
 
-    public  bool canUseMeleeAbility;
-    public  bool canUseRangedAbility;
-    public  bool canUseMixedAbility;
+    public bool canUseMeleeAbility;
+    public bool canUseRangedAbility;
+    public bool canUseMixedAbility;
 
     public bool canCastAbility;
     [SerializeField] private float _timerForAbility;
@@ -30,8 +32,10 @@ public class AbilitiesStatus : MonoBehaviour
     {
         currentMeleeAbility = Debugchan;
         currentRangedAbility = Debugchan;
+        currentHybridAbility = Debugchan;
         EventManager.Instance.Subscribe("OnActivatingMeleeAbilities", SetMeleeAbility);
         EventManager.Instance.Subscribe("OnActivatingRangedAbilities", SetRangedAbility);
+        EventManager.Instance.Subscribe("OnActivatingHybridAbilities", SetHybridAbility);
     }
 
     public void Debugchan()
@@ -43,22 +47,30 @@ public class AbilitiesStatus : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("RangedSkill"))
         {
-            //if (/*canUseRangedAbility && canCastAbility*/)
-            //{
-            currentRangedAbility();
-            StartCoroutine(InnerAbilityCd());
-            //}
+            if (canUseRangedAbility && canCastAbility)
+            {
+                currentRangedAbility();
+                StartCoroutine(InnerAbilityCd());
+            }
 
             //else Debug.Log("u cant use this yet ( ranged ) ");
         }
-        else if (Input.GetKeyDown(KeyCode.E)|| Input.GetButtonDown("MeleeSkill"))
+        else if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("MeleeSkill"))
         {
             if (canUseMeleeAbility && canCastAbility)
             {
-            currentMeleeAbility();
-            StartCoroutine(InnerAbilityCd());
+                currentMeleeAbility();
+                StartCoroutine(InnerAbilityCd());
             }
             //else Debug.Log("u cant use this yet (melee)");
+        }
+        else if (Input.GetButtonDown("HybridSkill"))
+        {
+            if (canUseMixedAbility && canCastAbility)
+            {
+                currentHybridAbility();
+                StartCoroutine(InnerAbilityCd());
+            }
         }
     }
 
@@ -66,7 +78,7 @@ public class AbilitiesStatus : MonoBehaviour
     {
         Debug.Log("Toy Working");
     }
-    
+
     //Esto basicamente lo que haces es definirme que on update voy a usar
     public void SetMeleeAbility(params object[] parameters)
     {
@@ -79,6 +91,12 @@ public class AbilitiesStatus : MonoBehaviour
         currentRangedAbility = rangedAbilities[(int)parameters[0]].OnUpdate;
     }
 
+    //Define la habilidad hibrida
+    public void SetHybridAbility(params object[] parameters)
+    {
+        currentHybridAbility = hybridAbilities[(int)parameters[0]].OnUpdate;
+    }
+
     public void EnablePM()
     {
         pm.enabled = true;
@@ -88,7 +106,7 @@ public class AbilitiesStatus : MonoBehaviour
     {
         pm.enabled = false;
     }
-    
+
     IEnumerator InnerAbilityCd()
     {
         canCastAbility = false;

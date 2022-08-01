@@ -17,14 +17,14 @@ public class AbilityHybrid : Abilities
     }
     public override void Attack()
     {
-        Debug.Log("Melee1");
+        Debug.Log("Hybrid");
 
         if (isIdle == true)
         {
             //Que la pueda cstear por deporte por ahora
             _cs.UseAbility(id);
             isIdle = false;
-            _anim.SetTrigger("MS1");
+            _anim.SetTrigger("HS1");
             rb.constraints = RigidbodyConstraints.FreezeAll;
         }
 

@@ -31,6 +31,7 @@ public class ButtonManager : MonoBehaviour
     [Header("Lista de las ID de las habilidades, tienen que ser similares a las que ya estan")]
     [SerializeField] private List<int> _meleeAbilitiesId = new List<int>();
     [SerializeField] private List<int> _rangedAbilitiesId = new List<int>();
+    [SerializeField] private List<int> _hybridAbilitiesId = new List<int>();
 
 
     [Header("Imagenes De SkillTree")]
@@ -50,6 +51,7 @@ public class ButtonManager : MonoBehaviour
 
     public int meleeUpgrade;
     public int rangedUpgrade;
+    public int hybridUpgrade;
 
     [SerializeField] private SkillTree _st;
     #region HybridAbility
@@ -72,17 +74,51 @@ public class ButtonManager : MonoBehaviour
 
     public void OnButtonSelectHybridAbility(int id)
     {
-        if (Input.GetButtonDown("Submit") && rangedUpgrade >= 1 && meleeUpgrade >= 1)
+        if (Input.GetButtonDown("Submit") && rangedUpgrade >= 1 && meleeUpgrade >= 1 && !_as.hybridAbilities[id].isPurchased)
         {
             if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded())
             {
-                Debug.Log("Compra osea activa el delegate");
+                Debug.Log("Puedo comprar Hybrid");
+
+                PurchaseSkillHybrid();
+
+                EventManager.Instance.Trigger("OnActivatingHybridAbilities", _hybridAbilitiesId[id]);
+
+                hybridUIImage.SetActive(true); //Activo la imagen de la UI
+                hybridSkillTreeImage.SetActive(true); //Activo la imagen de el skilltree
             }
             else
             {
                 Debug.Log("No puedo comprar la hibrida");
             }
         }
+        else if (Input.GetButtonDown("Submit") && _as.rangedAbilities[id].isPurchased)
+        {
+            EventManager.Instance.Trigger("OnActivatingHybridAbilities", _hybridAbilitiesId[id]);
+
+            hybridUIImage.SetActive(true); //Activo la imagen de la UI
+            hybridSkillTreeImage.SetActive(true); //Activo la imagen de el skilltree
+        }
+    }
+
+    public void PurchaseSkillHybrid() //Compra el skill
+    {
+        if (Input.GetButtonDown("Submit"))
+        {
+            switch (hybridUpgrade) //Revisa que sea el primer caso.
+            {
+                case 0:
+                    //Evento que gasta los skill poitns
+                    EventManager.Instance.Trigger("OnSpendingSP", 6);
+
+                    //Me avisa que esta comprada para poder activarla
+
+                    _as.hybridAbilities[hybridUpgrade].isPurchased = true;
+                    hybridUpgrade++;
+                    break;
+            }
+        }
+
     }
 
 
