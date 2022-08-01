@@ -18,6 +18,7 @@ public class SettingsMenu : MonoBehaviour
 
     public GameObject settingsMenu;
     public GameObject pauseMenu;
+    public GameObject blackScreen;
 
     public GameObject selector;
 
@@ -102,10 +103,6 @@ public class SettingsMenu : MonoBehaviour
         //}
     }
 
-    public void SetPositionSelector()
-    {
-    }
-
     //Botones para abrir settings
     public void BTN_Settings()
     {
@@ -155,6 +152,9 @@ public class SettingsMenu : MonoBehaviour
     public void BTN_BackInGame()
     {
         Pause.UnpauseGame();
+        
+        blackScreen.SetActive(false);
+        
         pauseMenu.SetActive(false);
     }
 

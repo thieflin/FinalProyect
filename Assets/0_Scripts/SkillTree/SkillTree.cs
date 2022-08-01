@@ -18,19 +18,29 @@ public class SkillTree : MonoBehaviour
     public Animator openingAnimation;
     public bool treeOpen;
 
+
+    [Header("Desactivacion de movimiento")]
+    public PlayerMovement pm;
+    public Combo combo;
+
+    public GameObject blackScreen;
     
     
     private void Update()
     {
         
         //Abre y cierra el skill tree con animacion
-        if (Input.GetKeyDown(KeyCode.CapsLock) || Input.GetButtonDown("SkillTree"))
+        //Consideron que esto no funcione si esta pausado el juego
+        if (Input.GetKeyDown(KeyCode.CapsLock) || Input.GetButtonDown("SkillTree") && !Pause.isPaused)
         {
             if (treeOpen)
             {
                 openingAnimation.SetTrigger("Close");
                 EventSystem.current.SetSelectedGameObject(null);
+                StartCoroutine(DeActivateBlackbackground());
                 treeOpen = false;
+                combo.enabled = true;
+                pm.enabled = true;
             }
                 
             else
@@ -38,11 +48,25 @@ public class SkillTree : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(startingButton);
                 openingAnimation.SetTrigger("Open");
                 treeOpen = true;
+                StartCoroutine(ActivateBlackbackground());
+                combo.enabled = false;
+                pm.enabled = false;
             }
         }
     }
 
-    //Event Animation boolean para no spamear el open y close del skill tree
+    IEnumerator ActivateBlackbackground()
+    {
+        yield return new WaitForSeconds(.5f);
+        blackScreen.SetActive(true);
+    }
+    IEnumerator DeActivateBlackbackground()
+    {
+        yield return new WaitForSeconds(.5f);
+        blackScreen.SetActive(false);
+    }
+
+
 
     private void Start()
     {
@@ -67,17 +91,6 @@ public class SkillTree : MonoBehaviour
         _skillPoints -= (int)parameters[0];//Le saco los skillpoitns que cueste la habilidad
         _skillPointsText.text = _skillPoints.ToString();
     }
-
-    //private void BluePrintActivations(params object[] parameters) //Me activa el skill que yo compre (visualmente)
-    //{
-    //    for (int i = 0; i < _bluePrintImages.Count; i++)
-    //    {
-    //        _bluePrintImages[(int)parameters[0]].enabled = true;
-    //        var tempColor = _bluePrintImages[(int)parameters[0]].color;
-    //        tempColor.a = 255;
-    //        _bluePrintImages[(int)parameters[0]].color = tempColor;
-    //    }
-    //}
 
     public float CurrentSkillPoints()
     {

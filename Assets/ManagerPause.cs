@@ -10,17 +10,21 @@ public class ManagerPause : MonoBehaviour
 
     public GameObject resumeButton;
 
+    public GameObject blackScreenBackground;
+
+    public SkillTree skillTree;
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Pause.isPaused);
 
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause"))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause") && !skillTree.treeOpen)
         {
             if (!Pause.isPaused)
             {
                 pauseMenu.SetActive(true);
                 Pause.PauseGame();
+
+                blackScreenBackground.SetActive(true);
 
                 EventSystem.current.SetSelectedGameObject(resumeButton);
 
@@ -30,12 +34,14 @@ public class ManagerPause : MonoBehaviour
             }
             else if(Pause.isPaused)
             {
+               
                 pauseMenu.SetActive(false);
                 Pause.UnpauseGame();
                 optionsMenu.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 EventSystem.current.SetSelectedGameObject(null);
                 Cursor.visible = false;
+                blackScreenBackground.SetActive(false);
 
             }
         }
