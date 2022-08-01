@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class AbilityGunOne : Abilities
 {
+
+    public GameObject bulletSpawner;
+    public GameObject bulletPrefab;
+    public ParticleSystem shootParticle;
+    public ParticleSystem shootParticle2;
+    public ParticleSystem shootParticle3;
+
+
     private void Start()
     {
         _cs = GetComponent<CharStatus>();
@@ -42,6 +50,24 @@ public class AbilityGunOne : Abilities
         rb.constraints -= RigidbodyConstraints.FreezePosition;
         isIdle = true;
     }
+
+    //Event animation particle shooting
+    public void ParticleRangedAbility()
+    {
+        shootParticle.Play();
+        shootParticle2.Play();
+        shootParticle3.Play();
+    }
+
+
+    //Event animation shooting
+    public void IsntantiateBulletRangedAbility()
+    {
+        var instantiateBullet = Instantiate(bulletPrefab, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
+    }
+
+
+
 
     //Event animation para activar los colliders
     public void ColliderActivationGS1(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
