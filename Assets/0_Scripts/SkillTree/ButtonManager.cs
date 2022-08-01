@@ -82,6 +82,8 @@ public class ButtonManager : MonoBehaviour
 
                 PurchaseSkillHybrid();
 
+                AudioManager.PlaySound("BuyingAbility");
+
                 EventManager.Instance.Trigger("OnActivatingHybridAbilities", _hybridAbilitiesId[id]);
 
                 hybridUIImage.SetActive(true); //Activo la imagen de la UI
@@ -89,12 +91,15 @@ public class ButtonManager : MonoBehaviour
             }
             else
             {
+                AudioManager.PlaySound("AbilityFailPurchase");
                 Debug.Log("No puedo comprar la hibrida");
             }
         }
         else if (Input.GetButtonDown("Submit") && _as.hybridAbilities[id].isPurchased)
         {
             EventManager.Instance.Trigger("OnActivatingHybridAbilities", _hybridAbilitiesId[id]);
+
+            AudioManager.PlaySound("BuyingAbility");
 
             hybridUIImage.SetActive(true); //Activo la imagen de la UI
             hybridSkillTreeImage.SetActive(true); //Activo la imagen de el skilltree
@@ -133,7 +138,7 @@ public class ButtonManager : MonoBehaviour
             //Si me alcanzan los puntos para poder comprarlo, y estoy en el nivel correcto.
             if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded() && Id < rangedUpgrade + 1)
             {
-
+                AudioManager.PlaySound("BuyingAbility");
                 Debug.Log("Puedo comprar ranged");
 
                 PurchaseSkillRanged();
@@ -159,7 +164,7 @@ public class ButtonManager : MonoBehaviour
 
                 //Desselecciono el boton anterior
                 //EventSystem.current.SetSelectedGameObject(null);
-
+                AudioManager.PlaySound("AbilityFailPurchase");
                 //Esto lo cambio: Ahora en lugar de un cuadro opto por un ruido de QUE NO FUCNIONA
                 //Igual lo dej commentado x si las dudas
 
@@ -190,7 +195,7 @@ public class ButtonManager : MonoBehaviour
             //Hago que el delegate ejecute la funcion que yo quiera ejecutar
             Debug.Log("Active la imagen de la habilidad");
             EventManager.Instance.Trigger("OnActivatingRangedAbilities", _rangedAbilitiesId[Id]);
-
+            AudioManager.PlaySound("BuyingAbility");
 
             rangedUIImage.SetActive(true);
 
@@ -288,7 +293,7 @@ public class ButtonManager : MonoBehaviour
             //Si me alcanzan los puntos para poder comprarlo, y estoy en el nivel correcto.
             if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded() && Id < meleeUpgrade + 1)
             {
-
+                AudioManager.PlaySound("BuyingAbility");
                 Debug.Log("Puedo comprar melee");
 
                 PurchaseSkillMelee();
@@ -317,7 +322,7 @@ public class ButtonManager : MonoBehaviour
                 //Le pongo como seleccion en el boton de no por si se equivoco
                 //EventSystem.current.SetSelectedGameObject(backButtonMele);
 
-
+                AudioManager.PlaySound("AbilityFailPurchase");
 
                 //ACA VA EL SONIDO DE QUE FALLO
             }
@@ -331,7 +336,8 @@ public class ButtonManager : MonoBehaviour
         {
             //Hago que el delegate ejecute la funcion que yo quiera ejecutar
             Debug.Log("Active la imagen de la habilidad");
-
+            AudioManager.PlaySound("BuyingAbility");
+            
             EventManager.Instance.Trigger("OnActivatingMeleeAbilities", _meleeAbilitiesId[Id]);
 
             meleeSkillTreeImage.SetActive(true);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioClip lootingCollectible, finishingPuzzle, hitting, slashing;
+    public static AudioClip lootingCollectible, finishingPuzzle, hitting, slashing, purchase, failtopurchase;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
@@ -12,7 +12,9 @@ public class AudioManager : MonoBehaviour
         lootingCollectible = Resources.Load<AudioClip>("collect");
         finishingPuzzle = Resources.Load<AudioClip>("puzzle");
         hitting = Resources.Load<AudioClip>("hit"); 
-        slashing = Resources.Load<AudioClip>("slash"); 
+        slashing = Resources.Load<AudioClip>("slash");
+        purchase = Resources.Load<AudioClip>("BuyingAbility");
+        failtopurchase = Resources.Load<AudioClip>("AbilityFailPurchase"); 
 
         audioSrc = GetComponent<AudioSource>();
 
@@ -40,7 +42,13 @@ public class AudioManager : MonoBehaviour
             case "slash":
                 audioSrc.PlayOneShot(slashing);
                 break;
-            
+            case "AbilityFailPurchase":
+                audioSrc.PlayOneShot(failtopurchase);
+                break;
+            case "BuyingAbility":
+                audioSrc.PlayOneShot(purchase);
+                break;
+
 
             default:
                 break;
