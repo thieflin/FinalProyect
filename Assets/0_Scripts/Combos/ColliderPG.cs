@@ -27,7 +27,7 @@ public class ColliderPG : MonoBehaviour
             if(_bm.meleeUpgrade >= 1)
                 EventManager.Instance.Trigger("OnGettingMPG", meleePG);
             if (_bm.hybridUpgrade >= 1)
-                EventManager.Instance.Trigger("OnGettingHPG", meleePG/2);
+                EventManager.Instance.Trigger("OnGettingHPG", meleePG/4);
         }
     }
 }

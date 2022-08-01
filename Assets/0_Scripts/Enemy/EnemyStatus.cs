@@ -89,7 +89,7 @@ public class EnemyStatus : EnemyData, IDamageable
             if(_bm.rangedUpgrade >= 1)
                 EventManager.Instance.Trigger("OnGettingRPG", 25f/*Este valor es lo que me da de gauge*/);
             if (_bm.hybridUpgrade >= 1)
-                EventManager.Instance.Trigger("OnGettingHPG", 10f/*Este valor es lo que me da de gauge*/);
+                EventManager.Instance.Trigger("OnGettingHPG", 6f/*Este valor es lo que me da de gauge*/);
 
             var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
             if (this.gameObject.activeSelf)

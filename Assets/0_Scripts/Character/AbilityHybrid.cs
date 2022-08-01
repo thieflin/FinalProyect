@@ -19,19 +19,19 @@ public class AbilityHybrid : Abilities
     {
         Debug.Log("Hybrid");
 
-        if (isIdle == true)
-        {
+
             //Que la pueda cstear por deporte por ahora
             _cs.UseAbility(id);
             isIdle = false;
+            Debug.Log("sifuncionaura");
             _anim.SetTrigger("HS1");
             rb.constraints = RigidbodyConstraints.FreezeAll;
-        }
+        
 
     }
 
     //Event animation ultimo frame para raetornar a idle
-    public void FinishAbilityOneMelee()
+    public void FinishAbilityOneHybrid()
     {
         _anim.SetTrigger("Idle");
         rb.constraints = RigidbodyConstraints.FreezeAll;
@@ -40,7 +40,7 @@ public class AbilityHybrid : Abilities
     }
 
     //Aactvacion de collidersssss
-    public void ColliderActivationMS1(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
+    public void ColliderActivationHS1(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)
     {
         if (animColliders[ColliderNumber].activeSelf)
             animColliders[ColliderNumber].SetActive(false);

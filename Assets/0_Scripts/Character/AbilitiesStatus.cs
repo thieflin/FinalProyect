@@ -64,12 +64,16 @@ public class AbilitiesStatus : MonoBehaviour
             }
             //else Debug.Log("u cant use this yet (melee)");
         }
-        else if (Input.GetButtonDown("HybridSkill"))
+        else if (Input.GetButtonDown("HybridSkill") || Input.GetKeyDown(KeyCode.T))
         {
             if (canUseMixedAbility && canCastAbility)
             {
                 currentHybridAbility();
                 StartCoroutine(InnerAbilityCd());
+            }
+            else
+            {
+                Debug.Log("anda la tecla xd");
             }
         }
     }

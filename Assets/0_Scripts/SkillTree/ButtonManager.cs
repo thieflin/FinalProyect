@@ -76,7 +76,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Submit") && rangedUpgrade >= 1 && meleeUpgrade >= 1 && !_as.hybridAbilities[id].isPurchased)
         {
-            if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded())
+            if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded()*2)
             {
                 Debug.Log("Puedo comprar Hybrid");
 
@@ -92,7 +92,7 @@ public class ButtonManager : MonoBehaviour
                 Debug.Log("No puedo comprar la hibrida");
             }
         }
-        else if (Input.GetButtonDown("Submit") && _as.rangedAbilities[id].isPurchased)
+        else if (Input.GetButtonDown("Submit") && _as.hybridAbilities[id].isPurchased)
         {
             EventManager.Instance.Trigger("OnActivatingHybridAbilities", _hybridAbilitiesId[id]);
 
