@@ -91,6 +91,11 @@ public class Boss : MonoBehaviour
     void Update()
     {
 
+        if (resting)
+        {
+            Resting();
+        }
+
         if (attacked)
         {
             rb.velocity = Vector3.zero;
@@ -206,6 +211,8 @@ public class Boss : MonoBehaviour
 
     IEnumerator FinishAttack()
     {
+        resting = false;
+
         randomAttack = Random.Range(0, 3);
 
         timerOnEachAttack = 0;
@@ -245,10 +252,23 @@ public class Boss : MonoBehaviour
         }
     }
 
+    void Resting()
+    {
+        timerBetweenAbilities += Time.deltaTime;
+
+        if (timerBetweenAbilities >= timeBetweenAbilities)
+        {
+            timerBetweenAbilities = 0f;
+            StartCoroutine(FinishAttack());
+        }
+    }
+
     void StartShooting()
     {
         anim.SetBool("Shooting", true);
         anim.SetBool("Walking", false);
+        toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
+        transform.forward = toPlayerVector;
         transform.position = transform.position;
         rb.velocity = Vector3.zero;
         StartCoroutine(WaitBeforeShoot());
@@ -264,23 +284,17 @@ public class Boss : MonoBehaviour
 
     void RestAfterAbility()
     {
-        randomAttack = 3;
+        randomAttack = 99;
 
         attacking = false;
         shooting = false;
         grabing = false;
+        resting = true;
 
         rb.velocity = Vector3.zero;
 
-        timerBetweenAbilities += Time.deltaTime;
-
         anim.SetTrigger("GoToIdle");
-
-        if (timerBetweenAbilities >= timeBetweenAbilities)
-        {
-            timerBetweenAbilities = 0f;
-            StartCoroutine(FinishAttack());
-        }
+        anim.SetBool("Walking", false);
     }
 
     IEnumerator WaitForGrabbing()
