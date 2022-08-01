@@ -2,31 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Boss : MonoBehaviour
 {
+    public enum Abilities
+    {
+        Melee,
+        Shooting,
+        Grab
+    }
 
     Animator anim;
     Rigidbody rb;
 
-    
-
+    public Abilities[] abilities;
+    public Abilities abilitySelected;
 
     [SerializeField] GameObject player;
     Vector3 toPlayerVector;
 
     [Header("Timers")]
+    public float timerOnEachAttack;
     public float timerAttacking;
     public float timeToAttack;
     public float timerToCancel;
     public float timeFirstAttack;
 
+    public float meleeDuration;
+    public float shootingDuration;
+    public float grabDuration;
+
+
     [Header("Boss Settings")]
+    public float speed;
     public float maxHP;
     public float HP;
     public bool dead;
     public float distanceToAttack;
     public bool attacking;
+    public bool attacked;
     public bool shooting;
+    public bool grabing;
+    public bool resting;
     public float timeBetweenShoots;
     public float timeBetweenInternalShoots;
     public float timerShooting;
@@ -35,6 +53,7 @@ public class Boss : MonoBehaviour
     public Transform[] spawnPositionsBullet;
     public bool startShooting;
 
+    public int randomAttack;
 
 
     // Start is called before the first frame update
@@ -44,13 +63,24 @@ public class Boss : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         HP = maxHP;
+
+
+        //Empieza con un ataque random
+        //randomAttack = Random.Range(0, abilities.Length - 1);
+        randomAttack = 0;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
-        transform.forward = toPlayerVector;
+
+        if (!attacked)
+        {
+            toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
+            transform.forward = toPlayerVector;
+        }
 
         if (dead)
         {
@@ -58,20 +88,30 @@ public class Boss : MonoBehaviour
             transform.forward = Vector3.zero;
         }
 
+        if (randomAttack == 0)
+        {
+            SelectAttack(Abilities.Melee);
+        }
+        else if (randomAttack == 1)
+        {
+            SelectAttack(Abilities.Shooting);
+        }
+        else if (randomAttack == 2)
+        {
+            SelectAttack(Abilities.Grab);
+        }
+
+
         if (startShooting)
         {
             SpawnBullets();
         }
 
-        if (Vector3.Distance(transform.position, player.transform.position) > distanceToAttack)
-        {
-            attacking = false;
-        }
 
-        if (Vector3.Distance(transform.position, player.transform.position) < distanceToAttack)
-        {
-            attacking = true;
-        }
+        //if (Vector3.Distance(transform.position, player.transform.position) < distanceToAttack)
+        //{
+        //    attacking = true;
+        //}
 
         if (attacking)
         {
@@ -87,6 +127,7 @@ public class Boss : MonoBehaviour
             }
             else
             {
+                attacked = true;
                 StartCoroutine(WaitToFinishAttackAnimation());
             }
         }
@@ -97,7 +138,6 @@ public class Boss : MonoBehaviour
             timerToCancel = 0f;
             anim.SetBool("IsAttackingMelee", false);
         }
-
     }
 
     void SpawnBullets()
@@ -113,9 +153,82 @@ public class Boss : MonoBehaviour
         }
     }
 
+    void SelectAttack(Abilities ability)
+    {
+        if (ability == Abilities.Melee)
+        {
+            abilitySelected = Abilities.Melee;
+            attacking = true;
+            shooting = false;
+            grabing = false;
+            StartAttackingMelee();
+        }
+
+        if (ability == Abilities.Shooting)
+        {
+            abilitySelected = Abilities.Shooting;
+            attacking = false;
+            shooting = true;
+            grabing = false;
+            StartShooting();
+        }
+
+        if (ability == Abilities.Grab)
+        {
+            abilitySelected = Abilities.Grab;
+            attacking = false;
+            shooting = false;
+            grabing = true;
+            StartGrabbing();
+        }
+    }
+
+    IEnumerator FinishAttack()
+    {
+        randomAttack = Random.Range(0, 3);
+        yield return new WaitForSeconds(0);
+    }
+
+    void StartAttackingMelee()
+    {
+        timerOnEachAttack += Time.deltaTime;
+
+        if (Vector3.Distance(transform.position, player.transform.position) > distanceToAttack)
+        {
+            //Camino al player si esta muy lejos y tengo que atacar
+            var direction = (player.transform.position - transform.position).normalized;
+            rb.velocity = direction * speed * Time.deltaTime;
+
+            anim.SetBool("Walking", true);
+        }
+        else if (Vector3.Distance(transform.position, player.transform.position) <= distanceToAttack)
+        {
+            anim.SetBool("Walking", false);
+            rb.velocity = Vector3.zero;
+            
+            StartAttacking();
+        }
+
+        if (timerOnEachAttack >= meleeDuration)
+        {
+            timerOnEachAttack = 0;
+            StartCoroutine(FinishAttack());
+        }
+    }
+
+    void StartShooting()
+    {
+
+    }
+
+    void StartGrabbing()
+    {
+
+    }
+
     IEnumerator Spawner()
     {
-        
+
         foreach (var positions in spawnPositionsBullet)
         {
             yield return new WaitForSeconds(timeBetweenInternalShoots);
@@ -126,7 +239,7 @@ public class Boss : MonoBehaviour
 
             var bullet = Instantiate(bulletPrefab, positions.transform.position, Quaternion.identity);
             var newBullet = bullet.GetComponent<BulletBoss>();
-            
+
 
             var direction = (shootingDirection - newBullet.transform.position).normalized;
 
@@ -139,14 +252,16 @@ public class Boss : MonoBehaviour
     IEnumerator WaitToFinishAttackAnimation()
     {
         attacking = true;
-        yield return new WaitForSeconds(1f);
+        rb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(2f);
         attacking = false;
+        attacked = false;
     }
 
     void TakeDamage(float dmg)
     {
         HP -= dmg;
-        if(HP <= 0)
+        if (HP <= 0)
         {
             dead = true;
         }
@@ -155,6 +270,10 @@ public class Boss : MonoBehaviour
     void StartAttacking()
     {
         anim.SetBool("IsAttackingMelee", true);
+
+        attacked = true;
+
+        transform.forward = transform.forward;
 
         if (timerAttacking >= timeToAttack)
         {
@@ -168,6 +287,7 @@ public class Boss : MonoBehaviour
 
     void StopAttacking()
     {
+        attacked = false;
         anim.SetBool("IsAttackingMelee", false);
         timerAttacking = 0f;
         timerToCancel = 0f;
