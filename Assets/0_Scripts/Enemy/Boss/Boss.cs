@@ -49,6 +49,8 @@ public class Boss : MonoBehaviour
     public float timeBetweenInternalShoots;
     public float timerShooting;
 
+    public GameObject handLeft, handRight;
+
     public GameObject bulletPrefab;
     public Transform[] spawnPositionsBullet;
     public bool startShooting;
@@ -160,6 +162,7 @@ public class Boss : MonoBehaviour
             abilitySelected = Abilities.Melee;
             attacking = true;
             shooting = false;
+            startShooting = false;
             grabing = false;
             StartAttackingMelee();
         }
@@ -178,6 +181,7 @@ public class Boss : MonoBehaviour
             abilitySelected = Abilities.Grab;
             attacking = false;
             shooting = false;
+            startShooting = false;
             grabing = true;
             StartGrabbing();
         }
@@ -186,6 +190,9 @@ public class Boss : MonoBehaviour
     IEnumerator FinishAttack()
     {
         randomAttack = Random.Range(0, 3);
+        timerOnEachAttack = 0;
+        Debug.Log("ENTRE ACA");
+        startShooting = false;
         yield return new WaitForSeconds(0);
     }
 
@@ -205,7 +212,7 @@ public class Boss : MonoBehaviour
         {
             anim.SetBool("Walking", false);
             rb.velocity = Vector3.zero;
-            
+
             StartAttacking();
         }
 
@@ -218,11 +225,32 @@ public class Boss : MonoBehaviour
 
     void StartShooting()
     {
-
+        anim.SetBool("Shooting", true);
+        anim.SetBool("Walking", false);
+        transform.position = transform.position;
+        rb.velocity = Vector3.zero;
+        StartCoroutine(WaitBeforeShoot());
     }
 
     void StartGrabbing()
     {
+
+    }
+
+    IEnumerator WaitBeforeShoot()
+    {
+        yield return new WaitForSeconds(0.1f);
+        startShooting = true;
+
+        timerOnEachAttack += Time.deltaTime;
+
+        if (timerOnEachAttack >= shootingDuration)
+        {
+            anim.SetBool("Shooting", false);
+           
+            StartCoroutine(FinishAttack());
+        }
+
 
     }
 
@@ -233,9 +261,9 @@ public class Boss : MonoBehaviour
         {
             yield return new WaitForSeconds(timeBetweenInternalShoots);
 
-            Vector3 shootingDirection = player.transform.position + player.transform.forward * 1;
+            Vector3 shootingDirection = player.transform.position + player.transform.forward * 2.5f;
 
-            shootingDirection = new Vector3(shootingDirection.x, shootingDirection.y + 3f, shootingDirection.z);
+            shootingDirection = new Vector3(shootingDirection.x, shootingDirection.y + 4f, shootingDirection.z);
 
             var bullet = Instantiate(bulletPrefab, positions.transform.position, Quaternion.identity);
             var newBullet = bullet.GetComponent<BulletBoss>();
@@ -245,7 +273,7 @@ public class Boss : MonoBehaviour
 
             newBullet.transform.forward = direction;
 
-            newBullet.GetComponent<Rigidbody>().AddForce(direction * newBullet.speed * Time.fixedDeltaTime, ForceMode.Force);
+            newBullet.GetComponent<Rigidbody>().AddForce(direction * newBullet.speed * Time.deltaTime, ForceMode.Force);
         }
     }
 
