@@ -264,6 +264,8 @@ public class Boss : MonoBehaviour
 
     void RestAfterAbility()
     {
+        randomAttack = 3;
+
         attacking = false;
         shooting = false;
         grabing = false;
