@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AbilityMeleeOne : Abilities
 {
+    public ParticleSystem particles;
+    public GameObject colliderSphere;
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class AbilityMeleeOne : Abilities
             _anim.SetTrigger("MS1");
             rb.constraints = RigidbodyConstraints.FreezeAll;
         }
-        
+
     }
 
     //Event animation ultimo frame para raetornar a idle
@@ -39,6 +41,24 @@ public class AbilityMeleeOne : Abilities
         rb.constraints -= RigidbodyConstraints.FreezePosition;
         isIdle = true;
     }
+
+    //Actrivacion particulas
+    public void ParticleActivationMS1()
+    {
+        particles.Play();
+    }
+
+    //Collider activacion y desactivacion
+    public void ActivacionColliderMS1()
+    {
+        colliderSphere.SetActive(true);
+    }
+
+    public void DesactivacionColliderMS1()
+    {
+        colliderSphere.SetActive(false);
+    }
+
 
     //Aactvacion de collidersssss
     public void ColliderActivationMS1(int ColliderNumber) //Tiene que ser distinto a la otra porque si no se bugea (xd moment)

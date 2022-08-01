@@ -32,7 +32,7 @@ public class WaypointStateMelee : MonoBehaviour, IState
     
     public void OnUpdate() //OnUpdate arranco con esto
     {
-        Debug.Log("im on patrol");
+
         //Movimiento base
         Move();
         Quaternion toRotation = Quaternion.LookRotation(-_hunter.transform.position + _hunter.allWaypoints[_hunter.currentWaypoint].transform.position);

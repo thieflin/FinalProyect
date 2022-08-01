@@ -54,9 +54,9 @@ public class CharStatus : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
-            EventManager.Instance.Trigger("OnGettingHPG", 10f);
-            EventManager.Instance.Trigger("OnGettingMPG", 10f);
-            EventManager.Instance.Trigger("OnGettingRPG", 10f);
+            EventManager.Instance.Trigger("OnGettingHPG", 100f);
+            EventManager.Instance.Trigger("OnGettingMPG", 100f);
+            EventManager.Instance.Trigger("OnGettingRPG", 100f);
         }
 
     }

@@ -580,7 +580,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   _maxHp: 50
   _hitboxLayermask: 9
-  _abilityLayermask: 10
+  _abilityLayermask: 23
   _hitKnockbackLayerMask: 0
   _dmgMitigation: 2
   _hpSlider: {fileID: 0}
@@ -722,9 +722,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.15
-  m_Height: 5.88
+  m_Height: 7.6273727
   m_Direction: 1
-  m_Center: {x: 0, y: 2.76, z: 0}
+  m_Center: {x: 0, y: 3.633686, z: 0}
 --- !u!1 &4317881520188041565
 GameObject:
   m_ObjectHideFlags: 0

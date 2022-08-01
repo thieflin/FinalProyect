@@ -52,7 +52,7 @@ public class IdleStateMelee : MonoBehaviour, IState
         //de que lo encontro
         if (_hunter.detectionBox.playerInBox)
             DetectEnemy();
-        Debug.Log("estoy en idle");
+
     }
 
     public void DetectEnemy()

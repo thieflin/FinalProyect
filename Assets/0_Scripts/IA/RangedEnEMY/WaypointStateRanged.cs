@@ -31,7 +31,7 @@ public class WaypointStateRanged : MonoBehaviour, IState
 
     public void OnUpdate() //OnUpdate arranco con esto
     {
-        Debug.Log("im on patrol");
+
         //Movimiento base
         Move();
         LookAtWps();

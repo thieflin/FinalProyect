@@ -13,7 +13,9 @@ public class ManagerPause : MonoBehaviour
     public GameObject blackScreenBackground;
 
     public SkillTree skillTree;
+
     // Update is called once per frame
+
     void Update()
     {
 

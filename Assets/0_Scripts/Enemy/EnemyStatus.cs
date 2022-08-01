@@ -66,17 +66,21 @@ public class EnemyStatus : EnemyData, IDamageable
             AudioManager.PlaySound("hit");
         }
 
-        ////Si le pego con el ultimo hit, el que knockbackea PIOLI
-        //else if (other.gameObject.layer == _hitKnockbackLayerMask)
-        //{
-        //    //Recibe dmg
-        //    TakeDamage(Combo.swordDmg);
-        //    AudioManager.PlaySound("hit");
-        //    Debug.Log("colisiona en el 2do");
-        //    //Ver de cambiar para que cada enemigo tenga su particula adentro y no la este INSTANCIANDO cada vez que le pego
-        //    //Instancia las partic
-        //    var instanstiatedParticles = Instantiate(onMeleeHittedParticles, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), transform.rotation);
-        //}
+        if (other.gameObject.layer == _abilityLayermask)
+        {
+            GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
+
+            Debug.Log("le pegue aweonaou");
+
+            //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO MÁS
+            if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
+            {
+                TargetLock.enemiesClose.Remove(this.GetComponent<Enemy>());
+            }
+
+            gameObject.SetActive(false);
+        }
+
     }
 
     private void OnParticleCollision(GameObject other)
@@ -95,7 +99,25 @@ public class EnemyStatus : EnemyData, IDamageable
             if (this.gameObject.activeSelf)
                 StartCoroutine(WaitForEnemyHitted());
         }
+
+        if (other.gameObject.layer == _abilityLayermask)
+        {
+            GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
+
+            Debug.Log("le pegue aweonaou");
+
+            //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO MÁS
+            if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
+            {
+                TargetLock.enemiesClose.Remove(this.GetComponent<Enemy>());
+            }
+
+            gameObject.SetActive(false);
+        }
+
     }
+
+
 
     IEnumerator WaitForEnemyHitted()
     {

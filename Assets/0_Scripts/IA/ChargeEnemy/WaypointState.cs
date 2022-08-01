@@ -35,7 +35,7 @@ public class WaypointState : MonoBehaviour, IState
         //Movimiento base
         Move();
 
-        Debug.Log("en wp");
+
         //Detectar enemigo cambio el estado
         if(_hunter.detectionBox.playerInBox)
             DetectEnemy();
