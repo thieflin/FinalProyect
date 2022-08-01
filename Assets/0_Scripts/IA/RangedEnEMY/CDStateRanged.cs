@@ -22,6 +22,11 @@ public class CDStateRanged : MonoBehaviour, IState
     public void OnStart()
     {
         _hunter.attackCd = Random.Range(3, 6);
+
+        _hunter.rb.constraints = RigidbodyConstraints.FreezeAll;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionX;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionZ;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionY;
     }
 
     public void OnUpdate()

@@ -22,6 +22,10 @@ public class CDState : MonoBehaviour, IState
     public void OnStart()
     {
         _hunter.attackCd = 4f;
+        _hunter.rb.constraints = RigidbodyConstraints.FreezeAll;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionX;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionZ;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionY;
     }
 
     public void OnUpdate()

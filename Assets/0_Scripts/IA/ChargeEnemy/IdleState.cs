@@ -29,6 +29,9 @@ public class IdleState : MonoBehaviour, IState
     {
         _hunter.anim.SetBool("IdleB", true);
         _hunter.idleWpCd = Random.Range(4, 8);
+        _hunter.rb.constraints = RigidbodyConstraints.FreezeAll;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionX;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionZ;
     }
 
     public void OnUpdate()

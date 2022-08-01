@@ -24,6 +24,9 @@ public class WaypointState : MonoBehaviour, IState
     public void OnStart()
     {
         _hunter.anim.SetBool("PatrolB", true);
+        _hunter.rb.constraints = RigidbodyConstraints.FreezeAll;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionX;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionZ;
 
     }
     

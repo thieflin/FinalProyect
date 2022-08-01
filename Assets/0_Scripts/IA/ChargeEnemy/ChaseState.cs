@@ -32,6 +32,12 @@ public class ChaseState : IState
         
         _hunter.anim.SetBool("IdleB", false);
         _hunter.anim.SetBool("PatrolB", false);
+
+        //cUANDO Lo detecta le desfreezeo asi no rebota a lo tonto
+        _hunter.rb.constraints = RigidbodyConstraints.FreezeAll;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionX;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionZ;
+        _hunter.rb.constraints -= RigidbodyConstraints.FreezePositionY;
     }
 
     public void OnUpdate()
