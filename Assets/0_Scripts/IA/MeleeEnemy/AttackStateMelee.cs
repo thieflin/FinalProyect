@@ -27,7 +27,7 @@ public class AttackStateMelee : MonoBehaviour, IState
     public void OnStart()
     {
         _hunter.anim.SetTrigger("Attack");
-        meassure = 3f;
+        //meassure = 3f;
     }
 
     //Falta hacer que cuando cargue te mire

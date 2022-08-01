@@ -17,9 +17,9 @@ public class ButtonManager : MonoBehaviour
 
     [Header("Botones de imagenes de interacciones de ranged")]
     public GameObject noButton;
-    public GameObject noButton2;    
+    public GameObject noButton2;
     public GameObject backButtonMele;
-    public GameObject noButtonMelee; 
+    public GameObject noButtonMelee;
     public GameObject lastPressedButton;
 
     [SerializeField] private AbilitiesStatus _as;
@@ -44,7 +44,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject hybridUIImage;
 
     [Header("Descripcion de habilidades")]
-    public List<TextMeshProUGUI> _abilityDescriptions = new List<TextMeshProUGUI>();
+    public List<GameObject> _abilityDescriptions = new List<GameObject>();
 
 
 
@@ -63,13 +63,18 @@ public class ButtonManager : MonoBehaviour
         hybridUIImage.SetActive(false);
         rangedUIImage.SetActive(false);
         meleeUIImage.SetActive(false);
+
+        foreach (var item in _abilityDescriptions)
+        {
+            item.SetActive(false);
+        }
     }
 
     public void OnButtonSelectHybridAbility(int id)
     {
-        if(Input.GetButtonDown("Submit") && rangedUpgrade >= 1 && meleeUpgrade >= 1)
+        if (Input.GetButtonDown("Submit") && rangedUpgrade >= 1 && meleeUpgrade >= 1)
         {
-            if(_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded())
+            if (_st.CurrentSkillPoints() >= _st.UpgradeSkillPointsNeeded())
             {
                 Debug.Log("Compra osea activa el delegate");
             }
@@ -115,7 +120,7 @@ public class ButtonManager : MonoBehaviour
             else //Aca es si no tengo suficientes puntos me la deja comprar
             {
                 Debug.Log("No puedo comprar ranged");
-                
+
                 //Desselecciono el boton anterior
                 //EventSystem.current.SetSelectedGameObject(null);
 
@@ -134,7 +139,7 @@ public class ButtonManager : MonoBehaviour
                 /*introducir sonido*/
 
             }
-            
+
         }
         //Ahora, si la tengo comprada, Directamente la activo
 
@@ -196,13 +201,13 @@ public class ButtonManager : MonoBehaviour
                 case 0:
                     //Evento que gasta los skill poitns
                     EventManager.Instance.Trigger("OnSpendingSP", 3);
-                    
+
                     //Me avisa que esta comprada para poder activarla
                     _as.rangedAbilities[rangedUpgrade].isPurchased = true;
 
                     //Me hace null la seleccion de boton
                     //EventSystem.current.SetSelectedGameObject(null);
-                    
+
                     //Desactiva las pantallas de opciones
                     //canBuyAbility.SetActive(false);
                     //cantBuyAbility.SetActive(false);
@@ -226,10 +231,10 @@ public class ButtonManager : MonoBehaviour
                     rangedUpgrade++;
                     break;
             }
-                
+
             Debug.Log("Compre la habilidad");
-            
-            
+
+
         }
 
         //Al comprarlo tengo que ponerle el iconito mas bonito para despues setearlo
@@ -375,4 +380,16 @@ public class ButtonManager : MonoBehaviour
 
     }
     #endregion
+
+
+    public void ShowAbilityDescription(int id)
+    {
+        Debug.Log("lo seleccione ura");
+        _abilityDescriptions[id].SetActive(true);
+    }
+    public void HideAbilityDescription(int id)
+    {
+        Debug.Log("desseleccione");
+        _abilityDescriptions[id].SetActive(false);
+    }
 }

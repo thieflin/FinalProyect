@@ -29,6 +29,7 @@ public class SkillTree : MonoBehaviour
             if (treeOpen)
             {
                 openingAnimation.SetTrigger("Close");
+                EventSystem.current.SetSelectedGameObject(null);
                 treeOpen = false;
             }
                 

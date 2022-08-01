@@ -24,9 +24,11 @@ public class SettingsMenu : MonoBehaviour
     [Header("Botones")]
     public GameObject settingsButton;
     public GameObject backButton;
-    public GameObject exitButtoin;
-    
+    public GameObject settingsFirstButton;
+    public GameObject optionsButton; //Este es para volver de los settings
 
+    [Header("Selectors")]
+    public List<GameObject> selectorsSettings = new List<GameObject>();
     
 
     private void Start()
@@ -111,7 +113,7 @@ public class SettingsMenu : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(null);
             settingsMenu.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(backButton);
+            EventSystem.current.SetSelectedGameObject(settingsFirstButton);
 
         }
 
@@ -141,7 +143,7 @@ public class SettingsMenu : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(null);
             settingsMenu.SetActive(false);
-            EventSystem.current.SetSelectedGameObject(settingsButton);
+            EventSystem.current.SetSelectedGameObject(optionsButton);
         }
 
         //if (Input.GetMouseButtonDown(0))
@@ -154,5 +156,14 @@ public class SettingsMenu : MonoBehaviour
     {
         Pause.UnpauseGame();
         pauseMenu.SetActive(false);
+    }
+
+    public void ShowSelector(int id)
+    {
+        selectorsSettings[id].SetActive(true);
+    }
+    public void HideSelector(int id)
+    {
+        selectorsSettings[id].SetActive(false);
     }
 }
