@@ -149,6 +149,16 @@ public class SettingsMenu : MonoBehaviour
         //}
     }
 
+    public void BTN_BackToMenu()
+    {
+        if (Input.GetButtonDown("Submit"))
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        SceneManager.LoadScene(0);
+    }
+
     public void BTN_BackInGame()
     {
         Pause.UnpauseGame();

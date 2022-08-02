@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -66,7 +67,7 @@ public class Boss : MonoBehaviour
     Vector3 savePositionRightHand;
     Vector3 savePositionLeftHand;
 
-    
+
 
     public GameObject bulletPrefab;
     public Transform[] spawnPositionsBullet;
@@ -75,11 +76,13 @@ public class Boss : MonoBehaviour
     public GameObject bossVulnerable;
 
     public Slider sliderHP;
-    
+
 
     public int randomAttack;
 
     public AudioSource shootingAudio, walkingAudio, grabingAudio, hitAudio;
+
+    public Animator fadeInAnimator;
 
 
     // Start is called before the first frame update
@@ -93,7 +96,7 @@ public class Boss : MonoBehaviour
 
         //Empieza con un ataque random
         //randomAttack = Random.Range(0, abilities.Length - 1);
-        
+
 
     }
 
@@ -365,7 +368,7 @@ public class Boss : MonoBehaviour
                 handLeft.GetComponent<GrabHands>().ChangeState();
             }
 
-           
+
 
             AudioManager.PlaySound("RobotGrab");
 
@@ -503,7 +506,7 @@ public class Boss : MonoBehaviour
         rb.velocity = Vector3.zero;
         walkingAudio.enabled = false;
         yield return new WaitForSeconds(2f);
-        
+
         attacking = false;
         attacked = false;
 
@@ -538,16 +541,26 @@ public class Boss : MonoBehaviour
     public void TakeDmg(int dmg)
     {
         HP -= dmg;
-        
-        if(HP < 0)
+
+        if (HP < 0)
         {
             HP = 0;
             dead = true;
-            bossVulnerable.GetComponent<BoxCollider>().enabled = false;
-            Debug.Log("ISDEAD");
+            bossVulnerable.GetComponent<BoxCollider>().enabled = false; ;
             anim.SetTrigger("IsDead");
+
+            fadeInAnimator.SetBool("FadeIn", true);
+
+            Invoke("GoToMainMenu", 2f);
         }
-        
+
     }
+
+
+    void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 
 }
