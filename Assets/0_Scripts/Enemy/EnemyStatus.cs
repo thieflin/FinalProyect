@@ -12,6 +12,10 @@ public class EnemyStatus : EnemyData, IDamageable
 
     //Esta variable deberia estar idealmente en el enemydata pero NO TIME
     public bool isKeyOwner;
+    public bool obtainedKey;
+
+    //Este es el ultimo enemigo con llave
+    public bool isLastKeyOwner;
 
     public void Start()
     {
@@ -22,7 +26,23 @@ public class EnemyStatus : EnemyData, IDamageable
         _anim = GetComponent<Animator>();
         startPos = transform.position;
 
+        obtainedKey = false;
+
+        EventManager.Instance.Subscribe("OnGettingEnemyKey", GotKey);
+        EventManager.Instance.Subscribe("OnGettingLastKeys", GotLastKey);
     }
+
+    public void GotKey(params object [] parameters)
+    {
+        obtainedKey = true;
+    }
+    public void GotLastKey(params object[] parameters)
+    {
+        NewKeyPalancas.lastKeys++;
+    }
+
+
+
     public void TakeDamage(int dmg)
     {
         //Le saco vida
@@ -38,7 +58,12 @@ public class EnemyStatus : EnemyData, IDamageable
 
             if (isKeyOwner)
             {
+                EventManager.Instance.Trigger("OnGettingEnemyKey");
+            }
 
+            if (isLastKeyOwner)
+            {
+                EventManager.Instance.Trigger("OnGettingLastKeys");
             }
 
             GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo

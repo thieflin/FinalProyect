@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class NewKeyPalancas : MonoBehaviour
 {
-    //Estas son son sin llave
+    
     public int normalAttackLayer;
+
+    //Si necesitan llave
     public bool isKeyMechanism;
     public bool gotKeyFromEnemy;
+    
+    //Si necesitan llave y son el ultimo elemento
     public bool isLastElement;
+    public static int lastKeys;
+    public static int activatedDevices;
+
     public Animator anim;
 
+    //Enemigos que tienen llave
+    public List<EnemyStatus> enemiesWithKey = new List<EnemyStatus>();
+
+    //Palancas que hay que animar
     public List<Animator> sticksToAnimate = new List<Animator>();
 
     private void Start()
@@ -18,6 +29,10 @@ public class NewKeyPalancas : MonoBehaviour
         GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        Debug.Log(lastKeys);
+    }
     public List<GameObject> blockColliders = new List<GameObject>();
 
     public void OnTriggerEnter(Collider other)
@@ -25,7 +40,7 @@ public class NewKeyPalancas : MonoBehaviour
         if (other.gameObject.layer == normalAttackLayer)
         {
             //Si es de los que NO necesita llave
-            if (!isKeyMechanism)
+            if (!isKeyMechanism && !isLastElement)
             {
                 //Desactivo los colliders al pegarle
                 foreach (var item in blockColliders)
@@ -39,9 +54,12 @@ public class NewKeyPalancas : MonoBehaviour
                     item.SetTrigger("Open");
                 }
             }
-            else if(isKeyMechanism)
+            //Si es mecanismo de llave
+            else if (isKeyMechanism)
             {
-                if (gotKeyFromEnemy)
+
+                //Si tengo la llave ejecuto lo de siempre
+                if (enemiesWithKey[0].obtainedKey == true)
                 {
                     
                     foreach (var item in blockColliders)
@@ -60,9 +78,41 @@ public class NewKeyPalancas : MonoBehaviour
                     Debug.Log("No podes abrirloooo");
                 }
             }
-            else if (isLastElement)
+            else if (isLastElement && !isKeyMechanism)
             {
-                //Aca es para el ultimo
+                //Agarro una llave y le pego 
+                if(lastKeys > 0)
+                {
+                    //Activo los devices
+                    activatedDevices++;
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+
+
+                    //Entonces si tengo 2 le pego dos veces y queda en 0
+
+                    if (activatedDevices >= 2)
+                    {
+
+                        foreach (var item in blockColliders)
+                        {
+                            item.SetActive(false);
+                        }
+
+                        //Corro la animacion de apertura
+                        foreach (var item in sticksToAnimate)
+                        {
+                            item.SetTrigger("Open");
+                        }
+                    }
+
+                    //En teoria si tengo una sola lalve puedo pegarle una vez
+                    lastKeys--;
+                }
+                else
+                {
+                    Debug.Log("xd");
+                }
+               
             }
         }
     }
