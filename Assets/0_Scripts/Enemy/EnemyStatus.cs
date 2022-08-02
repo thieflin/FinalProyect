@@ -9,6 +9,8 @@ public class EnemyStatus : EnemyData, IDamageable
     public bool enemyHitted = false;
     private ButtonManager _bm;
 
+    
+
 
     //Esta variable deberia estar idealmente en el enemydata pero NO TIME
     public bool isKeyOwner;
@@ -16,6 +18,7 @@ public class EnemyStatus : EnemyData, IDamageable
 
     //Este es el ultimo enemigo con llave
     public bool isLastKeyOwner;
+    public static int allKeys;
 
     public void Start()
     {
@@ -29,19 +32,16 @@ public class EnemyStatus : EnemyData, IDamageable
         obtainedKey = false;
 
         EventManager.Instance.Subscribe("OnGettingEnemyKey", GotKey);
-        EventManager.Instance.Subscribe("OnGettingLastKeys", GotLastKey);
     }
 
     public void GotKey(params object [] parameters)
     {
         obtainedKey = true;
     }
-    public void GotLastKey(params object[] parameters)
+    public void Update()
     {
-        NewKeyPalancas.lastKeys += 1;
+        Debug.Log(allKeys);
     }
-
-
 
     public void TakeDamage(int dmg)
     {
@@ -64,7 +64,8 @@ public class EnemyStatus : EnemyData, IDamageable
 
             if (isLastKeyOwner)
             {
-                EventManager.Instance.Trigger("OnGettingLastKeys");
+                Debug.Log("XDa");
+                allKeys++;
                 AudioManager.PlaySound("LootKeySound");
             }
 

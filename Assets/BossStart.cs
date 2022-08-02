@@ -8,6 +8,7 @@ public class BossStart : MonoBehaviour
     public GameObject bossUI;
     public GameObject collider;
     public GameObject firstPos;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +24,7 @@ public class BossStart : MonoBehaviour
             bossUI.SetActive(true);
 
             collider.GetComponent<BoxCollider>().enabled = true;
+            gameObject.SetActive(false);
         }
     }
 

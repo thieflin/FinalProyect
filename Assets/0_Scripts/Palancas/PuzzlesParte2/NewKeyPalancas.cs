@@ -81,7 +81,7 @@ public class NewKeyPalancas : MonoBehaviour
             else if (isLastElement && !isKeyMechanism)
             {
                 //Agarro una llave y le pego 
-                if(lastKeys > 0)
+                if(EnemyStatus.allKeys > 0)
                 {
                     //Activo los devices
                     activatedDevices++;
@@ -106,7 +106,7 @@ public class NewKeyPalancas : MonoBehaviour
                     }
 
                     //En teoria si tengo una sola lalve puedo pegarle una vez
-                    lastKeys--;
+                    EnemyStatus.allKeys--;
                 }
                 else
                 {

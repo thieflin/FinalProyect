@@ -217,6 +217,7 @@ public class CharStatus : MonoBehaviour
             boss.gameObject.SetActive(false);
             triggerEnemy.GetComponent<BossStart>().bossUI.SetActive(false);
             boss.randomAttack = 3;
+            triggerEnemy.SetActive(true);
             respawnManager.RespawnCharacter();
         }
 
