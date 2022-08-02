@@ -50,6 +50,11 @@ public class CharStatus : MonoBehaviour
     [SerializeField] private AbilitiesStatus _as;
     [SerializeField] private RespawnManager respawnManager;
 
+    [Header("Take Damage Feedback")]
+    public float flashTime;
+    Color origionalColor;
+    public MeshRenderer renderer;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
@@ -96,6 +101,8 @@ public class CharStatus : MonoBehaviour
         EventManager.Instance.Subscribe("OnGettingRPG", GetPowerGaugeRanged); //Evento para generar power gauge ( ranged )
         EventManager.Instance.Subscribe("OnGettingHPG", GetPowerGaugeHybrid); //Evento para generar power gauge ( hybrid )
 
+        origionalColor = renderer.material.color;
+
 
 
         _expBar.fillAmount = 0;
@@ -109,14 +116,14 @@ public class CharStatus : MonoBehaviour
     //Las gauges tnego que reworkearlos para que den para cada uno en especifica
 
     private void GetPowerGaugeRanged(params object[] parameters)
-    {            
+    {
         //Le doy mas puntos a la power gauge
         _rangedPowerGauge += (float)parameters[0];
 
         //Le actualizo el fill amount
         _rpgPercent = _rangedPowerGauge / _maxPowerGauge;
         _rpgBar.fillAmount = _rpgPercent;
-        if (_rangedPowerGauge >= _maxPowerGauge -1f)
+        if (_rangedPowerGauge >= _maxPowerGauge - 1f)
         {
             _as.canCastAbility = true;
 
@@ -136,7 +143,7 @@ public class CharStatus : MonoBehaviour
         //Le actualizo el fill amount al melee
         _mpgPercent = _meleePowerGauge / _maxPowerGauge;
         _mpgBar.fillAmount = _mpgPercent;
-        if (_meleePowerGauge >= _maxPowerGauge -1f)
+        if (_meleePowerGauge >= _maxPowerGauge - 1f)
         {
             _as.canUseMeleeAbility = true;
             _meleePowerGauge = _maxPowerGauge;
@@ -195,10 +202,23 @@ public class CharStatus : MonoBehaviour
     {
         hp -= dmg;
         _hpBar.fillAmount = HpPercentCalculation(hp);
-        if(hp <= 0)
+        if (hp <= 0)
         {
             respawnManager.RespawnCharacter();
         }
+
+
+    }
+
+    void FlashRed()
+    {
+        renderer.material.color = Color.red;
+        Invoke("ResetColor", flashTime);
+    }
+
+    void ResetColor()
+    {
+        renderer.material.color = origionalColor;
     }
 
     public float HpPercentCalculation(float actualHp)
@@ -233,7 +253,7 @@ public class CharStatus : MonoBehaviour
             _rpgBar.fillAmount = 0;
 
             //Reduce el powergauge d ela ulti a la mitad
-            _upgPercent = _ultimatePowerGauge*0.5f / _maxPowerGauge;
+            _upgPercent = _ultimatePowerGauge * 0.5f / _maxPowerGauge;
             _ultimatePowerGauge *= .5f;
             _upgBar.fillAmount = _upgPercent;
 
@@ -241,7 +261,7 @@ public class CharStatus : MonoBehaviour
             _rangedSkillUp.SetActive(false);
 
         }
-        else if(abilityId == 2) //MixedAbility
+        else if (abilityId == 2) //MixedAbility
         {
             _as.canUseMeleeAbility = false;
             _as.canUseRangedAbility = false;

@@ -86,7 +86,7 @@ public class Boss : MonoBehaviour
 
         //Empieza con un ataque random
         //randomAttack = Random.Range(0, abilities.Length - 1);
-        randomAttack = 2;
+        
 
     }
 
