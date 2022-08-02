@@ -102,7 +102,7 @@ public class CharStatus : MonoBehaviour
         EventManager.Instance.Subscribe("OnGettingHPG", GetPowerGaugeHybrid); //Evento para generar power gauge ( hybrid )
 
 
-        renderer = GetComponentInChildren<Material>();
+        //renderer = GetComponentInChildren<Material>();
 
         origionalColor = renderer.color;
 
