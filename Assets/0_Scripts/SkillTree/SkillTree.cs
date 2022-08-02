@@ -28,7 +28,10 @@ public class SkillTree : MonoBehaviour
     
     private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            EventManager.Instance.Trigger("OnEarningSP", 15);
+        }
         //Abre y cierra el skill tree con animacion
         //Consideron que esto no funcione si esta pausado el juego
         if (Input.GetKeyDown(KeyCode.CapsLock) || Input.GetButtonDown("SkillTree") && !Pause.isPaused)
