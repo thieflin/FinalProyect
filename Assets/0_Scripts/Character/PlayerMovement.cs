@@ -73,6 +73,11 @@ public class PlayerMovement : MonoBehaviour
             dashBar.fillAmount += 1 / (_timeBetweenDashes * 60);
         }
 
+        //Por si se bugea, boton de unlock osea tp al respawn point
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            transform.position = RespawnManager.playerRespawn.transform.position;
+        }
 
         ////Esto es porque por algun motivo me las desfreezea cuando combea medio xd el tema
         //_rb.constraints = RigidbodyConstraints.FreezeRotation;
