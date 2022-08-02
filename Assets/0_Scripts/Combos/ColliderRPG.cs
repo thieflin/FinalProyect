@@ -13,8 +13,10 @@ public class ColliderRPG : MonoBehaviour
         if (enemy)
         {
             EventManager.Instance.Trigger("OnGettingRPG", meleePG);
-        }
-    }
 
-    
+        }
+
+
+
+    }
 }

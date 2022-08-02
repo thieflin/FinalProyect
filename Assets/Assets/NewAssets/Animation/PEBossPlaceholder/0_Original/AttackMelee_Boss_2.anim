@@ -4149,6 +4149,43 @@ AnimationClip:
     path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right/ColliderHit
     classID: 135
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.26666668
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.46666667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right/ShootingPositionsRight/ColliderHit
+    classID: 135
+    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 30
   m_WrapMode: 0
@@ -4390,6 +4427,13 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 1859747847
+      attribute: 3305885265
+      script: {fileID: 0}
+      typeID: 135
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1928815092
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 135
@@ -18446,6 +18490,43 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_Enabled
     path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right/ColliderHit
+    classID: 135
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.26666668
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.46666667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right/ShootingPositionsRight/ColliderHit
     classID: 135
     script: {fileID: 0}
   m_EulerEditorCurves:

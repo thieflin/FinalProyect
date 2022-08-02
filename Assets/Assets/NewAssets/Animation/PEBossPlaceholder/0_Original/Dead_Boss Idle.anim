@@ -1,0 +1,5560 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dead_Boss Idle
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.11682127, y: -0.69462305, z: -0.106881134, w: 0.7017322}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.066351935, y: 0.14077786, z: -0.8706514, w: 0.46663165}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.015125148, y: -0.0073980833, z: -0.4337448, w: 0.9008785}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.016838655, y: 0.006636788, z: 0.4801534, w: 0.8769978}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.18320039, y: 0.0043760017, z: 0.34039208, w: 0.9222536}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.015468912, y: -0.0051980354, z: -0.32248676, w: 0.9464333}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.108548716, y: 0.1609118, z: -0.083142176, w: 0.9774518}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.000025428239, y: 0.00000007346108, z: -1.867986e-12, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.0052958587, y: -0.0068285163, z: -0.13104813, w: 0.9913383}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1.6911971e-21, y: 9.8552955e-23, z: 0.057347488, w: 0.99835426}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.45533657, y: -0.54098856, z: -0.6008183, w: -0.37285033}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.6931311, y: 0.11595601, z: 0.31939673, w: 0.6356958}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.038264588, y: 0.10925171, z: -0.32832217, w: 0.9374457}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.14989997, y: -0.00014915693, z: 0.00011988624, w: 0.98870116}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.57979757, y: -0.41561413, z: -0.38084507, w: 0.58826596}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.54098845, y: 0.45533666, z: -0.3728504, w: 0.6008182}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.6802449, y: 0.1457702, z: 0.36819044, w: 0.61680937}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.03732599, y: 0.10724514, z: -0.3258412, w: 0.9385802}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.14827965, y: -0.00014183935, z: 0.000084158426, w: 0.9889455}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.58826333, y: -0.38084936, z: 0.41560882, w: 0.5798011}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.000009311735, y: 0.77982306, z: -4.8788133}
+        inSlope: {x: -0.00009584345, y: 0, z: 0}
+        outSlope: {x: -0.00009584345, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.008851145, y: -0.006206296, z: 1.4670047}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -2.02733, y: 0.0000028095994, z: -0.000019635594}
+        inSlope: {x: -1.5225903e-14, y: 0, z: 0}
+        outSlope: {x: -1.5225903e-14, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -3.093059, y: 0.00000231702, z: -0.0000001506605}
+        inSlope: {x: 0.000120326345, y: 0, z: 0}
+        outSlope: {x: 0.000120326345, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -1.0264033, y: 0.0000001441525, z: 0.0000006301126}
+        inSlope: {x: -0.00002877369, y: 0, z: 0}
+        outSlope: {x: -0.00002877369, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.008851145, y: -0.006206296, z: -1.4670047}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 2.0273306, y: 0.000072120754, z: 0.000029078956}
+        inSlope: {x: 0.000041198688, y: 0, z: 0}
+        outSlope: {x: 0.000041198688, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 3.0930614, y: -0.000015261412, z: -0.0000003255761}
+        inSlope: {x: -0.000058419308, y: 0, z: 0}
+        outSlope: {x: -0.000058419308, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1.0264021, y: -0.00000025901647, z: 0.00000012892347}
+        inSlope: {x: 0.0000037057014, y: 0, z: 0}
+        outSlope: {x: 0.0000037057014, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -1.0200595, y: 0.00000022215605, z: -0.000000014113927}
+        inSlope: {x: -0.0000073024135, y: 0, z: 0}
+        outSlope: {x: -0.0000073024135, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -1.476739, y: 0.00000017787175, z: -0.0000001732422}
+        inSlope: {x: 0.000011771057, y: 0, z: 0}
+        outSlope: {x: 0.000011771057, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.6028799, y: -0.16888852, z: 0.9460886}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -1.9110191, y: -0.00000078593285, z: -0.0000006878592}
+        inSlope: {x: -0.000005885517, y: 0, z: 0}
+        outSlope: {x: -0.000005885517, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -2.6360338, y: 0.0000037902698, z: -0.000012162367}
+        inSlope: {x: 0.0001857211, y: 0, z: 0}
+        outSlope: {x: 0.0001857211, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -2.651059, y: 0.0000008166026, z: -0.000058131}
+        inSlope: {x: 0.000053187723, y: 0, z: 0}
+        outSlope: {x: 0.000053187723, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.6865745, y: -0.026524892, z: -0.080206595}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.6028799, y: -0.16888852, z: -0.9460886}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1.9110184, y: 0.0000018832047, z: 0.00000012311328}
+        inSlope: {x: -0.000014604827, y: 0, z: 0}
+        outSlope: {x: -0.000014604827, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 2.6360343, y: 0.000012278288, z: 0.000052008603}
+        inSlope: {x: -0.000020490344, y: 0, z: 0}
+        outSlope: {x: -0.000020490344, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 2.6510625, y: 0.00000090803326, z: 0.000057740264}
+        inSlope: {x: 0.000053187723, y: 0, z: 0}
+        outSlope: {x: 0.000053187723, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.7399241, y: 0.016157493, z: -0.024796948}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -1.5515815, y: -0.000000019199224, z: -0.00000018226113}
+        inSlope: {x: -0.000029427632, y: 0, z: 0}
+        outSlope: {x: -0.000029427632, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+  m_ScaleCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0019760132
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootT.x
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0033420085
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootT.y
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.086161494
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootT.z
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootQ.x
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootQ.y
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootQ.z
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootQ.w
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  m_PPtrCurves: []
+  m_SampleRate: 30
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 1577353074
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2040772229
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2645640311
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2088812111
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4140097446
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1118661816
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 132408988
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 524829045
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3371929880
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3237701514
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 48904172
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3318788401
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1432648014
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3356713591
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 623891229
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1427861893
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 508746249
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1431498192
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2579044233
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3479760081
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3134957772
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1929012245
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1577353074
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1427861893
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 508746249
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2040772229
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2645640311
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1431498192
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2088812111
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4140097446
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1118661816
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 132408988
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 524829045
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 623891229
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2579044233
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3371929880
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3237701514
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 48904172
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3479760081
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3134957772
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3318788401
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1432648014
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3356713591
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1929012245
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 7
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 8
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 9
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 10
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 11
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 12
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 13
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0019760132
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootT.x
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0033420085
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootT.y
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.086161494
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootT.z
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootQ.x
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootQ.y
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootQ.z
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: RootQ.w
+    path: 
+    classID: 95
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000009311735
+        inSlope: -0.00009584345
+        outSlope: -0.00009584345
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.77982306
+        inSlope: -1.1819918
+        outSlope: -1.1819918
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -4.8788133
+        inSlope: -1.2290411
+        outSlope: -1.2290411
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.008851145
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.006206296
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.4670047
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.02733
+        inSlope: -1.5225903e-14
+        outSlope: -1.5225903e-14
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0000028095994
+        inSlope: 0.00054172106
+        outSlope: 0.00054172106
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000019635594
+        inSlope: 0.0025055283
+        outSlope: 0.0025055283
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -3.093059
+        inSlope: 0.000120326345
+        outSlope: 0.000120326345
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00000231702
+        inSlope: -0.00002907542
+        outSlope: -0.00002907542
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0000001506605
+        inSlope: -0.000022072245
+        outSlope: -0.000022072245
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.0264033
+        inSlope: -0.00002877369
+        outSlope: -0.00002877369
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0000001441525
+        inSlope: 0.000013485784
+        outSlope: 0.000013485784
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0000006301126
+        inSlope: 0.0000011778143
+        outSlope: 0.0000011778143
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.008851145
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.006206296
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.4670047
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.0273306
+        inSlope: 0.000041198688
+        outSlope: 0.000041198688
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000072120754
+        inSlope: 0.00020053209
+        outSlope: 0.00020053209
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000029078956
+        inSlope: -0.00005117895
+        outSlope: -0.00005117895
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 3.0930614
+        inSlope: -0.000058419308
+        outSlope: -0.000058419308
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000015261412
+        inSlope: 0.0001034429
+        outSlope: 0.0001034429
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0000003255761
+        inSlope: -0.000008842473
+        outSlope: -0.000008842473
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.0264021
+        inSlope: 0.0000037057014
+        outSlope: 0.0000037057014
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00000025901647
+        inSlope: -0.000008995171
+        outSlope: -0.000008995171
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00000012892347
+        inSlope: 0.0000075584962
+        outSlope: 0.0000075584962
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.0200595
+        inSlope: -0.0000073024135
+        outSlope: -0.0000073024135
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00000022215605
+        inSlope: 0.000011412457
+        outSlope: 0.000011412457
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000000014113927
+        inSlope: 0.0000016482047
+        outSlope: 0.0000016482047
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.476739
+        inSlope: 0.000011771057
+        outSlope: 0.000011771057
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00000017787175
+        inSlope: 0.000007977198
+        outSlope: 0.000007977198
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0000001732422
+        inSlope: 0.0000047633002
+        outSlope: 0.0000047633002
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.6028799
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.16888852
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9460886
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.9110191
+        inSlope: -0.000005885517
+        outSlope: -0.000005885517
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00000078593285
+        inSlope: 0.000015120572
+        outSlope: 0.000015120572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0000006878592
+        inSlope: -0.000006874776
+        outSlope: -0.000006874776
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.6360338
+        inSlope: 0.0001857211
+        outSlope: 0.0001857211
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0000037902698
+        inSlope: -0.000562886
+        outSlope: -0.000562886
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000012162367
+        inSlope: -0.0000041418793
+        outSlope: -0.0000041418793
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.651059
+        inSlope: 0.000053187723
+        outSlope: 0.000053187723
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0000008166026
+        inSlope: -0.000107667656
+        outSlope: -0.000107667656
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000058131
+        inSlope: 0.000033568092
+        outSlope: 0.000033568092
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.6865745
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.026524892
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.080206595
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.6028799
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.16888852
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.9460886
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.9110184
+        inSlope: -0.000014604827
+        outSlope: -0.000014604827
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0000018832047
+        inSlope: 0.000003931596
+        outSlope: 0.000003931596
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00000012311328
+        inSlope: -0.0000067768906
+        outSlope: -0.0000067768906
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.6360343
+        inSlope: -0.000020490344
+        outSlope: -0.000020490344
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000012278288
+        inSlope: 0.00010325902
+        outSlope: 0.00010325902
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000052008603
+        inSlope: 0.0000026083676
+        outSlope: 0.0000026083676
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.6510625
+        inSlope: 0.000053187723
+        outSlope: 0.000053187723
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00000090803326
+        inSlope: 0.000178551
+        outSlope: 0.000178551
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000057740264
+        inSlope: 0.0000022372406
+        outSlope: 0.0000022372406
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.7399241
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.016157493
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.024796948
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.5515815
+        inSlope: -0.000029427632
+        outSlope: -0.000029427632
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.000000019199224
+        inSlope: -0.000017908993
+        outSlope: -0.000017908993
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00000018226113
+        inSlope: 0.000004912784
+        outSlope: 0.000004912784
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.11682127
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.69462305
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.106881134
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.7017322
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.066351935
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.14077786
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.8706514
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.46663165
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.015125148
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0073980833
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.4337448
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9008785
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.016838655
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.006636788
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.4801534
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.8769978
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.18320039
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0043760017
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.34039208
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9222536
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.015468912
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0051980354
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.32248676
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9464333
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.108548716
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1609118
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.083142176
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9774518
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000025428239
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00000007346108
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.867986e-12
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0052958587
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0068285163
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.13104813
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9913383
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.6911971e-21
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 9.8552955e-23
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.057347488
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.99835426
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.45533657
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.54098856
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.6008183
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.37285033
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.6931311
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.11595601
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.31939673
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.6356958
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.038264588
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.10925171
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.32832217
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9374457
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.14989997
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00014915693
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00011988624
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.98870116
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.57979757
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.41561413
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.38084507
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.58826596
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.54098845
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.45533666
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.3728504
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.6008182
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.6802449
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1457702
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.36819044
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.61680937
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.03732599
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.10724514
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.3258412
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9385802
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.14827965
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00014183935
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000084158426
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9889455
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.58826333
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.38084936
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.41560882
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.5798011
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.886418
+        inSlope: 0.3463949
+        outSlope: 0.3463949
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -89.55857
+        inSlope: 0.92239416
+        outSlope: 0.92239416
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -18.199986
+        inSlope: 75.814964
+        outSlope: 75.814964
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 17.882183
+        inSlope: 3.6448863
+        outSlope: 3.6448863
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9539207
+        inSlope: -27.58334
+        outSlope: -27.58334
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -123.47112
+        inSlope: -75.485695
+        outSlope: -75.485695
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.193791
+        inSlope: 0.71535254
+        outSlope: 0.71535254
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.516005
+        inSlope: -1.3463264
+        outSlope: -1.3463264
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -51.43451
+        inSlope: -9.396061
+        outSlope: -9.396061
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.3271791
+        inSlope: -0.5637414
+        outSlope: -0.5637414
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.5940958
+        inSlope: -20.093079
+        outSlope: -20.093079
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 57.419575
+        inSlope: 69.6662
+        outSlope: 69.6662
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_LeftUpLeg/BossPLACEHOLDERR_LeftLeg/BossPLACEHOLDERR_LeftFoot/BossPLACEHOLDERR_LeftToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -19.93132
+        inSlope: -6.7813177
+        outSlope: -6.7813177
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -7.127661
+        inSlope: 21.833158
+        outSlope: 21.833158
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 41.770885
+        inSlope: -116.11702
+        outSlope: -116.11702
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.4857309
+        inSlope: 2.7495244
+        outSlope: 2.7495244
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.1358422
+        inSlope: 1.2284851
+        outSlope: 1.2284851
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -37.646683
+        inSlope: 82.4305
+        outSlope: 82.4305
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 13.8251295
+        inSlope: 10.514356
+        outSlope: 10.514356
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 17.780039
+        inSlope: -7.754467
+        outSlope: -7.754467
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -7.550983
+        inSlope: -45.121967
+        outSlope: -45.121967
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0029138613
+        inSlope: 0.0000026877235
+        outSlope: 0.0000026877235
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000008418019
+        inSlope: 0.00003240365
+        outSlope: 0.00003240365
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.4848082e-17
+        inSlope: 1.1770145e-16
+        outSlope: 1.1770145e-16
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_RightUpLeg/BossPLACEHOLDERR_RightLeg/BossPLACEHOLDERR_RightFoot/BossPLACEHOLDERR_RightToeBase
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.7041659
+        inSlope: -0.20295222
+        outSlope: -0.20295222
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.6962544
+        inSlope: -0.13358487
+        outSlope: -0.13358487
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -15.056615
+        inSlope: -2.7681282
+        outSlope: -2.7681282
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.9283032e-19
+        inSlope: -9.134067e-19
+        outSlope: -9.134067e-19
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.2388516e-20
+        inSlope: -1.0605087e-19
+        outSlope: -1.0605087e-19
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 6.575145
+        inSlope: 0.000022587024
+        outSlope: 0.000022587024
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -81.73604
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -90.00001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -161.909
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 53.820263
+        inSlope: -43.078465
+        outSlope: -43.078465
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 88.81123
+        inSlope: 1.7399614
+        outSlope: 1.7399614
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 106.219795
+        inSlope: 17.286318
+        outSlope: 17.286318
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 8.249353
+        inSlope: -3.649696
+        outSlope: -3.649696
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 10.4622555
+        inSlope: 6.7011514
+        outSlope: 6.7011514
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -37.847065
+        inSlope: 30.503912
+        outSlope: 30.503912
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 17.24226
+        inSlope: 7.6206794
+        outSlope: 7.6206794
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0155379595
+        inSlope: -0.0033655444
+        outSlope: -0.0033655444
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.011539189
+        inSlope: 0.004066705
+        outSlope: 0.004066705
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -87.10004
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -110.60013
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 42.022877
+        inSlope: -0.000018069619
+        outSlope: -0.000018069619
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_LeftShoulder/BossPLACEHOLDERR_LeftArm/BossPLACEHOLDERR_LeftForeArm/BossPLACEHOLDERR_LeftHand/Hand_Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 81.73604
+        inSlope: -0.000072278475
+        outSlope: -0.000072278475
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 90.000015
+        inSlope: -0.000072278475
+        outSlope: -0.000072278475
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 18.09099
+        inSlope: -0.000009034809
+        outSlope: -0.000009034809
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 47.03922
+        inSlope: -7.8514557
+        outSlope: -7.8514557
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 87.30563
+        inSlope: 4.5510907
+        outSlope: 4.5510907
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 106.76663
+        inSlope: 0.76080394
+        outSlope: 0.76080394
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 8.045337
+        inSlope: -5.659595
+        outSlope: -5.659595
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 10.297014
+        inSlope: 8.251942
+        outSlope: 8.251942
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -37.56423
+        inSlope: 42.140163
+        outSlope: 42.140163
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 17.054485
+        inSlope: 8.487455
+        outSlope: 8.487455
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.015317496
+        inSlope: -0.0023237434
+        outSlope: -0.0023237434
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.007454982
+        inSlope: 0.0060494165
+        outSlope: 0.0060494165
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 87.100914
+        inSlope: 0.000036139238
+        outSlope: 0.000036139238
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 69.3939
+        inSlope: -0.000036139238
+        outSlope: -0.000036139238
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 137.97104
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_RightShoulder/BossPLACEHOLDERR_RightArm/BossPLACEHOLDERR_RightForeArm/BossPLACEHOLDERR_RightHand/Hand_Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: BossPLACEHOLDERR_Reference/BossPLACEHOLDERR_Hips/BossPLACEHOLDERR_Spine/BossPLACEHOLDERR_Spine1/BossPLACEHOLDERR_Head
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []

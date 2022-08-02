@@ -20,6 +20,11 @@ public class BulletBoss : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<CharStatus>().TakeDamage(5);
+        }
+
         Destroy(gameObject);
     }
 

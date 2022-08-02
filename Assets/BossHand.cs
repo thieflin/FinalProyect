@@ -16,7 +16,7 @@ public class BossHand : MonoBehaviour
 
             character.GetComponent<Rigidbody>().AddForce(character.transform.forward * -1 * knockBackForce * Time.deltaTime, ForceMode.Impulse);
 
-
+            Debug.Log("ENTRE");
         }
     }
 }

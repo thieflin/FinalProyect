@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioClip lootingCollectible, finishingPuzzle, hitting, slashing, purchase, failtopurchase, bossGrab, robotMeleeHitting;
+    public static AudioClip lootingCollectible, finishingPuzzle, hitting, slashing, purchase, failtopurchase, bossGrab, robotMeleeHitting, robotHitten;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
     {
         lootingCollectible = Resources.Load<AudioClip>("collect");
         finishingPuzzle = Resources.Load<AudioClip>("puzzle");
-        hitting = Resources.Load<AudioClip>("hit"); 
+        hitting = Resources.Load<AudioClip>("hit");
         slashing = Resources.Load<AudioClip>("slash");
         purchase = Resources.Load<AudioClip>("BuyingAbility");
         failtopurchase = Resources.Load<AudioClip>("AbilityFailPurchase");
         bossGrab = Resources.Load<AudioClip>("RobotGrab");
         robotMeleeHitting = Resources.Load<AudioClip>("RobotMeleeHitting");
+        robotHitten = Resources.Load<AudioClip>("RobotHitted");
 
         audioSrc = GetComponent<AudioSource>();
 
@@ -55,6 +56,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "RobotMeleeHitting":
                 audioSrc.PlayOneShot(robotMeleeHitting);
+                break;
+            case "RobotHitted":
+                audioSrc.PlayOneShot(robotHitten);
                 break;
 
             default:

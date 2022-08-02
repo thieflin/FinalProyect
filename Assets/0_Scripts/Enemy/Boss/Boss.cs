@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -65,14 +66,20 @@ public class Boss : MonoBehaviour
     Vector3 savePositionRightHand;
     Vector3 savePositionLeftHand;
 
+    
+
     public GameObject bulletPrefab;
     public Transform[] spawnPositionsBullet;
     public bool startShooting;
 
+    public GameObject bossVulnerable;
+
+    public Slider sliderHP;
+    
+
     public int randomAttack;
 
     public AudioSource shootingAudio, walkingAudio, grabingAudio, hitAudio;
-    bool hittingAudioPlayed;
 
 
     // Start is called before the first frame update
@@ -93,6 +100,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        sliderHP.value = HP;
 
         if (resting)
         {
@@ -107,7 +115,7 @@ public class Boss : MonoBehaviour
 
         if (dead)
         {
-            anim.SetTrigger("Dead");
+            randomAttack = 3;
             transform.forward = Vector3.zero;
         }
 
@@ -323,6 +331,8 @@ public class Boss : MonoBehaviour
         {
             grabLaunched = true;
 
+            bossVulnerable.GetComponent<BoxCollider>().enabled = true;
+
             toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
             transform.forward = toPlayerVector;
 
@@ -330,7 +340,7 @@ public class Boss : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f); //ESPERO UN POCO
 
-            savePositionPlayer = player.transform.position + player.transform.forward * 5f;
+            savePositionPlayer = player.transform.position + player.transform.forward * 3f;
 
             if (randomOptionForGrab == 0) //RIGHT HAND
             {
@@ -344,6 +354,18 @@ public class Boss : MonoBehaviour
 
             savePositionLeftHand = handLeft.transform.localPosition;
             savePositionRightHand = handRight.transform.localPosition;
+
+
+            if (randomOptionForGrab == 0) //RIGHT HAND
+            {
+                handRight.GetComponent<GrabHands>().ChangeState();
+            }
+            else if (randomOptionForGrab == 1) //LEFT HAND
+            {
+                handLeft.GetComponent<GrabHands>().ChangeState();
+            }
+
+           
 
             AudioManager.PlaySound("RobotGrab");
 
@@ -379,6 +401,7 @@ public class Boss : MonoBehaviour
 
             yield return new WaitForSeconds(0.5f);
 
+
             grabing = false;
         }
 
@@ -405,8 +428,19 @@ public class Boss : MonoBehaviour
             //LE DOY ALGO DE TIEMPO PARA QUE VUELVA LA MANO
             if (timerForGrabBack >= timeToGrabBack)
             {
+
+                if (randomOptionForGrab == 0) //RIGHT HAND
+                {
+                    handRight.GetComponent<GrabHands>().ChangeState();
+                }
+                else if (randomOptionForGrab == 1) //LEFT HAND
+                {
+                    handLeft.GetComponent<GrabHands>().ChangeState();
+                }
+
                 grabBack = false;
                 grabLaunched = false;
+                bossVulnerable.GetComponent<BoxCollider>().enabled = false;
                 timerForGrabBack = 0;
                 timerOnEachAttack = 0;
                 anim.SetBool("HookLeft", false);
@@ -475,14 +509,6 @@ public class Boss : MonoBehaviour
 
     }
 
-    void TakeDamage(float dmg)
-    {
-        HP -= dmg;
-        if (HP <= 0)
-        {
-            dead = true;
-        }
-    }
 
     void StartAttacking()
     {
@@ -503,13 +529,25 @@ public class Boss : MonoBehaviour
     void StopAttacking()
     {
         attacked = false;
-        hittingAudioPlayed = false;
         anim.SetBool("IsAttackingMelee", false);
         timerAttacking = 0f;
         timerToCancel = 0f;
         return;
     }
 
-
+    public void TakeDmg(int dmg)
+    {
+        HP -= dmg;
+        
+        if(HP < 0)
+        {
+            HP = 0;
+            dead = true;
+            bossVulnerable.GetComponent<BoxCollider>().enabled = false;
+            Debug.Log("ISDEAD");
+            anim.SetTrigger("IsDead");
+        }
+        
+    }
 
 }

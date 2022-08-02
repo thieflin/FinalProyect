@@ -50,10 +50,10 @@ public class CharStatus : MonoBehaviour
     [SerializeField] private AbilitiesStatus _as;
     [SerializeField] private RespawnManager respawnManager;
 
-    //[Header("Take Damage Feedback")]
-    //public float flashTime;
-    //Color origionalColor;
-    //public Material renderer;
+    [Header("Take Damage Feedback")]
+    public float flashTime;
+    Color origionalColor;
+    public Material renderer;
 
     private void Update()
     {
@@ -102,9 +102,9 @@ public class CharStatus : MonoBehaviour
         EventManager.Instance.Subscribe("OnGettingHPG", GetPowerGaugeHybrid); //Evento para generar power gauge ( hybrid )
 
 
-        //renderer = GetComponentInChildren<Material>();
+        renderer = GetComponentInChildren<Material>();
 
-        //origionalColor = renderer.color;
+        origionalColor = renderer.color;
 
 
         _expBar.fillAmount = 0;
@@ -203,7 +203,8 @@ public class CharStatus : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         hp -= dmg;
-        //FlashRed();
+        FlashRed();
+        EZCameraShake.CameraShaker.Instance.ShakeOnce(1.2f, 1.2f, .1f, 1f);
         _hpBar.fillAmount = HpPercentCalculation(hp);
         if (hp <= 0)
         {
@@ -213,16 +214,18 @@ public class CharStatus : MonoBehaviour
 
     }
 
-    //void FlashRed()
-    //{
-    //    renderer.color = Color.red;
-    //    Invoke("ResetColor", flashTime);
-    //}
+    void FlashRed()
+    {
+        renderer.color = Color.red;
+        Debug.Log(renderer.color);
+        Invoke("ResetColor", flashTime);
+    }
 
-    //void ResetColor()
-    //{
-    //    renderer.color = Color.white;
-    //}
+    void ResetColor()
+    {
+        renderer.color = Color.white;
+        Debug.Log(renderer.color);
+    }
 
     public float HpPercentCalculation(float actualHp)
     {
