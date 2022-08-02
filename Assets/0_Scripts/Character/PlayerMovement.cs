@@ -270,6 +270,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (canDash)
         {
+            AudioManager.PlaySound("DashCorto");
             if (whereToDash == Vector3.zero)
                 whereToDash = transform.forward;
 

@@ -193,6 +193,7 @@ public class CharStatus : MonoBehaviour
             _currentExp = 0; //Resetea la exp de nivel
             _expBar.fillAmount = 0f;
             _currentLvl++; //Aumenta nivel
+            AudioManager.PlaySound("LevelUp");
             _lvlText.text = _currentLvl.ToString();
             EventManager.Instance.Trigger("OnUpdatingLvl", _currentLvl);
             _expToLvlUp = _expToLvlUp * _expToLvlUpMultiplier; //Aumenta exp necesaria
@@ -205,6 +206,7 @@ public class CharStatus : MonoBehaviour
         hp -= dmg;
         FlashRed();
         EZCameraShake.CameraShaker.Instance.ShakeOnce(1.2f, 1.2f, .1f, 1f);
+        AudioManager.PlaySound("Hurt2");
         _hpBar.fillAmount = HpPercentCalculation(hp);
         if (hp <= 0)
         {

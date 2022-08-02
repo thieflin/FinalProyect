@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioClip lootingCollectible, finishingPuzzle, hitting, slashing, purchase, failtopurchase, bossGrab, robotMeleeHitting, robotHitten;
+    public static AudioClip shotgunSound, healSound, lootKeySound, levelUpSound, hurtSound, dashSound;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,12 @@ public class AudioManager : MonoBehaviour
         bossGrab = Resources.Load<AudioClip>("RobotGrab");
         robotMeleeHitting = Resources.Load<AudioClip>("RobotMeleeHitting");
         robotHitten = Resources.Load<AudioClip>("RobotHitted");
+        shotgunSound = Resources.Load<AudioClip>("ShotgunShort");
+        healSound = Resources.Load<AudioClip>("HealShortA");
+        lootKeySound = Resources.Load<AudioClip>("LootKeySound");
+        levelUpSound = Resources.Load<AudioClip>("LevelUp");
+        hurtSound = Resources.Load<AudioClip>("Hurt2");
+        dashSound = Resources.Load<AudioClip>("DashCorto");
 
         audioSrc = GetComponent<AudioSource>();
 
@@ -59,6 +66,24 @@ public class AudioManager : MonoBehaviour
                 break;
             case "RobotHitted":
                 audioSrc.PlayOneShot(robotHitten);
+                break;
+            case "ShotgunShort":
+                audioSrc.PlayOneShot(shotgunSound);
+                break;
+            case "HealShortA":
+                audioSrc.PlayOneShot(healSound);
+                break;
+            case "LootKeySound":
+                audioSrc.PlayOneShot(lootKeySound);
+                break;
+            case "LevelUp":
+                audioSrc.PlayOneShot(levelUpSound);
+                break;
+            case "Hurt2":
+                audioSrc.PlayOneShot(hurtSound);
+                break;
+            case "DashCorto":
+                audioSrc.PlayOneShot(dashSound);
                 break;
 
             default:

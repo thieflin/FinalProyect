@@ -94,10 +94,12 @@ public class AbilityHybrid : Abilities
     public void ParticleActivationShoot()
     {
         shootingParticle.Play();
+        AudioManager.PlaySound("ShotgunShort");
     }
     public void ParticleActivation3rdShot()
     {
         shootingParticle2.Play();
+        AudioManager.PlaySound("ShotgunShort");
     }
 
     public void IsntantiateBulletHybridAbility()

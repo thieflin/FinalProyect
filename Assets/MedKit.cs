@@ -30,6 +30,7 @@ public class MedKit : Objects
             {
                 var charStatus = other.transform.parent.GetComponent<CharStatus>();
                 charStatus.hp += healAmount;
+                AudioManager.PlaySound("HealShortA");
                 if (charStatus.hp >= charStatus.maxHp)
                 {
                     charStatus.hp = charStatus.maxHp;

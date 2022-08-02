@@ -54,6 +54,7 @@ public class AbilityGunOne : Abilities
     //Event animation particle shooting
     public void ParticleRangedAbility()
     {
+        AudioManager.PlaySound("ShotgunShort");
         shootParticle.Play();
         shootParticle2.Play();
         shootParticle3.Play();

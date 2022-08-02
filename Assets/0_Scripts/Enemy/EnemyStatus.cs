@@ -59,11 +59,13 @@ public class EnemyStatus : EnemyData, IDamageable
             if (isKeyOwner)
             {
                 EventManager.Instance.Trigger("OnGettingEnemyKey");
+                AudioManager.PlaySound("LootKeySound");
             }
 
             if (isLastKeyOwner)
             {
                 EventManager.Instance.Trigger("OnGettingLastKeys");
+                AudioManager.PlaySound("LootKeySound");
             }
 
             GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
