@@ -9,6 +9,10 @@ public class EnemyStatus : EnemyData, IDamageable
     public bool enemyHitted = false;
     private ButtonManager _bm;
 
+
+    //Esta variable deberia estar idealmente en el enemydata pero NO TIME
+    public bool isKeyOwner;
+
     public void Start()
     {
 
@@ -32,6 +36,10 @@ public class EnemyStatus : EnemyData, IDamageable
                 EventManager.Instance.Trigger("OnKillingWaveEnemy");
             }
 
+            if (isKeyOwner)
+            {
+
+            }
 
             GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
 
