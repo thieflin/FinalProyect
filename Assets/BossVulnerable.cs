@@ -11,7 +11,7 @@ public class BossVulnerable : MonoBehaviour
         if(other.gameObject.layer == 9)
         {
             AudioManager.PlaySound("RobotHitted");
-            boss.TakeDmg(51);
+            boss.TakeDmg(3);
         }
         if (other.gameObject.layer == 23)
         {

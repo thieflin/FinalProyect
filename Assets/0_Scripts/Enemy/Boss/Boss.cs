@@ -136,6 +136,7 @@ public class Boss : MonoBehaviour
         }
         else if (randomAttack == 3)
         {
+            anim.SetBool("Walking", false);
             return;
         }
 

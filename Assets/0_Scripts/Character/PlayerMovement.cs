@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     bool dashBarIsEmpty;
     public GameObject dashPart;
     private Vector3 whereToDash;
-    [SerializeField] Slider dashBar;
+    [SerializeField] Image dashBar;
     public bool canAttack = true;
     public bool flagDash; //Esta variable me sirve para desahabilitar el dash pero no con el cd, simplemente desactivarlo
     //para que no se pueda usarlo
@@ -68,6 +68,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(dashBar.fillAmount < 1)
+        {
+            dashBar.fillAmount += 1 / (_timeBetweenDashes * 60);
+        }
+
 
         ////Esto es porque por algun motivo me las desfreezea cuando combea medio xd el tema
         //_rb.constraints = RigidbodyConstraints.FreezeRotation;
@@ -302,7 +307,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = false; //Is dashing
         isDashing = true; //Esta dashing
         dashPart.SetActive(true);//Particulas
-        dashBar.value -= _timeBetweenDashes; //Slider
+        dashBar.fillAmount -= 1; //Slider
         var saveYRotation = transform.eulerAngles.y;
         yield return new WaitForSeconds(_dashTime);
         yield return new WaitForSeconds(0.2f);

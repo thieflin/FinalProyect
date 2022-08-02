@@ -49,6 +49,7 @@ public class CharStatus : MonoBehaviour
     [SerializeField] private Animator _anim;
     [SerializeField] private AbilitiesStatus _as;
     [SerializeField] private RespawnManager respawnManager;
+    [SerializeField] private Boss boss;
 
     [Header("Take Damage Feedback")]
     public float flashTime;
@@ -210,6 +211,7 @@ public class CharStatus : MonoBehaviour
         _hpBar.fillAmount = HpPercentCalculation(hp);
         if (hp <= 0)
         {
+            boss.randomAttack = 3;
             respawnManager.RespawnCharacter();
         }
 
