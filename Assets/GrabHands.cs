@@ -20,7 +20,7 @@ public class GrabHands : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<CharStatus>().TakeDamage(10);
+            other.GetComponent<CharStatus>().TakeDamage(20);
         }
     }
 }

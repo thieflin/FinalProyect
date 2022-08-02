@@ -55,8 +55,6 @@ public class CharStatus : MonoBehaviour
     public float flashTime;
     Color origionalColor;
     public Material renderer;
-    [SerializeField] private GameObject triggerEnemy;
-    
 
     private void Update()
     {
@@ -71,7 +69,6 @@ public class CharStatus : MonoBehaviour
 
     private void Awake()
     {
-
         hp = maxHp;
         _anim = GetComponent<Animator>();
         _as = GetComponent<AbilitiesStatus>();
@@ -214,8 +211,6 @@ public class CharStatus : MonoBehaviour
         _hpBar.fillAmount = HpPercentCalculation(hp);
         if (hp <= 0)
         {
-            boss.gameObject.SetActive(false);
-            triggerEnemy.GetComponent<BossStart>().bossUI.SetActive(false);
             boss.randomAttack = 3;
             respawnManager.RespawnCharacter();
         }

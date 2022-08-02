@@ -85,12 +85,9 @@ public class Boss : MonoBehaviour
     public Animator fadeInAnimator;
 
 
-
-
     // Start is called before the first frame update
     void Start()
     {
-
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
 
@@ -101,13 +98,6 @@ public class Boss : MonoBehaviour
         //randomAttack = Random.Range(0, abilities.Length - 1);
 
 
-    }
-
-    private void OnEnable()
-    {
-        randomAttack = 3;
-
-        HP = maxHP;
     }
 
     // Update is called once per frame
@@ -147,7 +137,6 @@ public class Boss : MonoBehaviour
         else if (randomAttack == 3)
         {
             anim.SetBool("Walking", false);
-            resting = true;
             return;
         }
 
