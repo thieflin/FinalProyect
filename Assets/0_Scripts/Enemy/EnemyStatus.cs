@@ -38,7 +38,7 @@ public class EnemyStatus : EnemyData, IDamageable
     }
     public void GotLastKey(params object[] parameters)
     {
-        NewKeyPalancas.lastKeys += 1;
+        NewKeyPalancas.lastKeys++;
     }
 
 
@@ -107,18 +107,6 @@ public class EnemyStatus : EnemyData, IDamageable
 
             Debug.Log("le pegue aweonaou");
 
-            if (isKeyOwner)
-            {
-                EventManager.Instance.Trigger("OnGettingEnemyKey");
-                AudioManager.PlaySound("LootKeySound");
-            }
-
-            if (isLastKeyOwner)
-            {
-                EventManager.Instance.Trigger("OnGettingLastKeys");
-                AudioManager.PlaySound("LootKeySound");
-            }
-
             //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO MÁS
             if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
             {
@@ -152,18 +140,6 @@ public class EnemyStatus : EnemyData, IDamageable
             GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
 
             Debug.Log("le pegue aweonaou");
-
-            if (isKeyOwner)
-            {
-                EventManager.Instance.Trigger("OnGettingEnemyKey");
-                AudioManager.PlaySound("LootKeySound");
-            }
-
-            if (isLastKeyOwner)
-            {
-                EventManager.Instance.Trigger("OnGettingLastKeys");
-                AudioManager.PlaySound("LootKeySound");
-            }
 
             //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO MÁS
             if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))

@@ -31,7 +31,7 @@ public class AbilityHybrid : Abilities
         Debug.Log("Hybrid");
 
 
-
+            //Que la pueda cstear por deporte por ahora
             _cs.UseAbility(id);
             isIdle = false;
             Debug.Log("sifuncionaura");
