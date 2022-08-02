@@ -1050,7 +1050,7 @@ MonoBehaviour:
   _hitKnockbackLayerMask: 0
   _dmgMitigation: 2
   _hpSlider: {fileID: 0}
-  _expPoints: 10
+  _expPoints: 18
   _anim: {fileID: 0}
   _rb: {fileID: 0}
   knockBackForce: 0
@@ -1058,6 +1058,9 @@ MonoBehaviour:
   isWaveEnemy: 0
   onMeleeHittedParticles: {fileID: 5883558166639154087, guid: 1aca01d182cecd34ca60e12c8b35d4b3, type: 3}
   enemyHitted: 0
+  isKeyOwner: 0
+  obtainedKey: 0
+  isLastKeyOwner: 0
 --- !u!65 &512750483740203832
 BoxCollider:
   m_ObjectHideFlags: 0

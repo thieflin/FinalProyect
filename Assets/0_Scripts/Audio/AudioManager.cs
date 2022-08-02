@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioClip lootingCollectible, finishingPuzzle, hitting, slashing, purchase, failtopurchase, bossGrab, robotMeleeHitting, robotHitten;
-    public static AudioClip shotgunSound, healSound, lootKeySound, levelUpSound, hurtSound, dashSound;
+    public static AudioClip shotgunSound, healSound, lootKeySound, levelUpSound, hurtSound, dashSound, puzzleSolve;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
         levelUpSound = Resources.Load<AudioClip>("LevelUp");
         hurtSound = Resources.Load<AudioClip>("Hurt2");
         dashSound = Resources.Load<AudioClip>("DashCorto");
+        puzzleSolve = Resources.Load<AudioClip>("PuzzleSolveCrop");
 
         audioSrc = GetComponent<AudioSource>();
 
@@ -84,6 +85,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "DashCorto":
                 audioSrc.PlayOneShot(dashSound);
+                break;
+            case "PuzzleSolveCrop":
+                audioSrc.PlayOneShot(puzzleSolve);
                 break;
 
             default:

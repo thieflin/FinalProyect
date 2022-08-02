@@ -48,6 +48,8 @@ public class NewKeyPalancas : MonoBehaviour
                     item.SetActive(false);
                 }
 
+
+                AudioManager.PlaySound("PuzzleSolveCrop");
                 //Corro la animacion de apertura
                 foreach (var item in sticksToAnimate)
                 {
@@ -66,6 +68,7 @@ public class NewKeyPalancas : MonoBehaviour
                     {
                         item.SetActive(false);
                     }
+                    AudioManager.PlaySound("PuzzleSolveCrop");
 
                     //Corro la animacion de apertura
                     foreach (var item in sticksToAnimate)
@@ -86,6 +89,8 @@ public class NewKeyPalancas : MonoBehaviour
                     //Activo los devices
                     activatedDevices++;
                     gameObject.GetComponent<BoxCollider>().enabled = false;
+
+                    AudioManager.PlaySound("PuzzleSolveCrop");
 
 
                     //Entonces si tengo 2 le pego dos veces y queda en 0

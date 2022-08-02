@@ -24,6 +24,8 @@ public class ExtraScriptTest : MonoBehaviour
                 puenteActivate.GetComponent<Animator>().SetTrigger("ActivateBridge");
 
             //GetComponent<Animator>().SetTrigger("LeverHit");
+            AudioManager.PlaySound("PuzzleSolveCrop");
+
             GetComponent<Animator>().SetTrigger("ActivateButton");
 
             if (checkPointRamp.Count > 0)

@@ -39,10 +39,14 @@ public class TwoButtons : MonoBehaviour
                     if (buttonsPressed == 1)
                     {
                         puentes.GetComponent<Animator>().SetTrigger("Part1");
+                        AudioManager.PlaySound("PuzzleSolveCrop");
+
                     }
                     else if(buttonsPressed == 2)
                     {
                         puentes.GetComponent<Animator>().SetTrigger("Part2");
+                        AudioManager.PlaySound("PuzzleSolveCrop");
+
 
                         foreach (var collider in colliderToDestroy)
                         {
