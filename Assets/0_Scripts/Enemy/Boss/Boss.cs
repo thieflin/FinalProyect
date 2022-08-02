@@ -71,6 +71,9 @@ public class Boss : MonoBehaviour
 
     public int randomAttack;
 
+    public AudioSource shootingAudio, walkingAudio, grabingAudio, hitAudio;
+    bool hittingAudioPlayed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -226,24 +229,37 @@ public class Boss : MonoBehaviour
     {
         timerOnEachAttack += Time.deltaTime;
 
-        toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
-        transform.forward = toPlayerVector;
+
 
         if (Vector3.Distance(transform.position, player.transform.position) > distanceToAttack)
         {
             //Camino al player si esta muy lejos y tengo que atacar
             var direction = (player.transform.position - transform.position).normalized;
             rb.velocity = direction * speed * Time.deltaTime;
-
             anim.SetBool("Walking", true);
+            walkingAudio.enabled = true;
+
+            toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
+            transform.forward = toPlayerVector;
         }
         else if (Vector3.Distance(transform.position, player.transform.position) <= distanceToAttack)
         {
             anim.SetBool("Walking", false);
+            walkingAudio.enabled = false;
+            hitAudio.enabled = true;
             rb.velocity = Vector3.zero;
-
             StartAttacking();
         }
+        else if (Vector3.Distance(transform.position, player.transform.position) > distanceToAttack && anim.GetBool("IsAttackingMelee"))
+        {
+            hitAudio.enabled = true;
+        }
+
+        if (!anim.GetBool("IsAttackingMelee"))
+        {
+            hitAudio.enabled = false;
+        }
+
 
         if (timerOnEachAttack >= meleeDuration)
         {
@@ -267,6 +283,7 @@ public class Boss : MonoBehaviour
     {
         anim.SetBool("Shooting", true);
         anim.SetBool("Walking", false);
+        walkingAudio.enabled = false;
         toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
         transform.forward = toPlayerVector;
         transform.position = transform.position;
@@ -277,6 +294,7 @@ public class Boss : MonoBehaviour
     void StartGrabbing()
     {
         anim.SetBool("Walking", false);
+        walkingAudio.enabled = false;
         timerOnEachAttack += Time.deltaTime;
 
         StartCoroutine(WaitForGrabbing());
@@ -288,6 +306,7 @@ public class Boss : MonoBehaviour
 
         attacking = false;
         shooting = false;
+
         grabing = false;
         resting = true;
 
@@ -295,6 +314,7 @@ public class Boss : MonoBehaviour
 
         anim.SetTrigger("GoToIdle");
         anim.SetBool("Walking", false);
+        walkingAudio.enabled = false;
     }
 
     IEnumerator WaitForGrabbing()
@@ -310,7 +330,7 @@ public class Boss : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f); //ESPERO UN POCO
 
-            savePositionPlayer = player.transform.position;
+            savePositionPlayer = player.transform.position + player.transform.forward * 5f;
 
             if (randomOptionForGrab == 0) //RIGHT HAND
             {
@@ -324,6 +344,8 @@ public class Boss : MonoBehaviour
 
             savePositionLeftHand = handLeft.transform.localPosition;
             savePositionRightHand = handRight.transform.localPosition;
+
+            AudioManager.PlaySound("RobotGrab");
 
             yield return new WaitForSeconds(0.5f);
 
@@ -342,6 +364,8 @@ public class Boss : MonoBehaviour
         if (grabing && !grabBack)
         {
             yield return new WaitForSeconds(0.5f); // ESPERO A QUE TERMINE LA ANIMACION PARA LANZAR LA MANO
+
+
 
             if (randomOptionForGrab == 0)
             {
@@ -398,15 +422,17 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         startShooting = true;
 
+        shootingAudio.enabled = true;
+
         timerOnEachAttack += Time.deltaTime;
 
         if (timerOnEachAttack >= shootingDuration)
         {
             anim.SetBool("Shooting", false);
-
+            shootingAudio.enabled = false;
+            startShooting = false;
             RestAfterAbility();
         }
-
 
     }
 
@@ -419,7 +445,7 @@ public class Boss : MonoBehaviour
         {
             yield return new WaitForSeconds(timeBetweenInternalShoots);
 
-            Vector3 shootingDirection = player.transform.position + player.transform.forward * 2.5f;
+            Vector3 shootingDirection = player.transform.position /*+ player.transform.forward * 1f*/;
 
             shootingDirection = new Vector3(shootingDirection.x, shootingDirection.y + 4f, shootingDirection.z);
 
@@ -431,7 +457,9 @@ public class Boss : MonoBehaviour
 
             newBullet.transform.forward = direction;
 
-            newBullet.GetComponent<Rigidbody>().AddForce(direction * newBullet.speed * Time.deltaTime, ForceMode.Force);
+
+            newBullet.GetComponent<Rigidbody>().velocity = direction * newBullet.speed * Time.deltaTime;
+            //newBullet.GetComponent<Rigidbody>().AddForce(direction * newBullet.speed * Time.deltaTime, ForceMode.Force);
         }
     }
 
@@ -439,9 +467,12 @@ public class Boss : MonoBehaviour
     {
         attacking = true;
         rb.velocity = Vector3.zero;
+        walkingAudio.enabled = false;
         yield return new WaitForSeconds(2f);
+        
         attacking = false;
         attacked = false;
+
     }
 
     void TakeDamage(float dmg)
@@ -472,6 +503,7 @@ public class Boss : MonoBehaviour
     void StopAttacking()
     {
         attacked = false;
+        hittingAudioPlayed = false;
         anim.SetBool("IsAttackingMelee", false);
         timerAttacking = 0f;
         timerToCancel = 0f;
