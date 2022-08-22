@@ -242,7 +242,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isDashing && !isGrounded())
         {
-            _rb.AddForce(Vector3.down * 300, ForceMode.Acceleration);
+            _rb.AddForce(Vector3.down * 150, ForceMode.Acceleration);
 
         }
 
@@ -319,7 +319,7 @@ public class PlayerMovement : MonoBehaviour
         transform.eulerAngles = new Vector3(0f, saveYRotation, 0f);
         isDashing = false;
         canAttack = true;
-        yield return new WaitForSeconds(_timeBetweenDashes+0.1f);
+        yield return new WaitForSeconds(_timeBetweenDashes+0.2f);
         canDash = true;
         dashPart.SetActive(false);
 

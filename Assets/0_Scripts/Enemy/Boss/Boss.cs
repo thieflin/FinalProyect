@@ -67,6 +67,9 @@ public class Boss : MonoBehaviour
     Vector3 savePositionRightHand;
     Vector3 savePositionLeftHand;
 
+    Vector3 saveLookingPos;
+    bool hasSavedPosition;
+
 
 
     public GameObject bulletPrefab;
@@ -84,18 +87,21 @@ public class Boss : MonoBehaviour
 
     public Animator fadeInAnimator;
 
+    //public List<SkinnedMeshRenderer> bossMaterials;
+    public Material matBoss;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
 
         HP = maxHP;
 
+        matBoss.SetFloat("_Speed", 0);
 
         //Empieza con un ataque random
         //randomAttack = Random.Range(0, abilities.Length - 1);
@@ -107,12 +113,16 @@ public class Boss : MonoBehaviour
     {
         randomAttack = 3;
 
+        matBoss.SetFloat("_Speed", 0);
+
         HP = maxHP;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(rb.velocity);
+
         sliderHP.value = HP;
 
         if (resting)
@@ -123,7 +133,7 @@ public class Boss : MonoBehaviour
         if (attacked)
         {
             rb.velocity = Vector3.zero;
-            transform.Rotate(0f, 0f, 0f);
+            transform.position = transform.position;
         }
 
         if (dead)
@@ -262,14 +272,27 @@ public class Boss : MonoBehaviour
             anim.SetBool("Walking", true);
             walkingAudio.enabled = true;
 
-            toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
-            transform.forward = toPlayerVector;
+            if (!attacked)
+            {
+                toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
+                transform.forward = toPlayerVector;
+            }
         }
         else if (Vector3.Distance(transform.position, player.transform.position) <= distanceToAttack)
         {
             anim.SetBool("Walking", false);
             walkingAudio.enabled = false;
             hitAudio.enabled = true;
+
+            if (!hasSavedPosition)
+            {
+                saveLookingPos = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
+                hasSavedPosition = true;
+                transform.forward = saveLookingPos;
+            }
+
+            Debug.Log(saveLookingPos);
+
             rb.velocity = Vector3.zero;
             StartAttacking();
         }
@@ -347,6 +370,8 @@ public class Boss : MonoBehaviour
             grabLaunched = true;
 
             bossVulnerable.GetComponent<BoxCollider>().enabled = true;
+
+            matBoss.SetFloat("_Speed", 10);
 
             toPlayerVector = new Vector3(player.transform.position.x - transform.position.x, 0f, player.transform.position.z - transform.position.z).normalized;
             transform.forward = toPlayerVector;
@@ -456,6 +481,7 @@ public class Boss : MonoBehaviour
                 grabBack = false;
                 grabLaunched = false;
                 bossVulnerable.GetComponent<BoxCollider>().enabled = false;
+                matBoss.SetFloat("_Speed", 0);
                 timerForGrabBack = 0;
                 timerOnEachAttack = 0;
                 anim.SetBool("HookLeft", false);
@@ -516,8 +542,9 @@ public class Boss : MonoBehaviour
     {
         attacking = true;
         rb.velocity = Vector3.zero;
+        transform.rotation = transform.rotation;
         walkingAudio.enabled = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         attacking = false;
         attacked = false;
@@ -531,6 +558,7 @@ public class Boss : MonoBehaviour
 
         attacked = true;
 
+
         if (timerAttacking >= timeToAttack)
         {
             timerAttacking = 0f;
@@ -543,6 +571,7 @@ public class Boss : MonoBehaviour
 
     void StopAttacking()
     {
+        hasSavedPosition = false;
         attacked = false;
         anim.SetBool("IsAttackingMelee", false);
         timerAttacking = 0f;
