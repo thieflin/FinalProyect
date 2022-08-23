@@ -20,10 +20,18 @@ public class EnemyStatus : EnemyData, IDamageable
     public bool isLastKeyOwner;
     public static int allKeys;
 
+    //TESTING PARA QUE NO ME MUEVAN CUANDO TOQUE AL PLAYER
+    public bool isColliding;
+    Rigidbody _rb;
+
+    public Vector3 position, velocity, angularVelocity;
+
+
     public void Start()
     {
 
         _bm = FindObjectOfType<ButtonManager>();
+        _rb = GetComponent<Rigidbody>();
 
         _currentHp = _maxHp;
         _anim = GetComponent<Animator>();
@@ -33,6 +41,28 @@ public class EnemyStatus : EnemyData, IDamageable
 
         EventManager.Instance.Subscribe("OnGettingEnemyKey", GotKey);
     }
+
+    void FixedUpdate()
+    {
+        if (!isColliding)
+        {
+            position = _rb.position;
+            velocity = _rb.velocity;
+            angularVelocity = _rb.angularVelocity;
+        }
+
+    }
+
+    void LateUpdate()
+    {
+        if (isColliding)
+        {
+            _rb.position = position;
+            _rb.velocity = velocity;
+            _rb.angularVelocity = angularVelocity;
+        }
+    }
+
 
     public void GotKey(params object [] parameters)
     {
@@ -71,7 +101,7 @@ public class EnemyStatus : EnemyData, IDamageable
 
             GetEXPPoints(_expPoints); //Los puntos de experiencia que se obtienen al matar al enemigo
 
-            //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO M¡S
+            //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO M√ÅS
             if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
             {
                 TargetLock.enemiesClose.Remove(this.GetComponent<Enemy>());
@@ -120,7 +150,7 @@ public class EnemyStatus : EnemyData, IDamageable
                 AudioManager.PlaySound("LootKeySound");
             }
 
-            //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO M¡S
+            //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO M√ÅS
             if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
             {
                 TargetLock.enemiesClose.Remove(this.GetComponent<Enemy>());
@@ -166,7 +196,7 @@ public class EnemyStatus : EnemyData, IDamageable
                 AudioManager.PlaySound("LootKeySound");
             }
 
-            //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO M¡S
+            //LO SACO DE LA LISTA PARA QUE UNA VEZ MUERTO NO PUEDA TARGETEARLO M√ÅS
             if (TargetLock.enemiesClose.Contains(this.GetComponent<Enemy>()))
             {
                 TargetLock.enemiesClose.Remove(this.GetComponent<Enemy>());
@@ -184,5 +214,17 @@ public class EnemyStatus : EnemyData, IDamageable
         enemyHitted = true;
         yield return new WaitForSeconds(0.3f);
         enemyHitted = false;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Player")
+            isColliding = true;
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.tag == "Player")
+            isColliding = false;
     }
 }

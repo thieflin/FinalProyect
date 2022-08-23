@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
     //Para testear unicamente
     public SphereCollider sph;
 
+    //PARA COLLISIONES CON ENEMIGOS
+
     private void Awake()
     {
         characterInputs = new Control(this);
@@ -273,6 +275,8 @@ public class PlayerMovement : MonoBehaviour
     //Para cuando dashea y esta targeteando
     public void Dash(Vector3 whereToDashes)
     {
+        //_rb.mass = 5;
+
         if (whereToDashes != Vector3.zero)
         {
             whereToDash = whereToDashes;
@@ -360,6 +364,22 @@ public class PlayerMovement : MonoBehaviour
     public void ActivateDashOnAttack()
     {
         flagDash = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.gameObject.layer == 18)
+        {
+            _rb.mass = 500;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.gameObject.layer == 18)
+        {
+            _rb.mass = 5;
+        }
     }
 
 }

@@ -595,6 +595,10 @@ MonoBehaviour:
   isKeyOwner: 0
   obtainedKey: 0
   isLastKeyOwner: 0
+  isColliding: 0
+  position: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!65 &4317881520172153412
 BoxCollider:
   m_ObjectHideFlags: 0
