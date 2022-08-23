@@ -366,20 +366,20 @@ public class PlayerMovement : MonoBehaviour
         flagDash = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.gameObject.layer == 18)
-        {
-            _rb.mass = 500;
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.collider.gameObject.layer == 18)
+    //    {
+    //        _rb.mass = 500;
+    //    }
+    //}
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.gameObject.layer == 18)
-        {
-            _rb.mass = 5;
-        }
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.collider.gameObject.layer == 18)
+    //    {
+    //        _rb.mass = 5;
+    //    }
+    //}
 
 }

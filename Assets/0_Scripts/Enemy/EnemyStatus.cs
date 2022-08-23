@@ -50,7 +50,6 @@ public class EnemyStatus : EnemyData, IDamageable
             velocity = _rb.velocity;
             angularVelocity = _rb.angularVelocity;
         }
-
     }
 
     void LateUpdate()
@@ -219,12 +218,18 @@ public class EnemyStatus : EnemyData, IDamageable
     void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Player")
+        {
+            _rb.velocity = Vector3.zero;
             isColliding = true;
+        }
     }
 
     void OnCollisionExit(Collision collision)
     {
         if (collision.collider.tag == "Player")
+        {
+            _rb.velocity = Vector3.zero;
             isColliding = false;
+        }
     }
 }
