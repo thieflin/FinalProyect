@@ -171,6 +171,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("Speed", 1);
             animator.SetBool("IsTargeting", false);
+            _rb.mass = 5f;
         }
         else if ((direction.x == 0 || direction.z == 0) && !isTargeting)
         {
@@ -224,8 +225,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-
-
         //TARGETING WALKING
         if (isTargeting)
         {
@@ -275,7 +274,7 @@ public class PlayerMovement : MonoBehaviour
     //Para cuando dashea y esta targeteando
     public void Dash(Vector3 whereToDashes)
     {
-        //_rb.mass = 5;
+        _rb.mass = 5;
 
         if (whereToDashes != Vector3.zero)
         {
@@ -366,20 +365,28 @@ public class PlayerMovement : MonoBehaviour
         flagDash = true;
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.collider.gameObject.layer == 18)
-    //    {
-    //        _rb.mass = 500;
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.layer == 18)
+        {
+            _rb.mass = 500;
+        }
+    }
 
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.collider.gameObject.layer == 18)
-    //    {
-    //        _rb.mass = 5;
-    //    }
-    //}
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.gameObject.layer == 18)
+        {
+            _rb.mass = 500;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.gameObject.layer == 18)
+        {
+            _rb.mass = 5;
+        }
+    }
 
 }
