@@ -35,6 +35,8 @@ public class HunterRanged : MonoBehaviour
     public bool justAttacked; //Booleano para saber si le pego al player
     public float attackCd;
     public bool enemyHitted;//Cuando recibe dmg que entre en cd
+    public float distanceToPlayer;//Cuando recibe dmg que entre en cd
+
 
     public RangedBullet bullet;
     public GameObject spawnBulletPos;
@@ -58,6 +60,7 @@ public class HunterRanged : MonoBehaviour
 
         target = FindObjectOfType<PlayerMovement>();
 
+        distanceToPlayer = 10;
 
         _fsm.AddState(PlayerStatesEnum.Patrol, new WaypointStateRanged(_fsm, this)); //Agrego todos los estados
         _fsm.AddState(PlayerStatesEnum.Idle, new IdleStateRanged(_fsm, this));

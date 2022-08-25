@@ -1181,6 +1181,7 @@ MonoBehaviour:
   justAttacked: 0
   attackCd: 0
   enemyHitted: 0
+  distanceToPlayer: 10
   bullet: {fileID: -6757709886621573434, guid: 12d39adc28b63b34ea21aa6c23ea54f4, type: 3}
   spawnBulletPos: {fileID: 512750485146953733}
   particleSystemXD: {fileID: 512750484003026535}

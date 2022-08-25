@@ -38,7 +38,19 @@ public class CDStateRanged : MonoBehaviour, IState
 
 
         Vector3 dir = _hunter.target.transform.position - _hunter.transform.position;
-        _hunter.transform.position += dir.normalized * _hunter.speed * .5f /*para que chasee mas rapdio*/ * Time.deltaTime;
+
+        if (_hunter.distanceToPlayer < dir.magnitude)
+        {
+            _hunter.transform.position += dir.normalized * _hunter.speed * .5f /*para que chasee mas rapdio*/ * Time.deltaTime;
+        }
+        else
+        {
+            _hunter.transform.position += dir.normalized * -_hunter.speed * .5f /*para que chasee mas rapdio*/ * Time.deltaTime;
+        }
+        //Esto tengo que cambiarlo a Rigidbody
+
+
+       
         //Hace que mire al player mientras espera y espere en idle (esto podria ponerse una animacion de transicion tambien)
         RotationTowardsPlayer();
 
